@@ -1,0 +1,18 @@
+# For Latex Files and associated figures.
+
+# Temporary and output files
+*.bak
+*.log
+*.dvi
+*.pdf
+*.out
+*.aux
+*.bbl
+*.blg
+*.toc
+
+# Gerber Files
+Archive/
+Figures/Image Sources/Jpg/Work Product/
+Figures/*.jpg
+Figures/*.eps

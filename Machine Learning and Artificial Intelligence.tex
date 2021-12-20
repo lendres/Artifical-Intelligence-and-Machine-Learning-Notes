@@ -1,0 +1,143 @@
+	\documentclass[useleftjustifiedchapterstyle]{lebook}
+
+	% This document requires the use of Lance A. Endres's LaTeX library available at the following location:
+	% https://github.com/lendres/LaTeX
+
+    % Be able to use hypertext references.
+	\usepackage[colorlinks=true,
+				linkcolor=blue,
+				citecolor=blue,
+				urlcolor=red,
+				filecolor=red,
+				anchorcolor=black,
+				pagecolor=blue,
+				linktocpage=true]{hyperref}
+
+	\usepackage{lesubscripts}
+
+	\usepackage{legraphicextensions}
+    % Set the search path for figures.  This way we can change it if required without having to modified
+    % all of the \includegraphics calls.
+	\graphicspath{{Figures/}}
+
+	\usepackage{amsmath}
+	\usepackage{lemath}
+	\setlength{\mathwhererightmargin}{0pt}
+	\setlength{\mathdefspacelength}{5.0pt}
+
+	\usepackage{lelists}
+	\setlength{\listtopsep}{0pt}
+
+	\usepackage{lelistofnotations}
+	\spacingbetweennotations{0.5\baselineskip}
+	\notationheadinglinesize{16pt}
+
+
+	% For the file extensions, use "g," "s," and "o" as the last letter and change the first 2 to create a new glossary.
+	% Optional arguments are:
+	%		toc: Adds the main glossary to the table of contents.  The others are added by default.
+	%		nonumberlist: Prevents the page numbers from being added to each entry in the glossaries.
+	\usepackage[toc=true, nonumberlist=true, acronym]{glossaries}
+	\newglossary[stg]{stats}{sts}{sto}{Statistics Glossary}
+	\newcommand*{\addacronym}[2]{\newacronym{#1}{\MakeUppercase{#1}}{#2}}
+	\makeglossaries{}
+
+	\usepackage[bottom]{footmisc}
+	\usepackage{subcaption}
+	\usepackage{times}
+
+	% For epigraphs (quotes at the start of chapters). 	
+	\usepackage{epigraph}
+	\renewcommand{\epigraphflush}{center}
+	\renewcommand{\epigraphrule}{0pt}
+	\setlength{\epigraphwidth}{\textwidth-3in}
+	\newcommand*{\formattedepigraph}[2]{\epigraph{\textit{#1}}{--- #2}}
+
+	\renewcommand*{\large}{\fontsize{13pt}{16pt}\selectfont}
+	\renewcommand*{\Large}{\fontsize{14pt}{19pt}\selectfont}
+	\renewcommand*{\LARGE}{\fontsize{17pt}{22pt}\selectfont}
+
+	% INCLUDE A BIBLIOGRAPHY.
+	\bibliographystyle{leplain}
+
+	\begin{document}
+
+	\input{"Equations.tex"}
+
+    % MAKE A TITLE PAGE.
+	\begin{titlepage}
+
+	\bfseries
+	\huge \center{Machine Learning and Artificial Intelligence}
+	\large \center{Python, Statistics, Machine Learning, and Artificial Intelligence Notes}
+	\vfill
+
+	%\begin{figure}[h]
+%		\centering
+%		\includegraphics[height=4.0in]{blueandredhirthjoints}
+%	\end{figure}
+
+	\vfill
+
+	\large \center{Written by:}
+	\LARGE \center{Lance A. Endres, Ph.D.}
+	\vspace*{36pt}
+	\large \center{November, 2021}
+	\vfill
+
+	\LARGE \center{}
+	\large \center{Copyright \copyright\ 2021, Lance A. Endres}
+
+	\normalsize
+	\end{titlepage}
+
+	\pagestyle{leplainheader}
+	\frontmatter{}
+
+	% GENERATE THE TABLE OF CONTENTS.
+	\tableofcontents{}
+
+%	\input{"Summary.tex"}
+
+	\mainmatter{}
+
+	% Glossary entries need to be defined before they can be referenced.
+    \input{"Statistics.tex"}
+
+    \input{"Machine Learning.tex"}
+
+	\input{"Statistics Glossary.tex"}
+    \input{"Acronyms.tex"}
+
+	\backmatter{}
+	\pagestyle{leplainheader}
+
+	% Standard glossary entries.
+	\newglossaryentry{utc}{name=UTC, description={Coordinated Universal Time}}
+	%\gls{utc}
+
+
+
+	% Print the glossaries here.
+	\printglossary[type=main, title=General Glossary]{}
+	\renewcommand*{\chaptertitle}{General Glossary}
+	
+	\printglossary[type=stats, title=Statistics Glossary]{}
+	\renewcommand*{\chaptertitle}{Statistics Glossary}
+%	\printglossaries{}
+
+	\printglossary[type=\acronymtype]
+	\renewcommand*{\chaptertitle}{Acronyms}
+
+	% PRINT A LIST OF NOTATIONS / NOMENCLATURE.
+	% Argument is a text/tex file containing lines in the form of:
+	% \addnotation{Variable}{Meaning of variable.}
+	\input{"List of Notations.tex"}
+
+	% Use all glossary entries without specifically referencing them.
+	% Gather all unused glossary terms.  Putting it before "\printgossaries" seems to cause a blank page to be injected.
+	\glsaddallunused{}
+
+	\bibliography{le,machinelearning}
+
+	\end{document}

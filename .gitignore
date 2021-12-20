@@ -10,9 +10,21 @@
 *.bbl
 *.blg
 *.toc
+*.acn
+*.acr
+*.alg
+*.stg
+*.sto
+*.sts
+*.ist
+*.glg
+*.glo
+*.gls
+*.glsdefs
 
-# Gerber Files
+# Files
 Archive/
 Figures/Image Sources/Jpg/Work Product/
 Figures/*.jpg
 Figures/*.eps
+Thumbs.db

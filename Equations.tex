@@ -1,0 +1,86 @@
+% Removes italics from terms that use the \mbf{} command.  Use this or next command, but not both.
+\newcommand*{\mrm}[1]{\mathrm{#1}}
+
+% Math fonts.
+\newcommand*{\mscalar}[1]{\mbox{$#1$}}
+\newcommand*{\mbf}[1]{\mbox{\boldmath$\mrm{#1}$}}
+\newcommand*{\half}{\textstyle\frac{1}{2}}
+
+% Points, lines, angles, and polygons.
+\newcommand*{\point}[1]{\mbf{#1}}
+\newcommand*{\pointprime}[1]{\mbf{#1^\prime}}
+\newcommand*{\pointdoubleprime}[1]{\mbf{#1^{\prime\prime}}}
+\newcommand*{\lineseg}[1]{\mbf{\overline{#1}}}
+\newcommand*{\anglenot}[1]{\mbf{\angle#1}}
+
+% STATISTICS
+% Scalars.
+\newcommand*{\coeffvariation}{\mscalar{c_v}}
+
+\newcommand*{\levelofsignificance}{\mscalar{\alpha}}
+\newcommand*{\median}{\mscalar{\tilde{x}}}
+
+\newcommand*{\nullhypothesis}{\mscalar{\textrm{H}_0}}
+
+\newcommand*{\populationmean}{\mscalar{\mu}}
+\newcommand*{\populationstandarddeviation}{\mscalar{\sigma}}
+
+\newcommand*{\quartile}[1]{\mscalar{Q_{#1}}}
+\newcommand*{\quartileone}{\quartile{1}}
+\newcommand*{\quartiletwo}{\quartile{2}}
+\newcommand*{\quartilethree}{\quartile{3}}
+
+\newcommand*{\samplemean}{\mscalar{\bar{x}}}
+\newcommand*{\samplestandarddeviation}{\mscalar{s}}
+
+\newcommand*{\variance}{\mscalar{v}}
+
+\newcommand*{\xsmallest}{\mscalar{x_{smallest}}}
+\newcommand*{\xlargest}{\mscalar{x_{largest}}}
+
+% Coordinate system axes.
+%\newcommand*{\axis}[1]{\mbf{\vec{#1}}}
+%\newcommand*{\xaxis}{\axis{x}}
+%\newcommand*{\yaxis}{\axis{y}}
+%\newcommand*{\zaxis}{\axis{z}}
+%
+
+%
+%% Tooth spacing is the angle between consecutive teeth.  Toot angle is the shape of the individual teeth.
+%\newcommand*{\toothspacing}[1]{\mbox{$#1_s$}}
+%\newcommand*{\toothprofileangle}[1]{\mbox{$#1_p$}}
+%
+%\newcommand*{\halftoothspacing}{\toothspacing{\phi}}
+%\newcommand*{\halftoothangle}{\toothprofileangle{\phi}}
+%
+%\newcommand*{\fulltoothspacing}{\toothspacing{\theta}}
+%\newcommand*{\fulltoothprofileangle}{\toothprofileangle{\theta}}
+%
+%% Groove angle is the angle from horizontal each tooth goes up or down as the radius increases.
+%\newcommand*{\grooveangle}{\mbox{$\phi_g$}}
+%\newcommand*{\grooveangleprime}{\mbox{$\phi_g^\prime$}}
+%
+%% Sin, cos, and tan of angles.
+%\newcommand*{\sineq}[1]{\sin\left(#1\right)}
+%\newcommand*{\sininv}[1]{\sin^{-1}\left(#1\right)}
+%\newcommand*{\coseq}[1]{\cos\left(#1\right)}
+%
+%\newcommand*{\taneq}[1]{\tan\left(#1\right)}
+%\newcommand*{\taninv}[1]{\tan^{-1}\left(#1\right)}
+%
+%\newcommand*{\sinhalftoothspacing}{\sineq{\halftoothspacing}}
+%\newcommand*{\coshalftoothspacing}{\coseq{\halftoothspacing}}
+%\newcommand*{\tanhalftoothspacing}{\taneq{\halftoothspacing}}
+%\newcommand*{\tanquartertoothspacing}{\taneq{\half\halftoothspacing}}
+%
+%\newcommand*{\tanhalftoothprofileangle}{\taneq{\halftoothangle}}
+%
+%
+%% Betas, eta, lamdba.
+%\newcommand*{\betag}{\mbox{$\beta_g$}}
+%\newcommand*{\betagprime}{\mbox{$\beta_g^\prime$}}
+%\newcommand*{\betatotal}{\betag + \betagprime}
+%
+%\newcommand*{\etag}{\mbox{$\eta_g$}}
+%
+%\newcommand*{\minheight}{\mbox{$\lambda$}} 

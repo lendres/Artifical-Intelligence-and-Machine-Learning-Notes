@@ -20,13 +20,50 @@
     % all of the \includegraphics calls.
 	\graphicspath{{Figures/}}
 
+	% Table package.
+	\usepackage{letable}
+	\setlength{\tablerowheight}{6mm}
+	\setlength{\tabledoublelinespace}{-13pt}
+	\tabletitlefont{\bfseries\Large}
+	\tablecolumnheaderfont{\bfseries}
+
+	% Used to auto number table rows.
+	\usepackage{array}
+	\newcounter{tablerowcounter}[table]
+	\renewcommand{\thetablerowcounter}{\thetable.\arabic{tablerowcounter}}
+	
+	% A new column type to apply automatic stepping
+	\newcolumntype{N}{>{\refstepcounter{tablerowcounter}\thetablerowcounter}c}
+	\AtBeginEnvironment{tabular}{\setcounter{tablerowcounter}{0}}
+
 	\usepackage{amsmath}
 	\usepackage{lemath}
 	\setlength{\mathwhererightmargin}{0pt}
 	\setlength{\mathdefspacelength}{5.0pt}
 
+	\usepackage{lecode}
+
 	\usepackage{lelists}
 	\setlength{\listtopsep}{0pt}
+	
+	% No space bulleted list for use in tables.
+	\newenvironment{nospacebulletedlist}
+	{
+		\vspace*{-0.7\baselineskip}
+		\begin{list}
+		{$\bullet$\hfill}
+		{
+			\setlength{\labelwidth}{0.40cm}
+			\standardlistparams{}
+			\setlength{\rightmargin}{0pt}
+			\setlength{\topsep}{0pt}
+			\setlength{\parskip}{0pt}
+		}
+	}
+	{
+		\end{list}
+		\vspace*{-0.7\baselineskip}
+	}
 
 	\usepackage{lelistofnotations}
 	\spacingbetweennotations{0.5\baselineskip}

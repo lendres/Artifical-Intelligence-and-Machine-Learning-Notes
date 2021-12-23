@@ -155,11 +155,11 @@ Type 2 error (false negative): Concluding there is not a change in probability w
         \centering
         \lecaption{Comparison of }
         \label{tab:hypothesistests}
-        \begin{tabular}{|N|p{1.25in}|p{3in}|p{1.25in}|} \hline
+        \begin{tabular}{|N|p{1.25in}|p{3.08in}|p{1.2in}|} \hline
 			\multicolumn{1}{|c|}{} & \tablecolumnheadervlines{Significance of Test} &
 				\tablecolumnheadervlines{Assumptions} &
 				\tablecolumnheadervlines{Distribution/Test} \\ \tabledoublecline{1}{4}
-			\tablerow & 
+			\label{trw:populationmean} &
 				Test for population mean. $\nullhypothesis : \populationmean = \populationmean_0$ &
 				\begin{nospacebulletedlist}
 					\item Continuous data
@@ -168,9 +168,8 @@ Type 2 error (false negative): Concluding there is not a change in probability w
 					\item Unknown population standard deviation
 					\item Random sampling from the population
 				\end{nospacebulletedlist} &
-				t-distribution (one sample t-test) \\ \hline
-			\tablerow & 
-				Test for equality of two population means. $\nullhypothesis : \populationmean_1 = \populationmean_2$ &
+				\distributiontest{t-distribution}{one sample t-test} \\ \hline
+			\label{trw:twopopulationmeans} & Test for equality of two population means. $\nullhypothesis : \populationmean_1 = \populationmean_2$ &
 				\begin{nospacebulletedlist}
 					\item Continuous data
 					\item Normally distributed population or sample size \textgreater{}30
@@ -178,16 +177,15 @@ Type 2 error (false negative): Concluding there is not a change in probability w
 					\item Known population standard deviations
 					\item Random sampling from the populations
 				\end{nospacebulletedlist} &
-				Standard normal distribution (two independent sample z-test) \\ \hline
-			\tablerow &
-				Test for equality of two population means. $\nullhypothesis : \populationmean_1 = \populationmean_2$ &
+				\distributiontest{Normal distribution}{two independent sample z-test} \\ \hline
+			\label{trw:p} & Test for equality of two population means. $\nullhypothesis : \populationmean_1 = \populationmean_2$ &
 				\begin{nospacebulletedlist}
 					\item Continuous data
 				\end{nospacebulletedlist} &
-				Standard normal distribution (two independent sample z-test) \\ \hline
+				\distributiontest{distribution}{test} \\ \hline
         \end{tabular}
     \end{topcaptiontable}
 
 	\begin{code}{}
-		\codeitem testStatistic, pValue = scipy.stats.ttest\_1samp(\ldots)
-	\end{code}
+		\codeitem \ref{trw:populationmean}) testStatistic, pValue = scipy.stats.ttest\_1samp(\ldots)
+	\end{code} 

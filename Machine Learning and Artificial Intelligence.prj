@@ -4,7 +4,7 @@
 1
 1
 Machine Learning and Artificial Intelligence.tex
-22
+21
 7
 1
 
@@ -15,10 +15,10 @@ Machine Learning and Artificial Intelligence.tex
 
 Machine Learning and Artificial Intelligence.tex
 TeX
-152055739 0 -1 945 -1 960 0 0 1348 583 0 332 276 -1 -1 0 0 57 -1 -1 57 1 0 960 -1   0
+152055739 0 -1 1282 -1 1091 0 0 1348 583 0 22 322 -1 -1 0 0 57 -1 -1 57 1 0 1091 -1   0
 Statistics.tex
 TeX
-286273467 0 -1 7544 -1 6041 64 64 1287 679 0 62 0 -1 -1 0 0 23 -1 -1 23 1 0 6041 -1   0
+286273467 0 168 29 -1 6455 64 64 1287 679 0 422 345 -1 -1 0 0 23 -1 -1 23 1 0 6455 -1   0
 machinelearning.bib
 BibTeX
 1049586 0 50 46 50 45 130 130 1478 713 0 582 759 -1 -1 0 0 60 0 0 60 1 0 45 50   0
@@ -34,9 +34,6 @@ TeX
 Equations.tex
 TeX
 17838011 1 -1 769 -1 754 26 26 1374 609 0 152 322 -1 -1 0 0 98 -1 -1 98 1 0 754 -1   0
-C:\Users\Lance\AppData\Roaming\WinEdt\_Run.log
-DATA
-307233010 0 0 1 0 1 224 224 1489 789 1 80 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0   0
 C:\Program Files (x86)\WinEdt Team\WinEdt\WinEdt.btn
 DATA
 273686770 1 219 33 219 1 156 156 1504 739 1 80 667 -1 -1 0 0 69 0 0 69 1 0 1 219   0

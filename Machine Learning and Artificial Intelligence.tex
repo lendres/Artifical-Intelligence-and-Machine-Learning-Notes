@@ -20,28 +20,25 @@
     % all of the \includegraphics calls.
 	\graphicspath{{Figures/}}
 
+
+	% HYPOTHESIS TEST TABLE.
 	% Table package.
 	\usepackage{letable}
 	\setlength{\tablerowheight}{6mm}
 	\setlength{\tabledoublelinespace}{-13pt}
-	\tabletitlefont{\bfseries\Large}
 	\tablecolumnheaderfont{\bfseries}
 
 	% Used to auto number table rows.
 	\usepackage{array}
 	\newcounter{tablerowcounter}[table]
-	\renewcommand{\thetablerowcounter}{\thetable.\arabic{tablerowcounter}}
-	
-	% A new column type to apply automatic stepping
-	\newcolumntype{N}{>{\refstepcounter{tablerowcounter}\thetablerowcounter}c}
+	\renewcommand{\thetablerowcounter}{\arabic{tablerowcounter}}
 	\AtBeginEnvironment{tabular}{\setcounter{tablerowcounter}{0}}
 
-	\usepackage{amsmath}
-	\usepackage{lemath}
-	\setlength{\mathwhererightmargin}{0pt}
-	\setlength{\mathdefspacelength}{5.0pt}
+	% A new column type to apply automatic stepping
+	\newcolumntype{N}{>{\tablerow\refstepcounter{tablerowcounter}\thetablerowcounter}c}
 
-	\usepackage{lecode}
+	\newcommand*{\distributiontest}[2]{#1\vspace*{8pt}\newline#2}
+
 
 	\usepackage{lelists}
 	\setlength{\listtopsep}{0pt}
@@ -61,9 +58,18 @@
 		}
 	}
 	{
-		\end{list}
 		\vspace*{-0.7\baselineskip}
+		\end{list}
 	}
+
+
+	\usepackage{amsmath}
+	\usepackage{lemath}
+	\setlength{\mathwhererightmargin}{0pt}
+	\setlength{\mathdefspacelength}{5.0pt}
+
+	\usepackage{lecode}
+	\setlength{\initialcodeindent}{0pt}
 
 	\usepackage{lelistofnotations}
 	\spacingbetweennotations{0.5\baselineskip}

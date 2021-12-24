@@ -132,6 +132,10 @@ Response: Dependent variable which is continuous and assumed to follow a normal 
 Factor: Independent explanatory variable with several levels.
 Number of factors: How many variables are used.
 
+	\begin{equation}
+		\textrm{f-statistic} = \frac{\textrm{between group variations}}{\textrm{within group variations}}
+	\end{equation}
+A large f-statistic indicates there is more variation between groups than within groups.  Thus, it will provide evidence against the null hypothesis.
 
 One-way \acrshort{anova}
 
@@ -264,11 +268,13 @@ Type 2 error (false negative): Concluding there is not a change in probability w
 				\end{nospacebulletedlist} &
 				\distributiontest{chi-squared distribution}{chi-squared test of independence} \\ \hline
 			\label{trw:anova} &
-				\newline$\nullhypothesis : \populationmean_1 = \populationmean_2 = \arguments = \populationmean_n$ &
+				Means for more than two populations \newline$\nullhypothesis : \populationmean_1 = \populationmean_2 = \arguments = \populationmean_n$ \vspace*{1pt} &
 				\begin{nospacebulletedlist}
-					\item
+					\item Normally distributed
+					\item Samples are independent simple random samples
+					\item Populations variances are equal
 				\end{nospacebulletedlist} &
-				\distributiontest{}{} \\ \hline
+				\distributiontest{F-distribution}{One-way \acrshort{anova} F-test} \\ \hline
         \end{longtable}
 %    \end{topcaptiontable}
 
@@ -286,10 +292,10 @@ Type 2 error (false negative): Concluding there is not a change in probability w
 		\codeitem \ref{trw:equalityofmeansequalunknownstandarddeviation}) scipy.stats.ttest\_ind(equal\_var=True, \arguments)
 		\codeitem \ref{trw:equalityofmeansunequalunknownstandarddeviation}) scipy.stats.ttest\_ind(equal\_var=False, \arguments)
 		\codeitem \ref{trw:pairedpoints}) scipy.stats.ttest\_rel(\arguments)
-		\codeitem \ref{trw:oneproportion}) statsmodels.stats.proportion.proportions\_ztest([ints]) 
+		\codeitem \ref{trw:oneproportion}) statsmodels.stats.proportion.proportions\_ztest([ints])
 		\codeitem \ref{trw:equalityoftwoproportions}) statsmodels.stats.proportion.proportions\_ztest([numpy arrays])
 		\codeitem \ref{trw:onevariance}) DistributionTests.ChiSquareVariance(\arguments)
 		\codeitem \ref{trw:chisquaredindependence}) scipy.stats.chi2\_contingency(\arguments)
 		\codeitem \ref{trw:anova}) (\arguments)
-		\codeitem \ref{trw:}) (\arguments)
+		\codeitem \ref{trw:}) scipy.stats.f\_oneway(\arguments)
 	\end{code} 

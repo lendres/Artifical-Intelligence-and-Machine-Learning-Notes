@@ -28,6 +28,8 @@
 	\setlength{\tabledoublelinespace}{-13pt}
 	\tablecolumnheaderfont{\bfseries}
 
+	\usepackage{longtable}
+
 	% Used to auto number table rows.
 	\usepackage{array}
 	\newcounter{tablerowcounter}[table]
@@ -39,6 +41,8 @@
 
 	\newcommand*{\distributiontest}[2]{#1\vspace*{8pt}\newline#2}
 
+	\newcommand*{\arguments}{...\hspace*{0.5pt}}
+
 
 	\usepackage{lelists}
 	\setlength{\listtopsep}{0pt}
@@ -46,7 +50,7 @@
 	% No space bulleted list for use in tables.
 	\newenvironment{nospacebulletedlist}
 	{
-		\vspace*{-0.7\baselineskip}
+		\vspace*{-1.1\baselineskip}
 		\begin{list}
 		{$\bullet$\hfill}
 		{
@@ -58,7 +62,7 @@
 		}
 	}
 	{
-		\vspace*{-0.7\baselineskip}
+		\vspace*{-0.9\baselineskip}
 		\end{list}
 	}
 

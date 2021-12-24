@@ -1,3 +1,8 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
 	\chapter{Statistics}
 	\formattedepigraph{All models are wrong, but some models are useful.}{George Box}
 
@@ -127,20 +132,8 @@ Student's t-distribution is a family of continuous probability distributions tha
 		\item Random sampling from the population.
 	\end{bulletedlist}
 
-	\section{Analysis of Variance (\acrshort{anova})}
-Response: Dependent variable which is continuous and assumed to follow a normal distribution.
-Factor: Independent explanatory variable with several levels.
-Number of factors: How many variables are used.
-
-
-One-way \acrshort{anova}
-
-	\begin{figure}[tbp]
-		\centering
-		\includegraphics[height=1.75in]{anovalevelversusfactor}
-		\caption{Levels versus factors for \acrshort{anova}.}
-		\label{fig:anovalevelversusfactor}
-	\end{figure}
+	\section{Equality of Means}
+Known standard deviation.
 
 	\section{Hypothesis Testing}
 Type 1 error (false positive): Concluding there is a change in probability when there is not.  The null hypothesis is true, but it is rejected.  Probability of a Type 1 error is denoted as \levelofsignificance{}.
@@ -163,23 +156,21 @@ Type 2 error (false negative): Concluding there is not a change in probability w
 		\item Perform the test.
 	\end{numberedlist}
 
-\newpage{}
-%    \begin{topcaptiontable}
-%        \centering
-%        \lecaption{Comparison of Hypothesis Test Types.  See the Jupiter notebook "Hypothesis Testing Statistical Learning Week 2" for more information and examples.}
-%        \label{tab:hypothesistests}
-% \tabledoublecline{1}{4}
-        \begin{longtable}{|N|p{1.25in}|p{3.08in}|p{1.2in}|} \hline
-			\multicolumn{1}{|c|}{} & \tablecolumnheadervlinestwo{Significance of Test} &
-				\tablecolumnheadervlinestwo{Assumptions} &
-				\tablecolumnheadervlinestwo{Distribution/Test} \endhead \hline
+    \begin{topcaptiontable}
+        \centering
+        \lecaption{Comparison of Hypothesis Test Types.  See the Jupiter notebook "Hypothesis Testing Statistical Learning Week 2" for more information and examples.}
+        \label{tab:hypothesistests}
+        \begin{tabular}{|N|p{1.25in}|p{3.08in}|p{1.2in}|} \hline
+			\multicolumn{1}{|c|}{} & \tablecolumnheadervlines{Significance of Test} &
+				\tablecolumnheadervlines{Assumptions} &
+				\tablecolumnheadervlines{Distribution/Test} \\ \tabledoublecline{1}{4}
 			\label{trw:populationmean} &
 				Population mean $\nullhypothesis : \populationmean = \populationmean_0$ &
 				\begin{nospacebulletedlist}
 					\item Continuous data
-					\item Normally distributed
+					\item Normally distributed population
 					\item Sample size \textless{}30
-					\item Random sampling
+					\item Random sampling from the population
 					\item Unknown population standard deviation
 				\end{nospacebulletedlist} &
 				\distributiontest{t-distribution}{one sample t-test} \\ \hline
@@ -187,19 +178,19 @@ Type 2 error (false negative): Concluding there is not a change in probability w
 				Equality of two population means \newline$\nullhypothesis : \populationmean_1 = \populationmean_2$ &
 				\begin{nospacebulletedlist}
 					\item Continuous data
-					\item Normally distributed or sample size \textgreater{}30
+					\item Normally distributed population or sample size \textgreater{}30
 					\item Independent populations
-					\item Random sampling
+					\item Random sampling from the populations
 					\item Known population standard deviations
 				\end{nospacebulletedlist} &
-				\distributiontest{normal distribution}{two independent sample z-test} \\ \hline
+				\distributiontest{Normal distribution}{two independent sample z-test} \\ \hline
 			\label{trw:equalityofmeansequalunknownstandarddeviation} &
 				Equality of means with equal and unknown standard deviation \newline$\nullhypothesis : \populationmean_1 = \populationmean_2$ &
 				\begin{nospacebulletedlist}
 					\item Continuous data
-					\item Normally distributed
+					\item Normally distributed populations
 					\item Independent populations
-					\item Random sampling
+					\item Random sampling from the populations
 					\item Equal population standard deviations
 				\end{nospacebulletedlist} &
 				\distributiontest{t-distribution}{two independent sample t-test} \\ \hline
@@ -207,89 +198,46 @@ Type 2 error (false negative): Concluding there is not a change in probability w
 				Equality of means with unequal and unknown standard deviations \newline$\nullhypothesis : \populationmean_1 = \populationmean_2$ &
 				\begin{nospacebulletedlist}
 					\item Continuous data
-					\item Normally distributed
+					\item Normally distributed populations
 					\item Independent populations
-					\item Random sampling
+					\item Random sampling from the populations
 					\item Unequal population standard deviations
 				\end{nospacebulletedlist} &
 				\distributiontest{t-distribution}{two independent sample t-test} \\ \hline
 			\label{trw:pairedpoints} &
-				Equality of two population means when sample points are paired \newline$\nullhypothesis : \populationmean_1 = \populationmean_2$ \vspace*{1pt} &
+				Equality of two population means when sample points are paired \newline$\nullhypothesis : \populationmean_1 = \populationmean_2$ &
 				\begin{nospacebulletedlist}
 					\item Continuous data
-					\item Normally distributed
+					\item Normally distributed populations
 					\item Independent populations
-					\item Random sampling
+					\item Random sampling from the populations
 				\end{nospacebulletedlist} &
 				\distributiontest{t-distribution}{paired t-test} \\ \hline
 			\label{trw:oneproportion} &
-				Population proportion \newline$\nullhypothesis : \proportion = \proportion_0$ &
+				Population proportion \newline$\nullhypothesis : p = p_0$ &
 				\begin{nospacebulletedlist}
 					\item Binomial distribution
-					\item Random sampling
+					\item Random sampling from the population
 					\item When both mean (np) and n(1-p) are greater than or equal to 10, the binomial distribution can be approximated by a normal distribution
 				\end{nospacebulletedlist} &
-				\distributiontest{normal distribution}{one proportion z-test} \\ \hline
-			\label{trw:equalityoftwoproportions} &
-				Equality of two population proportions \newline$\nullhypothesis : \proportion_1 = \proportion_2 $ &
-				\begin{nospacebulletedlist}
-					\item Binomial distribution
-					\item Independent populations
-					\item Random sampling
-					\item When both mean (np) and n(1-p) are greater than or equal to 10, the binomial distribution can be approximated by a normal distribution
-				\end{nospacebulletedlist} &
-				\distributiontest{normal distribution}{two proportion z-test} \\ \hline
-			\label{trw:onevariance} &
-				Population variance \newline$\nullhypothesis : \populationvariance = \populationvariance_0$ &
-				\begin{nospacebulletedlist}
-					\item Continuous data
-					\item Normally distributed
-					\item Random sampling
-				\end{nospacebulletedlist} &
-				\distributiontest{chi-square distribution}{chi-square test for variance} \vspace*{2pt} \\ \hline
-			\label{trw:equalityofvariances} &
-				Equality of two population variances \newline$\nullhypothesis : \populationvariance_1 = \populationvariance_2$ &
-				\begin{nospacebulletedlist}
-					\item Normally distributed
-					\item Independent populations
-					\item Larger variance should be placed in the numerator
-				\end{nospacebulletedlist} &
-				\distributiontest{F-distribution}{F-test for variances} \\ \hline
-			\label{trw:chisquaredindependence} &
-				In a contingency tables \newline$\nullhypothesis : $ The row and column variables are independent \vspace*{1pt} &
-				\begin{nospacebulletedlist}
-					\item Random sampling
-					\item Categorical variables
-					\item Expected value of the number of sample observations in each level of the variable is at least 5
-				\end{nospacebulletedlist} &
-				\distributiontest{chi-squared distribution}{chi-squared test of independence} \\ \hline
-			\label{trw:anova} &
-				\newline$\nullhypothesis : \populationmean_1 = \populationmean_2 = \arguments = \populationmean_n$ &
-				\begin{nospacebulletedlist}
-					\item
-				\end{nospacebulletedlist} &
-				\distributiontest{}{} \\ \hline
-        \end{longtable}
-%    \end{topcaptiontable}
-
-
+				\distributiontest{Normal distribution}{one proportion z-test} \\ \hline
 %			\label{trw:} &
 %				\newline$\nullhypothesis : $ &
 %				\begin{nospacebulletedlist}
 %					\item
 %				\end{nospacebulletedlist} &
 %				\distributiontest{}{} \\ \hline
+        \end{tabular}
+    \end{topcaptiontable}
 
 	\begin{code}{}
-		\codeitem \ref{trw:populationmean}) scipy.stats.ttest\_1samp(\arguments)
-		\codeitem \ref{trw:twopopulationmeans}) DistributionTests.TwoSampleZTest(\arguments)
-		\codeitem \ref{trw:equalityofmeansequalunknownstandarddeviation}) scipy.stats.ttest\_ind(equal\_var=True, \arguments)
-		\codeitem \ref{trw:equalityofmeansunequalunknownstandarddeviation}) scipy.stats.ttest\_ind(equal\_var=False, \arguments)
-		\codeitem \ref{trw:pairedpoints}) scipy.stats.ttest\_rel(\arguments)
-		\codeitem \ref{trw:oneproportion}) statsmodels.stats.proportion.proportions\_ztest([ints]) 
-		\codeitem \ref{trw:equalityoftwoproportions}) statsmodels.stats.proportion.proportions\_ztest([numpy arrays])
-		\codeitem \ref{trw:onevariance}) DistributionTests.ChiSquareVariance(\arguments)
-		\codeitem \ref{trw:chisquaredindependence}) scipy.stats.chi2\_contingency(\arguments)
-		\codeitem \ref{trw:anova}) (\arguments)
-		\codeitem \ref{trw:}) (\arguments)
+		\codeitem \ref{trw:populationmean}) scipy.stats.ttest\_1samp(\ldots)
+		\codeitem \ref{trw:twopopulationmeans}) DistributionTests.TwoSampleZTest(\ldots)
+		\codeitem \ref{trw:equalityofmeansequalunknownstandarddeviation}) scipy.stats.ttest\_ind(equal\_var=True, \ldots)
+		\codeitem \ref{trw:equalityofmeansunequalunknownstandarddeviation}) scipy.stats.ttest\_ind(equal\_var=False, \ldots)
+		\codeitem \ref{trw:pairedpoints}) scipy.stats.ttest\_rel(\ldots)
+		\codeitem \ref{trw:oneproportion}) statsmodels.stats.proportion.import proportions\_ztest(\ldots)
+		\codeitem \ref{trw:}) (\ldots)
 	\end{code} 
+
+\end{document}

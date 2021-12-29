@@ -148,13 +148,21 @@
 
 	\mainmatter{}
 
-	% Glossary entries need to be defined before they can be referenced.
-    \input{"Statistics.tex"}
 
-    \input{"Machine Learning.tex"}
+	% Glossary entries need to be defined before they can be referenced.
+	\input{"Statistics.tex"}
+	\input{"Data Analysis.tex"}
+
+	\input{"Machine Learning.tex"}
 
 	\input{"Statistics Glossary.tex"}
-    \input{"Acronyms.tex"}
+	\input{"Acronyms.tex"}
+
+
+	\appendix
+	\chapter{Installation Notes}
+\codetext{!\{sys.executable\} -m pip install pandas-profiling}	
+
 
 	\backmatter{}
 	\pagestyle{leplainheader}
@@ -163,15 +171,12 @@
 	\newglossaryentry{utc}{name=UTC, description={Coordinated Universal Time}}
 	%\gls{utc}
 
-
-
 	% Print the glossaries here.
 	\printglossary[type=main, title=General Glossary]{}
 	\renewcommand*{\chaptertitle}{General Glossary}
 	
 	\printglossary[type=stats, title=Statistics Glossary]{}
 	\renewcommand*{\chaptertitle}{Statistics Glossary}
-%	\printglossaries{}
 
 	\printglossary[type=\acronymtype]
 	\renewcommand*{\chaptertitle}{Acronyms}

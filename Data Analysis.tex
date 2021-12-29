@@ -1,0 +1,47 @@
+	\chapter{Data Analysis}
+	\subsection{Bivariate Analysis}
+
+	%\subsubsection{Numerical versus Numerical}
+
+    \begin{topcaptiontable}[tbh]
+        \centering
+        \lecaption{Plot types for numerical versus numerical data.}
+        \label{tab:numericalnumericalplots}
+		
+        \begin{tabular}{|p{1.8in}|p{\textwidth-2.30in}|} \hline
+			\tablecolumnheadervlinesone{Plot Type} & \tablecolumnheadervlinestwo{Plotting Function(s)} \\ \hline
+			Scatter plot					&	\codetext{sns.scatterplot(data, x, y)} \newline
+												\codetext{sns.regplot(data, x, y)} \\ \hline
+			Line plot						&	\codetext{sns.lineplot(data, x, y)} \\ \hline
+			Heat map for correlation		&	\codetext{sns.heatmap(data.corr(), annot)} \\ \hline
+			Joint plot						&	\codetext{sns.jointplot(data, x, y)}\\ \hline
+		\end{tabular}
+	\end{topcaptiontable}
+
+    \begin{topcaptiontable}[tbh]
+        \centering
+        \lecaption{Plot types for numerical versus categorical data.}
+        \label{tab:numericalnumericalplots}
+		
+        \begin{tabular}{|p{1.8in}|p{\textwidth-2.30in}|} \hline
+			\tablecolumnheadervlinesone{Plot Type} & \tablecolumnheadervlinestwo{Plotting Function(s)} \\ \hline
+			Bar chart						&	\codetext{sns.barplot(data, x, y, hue)} \\ \hline
+			Violin plot						&	\codetext{sns.violinplot(x, y)} \\ \hline
+			Categorical box plot			&	\codetext{} \\ \hline
+			Swarm plot						&\\ \hline
+			Point plot						&	\codetext{sns.pointplot} \\ \hline
+		\end{tabular}
+	\end{topcaptiontable}
+
+    \begin{topcaptiontable}[tbh]
+        \centering
+        \lecaption{Plot types for categorical versus categorical data.}
+        \label{tab:numericalnumericalplots}
+		
+        \begin{tabular}{|p{1.8in}|p{\textwidth-2.30in}|} \hline
+			\tablecolumnheadervlinesone{Plot Type} & \tablecolumnheadervlinestwo{Plotting Function(s)} \\ \hline
+			Bar chart						&	\codetext{} \\ \hline
+			Grouped bar chart				&	\codetext{} \\ \hline
+			Point plot						&	\codetext{} \\ \hline
+		\end{tabular}
+	\end{topcaptiontable}

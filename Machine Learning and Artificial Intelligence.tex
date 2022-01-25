@@ -3,140 +3,15 @@
 	% This document requires the use of Lance A. Endres's LaTeX library available at the following location:
 	% https://github.com/lendres/LaTeX
 
-    % Be able to use hypertext references.
-	\usepackage[colorlinks=true,
-				linkcolor=blue,
-				citecolor=blue,
-				urlcolor=red,
-				filecolor=red,
-				anchorcolor=black,
-				pagecolor=blue,
-				linktocpage=true]{hyperref}
-
-	\usepackage{lesubscripts}
-
-	\usepackage{legraphicextensions}
-    % Set the search path for figures.  This way we can change it if required without having to modified
-    % all of the \includegraphics calls.
-	\graphicspath{{Figures/}}
-
-
-	% HYPOTHESIS TEST TABLE.
-	% Table package.
-	\usepackage{letable}
-	\setlength{\tablerowheight}{6mm}
-	\setlength{\tabledoublelinespace}{-13pt}
-	\tablecolumnheaderfont{\bfseries}
-
-	\usepackage{longtable}
-
-	% Used to auto number table rows.
-	\usepackage{array}
-	\newcounter{tablerowcounter}[table]
-	\renewcommand{\thetablerowcounter}{\arabic{tablerowcounter}}
-	\AtBeginEnvironment{tabular}{\setcounter{tablerowcounter}{0}}
-
-	% A new column type to apply automatic stepping
-	\newcolumntype{N}{>{\tablerow\refstepcounter{tablerowcounter}\thetablerowcounter}c}
-
-	\newcommand*{\distributiontest}[2]{#1\vspace*{8pt}\newline#2}
-
-	\newcommand*{\arguments}{...\hspace*{0.5pt}}
-
-
-	\usepackage{lelists}
-	\setlength{\listtopsep}{0pt}
-	
-	% No space bulleted list for use in tables.
-	\newenvironment{nospacebulletedlist}
-	{
-		\vspace*{-1.1\baselineskip}
-		\begin{list}
-		{$\bullet$\hfill}
-		{
-			\setlength{\labelwidth}{0.40cm}
-			\standardlistparams{}
-			\setlength{\rightmargin}{0pt}
-			\setlength{\topsep}{0pt}
-			\setlength{\parskip}{0pt}
-		}
-	}
-	{
-		\vspace*{-0.9\baselineskip}
-		\end{list}
-	}
-
-
-	\usepackage{amsmath}
-	\usepackage{lemath}
-	\setlength{\mathwhererightmargin}{0pt}
-	\setlength{\mathdefspacelength}{5.0pt}
-
-	\usepackage{lecode}
-	\setlength{\initialcodeindent}{0pt}
-
-	\usepackage{lelistofnotations}
-	\spacingbetweennotations{0.5\baselineskip}
-	\notationheadinglinesize{16pt}
-
-
-	% For the file extensions, use "g," "s," and "o" as the last letter and change the first 2 to create a new glossary.
-	% Optional arguments are:
-	%		toc: Adds the main glossary to the table of contents.  The others are added by default.
-	%		nonumberlist: Prevents the page numbers from being added to each entry in the glossaries.
-	\usepackage[toc=true, nonumberlist=true, acronym]{glossaries}
-	\newglossary[stg]{stats}{sts}{sto}{Statistics Glossary}
-	\newcommand*{\addacronym}[2]{\newacronym{#1}{\MakeUppercase{#1}}{#2}}
-	\makeglossaries{}
-
-	\usepackage[bottom]{footmisc}
-	\usepackage{subcaption}
-	\usepackage{times}
-
-	% For epigraphs (quotes at the start of chapters). 	
-	\usepackage{epigraph}
-	\renewcommand{\epigraphflush}{center}
-	\renewcommand{\epigraphrule}{0pt}
-	\setlength{\epigraphwidth}{\textwidth-3in}
-	\newcommand*{\formattedepigraph}[2]{\epigraph{\textit{#1}}{--- #2}}
-
-	\renewcommand*{\large}{\fontsize{13pt}{16pt}\selectfont}
-	\renewcommand*{\Large}{\fontsize{14pt}{19pt}\selectfont}
-	\renewcommand*{\LARGE}{\fontsize{17pt}{22pt}\selectfont}
-
-	% INCLUDE A BIBLIOGRAPHY.
-	\bibliographystyle{leplain}
+	% SETUP
+	\input{"Setup.tex"}
 
 	\begin{document}
 
 	\input{"Equations.tex"}
 
     % MAKE A TITLE PAGE.
-	\begin{titlepage}
-
-	\bfseries
-	\huge \center{Machine Learning and Artificial Intelligence}
-	\large \center{Python, Statistics, Machine Learning, and Artificial Intelligence Notes}
-	\vfill
-
-	%\begin{figure}[h]
-%		\centering
-%		\includegraphics[height=4.0in]{blueandredhirthjoints}
-%	\end{figure}
-
-	\vfill
-
-	\large \center{Written by:}
-	\LARGE \center{Lance A. Endres, Ph.D.}
-	\vspace*{36pt}
-	\large \center{November, 2021}
-	\vfill
-
-	\LARGE \center{}
-	\large \center{Copyright \copyright\ 2021, Lance A. Endres}
-
-	\normalsize
-	\end{titlepage}
+	\input{"Title Page.tex"}
 
 	\pagestyle{leplainheader}
 	\frontmatter{}
@@ -144,14 +19,12 @@
 	% GENERATE THE TABLE OF CONTENTS.
 	\tableofcontents{}
 
-%	\input{"Summary.tex"}
-
 	\mainmatter{}
-
 
 	% Glossary entries need to be defined before they can be referenced.
 	\input{"Statistics.tex"}
 	\input{"Data Analysis.tex"}
+	\input{"Linear Regression.tex"}
 
 	\input{"Machine Learning.tex"}
 
@@ -160,14 +33,7 @@
 
 
 	\appendix
-	\chapter{Installation Notes}
-\codetext{!\{sys.executable\} -m pip install pandas-profiling}
-
-Use this to import from another directory.
-	\begin{code}[\codenumbering]{}
-		\codeitemnonumber import sys
-		\codeitemnonumber sys.path.insert(1, "..\textbackslash{}lendres\textbackslash{}")
-	\end{code}
+	\input{"Installation Notes"}
 
 	\backmatter{}
 	\pagestyle{leplainheader}

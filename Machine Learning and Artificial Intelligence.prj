@@ -15,16 +15,16 @@ Machine Learning and Artificial Intelligence.tex
 
 Machine Learning and Artificial Intelligence.tex
 TeX
-152055739 0 9 29 -1 237 0 0 1348 583 0 22 -295 -1 -1 0 0 57 -1 -1 57 1 0 237 -1   0
+152055739 0 9 29 -1 237 0 0 1348 583 0 22 152 -1 -1 0 0 57 -1 -1 57 1 0 237 -1   0
 Statistics Glossary.tex
 TeX
 17838011 0 -1 6964 -1 650 0 0 1255 565 0 174 95 -1 -1 0 0 34 -1 -1 34 1 0 650 -1   0
 Installation Notes.tex
 TeX
-1060859 1 -1 28 -1 10 208 208 1556 791 0 126 0 -1 -1 0 0 -1 -1 -1 -1 1 0 10 -1   0
+1060859 1 -1 28 -1 10 208 208 1556 791 0 126 0 -1 -1 0 0 29 -1 -1 29 1 0 10 -1   0
 Linear Regression.tex
 TeX
-269496315 0 -1 302 -1 350 182 182 1530 765 0 174 190 -1 -1 0 0 -1 -1 -1 -1 1 0 350 -1   0
+269496315 0 -1 463 -1 465 182 182 1530 765 0 870 209 -1 -1 0 0 28 -1 -1 28 1 0 465 -1   0
 Statistics.tex
 TeX
 17838011 1 -1 1439 -1 1378 64 64 1287 679 0 22 247 -1 -1 0 0 23 -1 -1 23 1 0 1378 -1   0
@@ -33,7 +33,7 @@ TeX
 1060795 0 -1 355 -1 268 32 32 1255 647 0 22 76 -1 -1 0 0 0 -1 -1 0 1 0 268 -1   0
 Acronyms.tex
 TeX
-17838011 0 -1 368 -1 396 182 182 1530 765 0 398 266 -1 -1 0 0 16 -1 -1 16 1 0 396 -1   0
+17838011 0 -1 228 -1 248 182 182 1530 765 0 310 190 -1 -1 0 0 16 -1 -1 16 1 0 248 -1   0
 Equations.tex
 TeX
 17838011 1 -1 769 -1 754 26 26 1374 609 0 430 266 -1 -1 0 0 98 -1 -1 98 1 0 754 -1   0
@@ -94,13 +94,16 @@ ASCII:EDT
 
 *Machine Learning and Artificial Intelligence.tex
 >
+*Setup.tex
 *Equations.tex
 *Title Page.tex
 *Statistics.tex
 *Data Analysis.tex
+*Linear Regression.tex
 *Machine Learning.tex
 *Statistics Glossary.tex
 *Acronyms.tex
+*Installation Notes
 *List of Notations.tex
 *machinelearning.bib
 <

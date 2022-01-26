@@ -1,11 +1,25 @@
 	\chapter{Linear Regression}
 Residuals are the distance from the data point to the fitted line or linear regression.
 
-standard deviation of the residuals, also called the root mean square of the errors.
+Mean square of errors
+	\begin{equation}
+		m_e = \frac{\sum \left(y_i - y_p\right)^2}{n-2} = \frac{\sum e_i^2}{n-2}
+	\end{equation}
+
+Standard deviation of the residuals, also called the root mean square of the errors.
 
 	\begin{equation}
-		s_e = \sqrt{\frac{\sum e_i^2}{n-2}}
+		s_e = \sqrt{\frac{\sum \left(y_i - y_p\right)^2}{n-2}} = \sqrt{\frac{\sum e_i^2}{n-2}} = \sqrt{m_e}
 	\end{equation}
+
+Mean absolute error
+	\begin{equation}
+		a_e = \frac{\sum \left|y_i - y_p\right|}{n-2} = \frac{\sum \left|e_i\right|}{n-2}
+	\end{equation}
+
 	\begin{mathwhere}
-		\mathdefitem{e}{residual.}
+		\mathdefitem{y_i}{actual value;}
+		\mathdefitem{y_p}{predicted value;}
+		\mathdefitem{e}{residual;}
+		\mathdefitem{n}{number of observations/samples.}
 	\end{mathwhere}

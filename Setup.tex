@@ -15,6 +15,7 @@
     % all of the \includegraphics calls.
 	\graphicspath{{Figures/}}
 
+	\usepackage{lequestionandanswer}
 
 	% HYPOTHESIS TEST TABLE.
 	% Table package.
@@ -81,6 +82,7 @@
 	%		nonumberlist: Prevents the page numbers from being added to each entry in the glossaries.
 	\usepackage[toc=true, nonumberlist=true, acronym]{glossaries}
 	\newglossary[stg]{stats}{sts}{sto}{Statistics Glossary}
+	\newglossary[mdl]{model}{mts}{mto}{Model Glossary}
 	\newcommand*{\addacronym}[2]{\newacronym{#1}{\MakeUppercase{#1}}{#2}}
 	\makeglossaries{}
 
@@ -102,4 +104,4 @@
 	\renewcommand*{\LARGE}{\fontsize{17pt}{22pt}\selectfont}
 
 	% INCLUDE A BIBLIOGRAPHY.
-	\bibliographystyle{leplain}
+	\bibliographystyle{leplain} 

@@ -22,15 +22,15 @@
 	\mainmatter{}
 
 	% Glossary entries need to be defined before they can be referenced.
-	\input{"Statistics.tex"}
-	\input{"Data Analysis.tex"}
-	\input{"Linear Regression.tex"}
-
-	\input{"Machine Learning.tex"}
-
 	\input{"Statistics Glossary.tex"}
+	\input{"Modeling Glossary.tex"}
 	\input{"Acronyms.tex"}
 
+	\input{"Statistics.tex"}
+	\input{"Data Analysis.tex"}
+	\input{"Regression.tex"}
+
+	\input{"Machine Learning.tex"}
 
 	\appendix
 	\input{"Installation Notes"}
@@ -38,17 +38,23 @@
 	\backmatter{}
 	\pagestyle{leplainheader}
 
-	% Standard glossary entries.
-	\newglossaryentry{utc}{name=UTC, description={Coordinated Universal Time}}
-	%\gls{utc}
 
-	% Print the glossaries here.
-	\printglossary[type=main, title=General Glossary]{}
-	\renewcommand*{\chaptertitle}{General Glossary}
-	
+
+%	% Standard glossary entries.
+%	\newglossaryentry{utc}{name=UTC, description={Coordinated Universal Time}}
+%	%\gls{utc}
+%	\printglossary[type=main, title=General Glossary]{}
+%	\renewcommand*{\chaptertitle}{General Glossary}
+
+	% Statistics glossary.
 	\printglossary[type=stats, title=Statistics Glossary]{}
 	\renewcommand*{\chaptertitle}{Statistics Glossary}
 
+	% Modeling glossary.
+	\printglossary[type=model, title=Modeling Glossary]{}
+	\renewcommand*{\chaptertitle}{Modeling Glossary}
+
+	% Acronyms.
 	\printglossary[type=\acronymtype]
 	\renewcommand*{\chaptertitle}{Acronyms}
 

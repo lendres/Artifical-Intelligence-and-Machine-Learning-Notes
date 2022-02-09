@@ -1,0 +1,147 @@
+	\chapter{Regression and Classification}
+	\section{Linear Regression}
+Residuals are the distance from the data point to the fitted line or linear regression.
+
+Mean square of errors
+	\begin{equation}
+		m_e = \frac{\sum \left(y_i - y_p\right)^2}{n-2} = \frac{\sum e_i^2}{n-2}
+	\end{equation}
+
+Standard deviation of the residuals, also called the root mean square of the errors.
+
+	\begin{equation}
+		s_e = \sqrt{\frac{\sum \left(y_i - y_p\right)^2}{n-2}} = \sqrt{\frac{\sum e_i^2}{n-2}} = \sqrt{m_e}
+	\end{equation}
+
+Mean absolute error
+	\begin{equation}
+		a_e = \frac{\sum \left|y_i - y_p\right|}{n-2} = \frac{\sum \left|e_i\right|}{n-2}
+	\end{equation}
+
+	\begin{mathwhere}
+		\mathdefitem{y_i}{actual value;}
+		\mathdefitem{y_p}{predicted value;}
+		\mathdefitem{e}{residual;}
+		\mathdefitem{n}{number of observations/samples.}
+	\end{mathwhere}
+
+Coefficient of determination, often call the R squared score, is the proportion of the variation in the dependent variable that is predictable from the independent variable(s).  A score of 1 means the variance is perfectly captured.
+
+As more parameters are added to the model, the R squared score will increase.  Even if the parameters does not correlate well with the output, by chance it can improve the result.
+
+Adjusted R squared is a modification to R squared to create a more intuitive response to adding model parameters.  If the added parameter improves the response, the adjusted R square value goes up.  If it does not add \emph{enough} value to the response, the adjusted R square value falls.
+
+	\subsection{Over Fit and Under Fit}
+An over fit model will capture noise as well as the information.  An under fit model will not capture the available information.
+
+	\subsubsection{R Square Score}
+If the model is over fit, the R squared score on the training data and the testing data will not match well.
+
+
+	\section{Logistic Regression}
+Logistic regression is a classification problem.
+
+	\subsection{Understanding TP, TN, FP, and FN}
+The second entry is the models prediction.  The first entry is whether that prediction is correct.
+	\begin{equation}
+		(T/F)(P/N) = (\textrm{was the prediction correct})(\textrm{model prediction})
+	\end{equation}
+
+	\subsection{Section FAQ}
+
+    \begin{qanda}
+\question{When should we use Precision or Recall as model performance evaluation criteria?}
+
+\answer{Precision should be used when you want to minimize False Positives i.e. one wants at least negatives should not be predicted as positives. Also, in cases where the loss of resources is high.  Recall should be used when you want to minimize False Negatives, i.e. one wants at least positives should not be predicted as negatives. Also, in cases where the loss of opportunity is high.}
+    \end{qanda}
+
+    \begin{qanda}
+		\question{What is misclassification?}
+
+		\answer{Misclassification occurs when values are predicted incorrectly or the model assigns the observation to a different class instead of the class it should be in. For example, for observation, the actual label is class 0 but the model predicts this observation as class 1.}
+    \end{qanda}
+
+    \begin{qanda}
+		\question{Why confusion matrix is inverted in the hands-on notebook and it is difficult to identify TP, TN, FP, and FN?}
+		\answer{Generally, in theory, or while teaching confusion matrix many sources keep the predicted labels are on the y-axis whereas the actual labels are on the x-axis. But in the implementation, it can be different depending upon the library we are using.  Sklearn follows an approach of Actual labels on the x-axis and Predicted labels on the y-axis.  Let us understand how to identify TP, TN, FP, and FN in a confusion matrix through an example.  Let's say we are trying to predict a person is diabetic (class 1) or not (class 0).
+	\begin{bulletedlist}
+		\item True Positives (TP): A person has diabetes and the model predicted that person is diabetic.
+		\item True Negatives (TN): A person doesn't have diabetes and the model predicted that person doesn't have diabetes.
+		\item False Positives (FP): A person doesn't have diabetes but the model predicted that person has diabetes.
+		\item False Negatives (FN): The person has diabetes but the model predicted that person doesn't have diabetes.
+	\end{bulletedlist}
+Now based on the actual label and predicted label you can identify the TP, TN, FP, and FN.}
+    \end{qanda}
+
+
+
+
+    \begin{qanda}
+		\question{When do we label encode and create dummy variables for categorical levels?}
+
+		\answer{We generally prefer label encoding when there is a sense of order on the values, for example, let's say a variable has values bad, good, very good in such a case we know that there is an order and we can encode them as 1, 2, and 3 respectively.  But let's say the values are red, blue, green in this case there is no definite order in values and hence creating dummy variables would be a better choice.}
+    \end{qanda}
+
+Use Sigmoid functions because of the S-shape.
+
+Advantages
+	\begin{bulletedlist}
+		\item A classification model that gives probabilities.
+		\item Easily extended to multiple classes (multinomial regression).
+		\item Quick to train and very fast at classifying unknown records.
+	\end{bulletedlist}
+
+
+Disadvantages
+	\begin{bulletedlist}
+		\item Construction linear boundaries.
+		\item Assumes that variables are independent (does not include interaction terms).
+		\item Interpretation of coefficients is difficult.
+	\end{bulletedlist}
+
+
+    \subsection{Logit Regression}
+    \begin{bulletedlist}
+		\item This is the most popular model.
+		\item It must be between 0 and 1.
+    \end{bulletedlist}
+
+	\begin{equation}
+		y = \frac{1}{1+e^{-\left(a+bx\right)}} = \frac{e^{\left(a+bx\right)}}{1+e^{\left(a+bx\right)}}
+	\end{equation}
+Or equivalently
+	\begin{equation}
+		\log\left(\frac{y}{1-y}\right) = a+bx
+	\end{equation}
+which can be interpreted as the log of the probability odds is a linear function.
+
+Solving for a and b is not done by minimizing the errors.  Because the function is a non-linear function, multiple curves can be produced (called a non-convex problem?).  Instead, the solution is found by minimizing the log loss (cross entropy) which is defined as
+	\begin{equation}
+		-y\log\left(\hat{y}\right) - \left(1-y\right)\log\left(1-\hat{y}\right)
+	\end{equation}
+	\begin{mathwhere}[0.49in]
+		\mathdefitem{y}{observed objective value;}
+		\mathdefitem{\hat{y}}{predicted objective value.}
+	\end{mathwhere}
+
+
+	\subsection{Probit Regression}
+	\begin{equation}
+		y = \Phi\left(x\right)
+	\end{equation}
+	\begin{mathwhere}[0.49in]
+		\mathdefitem{\Phi\left(x\right)}{cumulative function of the normal distribution.}
+	\end{mathwhere}
+
+
+	\subsection{Precision and Recall}
+	\begin{equation}
+		recall = \frac{T_P}{T_P + F_N}
+	\end{equation}
+	\begin{equation}
+		precision = \frac{T_P}{T_P + F_P}
+	\end{equation}
+	\begin{mathwhere}[0.49in]
+		\mathdefitem{T_P}{true positive;}
+		\mathdefitem{F_N}{false negatives.}
+	\end{mathwhere}

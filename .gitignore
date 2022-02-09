@@ -28,3 +28,5 @@ Figures/Image Sources/Jpg/Work Product/
 Figures/*.jpg
 Figures/*.eps
 Thumbs.db
+
+_temp.log

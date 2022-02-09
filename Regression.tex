@@ -47,6 +47,8 @@ The second entry is the models prediction.  The first entry is whether that pred
 		(T/F)(P/N) = (\textrm{was the prediction correct})(\textrm{model prediction})
 	\end{equation}
 
+A FP is also called a Type 1 Error.  A FN is also called a Type 2 Error.
+
 	\subsection{Section FAQ}
 
     \begin{qanda}
@@ -134,19 +136,29 @@ Solving for a and b is not done by minimizing the errors.  Because the function 
 	\end{mathwhere}
 
 
-	\subsection{Precision and Recall}
-Recall, Sensitivity, and True Positive Rate are the same thing.
-	\begin{equation}
-		accuracy = \frac{TP + TN}{TP + TN + FN + FP}
-	\end{equation}
-
-	\begin{equation}
-		recall = \frac{T_P}{T_P + F_N}
-	\end{equation}
-	\begin{equation}
-		precision = \frac{T_P}{T_P + F_P}
-	\end{equation}
-	\begin{mathwhere}[0.49in]
-		\mathdefitem{T_P}{true positive;}
-		\mathdefitem{F_N}{false negatives.}
+	\section{Evaluation of Models}
+Recall, sensitivity, and true positive rate are the same thing.  Specificity and true negative rate are the same thing.  Maximizing sensitivity and specificity at the same time means minimizing the false negatives and false positives.
+	\begin{eqnarray}
+		\textrm{accuracy} 						& = & 1 - \textrm{error} 						\\
+												& = & \frac{T_P + T_N}{T_P + T_N + F_N + F_P} 	\\
+		\textrm{classification error  rate}		& = & 1 - \textrm{accuracy} 					\\
+												& = & \frac{F_P + F_N}{T_P + T_N + F_N + F_P} 	\\
+		\textrm{sensitivity} 					& = & \frac{T_P}{T_P + F_N} 					\\
+		\textrm{precision} 						& = & \frac{T_P}{T_P + F_P} 					\\
+		\textrm{specificity} 					& = & \frac{T_N}{T_N + F_P}						\\
+		\falsepositiverate						& = & \frac{F_P}{T_N + F_P}						\\
+												& = & 1 - \textrm{specificity}					\\
+		\textrm{gini}							& = & \frac{A_c - 0.5}{0.5}						\\
+												& = & 2*A_c - 1
+	\end{eqnarray}
+	\begin{mathwhere}[0.4in]
+		\mathdefitem{T_N}{true negatives;}
+		\mathdefitem{T_P}{true positives;}
+		\mathdefitem{F_N}{false negatives;}
+		\mathdefitem{F_P}{false positives;}
+		\mathdefitem{A_c}{area under the curve.}
 	\end{mathwhere}
+
+	\subsection{ROC Curves}
+The ROC curve plots out the sensitivity and specificity for every possible decision rule cutoff between 0 and 1 for a model.
+Plot the false positive rate (FPR) along the X axis and the rate true positive rate (TPR) along the Y axis.

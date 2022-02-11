@@ -143,7 +143,7 @@ Recall, sensitivity, and true positive rate are the same thing.  Specificity and
 												& = & \frac{T_P + T_N}{T_P + T_N + F_N + F_P} 	\\
 		\textrm{classification error  rate}		& = & 1 - \textrm{accuracy} 					\\
 												& = & \frac{F_P + F_N}{T_P + T_N + F_N + F_P} 	\\
-		\textrm{sensitivity} 					& = & \frac{T_P}{T_P + F_N} 					\\
+		\textrm{recall/sensitivity}				& = & \frac{T_P}{T_P + F_N} 					\\
 		\textrm{precision} 						& = & \frac{T_P}{T_P + F_P} 					\\
 		\textrm{specificity} 					& = & \frac{T_N}{T_N + F_P}						\\
 		\falsepositiverate						& = & \frac{F_P}{T_N + F_P}						\\
@@ -161,4 +161,4 @@ Recall, sensitivity, and true positive rate are the same thing.  Specificity and
 
 	\subsection{ROC Curves}
 The ROC curve plots out the sensitivity and specificity for every possible decision rule cutoff between 0 and 1 for a model.
-Plot the false positive rate (FPR) along the X axis and the rate true positive rate (TPR) along the Y axis.
+Plot the false positive rate (FPR) along the X axis and the rate true positive rate (TPR) along the Y axis. 

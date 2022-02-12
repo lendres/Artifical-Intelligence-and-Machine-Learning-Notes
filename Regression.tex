@@ -136,7 +136,7 @@ Solving for a and b is not done by minimizing the errors.  Because the function 
 	\end{mathwhere}
 
 
-	\section{Evaluation of Models}
+	\subsection{Evaluation of Models}
 Recall, sensitivity, and true positive rate are the same thing.  Specificity and true negative rate are the same thing.  Maximizing sensitivity and specificity at the same time means minimizing the false negatives and false positives.
 	\begin{eqnarray}
 		\textrm{accuracy} 						& = & 1 - \textrm{error} 						\\
@@ -165,4 +165,18 @@ Specificity: Percent of the negatives that were caught (correctly labeled).
 
 	\subsection{ROC Curves}
 The ROC curve plots out the sensitivity and specificity for every possible decision rule cutoff between 0 and 1 for a model.
-Plot the false positive rate (FPR) along the X axis and the rate true positive rate (TPR) along the Y axis. 
+Plot the false positive rate (FPR) along the X axis and the rate true positive rate (TPR) along the Y axis.
+
+	\section{Decision Tree}
+	\subsection{Section FAQ}
+    \begin{qanda}
+		\question{Will Logistic Regression and Decision Tree give the same variables in order of importance?}
+
+		\answer{It is not necessary that all the models give equal importance to the same variables. Each model will provide a result with different variables as important in a different order.}
+    \end{qanda}
+
+    \begin{qanda}
+		\question{How does multicollinearity affect a Decision Tree?}
+
+		\answer{Multicollinearity doesn't affect the prediction of a model rather has an impact on the interpretation we make from the model. Multicollinearity affects linear models only whereas a Decision Tree is a non-linear model that is not impacted by the presence of multicollinearity in the data.}
+    \end{qanda}

@@ -180,3 +180,24 @@ Plot the false positive rate (FPR) along the X axis and the rate true positive r
 
 		\answer{Multicollinearity doesn't affect the prediction of a model rather has an impact on the interpretation we make from the model. Multicollinearity affects linear models only whereas a Decision Tree is a non-linear model that is not impacted by the presence of multicollinearity in the data.}
     \end{qanda}
+
+
+Decision trees allow us to do both classification and regression.
+
+Measure impurity: gini impurity, entropy, variance
+
+There are several decision tree types, mostly they vary based on the measure of impurity used.  Some popular ones are:
+	\begin{bulletedlist}
+		\item CART: gini impurity
+		\item C4.5: entropy
+		\item CHAID: chi-squared
+	\end{bulletedlist}
+
+Gini impurity how often is a randomly chosen element from the set would be incorrectly labeled if it was randomly labeled according to the distribution of labels in the subset.
+
+Can be computed by summing the probability of an item with label $i$ being chosen ($p_i$), times the probability of a mistake ($1-p_i$)
+in categorizing that item.
+Simplifying gives, the Gini impurity of a set:
+	\begin{equation}
+		G(k) = 1 - \sum_{i=1}^J p_i^2
+	\end{equation}

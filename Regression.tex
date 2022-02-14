@@ -168,6 +168,25 @@ The ROC curve plots out the sensitivity and specificity for every possible decis
 Plot the false positive rate (FPR) along the X axis and the rate true positive rate (TPR) along the Y axis.
 
 	\section{Decision Tree}
+Decisions trees can be used for both classification and regression.  The only difference is the output will be a class or a number.
+
+	\subsection{Pros and Cons of Decision Trees}
+Pros:
+	\begin{bulletedlist}
+		\item Easy to understand and interpret.
+		\item Useful in data exploration as it gives the splitting based on the significance of variables.
+		\item Not influenced by the outlier/Null values and hence requires less data cleaning. Requires less time and effort during data pre-processing than other algorithms.
+		\item Can handle both continuous and categorical variables.
+		\item Does not require any underlying assumptions in data.  Works with both linearly and nonlinearly related variables.
+	\end{bulletedlist}
+
+Cons:
+	\begin{bulletedlist}
+		\item A small change in the data-set can result in large change in the structure of the decision tree causing instability in the model.
+		\item Large trees can be difficult to interpret.
+		\item Tends to over fit the data.
+	\end{bulletedlist}
+
 	\subsection{Section FAQ}
     \begin{qanda}
 		\question{Will Logistic Regression and Decision Tree give the same variables in order of importance?}
@@ -184,7 +203,15 @@ Plot the false positive rate (FPR) along the X axis and the rate true positive r
 
 Decision trees allow us to do both classification and regression.
 
-Measure impurity: gini impurity, entropy, variance
+	\subsection{Impurity}
+Measure impurity: gini impurity, entropy, variance (regression).  The Gini impurity and the variance are the two most popular for classification and regression.
+
+	\begin{figure}[tbp]
+		\centering
+		\includegraphics[width=\textwidth]{impuritymeasures}
+		%\caption{}
+		%\label{fig:}
+	\end{figure}
 
 There are several decision tree types, mostly they vary based on the measure of impurity used.  Some popular ones are:
 	\begin{bulletedlist}
@@ -193,6 +220,7 @@ There are several decision tree types, mostly they vary based on the measure of 
 		\item CHAID: chi-squared
 	\end{bulletedlist}
 
+	\subsubsection{Gini Impurity}
 Gini impurity how often is a randomly chosen element from the set would be incorrectly labeled if it was randomly labeled according to the distribution of labels in the subset.
 
 Can be computed by summing the probability of an item with label $i$ being chosen ($p_i$), times the probability of a mistake ($1-p_i$)
@@ -201,3 +229,77 @@ Simplifying gives, the Gini impurity of a set:
 	\begin{equation}
 		G(k) = 1 - \sum_{i=1}^J p_i^2
 	\end{equation}
+
+	\subsubsection{Entropy}
+Entropy log is usually base 2, but it does not have to be.  Any log base can be chosen so long as it is consistent.
+
+	\subsubsection{Information Gain}
+	\begin{equation}
+		E(Y) - E(Y|X)
+	\end{equation}
+	\begin{mathwhere}[0.4in]
+		\mathdefitem{E(Y)}{entropy of the parent node;}
+		\mathdefitem{E(Y|X)}{entropy of the combined children nodes.}
+	\end{mathwhere}
+Parent should have large entropy; the children should be purer and therefore have less entropy.
+
+	\subsection{Cross Validation}
+Cross Validation is a common Machine Learning technique that splits the data into n non-overlapping groups, and runs $n$ experiments:
+	\begin{bulletedlist}
+		\item In each experiment, $n-1$ groups are used to train a model and the model is tested on the left out group.
+		\item The results are summarized over the $n$ experiments.
+		\item It gives a mechanism that allows us to test a model repeatedly on data that was not used to build the model.
+		\item For Decision Trees, a very common approach is simply to choose the tree with minimum cross validation error.
+	\end{bulletedlist}
+
+	\subsection{Pruning}
+	\subsubsection{Pre-pruning}
+Hyperparameters are specified before running the model.  Hyperparameters in Decision Trees:
+	\begin{bulletedlist}
+		\item max\_depth - The maximum depth of the tree. If set to ``None'', then nodes are expanded until all leaves are pure. Higher the value, more complex the tree.
+		\item min\_samples\_split - The minimum number of samples required to split a node. Doesn't split any node that is smaller than this number. Higher the values, less complex the tree.
+		\item min\_samples\_leaf - The minimum number of samples required at a leaf node. All leaf nodes have at least these many data points. Higher the value, less complex the tree.
+	\end{bulletedlist}
+
+Algorithms can search for the best hyperparameters to use (a grid search).  This can easily lead to over fitting the data.
+
+	\subsubsection{Post Pruning}
+Cost-complexity pruning.
+	\begin{equation}
+		\alpha = \frac{e_p - e_o}{n_r}
+	\end{equation}
+	\begin{mathwhere}[0.4in]
+		\mathdefitem{e_p}{error on the pruned tree (always larger than $e_o$);}
+		\mathdefitem{e_o}{error on the original tree;}
+		\mathdefitem{n_r}{number of nodes reduce.}
+	\end{mathwhere}
+The smaller the $\alpha$ the smaller the value added by the subtree removed.  Remove the smallest $\alpha$ to create a new tree that has reduced nodes but is almost as accurate.
+
+A small $\alpha$ means a complex model with lots of nodes.
+
+	\begin{bulletedlist}
+		\item Starting from the Full tree, create a sequence of trees that are sequentially smaller (pruned).
+		\item At each step the algorithm
+		\item try removing each possible subtree
+		\item find the ``relative error decrease per node'' for that subtree Complexity parameter,
+		\item And remove the subtree with the minimum
+		\item With the list of subtrees, one usually reverts back to using cross validation errors to find the best final pruned tree.
+	\end{bulletedlist}
+
+	\begin{figure}[tbp]
+		\begin{minipage}[t]{0.475\textwidth}
+			\flushleft
+			\includegraphics[width=\textwidth]{impurityversusalpha}
+			%\caption{}
+			%\label{fig:}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.475\textwidth}
+			\flushright
+			\includegraphics[width=\textwidth]{accuracyversusalpha}
+			%\caption{}
+			%\label{fig:}
+		\end{minipage}
+	\end{figure}
+
+

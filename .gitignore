@@ -17,6 +17,8 @@
 *.sto
 *.sts
 *.ist
+*.mto
+*.mts
 *.glg
 *.glo
 *.gls

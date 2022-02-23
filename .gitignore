@@ -32,3 +32,4 @@ Figures/*.eps
 Thumbs.db
 
 _temp.log
+*.sav

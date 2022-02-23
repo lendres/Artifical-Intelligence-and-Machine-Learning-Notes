@@ -161,7 +161,7 @@ Recall, sensitivity, and true positive rate are the same thing.  Specificity and
 		\mathdefitem{A_c}{area under the curve.}
 	\end{mathwhere}
 
-Recall: Percent of the positives that were caught.  For example, what percent of people who have a disease did a medical test catch.
+Recall (sensitivity/true positive rate): Percent of the positives that were caught.  For example, what percent of people who have a disease did a medical test catch.
 
 Specificity: Percent of the negatives that were caught (correctly labeled).
 
@@ -174,8 +174,8 @@ F1 which is a function of precision and recall.  F1 Score is needed when you wan
 
 
 	\subsection{ROC Curves}
-The ROC curve plots out the sensitivity and specificity for every possible decision rule cutoff between 0 and 1 for a model.
-Plot the false positive rate (FPR) along the X axis and the rate true positive rate (TPR) along the Y axis.
+The ROC curve plots out the Recall (sensitivity/true positive rate) and specificity for every possible decision rule cutoff between 0 and 1 for a model.
+Plot the false positive rate (FPR) along the X axis and the Recall (sensitivity/true positive rate) along the Y axis.
 
 	\section{Decision Tree}
 Decisions trees can be used for both classification and regression.  The only difference is the output will be a class or a number.
@@ -194,7 +194,8 @@ Cons:
 	\begin{bulletedlist}
 		\item A small change in the data-set can result in large change in the structure of the decision tree causing instability in the model.
 		\item Large trees can be difficult to interpret.
-		\item Tends to over fit the data.
+		\item Tends to over fit the data.  They should be pruned.
+		\item Uses the ``Grady'' approach.  It only looks for local options for making decisions.  It does not consider that a worse choice now can produce better results a few steps in the future.
 	\end{bulletedlist}
 
 	\subsection{Section FAQ}
@@ -273,7 +274,7 @@ Hyperparameters are specified before running the model.  Some hyperparameters in
 
 Algorithms can search for the best hyperparameters to use (a grid search).  This can easily lead to over fitting the data.
 
-	\subsubsection{Post Pruning}
+	\subsubsection{Post-pruning}
 Cost-complexity pruning.
 	\begin{equation}
 		\alpha = \frac{e_p - e_o}{n_r}

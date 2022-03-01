@@ -31,5 +31,5 @@ Figures/*.jpg
 Figures/*.eps
 Thumbs.db
 
-_temp.log
+_temp.*
 *.sav

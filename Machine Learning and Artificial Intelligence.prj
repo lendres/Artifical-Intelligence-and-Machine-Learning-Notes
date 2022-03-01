@@ -4,7 +4,7 @@
 1
 1
 Machine Learning and Artificial Intelligence.tex
-29
+28
 10
 5
 
@@ -30,7 +30,7 @@ TeX
 1060795 1 -1 12223 -1 12213 182 182 1530 765 0 22 391 -1 -1 0 0 42 -1 -1 42 1 0 12213 -1   0
 Ensemble Techniques.tex
 TeX
-269496251 0 -1 3585 -1 3511 0 0 1265 565 0 1122 621 -1 -1 0 0 -1 -1 -1 -1 1 0 3511 -1   0
+269496251 0 -1 1631 -1 1633 0 0 1265 565 0 512 253 -1 -1 0 0 30 -1 -1 30 1 0 1633 -1   0
 Statistics.tex
 TeX
 17838011 2 -1 6970 -1 6976 64 64 1287 679 0 192 92 -1 -1 0 0 23 -1 -1 23 1 0 6976 -1   0
@@ -43,9 +43,6 @@ TeX
 Equations.tex
 TeX
 17838011 1 -1 1617 -1 1634 26 26 1374 609 0 322 713 -1 -1 0 0 98 -1 -1 98 1 0 1634 -1   0
-Ensemble Technique.tex
-TeX
-269496315 0 -1 171 -1 457 0 0 1265 565 0 242 299 -1 -1 0 0 -1 -1 -1 -1 1 0 457 -1   0
 Installation Notes.tex
 TeX
 269496315 1 -1 28 -1 10 208 208 1556 791 0 126 0 -1 -1 0 0 29 -1 -1 29 1 0 10 -1   0
@@ -112,6 +109,7 @@ ASCII:EDT
 *Statistics.tex
 *Data Analysis.tex
 *Regression.tex
+*Ensemble Techniques.tex
 *Machine Learning.tex
 *Installation Notes
 *List of Notations.tex

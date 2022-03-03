@@ -7,16 +7,58 @@
 %    description={}
 %}
 
+\newglossaryentry{mdl:bagging}
+{
+	type=model,
+    name=bagging,
+    description={Constructing models in parallel.  Also called bootstrap aggregating}
+}
+
+\newglossaryentry{mdl:boosting}
+{
+	type=model,
+    name=boosting,
+    description={Constructing models in serial}
+}
+
+\newglossaryentry{mdl:bootstrapaggregating}
+{
+	type=model,
+    name=bootstrap aggregating,
+    description={See \gls{mdl:bagging}}
+}
+
+\newglossaryentry{mdl:ensemble}
+{
+	type=model,
+    name=ensemble techniques,
+    description={Using multiple models to obtain better predictive performance}
+}
+
+\newglossaryentry{mdl:unstable}
+{
+	type=model,
+    name=unstable,
+    description={Models that are very sensitive to small changes in the data (small changes in data lead to a different model)}
+}
+
 \newglossaryentry{mdl:oddsratio}
 {
 	type=model,
     name=odds ratio,
-    description={The probability of successful result divided by the probability of failure result.}
+    description={The probability of successful result divided by the probability of failure result}
+}
+
+\newglossaryentry{mdl:randomforrest}
+{
+	type=model,
+    name=random forrest,
+    description={Bagging that uses decision trees as the models}
 }
 
 \newglossaryentry{mdl:supervisedlearning}
 {
 	type=model,
     name=supervised learning,
-    description={Supervised learning is when you already know the label (value) of the target variable. It is of two types: regression (for continuous variables) and classification (for categorical or discrete values).}
-}
+    description={Supervised learning is when you already know the label (value) of the target variable. It is of two types: regression (for continuous variables) and classification (for categorical or discrete values)}
+} 

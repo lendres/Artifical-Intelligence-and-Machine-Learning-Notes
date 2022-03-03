@@ -34,28 +34,38 @@ Bagging constructs model in parallel.  Boosting constructs models in series.
     \begin{qanda}
 		\question{In Bagging, we can employ various models as long as the ensemble contains one particular type of algorithm (task)?}
 
-		\answer{In bagging, we use the same algorithms and give different data points to obtain different models.  Bagging is homogenous therefore all the algorithms used have to be the same.  So suppose there is a bagging model with n\_estimators as 10 and if we use the Decision tree then all 10 algorithms have to be decision tree.  If any other algorithm supposes Logistic Regression then all 10 has to be Logistic Regression.  All the algorithms used in one bagging model have to be the same.  5 Decision Tree and 5 Logistic Regression algorithms won't work, all 10 have to be Decision Tree or all 10 have to be Logistic Regression.}
+		\answer{In bagging, we use the same algorithms and give different data points to obtain different models.  Bagging is homogenous therefore all the algorithms used have to be the same.  So suppose there is a bagging model with n\_estimators as 10 and if we use the Decision tree then all 10 algorithms have to be decision tree.  If any other algorithm supposes logistic regression then all 10 has to be logistic regression.  All the algorithms used in one bagging model have to be the same.  Part decision tree and part logistic regression algorithms won't work, all 10 have to be decision tree or all 10 have to be logistic regression.}
     \end{qanda}
+
     \begin{qanda}
 		\question{How much difference between a model's train and test performance is considered as over fitting or under fitting?}
 
 		\answer{There cannot be a universal threshold to decide the fit of a model. Under fit models are easy to identify but over fit models are relatively more difficult to identify as we can be sure of the model's fitness only when it is used in production. In practice, what matters is the actual test error, i.e. how often the predictions are wrong on new data. The limits on that are strictly a matter of business risk.
 \newline{}
+
 Theoretically, you can get any level of closeness you want between training and testing metrics, provided you have large enough sample space.
 For example, if you are using a complex model like a deep neural network and have hundreds of thousands (or more) of observations, then you are entitled to see an average test error to be very close to an average training error, say well within 1 percent. But if you are using a simple model like linear regression or pruned decision tree and/or you only have a few observations, say in the range of hundreds, then average test error exceeding average training error by even 10 percent may not be unreasonable.
+\newline{}
 
 So it boils down to how much difference is acceptable to that domain or industry, then you have to increase the data size until the train-test difference is smaller than that.}
     \end{qanda}
+
     \begin{qanda}
 	\question{To build each individual tree in random forest, whether a subset of only rows is taken or that of columns is also taken?}%%
+
 	\answer{To prepare data for an individual tree, a subset of rows is taken but the entire set of features are available from the original data.  While splitting at the nodes, a random subset of features is selected. Hence both, row and column sampling is done in random forest.}
     \end{qanda}
+
+
     \begin{qanda}
 	\question{I am getting the below error with Bagging Classifier with Logistic Regression as base\_estimator: AttributeError: `str' object has no attribute `decode' How to solve it?}
 
 	\answer{The LogisticRegression function has a parameter named solver, which was earlier by default set to `liblinear', but after an update in sklearn, the default solver was changed to `lbfgs'. Kindly try setting the solver as liblinear, and try the code again, as shown below:
+\newline{}
 
-bagging\_lr=BaggingClassifier(base\_estimator=LogisticRegression(solver=`liblinear', random\_state=1),random\_state=1)
+bagging\_lr = BaggingClassifier(base\_estimator=LogisticRegression(solver=`liblinear', random\_state=1), random\_state=1)
+\newline{}
+
 bagging\_lr.fit(X\_train,y\_train)}
     \end{qanda}
 
@@ -64,4 +74,23 @@ Bagging (parallel processing) splits the data into many smaller samples and crea
 
 Bagging that uses decision trees as the models is called a random forrest.  In a random forrest, the models also only branch on the columns so that each model separated from the others (which have their own data split on the rows from the main data set).
 
-Bagging = bootstrap (sampling the main data set) aggregation (putting all the models back together). 
+Bagging is bootstrap (sampling the main data set) plus aggregation (putting all the models back together). 
+
+	\section{Random Forests}
+While building:
+	\begin{bulletedlist}
+		\item Random sampling with replacement.
+		\item For each subset, build a decision tree.  Use only $m<M$ randomly picked independent variables for each node's branching possibilities (only use a subset of the total number of columns).
+		\item Do not prune.
+	\end{bulletedlist}
+If the number of selected column subsets ($m$) is too small, the ability of the models to predict is weak because the probability of selecting an important variable is small.  If $m$ is large, the models become correlated and predict the same thing.
+
+While predicting.
+	\begin{bulletedlist}
+		\item Use each tree to make individual predictions.
+		\item Combine predictions using voting.
+		\begin{bulletedlist}
+			\item Means for regression.
+			\item Mode for classification.
+		\end{bulletedlist}
+	\end{bulletedlist}

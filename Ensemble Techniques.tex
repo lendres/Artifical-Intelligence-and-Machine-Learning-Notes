@@ -26,8 +26,6 @@ Bagging constructs model in parallel.  Boosting constructs models in series.
 	\end{bulletedlist}
 
 
-
-
 	\section{Section FAQ}
 
 	\resetquestioncounter{}
@@ -95,13 +93,14 @@ While predicting.
 		\end{bulletedlist}
 	\end{bulletedlist}
 
+
 	\section{Boosting}
 	\resetquestioncounter{}
     \begin{qanda}
 \question{What is the difference between AdaBoost and Gradient Boosting?}
-
+\printinunitsof{in}\prntlen{\quandatextwidth}
 \answer{
-	\begin{tabular}{|p{0.5\textwidth}|p{0.5\textwidth}|} \hline
+	\begin{tabular}{|p{0.5\quandatextwidth-2\tabcolsep}|p{0.5\quandatextwidth-2\tabcolsep}|} \hline
 			\tablecolumnheadervlinesone{AdaBoost} & \tablecolumnheadervlinestwo{Gradient Boosting} \\ \hline
 			Adaboost is more about ``voting weights'' &
             Gradient boosting is more about ``adding gradient optimization.'' \\ \hline
@@ -163,10 +162,73 @@ Note: Open a new terminal before using the above command in the Mac terminal. To
   \end{qanda}
 
 	\begin{qanda}
-\question{I am getting the below warning while fitting XGBoost Classifier, how do you solve it?  \newline
+\question{The warning below appears while fitting XGBoost Classifier, how do you solve it?  \newline
 \textcode{WARNING: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective `binary:logistic' was changed from `error' to `logloss'. Explicitly set eval\_metric if you'd like to restore the old behavior.}
 }
-\answer{To remove the warning kindly try setting the eval\_metric hyperparameter as 'logloss', as shown below: \newline
+\answer{To remove the warning try setting the eval\_metric hyperparameter as 'logloss', as shown below: \newline
 \textcode{xgb = XGBClassifier(eval\_metric=`logloss')}
 }
   \end{qanda}
+
+	\subsection{Boosting Methods}
+\noindent AdaBoosting (Adaptive Boosting)
+	\begin{bulletedlist}
+		\item In AdaBoost, the successive learners are created with a focus on the ill fitted data of the previous learner.
+		\item Each successive learner focuses more and more on the harder to fit data i.e. their residuals in the previous tree
+	\end{bulletedlist}
+
+\vspace{\baselineskip}
+\noindent Gradient Boosting
+	\begin{bulletedlist}
+		\item Each learner is fit on a modified version of original data. Original data is replaced with the x
+values and residuals from previous learner
+		\item By fitting new models to the residuals, the overall learner gradually improves in areas
+where residuals are initially high
+	\end{bulletedlist}
+
+\vspace{\baselineskip}
+\noindent XG Boost (Extreme Gradient Boosting)
+	\begin{bulletedlist}
+		\item Upgraded implementation of Gradient Boosting. Developed for high computational speed, scalability, and better performance.
+		\item Parallel Implementation, Cross-Validation, Cache Optimization, Distributed Computation
+	\end{bulletedlist}
+
+	\section{Comparison}
+What is the difference between bagging and boosting?
+
+	\noindent \begin{tabular}{|p{0.5\textwidth-2\tabcolsep}|p{0.5\textwidth-2\tabcolsep}|} \hline
+		\tablecolumnheadervlinesone{Bagging} & \tablecolumnheadervlinestwo{Boosting} \\ \hline
+		Parallel Training - All the weak learners are built in parallel i.e. independent of each other. &
+		Sequential Training - Successive weak learners to improve the accuracy from the prior learners \\ \hline
+		Equal weightage - Each weak learner has equal weight in the final prediction. &
+		Weighted average - More weight to those weak learners with better performance. \\ \hline
+		Independent samples - Samples are drawn from the original data set with replacement to train each individual weak learner. &
+		Dependent samples - Subsequent samples have more of those observations which had relatively higher errors in previous weak learners. \\ \hline
+		Can help reduce variance of the model. &
+		Can help reduce bias of the model. \\ \hline
+		Examples: Bagging Classifier, Random Forest &
+		Examples are AdaBoost, Gradient Boosting Classifier \\ \hline
+	\end{tabular}
+
+	\section{Gradient Boosting}
+Gradient boosting uses subsequent models to predict the residuals.  The original model is added to the results of the residual predictors (which weight errors more) to get a complete model.  The residual predictors are added to the main model using a learning correction ($\alpha$) that reduces its contribution.  If a weight of 1 is used, the model will be over fit.
+
+	\section{XG Boost (Extreme Gradient Boosting)}
+A highly efficient gradient boosting algorithm.  It has some mathematical techniques and a very good implementation.
+
+	\begin{bulletedlist}
+		\item XGBoost builds upon the idea of gradient boosting algorithm with some modifications. Gradient boosted trees are built in sequence because each estimator predicts residuals of the previous estimator, which makes it slow at the time of model training as compared to building estimators in parallel.
+		\item Thus, the main concentration in XGBoost is speed enhancement and model performance.
+		\item The speed and scalability of XGBoost is due to several important features that help in better computing using concepts like parallelization, cache optimization, out of core computing and
+distributed computing.
+	\end{bulletedlist}
+
+	\subsection{Salient features}
+	\begin{bulletedlist}
+		\item \textbf{Parallelization} - In XGBoost, data is stored in in-memory units, called block, and the optimal split in each tree can be found in parallel using this block structure.  This reduces the time of model training significantly.
+		\item \textbf{Cache Optimization} - XGBoost optimizes the block size for efficient parallelization and make best use of hardware.
+		\item \textbf{Out-of-Core Computing} - This helps to handle huge data sets which do not even fit into memory.
+		\item \textbf{Distributed Computing} - It helps to train huge models using multiple similar machines.
+		\item \textbf{Missing Values Imputation} - XGBoost is designed to handle missing values internally.  It uses a default direction for the missing values. However, the default
+direction can be right-child or left-child, and it is learned in the tree construction process to choose the best direction that optimizes the training loss.
+	\end{bulletedlist}

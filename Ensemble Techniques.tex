@@ -232,3 +232,14 @@ distributed computing.
 		\item \textbf{Missing Values Imputation} - XGBoost is designed to handle missing values internally.  It uses a default direction for the missing values. However, the default
 direction can be right-child or left-child, and it is learned in the tree construction process to choose the best direction that optimizes the training loss.
 	\end{bulletedlist}
+
+	\section{Stacking}
+Uses different types of models (heterogeneous models) that are combined with a meta-model.
+
+	\begin{numberedlist}
+		\item Data is split into fold 1, fold 2, and testing.
+		\item A set of models is trained on fold 1.
+		\item The models can be tested on fold 2.
+		\item The meta model is trained on fold 2 (trained how to combine the models).
+		\item The meta model can then be tested on the testing data.
+	\end{numberedlist}

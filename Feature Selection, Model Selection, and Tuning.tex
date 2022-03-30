@@ -1,0 +1,190 @@
+	\chapter{Feature Selection, Model Selection, and Tuning}
+	\section{Feature Engineering and Cross Validation}
+	\subsection{Section FAQ}
+
+	\resetquestioncounter{}
+	\begin{qanda}
+		\question{How do False-negative and False positive values change in the confusion matrix? Are they inversely related?}
+
+		\answer{When we build a model and our target variable has a binary category and then we look at the confusion matrix. There are four elements:
+
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber True Positive (observed=1, predicted=1)
+			\codeitemnonumber False Positive (observed=0, predicted=1)
+			\codeitemnonumber True Negative (observed=0, predicted=0)
+			\codeitemnonumber False Negative (observed=1, predicted=0)
+		\end{code}
+
+\vspace{\baselineskip}
+The default threshold is 0.5. We change the threshold when we want to decrease or increase the number of false positives or false negatives.
+
+\vspace{\baselineskip}
+Consider a credit card default problem for a bank. So if the model predicts that a person will default and the person doesn't then the bank might lose a potential customer but if the model predicts a customer would not default and he does, in the scenarios company would lose money. So the bank would want this number to be small.
+
+\vspace{\baselineskip}
+Assuming defaulter to be 1 and non-defaulter to be 0 then the company would want lower False negatives. So we will try to build the model with a lower threshold so more people will be predicted as defaulters.
+
+\vspace{\baselineskip}
+As you will try to decrease FN, FP will increase because of the values which were previously predicted as TN might change to FP, that is why prof must have said about the inverse relationship. So if we try to decrease FN via changing threshold all values in the confusion matrix change and FN will decrease but FP will increase.}
+	\end{qanda}
+
+	\begin{qanda}
+		\question{How to deal with outliers?}
+
+		\answer{How to treat outliers is a very tricky topic, it mainly depends on the problem statement. Sometimes we can't even remove outliers or treat them because that's just the way data is and should be kept like that for analysis.
+
+Let us consider an example of a bank.  In a bank, account balance might have high outliers as few people will have a high amount in their accounts, but should we be treating this value or removing it? So I think here we have to consider that in practical life situations we cannot remove these accounts and if we replace them with any other value that will make the data biased.
+
+So the best option would be thinking w.r.t. the problem statement. If the problem statement is: Who is more likely to do a credit card default then I think we can remove people with a high balance in their account as they are less likely to default. In another case, if the problem statement is: Who is going to take a home loan then also I think we can remove outliers but if our problem statement is about business loans then we have to consider these outliers having high balance as they might take a loan for their business.
+
+All the above judgments should be made by doing the necessary EDA on the data set to figure out the relationship of balance with the target (credit card default, home loan, business loan, etc.). None of the conclusions should come without the data supporting them.
+
+Replacing the outliers is done when outliers are few in number and we think that this would be because of the wrong imputation. So we remove these outliers and treat them as missing data.}
+	\end{qanda}
+
+	\begin{qanda}
+		\question{Why can't we use the ROC\_AUC score in case of a skewed data set?}
+
+		\answer{This is because a small number of correct or incorrect predictions can result in a large change in the ROC Curve or ROC AUC score, that is why precision and recall are preferred more in case of skewed data.}
+	\end{qanda}
+
+	\begin{qanda}
+		\question{What are imbalanced data sets?}
+
+		\answer{Imbalanced data sets are those where there is a severe skew in the class distribution, such as 1:100 or 1:1000 examples in the minority class to the majority class.
+
+This bias in the training data set can influence many machine learning algorithms, leading some to ignore the minority class entirely. This is a problem as it is typically the minority class on which predictions are most important.}
+	\end{qanda}
+
+	\begin{qanda}
+		\question{What are the techniques to handle imbalanced data sets?}
+
+		\answer{One approach to addressing the problem of class imbalance is to randomly resample the training data set. The two main approaches to randomly resampling an imbalanced data set are to delete examples from the majority class, called under sampling, and to duplicate examples from the minority class, called over sampling.}
+	\end{qanda}
+
+	\begin{qanda}
+		\question{What is Cross-Validation?}
+
+		\answer{Cross-Validation is a very useful technique for assessing the performance of machine learning models. It helps in knowing how the machine learning model would generalize to an independent data set. You want to use this technique to estimate how accurate the predictions your model will give in practice.}
+	\end{qanda}
+
+	\begin{qanda}
+		\question{What are polynomial Features and when to use them? why do we need additional features, which are going to be derived from existing features? Is it not the case of over fitting?}
+
+		\answer{Polynomial features are used to convert features to a higher degree.
+
+If there are 2 features $[a, b]$, then degree-2 polynomial features are $[1, a, b, a^2, ab, b^2]$.
+
+This is a pre-processing technique after converting to a higher degree we can use the new features for any algorithm like a ridge, lasso, logistic, decision tree, etc.  We use polynomial features when the relationship between the target variable and independent variables is nonlinear.
+
+One way to check whether a data set is nonlinear is negative r2score. R2score will be negative when the relationship between the target variable and independent variables is nonlinear. Then we introduce the polynomial features to check for higher degree terms.
+Polynomial features not necessarily increase over fitting, it increases redundant columns but not over fitting. So we remove all the correlated features when we want to check which features are driving the model if the sole aim of the model is a higher score then these redundant columns don't hurt.
+
+We can use polynomial features to check for interaction between the features as well by interaction\_only=True.}
+	\end{qanda}
+
+	\begin{qanda}
+		\question{How K-Fold Cross-validation works?}
+
+		\answer{Here is the thing:
+		\begin{bulletedlist}
+			\item If k-fold cross-validation is used to optimize the model parameters, the training set is split into k parts.
+			\item Training happens k times, each time leaving out a different part of the training set.
+			\item Typically, the error of these k-models is averaged.
+			\item This is done for each of the model parameters to be tested, and the model with the lowest cross-validated and validation error is chosen.
+			\item The test set has not been used so far.
+			\item Only at the very end, the test set is used to test the performance of the (optimized) model.
+		\end{bulletedlist}
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber \# example: k-fold cross validation for hyperparameter optimization (k=3)
+			\codeitemnonumber original data split into training and test set:
+			\codeitemnonumber |---------------- train ---------------------|         |--- test ---|
+			\codeitemnonumber 
+			\codeitemnonumber cross-validation: test set is not used, error is calculated from
+			\codeitemnonumber validation set (k-times) and averaged:
+			\codeitemnonumber 
+			\codeitemnonumber |---- train ------------------|- validation -|         |--- test ---|
+			\codeitemnonumber |---- train ---|- validation -|---- train ---|         |--- test ---|
+			\codeitemnonumber |- validation -|----------- train -----------|         |--- test ---|
+			\codeitemnonumber 
+			\codeitemnonumber final measure of model performance: model is trained on all training data
+			\codeitemnonumber and the error is calculated from test set:
+			\codeitemnonumber 
+			\codeitemnonumber |---------------- train ---------------------|--- test ---|
+		\end{code}
+
+\begin{bulletedlist}
+	\item In some cases, k-fold cross-validation is used on the entire data set if no parameter optimization is needed (this is rare, but it happens).
+	\item In this case, there would not be a validation set and the k parts are used as a test set one by one.
+	\item The error of each of these k tests is typically averaged.
+\end{bulletedlist}
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber \# example: k-fold cross validation
+			\codeitemnonumber 
+			\codeitemnonumber |----- test -----|------------ train --------------|
+			\codeitemnonumber |----- train ----|----- test -----|----- train ----|
+			\codeitemnonumber |------------ train --------------|----- test -----|
+		\end{code}
+}
+	\end{qanda}
+
+	\begin{qanda}
+		\question{Should we apply the transformations AFTER splitting the data into train/test/validation to prevent data leaks?}
+
+		\answer{Yes. Data preparation must be fit on the training data set only. That is, any coefficients or models prepared for the data preparation process must only use rows of data in the training data set.
+
+Once fit, the data preparation algorithms or models can then be applied to the training data set, and the test data set.
+\begin{numberedlist}
+	\item Split Data.
+	\item Fit Data Preparation on Training data set.
+	\item Apply Data Preparation to Train and Test data sets.
+	\item Evaluate Models.
+\end{numberedlist}
+}
+	\end{qanda}
+
+	\begin{qanda}
+		\question{How to install imblearn library?}
+
+		\answer{To install imblearn you can use:
+\begin{code}[\codenumbering]{}
+!pip install imbalanced-learn==0.8.0 \#in jupyter notebook \# for Windows OS
+pip install imbalanced-learn==0.8.0 \# in anaconda prompt
+\end{code}
+}
+	\end{qanda}
+
+
+	\begin{qanda}
+		\question{I am getting this error while trying to import SMOTE, how do I fix it?
+\textcode{
+ImportError: cannot import name `delayed' from `sklearn.utils.fixes' (C:\textbackslash{}Users\textbackslash{}anaconda3\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}sklearn\textbackslash{}utils\textbackslash{}fixes.py)}
+}
+
+		\answer{Use the following:
+	\begin{code}[\codenumbering]{}
+		!pip install imbalanced-learn==0.8.0
+		!pip install delayed
+	\end{code}
+}
+	\end{qanda}
+
+
+
+	\begin{qanda}
+		\question{Why do we need to do one-hot encoding after splitting the data even though one-hot encoding doesn't lead to data leakage?}
+
+		\answer{We might do one hot encoding after splitting data if we have missing values in categorical columns as we can't do one-hot encoding for variables with missing values
+And missing value imputation leads to data leakage, so should be done after splitting the data.}
+	\end{qanda}
+
+
+	\section{Need for cross-validation}
+	\begin{bulletedlist}
+		\item We wish to know how well a Machine Learning model is likely to perform in production
+		\item To estimate the model production score, we divide the data into 3 parts.
+		\item Usually the available data is not sufficient to split into training, test and validation sets and expect them to represent the universe.
+		\item As a result, the performance on training data may not be a good estimate of the performance in the universe.
+		\item Using cross validation techniques can help us achieve a generalized model performance.
+		\item This technique is also very useful in the absence of large data sets.
+	\end{bulletedlist}

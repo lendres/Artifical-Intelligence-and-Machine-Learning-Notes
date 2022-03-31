@@ -99,17 +99,17 @@ We can use polynomial features to check for interaction between the features as 
 			\codeitemnonumber \# example: k-fold cross validation for hyperparameter optimization (k=3)
 			\codeitemnonumber original data split into training and test set:
 			\codeitemnonumber |---------------- train ---------------------|         |--- test ---|
-			\codeitemnonumber 
+			\codeitemnonumber
 			\codeitemnonumber cross-validation: test set is not used, error is calculated from
 			\codeitemnonumber validation set (k-times) and averaged:
-			\codeitemnonumber 
+			\codeitemnonumber
 			\codeitemnonumber |---- train ------------------|- validation -|         |--- test ---|
 			\codeitemnonumber |---- train ---|- validation -|---- train ---|         |--- test ---|
 			\codeitemnonumber |- validation -|----------- train -----------|         |--- test ---|
-			\codeitemnonumber 
+			\codeitemnonumber
 			\codeitemnonumber final measure of model performance: model is trained on all training data
 			\codeitemnonumber and the error is calculated from test set:
-			\codeitemnonumber 
+			\codeitemnonumber
 			\codeitemnonumber |---------------- train ---------------------|--- test ---|
 		\end{code}
 
@@ -120,7 +120,7 @@ We can use polynomial features to check for interaction between the features as 
 \end{bulletedlist}
 		\begin{code}[\codenumbering]{}
 			\codeitemnonumber \# example: k-fold cross validation
-			\codeitemnonumber 
+			\codeitemnonumber
 			\codeitemnonumber |----- test -----|------------ train --------------|
 			\codeitemnonumber |----- train ----|----- test -----|----- train ----|
 			\codeitemnonumber |------------ train --------------|----- test -----|
@@ -188,3 +188,24 @@ And missing value imputation leads to data leakage, so should be done after spli
 		\item Using cross validation techniques can help us achieve a generalized model performance.
 		\item This technique is also very useful in the absence of large data sets.
 	\end{bulletedlist}
+
+	\begin{bulletedlist}
+		\item Cross-validation divides data into k folds
+		\item k-1 folds are used for training and the kth fold is used for testing purposes
+		\item The process is repeated k times
+		\item k different scores will be obtained
+		\item The final model performance is calculated by taking the average of k scores
+		\item We can also calculate the standard deviation of those scores and using that we can say that with 95\% confidence our model's performance will belong to:
+	\end{bulletedlist}
+%(avg - 2*std. dev., avg + 2*std dev)
+	\begin{equation}
+%		\left(\samplemean - 2*\samplestandarddeviation, \samplemean + 2*\samplestandarddeviation\right)
+		\left(\samplemean - 2*\samplestandarddeviation{}, \samplemean + 2*\samplestandarddeviation{}\right)
+	\end{equation}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.5in]{crossvalidation}
+		\caption{Cross validation.}
+		\label{fig:normaldistrution}
+	\end{figure}
+

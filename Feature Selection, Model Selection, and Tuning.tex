@@ -189,6 +189,40 @@ And missing value imputation leads to data leakage, so should be done after spli
 		\item This technique is also very useful in the absence of large data sets.
 	\end{bulletedlist}
 
+	\section{Cross Validation}
+	\begin{bulletedlist}
+		\item Cross-validation divides data into k folds
+		\item k-1 folds are used for training and the kth fold is used for testing purposes
+		\item The process is repeated k times
+		\item k different scores will be obtained
+		\item The final model performance is calculated by taking the average of k scores
+		\item We can also calculate the standard deviation of those scores and using that we can say that with 95\% confidence our model's performance will belong to:
+	\end{bulletedlist}
+%(avg - 2*std. dev., avg + 2*std dev)
+	\begin{equation}
+%		\left(\samplemean - 2*\samplestandarddeviation, \samplemean + 2*\samplestandarddeviation\right)
+		\left(\samplemean - 2*\samplestandarddeviation{}, \samplemean + 2*\samplestandarddeviation{}\right)
+	\end{equation}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.5in]{crossvalidation}
+		\caption{Cross validation.}
+		\label{fig:normaldistrution}
+	\end{figure}
+
+
+	\section{Choosing the Value of K}
+	\begin{bulletedlist}
+		\item k is an integer.
+		\item Minimum value of k has to be 2, there will be two iterations in this case.
+		\item Max value of k can be the number of data points, this is also known as Leave One Out Cross Validation or LOOCV
+		\item Whatever the value of k chosen, the resulting training and test data should be representative of the unseen data as much as possible.
+		\item There is no formula to decide the k but k = 10 is usually considered good.
+		\item Too large a k, means less variance across the training sets thus limit the model differences across iterations.
+		\item For a sample size of n, And k = p, Number Of Records (r) per fold = n/p.
+	\end{bulletedlist}
+
+
 	\section{Over Sampling and Under Sampling}
 We can handle the imbalanced data set cases to minimize the Type II errors by balancing the class representations.  To balance the classes we can either decrease the frequency of the majority class or increase the frequency of the minority class.
 	\begin{figure}[h]
@@ -209,23 +243,3 @@ SMOTE (Synthetic Minority Oversampling TEchnique)
 		\item It works randomly picking a point from the minority class and computing the k-nearest neighbors for this point.
 		\item Synthetic points are added between the chosen point and its neighbors.
 	\end{bulletedlist}
-
-	\begin{bulletedlist}
-		\item Cross-validation divides data into k folds
-		\item k-1 folds are used for training and the kth fold is used for testing purposes
-		\item The process is repeated k times
-		\item k different scores will be obtained
-		\item The final model performance is calculated by taking the average of k scores
-		\item We can also calculate the standard deviation of those scores and using that we can say that with 95\% confidence our model's performance will belong to:
-	\end{bulletedlist}
-%(avg - 2*std. dev., avg + 2*std dev)
-	\begin{equation}
-%		\left(\samplemean - 2*\samplestandarddeviation, \samplemean + 2*\samplestandarddeviation\right)
-		\left(\samplemean - 2*\samplestandarddeviation{}, \samplemean + 2*\samplestandarddeviation{}\right)
-	\end{equation}
-	\begin{figure}[h]
-		\centering
-		\includegraphics[height=1.5in]{crossvalidation}
-		\caption{Cross validation.}
-		\label{fig:normaldistrution}
-	\end{figure}

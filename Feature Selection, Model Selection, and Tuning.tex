@@ -245,3 +245,82 @@ SMOTE (Synthetic Minority Oversampling TEchnique)
 		\item It works randomly picking a point from the minority class and computing the k-nearest neighbors for this point.
 		\item Synthetic points are added between the chosen point and its neighbors.
 	\end{bulletedlist}
+
+
+	\section{Linear Regression Regularization}
+
+When we have too many parameters and exposed to curse of dimensionality, we resort to dimensionality reduction techniques such as transforming to PCA and eliminating the PCA with least magnitude of eigenvalues. This can be a laborious process before we find the right number principal components. Instead, we can employ the shrinkage methods.  Shrinkage methods attempt to shrink the coefficients of the attributes and lead us towards simpler yet effective models. The two shrinkage methods are:
+
+Why should we be interested in shrinking the coefficients? How does it help?  When we have large number of dimensions and few data points, the models are likely to become complex, over fit and prone to variance errors. When you print out the coefficients of the attributes of such complex model, you will notice that the magnitude of the different coefficients become large.
+
+Large coefficients indicate a case where for a unit change in the input variable, the magnitude of change in the target column is very large.
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=\textwidth]{modelcoefficients}
+		\caption{Model coefficients.}
+		\label{fig:modelcoefficients}
+	\end{figure}
+
+	\begin{bulletedlist}
+		\item Curse of dimensionality results in large magnitude coefficients which results in a complex undulated surface / model.
+		\item This complex surface has the data points occupying the peaks and the valleys.
+		\item The model gives near 100\% accuracy in training but poor result in testing and the testing scores also vary a lot from one sample to another.
+		\item The model is supposed to have absorbed the noise in the data distribution!
+		\item Large magnitudes of the coefficient give the least SSE and at times SSE = 0! A model that fits the training set 100\%!
+		\item Such models do not generalize.
+		\item Very large values of the penalty term leads to under fitting (model has been smoothed too much).
+	\end{bulletedlist}
+
+	\subsection{Ridge Regression}
+	\begin{bulletedlist}
+		\item Ridge regression is similar to the linear regression where the objective is to find the best fit surface. The difference is in the way the best coefficients are found. Unlike linear regression where the optimization function is \gls{sse}, here it is slightly different (see \figurename~\ref{fig:linearversusridgeregression})
+		\item The term $\lambda$ is a penalty term used to penalize large magnitude coefficients, $\beta_j$.  When it is set to a high number, coefficients are suppressed significantly.  When it is set to 0, the cost function becomes the same as the linear regression cost function.
+		\item The extra term works to suppress peaks and valleys (the sharp points of the fitted equation) and create a smoother surface.
+		\item The penalty term is the sum of squared values of the coefficients.
+	\end{bulletedlist}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=\textwidth]{linearversusridgeregression}
+		\caption{Linear versus ridge regression.}
+		\label{fig:linearversusridgeregression}
+	\end{figure}
+
+	\begin{bulletedlist}
+		\item In Ridge Regression, the algorithm while trying to find the best combination of coefficients which minimize the SSE on the training data, is constrained by the penalty term.
+		\item The penalty term is akin to cost of magnitude of the coefficients. Higher the magnitude, more the cost. Thus to minimize the cost, the coefficient are suppressed
+		\item Thus the resulting surface tends to be relatively much more smoother than the unconstrained surface. This means we have settled for a model which will make errors in the
+training data.
+		\item This is fine as long as the errors can be attributed to the random fluctuations i.e.\ because the model does not absorb the random fluctuations in the data.
+		\item Such model will perform equally well on unseen data i.e.\ test data. The model will generalize better than the complex model.
+	\end{bulletedlist}
+
+	\subsection{Lasso Regression}
+
+	\begin{bulletedlist}
+		\item Lasso Regression is similar to the Ridge regression with a difference in the penalty term. Unlike Ridge, the penalty term here is raised to power 1. Also known as L1 norm.
+		\item The term continues to be the input parameter which will decide how high penalties would be for the coefficients. Larger the value more diminished the coefficients will be.
+		\item Unlike Ridge regression, where the coefficients are driven towards zero but may not become zero, Lasso Regression penalty process will make many of the coefficients 0. In other words, literally drop the dimensions.  This is effectively automatic feature selection.
+		\item Penalty adds up magnitude of coefficients instead of the square of the coefficients that ridge regression does.
+	\end{bulletedlist}
+
+	\begin{equation}
+		\sum^M_{i=1} \left(y_i - \sum^P_{j=0} w_j \times x_{ij} \right)^2  +  \lambda \sum^P_{j=0} \left| w_j \right|
+	\end{equation}
+
+	\subsection{Comparing Ridge and Lasso}
+To compare the Ridge and Lasso, let us first transform our error function (which is a quadratic / convex function) into a contour graph.
+
+	\begin{bulletedlist}
+		\item Every ring on the error function represents a combination of coefficients (m1 and m2 in the image) which result in same quantum of error i.e.\ SSE.
+		\item Let us convert that to a 2d contour plot.  In the contour plot, every ring represents one quantum of error.
+		\item The innermost ring / bull's eye is the combination of the coefficients that gives the lease SSE.
+	\end{bulletedlist}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=2.0in]{ridgeversuslasso1}
+		\caption{}
+		\label{fig:ridgeversuslasso1}
+	\end{figure}

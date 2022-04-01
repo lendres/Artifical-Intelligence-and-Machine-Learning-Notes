@@ -99,17 +99,17 @@ We can use polynomial features to check for interaction between the features as 
 			\codeitemnonumber \# example: k-fold cross validation for hyperparameter optimization (k=3)
 			\codeitemnonumber original data split into training and test set:
 			\codeitemnonumber |---------------- train ---------------------|         |--- test ---|
-			\codeitemnonumber 
+			\codeitemnonumber
 			\codeitemnonumber cross-validation: test set is not used, error is calculated from
 			\codeitemnonumber validation set (k-times) and averaged:
-			\codeitemnonumber 
+			\codeitemnonumber
 			\codeitemnonumber |---- train ------------------|- validation -|         |--- test ---|
 			\codeitemnonumber |---- train ---|- validation -|---- train ---|         |--- test ---|
 			\codeitemnonumber |- validation -|----------- train -----------|         |--- test ---|
-			\codeitemnonumber 
+			\codeitemnonumber
 			\codeitemnonumber final measure of model performance: model is trained on all training data
 			\codeitemnonumber and the error is calculated from test set:
-			\codeitemnonumber 
+			\codeitemnonumber
 			\codeitemnonumber |---------------- train ---------------------|--- test ---|
 		\end{code}
 
@@ -120,7 +120,7 @@ We can use polynomial features to check for interaction between the features as 
 \end{bulletedlist}
 		\begin{code}[\codenumbering]{}
 			\codeitemnonumber \# example: k-fold cross validation
-			\codeitemnonumber 
+			\codeitemnonumber
 			\codeitemnonumber |----- test -----|------------ train --------------|
 			\codeitemnonumber |----- train ----|----- test -----|----- train ----|
 			\codeitemnonumber |------------ train --------------|----- test -----|
@@ -187,4 +187,25 @@ And missing value imputation leads to data leakage, so should be done after spli
 		\item As a result, the performance on training data may not be a good estimate of the performance in the universe.
 		\item Using cross validation techniques can help us achieve a generalized model performance.
 		\item This technique is also very useful in the absence of large data sets.
+	\end{bulletedlist}
+
+	\section{Over Sampling and Under Sampling}
+We can handle the imbalanced data set cases to minimize the Type II errors by balancing the class representations.  To balance the classes we can either decrease the frequency of the majority class or increase the frequency of the minority class.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=5.0in]{overandundersampling}
+		\caption{Over and under sampling.}
+		\label{fig:overandundersampling}
+	\end{figure}
+
+The simplest implementation of over-sampling is to duplicate random records from the minority class, which can cause over fitting.
+
+In under-sampling, the simplest technique involves removing random records from the majority class, which can cause loss of information.
+
+	\subsection{SMOTE}
+SMOTE (Synthetic Minority Oversampling TEchnique)
+	\begin{bulletedlist}
+		\item Syntheses elements for the minority class, based on those that already exist.
+		\item It works randomly picking a point from the minority class and computing the k-nearest neighbors for this point.
+		\item Synthetic points are added between the chosen point and its neighbors.
 	\end{bulletedlist}

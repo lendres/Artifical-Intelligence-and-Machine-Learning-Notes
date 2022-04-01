@@ -15,16 +15,16 @@ Machine Learning and Artificial Intelligence.tex
 
 Statistics.tex
 TeX
-17838011 1 -1 912 -1 745 64 64 1287 679 0 22 184 -1 -1 0 0 23 -1 -1 23 1 0 745 -1   0
+17838011 1 -1 912 -1 745 64 64 1287 679 0 22 171 -1 -1 0 0 23 -1 -1 23 1 0 745 -1   0
 Feature Selection, Model Selection, and Tuning.tex
 TeX
-286273467 0 -1 13570 -1 13515 208 208 1556 791 0 22 690 -1 -1 0 0 57 -1 -1 57 1 0 13515 -1   0
+286273467 0 -1 13570 -1 13515 208 208 1556 791 0 22 389 -1 -1 0 0 57 -1 -1 57 1 0 13515 -1   0
 Installation Notes.tex
 TeX
-17838075 0 -1 1092 -1 1093 208 208 1556 791 0 292 713 -1 -1 0 0 29 -1 -1 29 1 0 1093 -1   0
+17838075 0 -1 1092 -1 964 208 208 1556 791 0 246 551 -1 -1 0 0 29 -1 -1 29 1 0 964 -1   0
 Acronyms.tex
 TeX
-17838011 0 -1 806 -1 831 182 182 1530 765 0 452 598 -1 -1 0 0 16 -1 -1 16 1 0 831 -1   0
+17838011 0 -1 806 -1 831 182 182 1530 765 0 366 589 -1 -1 0 0 16 -1 -1 16 1 0 831 -1   0
 C:\Custom Program Files\LaTeX\TeX\LaTeX\lecode.sty
 TeX:DTX
 273690619 0 -1 0 -1 0 78 78 1426 661 0 22 0 -1 -1 0 0 24 -1 -1 24 1 0 0 -1   0
@@ -106,13 +106,14 @@ ASCII:EDT
 *Setup.tex
 *Equations.tex
 *Title Page.tex
-*Statistics Glossary.tex
-*Modeling Glossary.tex
-*Acronyms.tex
-*Statistics.tex
-*Data Analysis.tex
-*Regression.tex
-*Ensemble Techniques.tex
+*Statistics Glossary
+*Modeling Glossary
+*Acronyms
+*Statistics
+*Data Analysis
+*Modeling
+*Regression
+*Ensemble Techniques
 *Feature Selection, Model Selection, and Tuning
 *Installation Notes
 *List of Notations.tex

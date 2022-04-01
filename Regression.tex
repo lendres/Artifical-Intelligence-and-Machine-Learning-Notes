@@ -162,6 +162,8 @@ Recall, sensitivity, and true positive rate are the same thing.  Specificity and
 		\mathdefitem{A_c}{area under the curve.}
 	\end{mathwhere}
 
+Accuracy is the percent of the positive and negatives accurately predicted out of the totals.  When dealing with imbalanced data, this can be misleading because the class with the smaller number of entries can be ignored and the accuracy can still be good.  For example, if you are trying to predict if a loan will be defaulted on and 98 percent of people do not default, they just predict everyone does not default and you can get a good accuracy score.
+
 Recall (sensitivity/true positive rate): Percent of the positives that were caught.  For example, what percent of people who have a disease did a medical test catch.
 
 Specificity: Percent of the negatives that were caught (correctly labeled).

@@ -30,41 +30,53 @@ Bagging constructs model in parallel.  Boosting constructs models in series.
 
 	\resetquestioncounter{}
     \begin{qanda}
-		\question{In Bagging, we can employ various models as long as the ensemble contains one particular type of algorithm (task)?}
+		\begin{question}
+In Bagging, we can employ various models as long as the ensemble contains one particular type of algorithm (task)?
+		\end{question}
 
-		\answer{In bagging, we use the same algorithms and give different data points to obtain different models.  Bagging is homogenous therefore all the algorithms used have to be the same.  So suppose there is a bagging model with n\_estimators as 10 and if we use the Decision tree then all 10 algorithms have to be decision tree.  If any other algorithm supposes logistic regression then all 10 has to be logistic regression.  All the algorithms used in one bagging model have to be the same.  Part decision tree and part logistic regression algorithms won't work, all 10 have to be decision tree or all 10 have to be logistic regression.}
+		\begin{answer}
+In bagging, we use the same algorithms and give different data points to obtain different models.  Bagging is homogenous therefore all the algorithms used have to be the same.  So suppose there is a bagging model with n\_estimators as 10 and if we use the Decision tree then all 10 algorithms have to be decision tree.  If any other algorithm supposes logistic regression then all 10 has to be logistic regression.  All the algorithms used in one bagging model have to be the same.  Part decision tree and part logistic regression algorithms won't work, all 10 have to be decision tree or all 10 have to be logistic regression.
+		\end{answer}
     \end{qanda}
 
     \begin{qanda}
-		\question{How much difference between a model's train and test performance is considered as over fitting or under fitting?}
+		\begin{question}
+How much difference between a model's train and test performance is considered as over fitting or under fitting?
+		\end{question}
 
-		\answer{There cannot be a universal threshold to decide the fit of a model. Under fit models are easy to identify but over fit models are relatively more difficult to identify as we can be sure of the model's fitness only when it is used in production. In practice, what matters is the actual test error, i.e. how often the predictions are wrong on new data. The limits on that are strictly a matter of business risk.
-\newline{}
+		\begin{answer}
+There cannot be a universal threshold to decide the fit of a model. Under fit models are easy to identify but over fit models are relatively more difficult to identify as we can be sure of the model's fitness only when it is used in production. In practice, what matters is the actual test error, i.e. how often the predictions are wrong on new data. The limits on that are strictly a matter of business risk.
 
 Theoretically, you can get any level of closeness you want between training and testing metrics, provided you have large enough sample space.
 For example, if you are using a complex model like a deep neural network and have hundreds of thousands (or more) of observations, then you are entitled to see an average test error to be very close to an average training error, say well within 1 percent. But if you are using a simple model like linear regression or pruned decision tree and/or you only have a few observations, say in the range of hundreds, then average test error exceeding average training error by even 10 percent may not be unreasonable.
-\newline{}
 
-So it boils down to how much difference is acceptable to that domain or industry, then you have to increase the data size until the train-test difference is smaller than that.}
+So it boils down to how much difference is acceptable to that domain or industry, then you have to increase the data size until the train-test difference is smaller than that.
+		\end{answer}
     \end{qanda}
 
     \begin{qanda}
-	\question{To build each individual tree in random forest, whether a subset of only rows is taken or that of columns is also taken?}%%
+		\begin{question}
+To build each individual tree in random forest, whether a subset of only rows is taken or that of columns is also taken?
+		\end{question}
 
-	\answer{To prepare data for an individual tree, a subset of rows is taken but the entire set of features are available from the original data.  While splitting at the nodes, a random subset of features is selected. Hence both, row and column sampling is done in random forest.}
+		\begin{answer}
+To prepare data for an individual tree, a subset of rows is taken but the entire set of features are available from the original data.  While splitting at the nodes, a random subset of features is selected. Hence both, row and column sampling is done in random forest.
+		\end{answer}
     \end{qanda}
 
 
     \begin{qanda}
-	\question{I am getting the below error with Bagging Classifier with Logistic Regression as base\_estimator: AttributeError: `str' object has no attribute `decode' How to solve it?}
+		\begin{question}
+I am getting the below error with Bagging Classifier with Logistic Regression as base\_estimator: AttributeError: `str' object has no attribute `decode' How to solve it?
+		\end{question}
 
-	\answer{The LogisticRegression function has a parameter named solver, which was earlier by default set to `liblinear', but after an update in sklearn, the default solver was changed to `lbfgs'. Kindly try setting the solver as liblinear, and try the code again, as shown below:
-\newline{}
+		\begin{answer}
+The LogisticRegression function has a parameter named solver, which was earlier by default set to `liblinear', but after an update in sklearn, the default solver was changed to `lbfgs'. Kindly try setting the solver as liblinear, and try the code again, as shown below:
 
 bagging\_lr = BaggingClassifier(base\_estimator=LogisticRegression(solver=`liblinear', random\_state=1), random\_state=1)
-\newline{}
 
-bagging\_lr.fit(X\_train,y\_train)}
+bagging\_lr.fit(X\_train,y\_train)
+		\end{answer}
     \end{qanda}
 
 	\section{Bagging}
@@ -97,77 +109,94 @@ While predicting.
 	\section{Boosting}
 	\resetquestioncounter{}
     \begin{qanda}
-\question{What is the difference between AdaBoost and Gradient Boosting?}
-\printinunitsof{in}\prntlen{\quandatextwidth}
-\answer{
-	\begin{tabular}{|p{0.5\quandatextwidth-2\tabcolsep}|p{0.5\quandatextwidth-2\tabcolsep}|} \hline
-			\tablecolumnheadervlinesone{AdaBoost} & \tablecolumnheadervlinestwo{Gradient Boosting} \\ \hline
-			Adaboost is more about ``voting weights'' &
-            Gradient boosting is more about ``adding gradient optimization.'' \\ \hline
-			Adaboost increases the accuracy by giving more weightage to the target which is misclassified by the model.	&
-			Gradient boosting increases the accuracy by minimizing the Loss Function (an error which is the difference of actual and predicted value) and having this loss as a target for the next iteration. \\ \hline
-			At each iteration, the Adaptive boosting algorithm changes the sample distribution by modifying the weights attached to each of the instances. &
-			Gradient boosting calculates the gradient (derivative) of the Loss Function with respect to the prediction (instead of the features). \newline
+		\begin{question}
+What is the difference between AdaBoost and Gradient Boosting?
+		\end{question}
 
-The Gradient boosting algorithm builds the first weak learner and calculates the Loss Function. \newline
-
-It then builds a second learner to predict the loss after the first step. The step continues for the third learner and then for the fourth learner and so on until a certain threshold is reached. \\ \hline
-		\end{tabular}
-}
+		\begin{answer}
+			\begin{tabular}{|p{0.5\qandatextwidth-2\tabcolsep}|p{0.5\qandatextwidth-2\tabcolsep}|} \hline
+					\tablecolumnheadervlinesone{AdaBoost} & \tablecolumnheadervlinestwo{Gradient Boosting} \\ \hline
+					Adaboost is more about ``voting weights'' &
+		            Gradient boosting is more about ``adding gradient optimization.'' \\ \hline
+					Adaboost increases the accuracy by giving more weightage to the target which is misclassified by the model.	&
+					Gradient boosting increases the accuracy by minimizing the Loss Function (an error which is the difference of actual and predicted value) and having this loss as a target for the next iteration. \\ \hline
+					At each iteration, the Adaptive boosting algorithm changes the sample distribution by modifying the weights attached to each of the instances. &
+					Gradient boosting calculates the gradient (derivative) of the Loss Function with respect to the prediction (instead of the features). \newline
+		
+		The Gradient boosting algorithm builds the first weak learner and calculates the Loss Function. \newline
+		
+		It then builds a second learner to predict the loss after the first step. The step continues for the third learner and then for the fourth learner and so on until a certain threshold is reached. \\ \hline
+				\end{tabular}
+		\end{answer}
    \end{qanda}
 
     \begin{qanda}
-\question{When to apply AdaBoost (Adaptive Boosting Algorithm)?}
+		\begin{question}
+When should you apply AdaBoost (Adaptive Boosting Algorithm)?
+		\end{question}
 
-\answer{Here is the list of all the key points below for an understanding of Adaboost:
-	\begin{bulletedlist}
-		\item AdaBoost can be applied to any classification algorithm, so it's really a technique that builds on top of other classifiers as opposed to being a classifier itself.
-		\item You could just train a bunch of weak classifiers on your own and combine the results.
-		\item There's really two things it figures out for you:
-		\begin{bulletedlist}
-			\item It helps you choose the training set for each new classifier that you train based on the results of the previous classifier.
-			\item It determines how much weight should be given to each classifier's proposed answer when combining the results.
-		\end{bulletedlist}
-	\end{bulletedlist}
-}
+		\begin{answer}Here is the list of all the key points below for an understanding of Adaboost:
+			\begin{bulletedlist}
+				\item AdaBoost can be applied to any classification algorithm, so it's really a technique that builds on top of other classifiers as opposed to being a classifier itself.
+				\item You could just train a bunch of weak classifiers on your own and combine the results.
+				\item There's really two things it figures out for you:
+				\begin{bulletedlist}
+					\item It helps you choose the training set for each new classifier that you train based on the results of the previous classifier.
+					\item It determines how much weight should be given to each classifier's proposed answer when combining the results.
+				\end{bulletedlist}
+			\end{bulletedlist}
+		\end{answer}
   \end{qanda}
 
 	\begin{qanda}
-\question{How does AdaBoost (Adaptive Boosting Algorithm) work?}
-\answer{Important Points regarding working of Adaboost:
-	\begin{bulletedlist}
-		\item AdaBoost can be applied to any classification algorithm, so it's really a technique that builds on top of other classifiers as opposed to being a classifier itself.
-		\item Each weak classifier should be trained on a random subset of the total training set.
-		\item AdaBoost assigns a ``weight'' to each training example, which determines the probability that each example should appear in the training set.
-		\begin{bulletedlist}
-			\item The initial weights generally add up to 1.  For example, if there are 8 training examples, the weight assigned to each will be 1/8 initially.  All training examples have equal weights.
-		\end{bulletedlist}
-		\item If a training example is misclassified, then that training example is assigned a higher weight so that the probability of appearing that particular misclassified training example is higher in the next training set for training the classifier.
-		\item After performing the previous step, ideally, the trained classifier will perform better on the misclassified examples next time.
-		\item The weights are based on increasing the probability of being chosen in the next sequential training sub-set.
-	\end{bulletedlist}
-}
+		\begin{question}
+How does AdaBoost (Adaptive Boosting Algorithm) work?
+		\end{question}
+
+		\begin{answer}Important Points regarding working of Adaboost:
+			\begin{bulletedlist}
+				\item AdaBoost can be applied to any classification algorithm, so it's really a technique that builds on top of other classifiers as opposed to being a classifier itself.
+				\item Each weak classifier should be trained on a random subset of the total training set.
+				\item AdaBoost assigns a ``weight'' to each training example, which determines the probability that each example should appear in the training set.
+				\begin{bulletedlist}
+					\item The initial weights generally add up to 1.  For example, if there are 8 training examples, the weight assigned to each will be 1/8 initially.  All training examples have equal weights.
+				\end{bulletedlist}
+				\item If a training example is misclassified, then that training example is assigned a higher weight so that the probability of appearing that particular misclassified training example is higher in the next training set for training the classifier.
+				\item After performing the previous step, ideally, the trained classifier will perform better on the misclassified examples next time.
+				\item The weights are based on increasing the probability of being chosen in the next sequential training sub-set.
+			\end{bulletedlist}
+		\end{answer}
   \end{qanda}
 
     \begin{qanda}
-\question{How to install the XGBoost library in Windows or Mac operations systems?}
-\answer{For Windows, run the following command in your Jupyter notebook: \newline
-\textcode{!pip install xgboost} \newline
+		\begin{question}
+How to install the XGBoost library in Windows or Mac operations systems?
+		\end{question}
 
-For Mac, run the following command in your terminal: \newline
-\textcode{conda install -c conda-forge xgboost} \newline
+		\begin{answer}
+For Windows, run the following command in your Jupyter notebook:
+
+\noindent \textcode{!pip install xgboost}
+
+For Mac, run the following command in your terminal:
+
+\noindent \textcode{conda install -c conda-forge xgboost}
 
 Note: Open a new terminal before using the above command in the Mac terminal. To open the terminal, please open the Launchpad and then click on the terminal icon.
-}
+		\end{answer}
   \end{qanda}
 
 	\begin{qanda}
-\question{The warning below appears while fitting XGBoost Classifier, how do you solve it?  \newline
+		\begin{question}
+			The warning below appears while fitting XGBoost Classifier, how do you solve it?  \newline
 \textcode{WARNING: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective `binary:logistic' was changed from `error' to `logloss'. Explicitly set eval\_metric if you'd like to restore the old behavior.}
-}
-\answer{To remove the warning try setting the eval\_metric hyperparameter as 'logloss', as shown below: \newline
-\textcode{xgb = XGBClassifier(eval\_metric=`logloss')}
-}
+		\end{question}
+
+		\begin{answer}
+To remove the warning try setting the eval\_metric hyperparameter as 'logloss', as shown below:
+
+\noindent \textcode{xgb = XGBClassifier(eval\_metric=`logloss')}
+		\end{answer}
   \end{qanda}
 
 	\subsection{Boosting Methods}

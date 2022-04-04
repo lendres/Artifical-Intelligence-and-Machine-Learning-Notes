@@ -8,7 +8,7 @@ Supervised learning can be separated into two types of problems when data mining
 		\item \textbf{Regression} is another type of supervised learning method that uses an algorithm to understand the relationship between dependent and independent variables. Regression models are helpful for predicting numerical values based on different data points, such as sales revenue projections for a given business. Some popular regression algorithms are linear regression, logistic regression and polynomial regression.
 	\end{bulletedlist}
 
-	\section{Unupervised Learning}
+	\section{Unsupervised Learning}
 Unsupervised learning uses machine learning algorithms to analyze and cluster unlabeled data sets. These algorithms discover hidden patterns in data without the need for human intervention (hence, they are ``unsupervised'').
 
 Unsupervised learning models are used for three main tasks: clustering, association and dimensionality reduction:
@@ -17,3 +17,23 @@ Unsupervised learning models are used for three main tasks: clustering, associat
 	\item \textbf{Association} is another type of unsupervised learning method that uses different rules to find relationships between variables in a given data set. These methods are frequently used for market basket analysis and recommendation engines, along the lines of ``Customers Who Bought This Item Also Bought'' recommendations.
 	\item \textbf{Dimensionality reduction} is a learning technique used when the number of features  (or dimensions) in a given data set is too high. It reduces the number of data inputs to a manageable size while also preserving the data integrity. Often, this technique is used in the preprocessing data stage, such as when autoencoders remove noise from visual data to improve picture quality.
 	\end{bulletedlist}
+
+	\section{Transformation and Imputing}
+%	\begin{code}[\codenumbering]{}
+%		\codeitemnonumber
+%		\codeitemnonumber
+%	\end{code}
+
+    \begin{topcaptiontable}[h]
+        \centering
+        \lecaption{Transformation and imputing functions.}
+        \label{tab:}
+		
+        \begin{tabular}{|p{2.5in}|p{\textwidth-3.0in}|} \hline
+			\tablecolumnheadervlinesone{Class/Function} 	& \tablecolumnheadervlinestwo{Plotting Function(s)} \\ \hline
+			\codetext{StandardScaler}						& Scales values to a range between 0 and 1. \\ \hline
+			\codetext{}						&	 \\ \hline
+			\codetext{KNNImputer}							&	 \\ \hline
+			\codetext{DataFrame[``c''].map(lbls)}		& Maps values in \textcode{``c''} from one to another based on the dictionary \textcode{lbls}. \\ \hline
+		\end{tabular}
+	\end{topcaptiontable}

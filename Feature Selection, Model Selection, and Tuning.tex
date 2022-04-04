@@ -232,11 +232,11 @@ And missing value imputation leads to data leakage, so should be done after spli
 
 	\section{Cross Validation}
 	\begin{bulletedlist}
-		\item Cross-validation divides data into k folds
-		\item k-1 folds are used for training and the kth fold is used for testing purposes
-		\item The process is repeated k times
-		\item k different scores will be obtained
-		\item The final model performance is calculated by taking the average of k scores
+		\item Cross-validation divides data into k folds.
+		\item k-1 folds are used for training and the kth fold is used for testing purposes.
+		\item The process is repeated k times.
+		\item k different scores will be obtained.
+		\item The final model performance is calculated by taking the average of k scores.
 		\item We can also calculate the standard deviation of those scores and using that we can say that with 95\% confidence our model's performance will belong to:
 	\end{bulletedlist}
 %(avg - 2*std. dev., avg + 2*std dev)
@@ -283,7 +283,7 @@ In under-sampling, the simplest technique involves removing random records from 
 SMOTE (Synthetic Minority Oversampling TEchnique)
 	\begin{bulletedlist}
 		\item Syntheses elements for the minority class, based on those that already exist.
-		\item It works randomly picking a point from the minority class and computing the k-nearest neighbors for this point.
+		\item It works randomly picking a point from the minority class and computing the k-nearest neighbors (KNN) for this point.
 		\item Synthetic points are added between the chosen point and its neighbors.
 	\end{bulletedlist}
 
@@ -384,6 +384,8 @@ The way we use fit and predict in regression, similarly for functions that trans
 \textbf{transform} - transforming the data using parameters fitted with the fit function.
 
 \textbf{fit\_transform} - to first fit the parameters of the function and then transform the data.
+
+\href{https://towardsdatascience.com/what-and-why-behind-fit-transform-vs-transform-in-scikit-learn-78f915cf96fe}{Explanation}
 		\end{answer}
 	\end{qanda}
 
@@ -453,4 +455,4 @@ Getting the same results is not incorrect, you might get the same results from b
 
 Getting the same results is not incorrect, you might get the same results from both grid and random search.  However few things that can be checked in such cases are:
 		\end{answer}
-	\end{qanda}
+	\end{qanda} 

@@ -25,11 +25,18 @@ https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html
 		\codeitemnonumber \# Jupyter notebook
 		\codeitemnonumber !pip install imblearn --user
 		\codeitemnonumber !pip install imbalanced-learn --user
-		\codeitemnonumber 
+		\codeitemnonumber
 		\codeitemnonumber \# Anaconda prompt
 		\codeitemnonumber \#!pip install -U imbalanced-learn
 
 		\codeitemnonumber \#conda install -c conda-forge imbalanced-learn
 
 		\codeitemnonumber \# Restart the kernel after successful installation of the library
+	\end{code}
+
+	\section{Anaconda and Python}
+	\begin{code}[\codenumbering]{}
+		\codeitemnonumber conda update -n base conda
+		\codeitemnonumber conda update --all
+		\codeitemnonumber jupyter contrib nbextension install --user
 	\end{code}

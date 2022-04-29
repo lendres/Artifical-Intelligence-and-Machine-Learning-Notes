@@ -9,24 +9,18 @@ How do False-negative and False positive values change in the confusion matrix? 
 
 		\begin{answer}
 When we build a model and our target variable has a binary category and then we look at the confusion matrix. There are four elements:
-
 		\begin{code}[\codenumbering]{}
 			\codeitemnonumber True Positive (observed=1, predicted=1)
 			\codeitemnonumber False Positive (observed=0, predicted=1)
 			\codeitemnonumber True Negative (observed=0, predicted=0)
 			\codeitemnonumber False Negative (observed=1, predicted=0)
 		\end{code}
-
-\vspace{\baselineskip}
 The default threshold is 0.5. We change the threshold when we want to decrease or increase the number of false positives or false negatives.
 
-\vspace{\baselineskip}
 Consider a credit card default problem for a bank. So if the model predicts that a person will default and the person doesn't then the bank might lose a potential customer but if the model predicts a customer would not default and he does, in the scenarios company would lose money. So the bank would want this number to be small.
 
-\vspace{\baselineskip}
 Assuming defaulter to be 1 and non-defaulter to be 0 then the company would want lower False negatives. So we will try to build the model with a lower threshold so more people will be predicted as defaulters.
 
-\vspace{\baselineskip}
 As you will try to decrease FN, FP will increase because of the values which were previously predicted as TN might change to FP, that is why prof must have said about the inverse relationship. So if we try to decrease FN via changing threshold all values in the confusion matrix change and FN will decrease but FP will increase.
 		\end{answer}
 	\end{qanda}
@@ -169,42 +163,7 @@ Once fit, the data preparation algorithms or models can then be applied to the t
 				\item Split Data.
 				\item Fit Data Preparation on Training data set.
 				\item Apply Data Preparation to Train and Test data sets.
-				\item Evaluate Models.
-			\end{numberedlist}
-		\end{answer}
-	\end{qanda}
-
-	\begin{qanda}
-		\begin{question}
-How to install imblearn library?
-		\end{question}
-
-		\begin{answer}
-To install imblearn you can use:
-			\begin{code}[\codenumbering]{}
-				!pip install imbalanced-learn==0.8.0 \#in jupyter notebook \# for Windows OS
-				pip install imbalanced-learn==0.8.0 \# in anaconda prompt
-			\end{code}
-		\end{answer}
-	\end{qanda}
-
-
-	\begin{qanda}
-		\begin{question}
-I am getting this error while trying to import SMOTE, how do I fix it?
-\textcode{
-ImportError: cannot import name `delayed' from `sklearn.utils.fixes' (C:\textbackslash{}Users\textbackslash{}anaconda3\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}sklearn\textbackslash{}utils\textbackslash{}fixes.py)}
-		\end{question}
-
-		\begin{answer}
-Use the following:
-			\begin{code}[\codenumbering]{}
-				!pip install imbalanced-learn==0.8.0
-				!pip install delayed
-			\end{code}
-		\end{answer}
-	\end{qanda}
-
+				\item Evaluate Models.\end{numberedlist}\end{answer}\end{qanda}
 
 
 	\begin{qanda}
@@ -363,4 +322,4 @@ To compare the Ridge and Lasso, let us first transform our error function (which
 		\includegraphics[width=2.0in]{ridgeversuslasso1}
 		\caption{}
 		\label{fig:ridgeversuslasso1}
-	\end{figure}
+	\end{figure} 

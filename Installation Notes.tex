@@ -40,3 +40,26 @@ https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html
 		\codeitemnonumber conda update --all
 		\codeitemnonumber jupyter contrib nbextension install --user
 	\end{code}
+
+\textcode{conda install -c conda-forge sklearn-pandas}
+
+
+
+	\section{Imblearn library}
+To install imblearn you can use:
+	\begin{code}[\codenumbering]{}
+		\codeitemnonumber !pip install imbalanced-learn==0.8.0 \# In Jupyter notebook
+		\codeitemnonumber pip install imbalanced-learn==0.8.0 \# In anaconda prompt
+	\end{code}
+
+
+	\section{SMOTE}
+I am getting this error while trying to import SMOTE, how do I fix it?
+
+\noindent\textcode{ImportError: cannot import name `delayed' from `sklearn.utils.fixes' (C:\textbackslash{}Users\textbackslash{}anaconda3\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}sklearn\textbackslash{}utils\textbackslash{}fixes.py)}
+
+Use the following:
+	\begin{code}[\codenumbering]{}
+		\codeitemnonumber !pip install imbalanced-learn==0.8.0
+		\codeitemnonumber !pip install delayed
+	\end{code}

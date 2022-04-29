@@ -9,6 +9,12 @@ Supervised learning can be separated into two types of problems when data mining
 	\end{bulletedlist}
 
 	\section{Unsupervised Learning}
+Can I group my customers or products into different groups? Is there any underlying pattern in the data set? Are there similar observations in my data set? - Such questions come under the realm of unsupervised learning and can be answered with the help of clustering algorithms.
+
+Till now you have learned about supervised learning algorithms where the target label for each observation was already available. Many times target labels will not be available to us, so in such a scenario, we use unsupervised learning algorithms which help us discover a hidden pattern in the dataset.
+
+In real life, it is easier to get unlabeled data than labeled data. This adds to the tedious task of manual intervention to use any prediction methodology. Unsupervised Learning groups data points based on similarity of data points. In this course, we will learn the most commonly used Unsupervised learning methodologies like K-means Clustering, Hierarchical Clustering, and Dimensionality Reduction.
+
 Unsupervised learning uses machine learning algorithms to analyze and cluster unlabeled data sets. These algorithms discover hidden patterns in data without the need for human intervention (hence, they are ``unsupervised'').
 
 Unsupervised learning models are used for three main tasks: clustering, association and dimensionality reduction:
@@ -17,6 +23,7 @@ Unsupervised learning models are used for three main tasks: clustering, associat
 	\item \textbf{Association} is another type of unsupervised learning method that uses different rules to find relationships between variables in a given data set. These methods are frequently used for market basket analysis and recommendation engines, along the lines of ``Customers Who Bought This Item Also Bought'' recommendations.
 	\item \textbf{Dimensionality reduction} is a learning technique used when the number of features  (or dimensions) in a given data set is too high. It reduces the number of data inputs to a manageable size while also preserving the data integrity. Often, this technique is used in the preprocessing data stage, such as when autoencoders remove noise from visual data to improve picture quality.
 	\end{bulletedlist}
+
 
 	\section{Transformation and Imputing}
 %	\begin{code}[\codenumbering]{}
@@ -27,7 +34,7 @@ Unsupervised learning models are used for three main tasks: clustering, associat
     \begin{topcaptiontable}[h]
         \centering
         \lecaption{Transformation and imputing functions.}
-        \label{tab:}
+        \label{tab:transfomrationandimputing}
 		
         \begin{tabular}{|p{2.5in}|p{\textwidth-3.0in}|} \hline
 			\tablecolumnheadervlinesone{Class/Function} 	& \tablecolumnheadervlinestwo{Plotting Function(s)} \\ \hline
@@ -37,3 +44,26 @@ Unsupervised learning models are used for three main tasks: clustering, associat
 			\codetext{DataFrame[``c''].map(lbls)}		& Maps values in \textcode{``c''} from one to another based on the dictionary \textcode{lbls}. \\ \hline
 		\end{tabular}
 	\end{topcaptiontable}
+
+	\subsection{Skewed Data}
+For highly skewed data, there are three main options for transforming data. \begin{topcaptiontable}[h]
+        \centering
+        \lecaption{Transforming Skewed Data}
+        \label{tab:}
+		
+        \begin{tabular}{|p{2.5in}|p{\textwidth-3.0in}|} \hline
+			\tablecolumnheadervlinesone{Class/Function} 	& \tablecolumnheadervlinestwo{Plotting Function(s)} \\ \hline
+			\codetext{log}								& Will not work on data with zeros.  To avoid, you could add a small value so there are no zeros. \\ \hline
+			\codetext{sqrt}								&	 \\ \hline
+			\codetext{np.arcsinh}						& Hyperbolic sin inverse.  Works on data with zeros and negative values.  Works a lot like a log transformation. \\ \hline
+		\end{tabular}
+	\end{topcaptiontable}
+
+See the video in section 2.7 of the Great Learning course.
+
+
+	\section{Model Interpretation}
+	\begin{bulletedlist}
+		\item Use a class agnostic scoring method (area under curve of receiver operating characteristic).
+		\item SHAP plot for final model.
+	\end{bulletedlist}

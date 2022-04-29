@@ -66,11 +66,7 @@ To prepare data for an individual tree, a subset of rows is taken but the entire
 
 
     \begin{qanda}
-		\begin{question}
-I am getting the below error with Bagging Classifier with Logistic Regression as base\_estimator: AttributeError: `str' object has no attribute `decode' How to solve it?
-		\end{question}
-
-		\begin{answer}
+		\begin{question}I am getting the below error with Bagging Classifier with Logistic Regression as base\_estimator: AttributeError: `str' object has no attribute `decode' How to solve it?\end{question}\begin{answer}
 The LogisticRegression function has a parameter named solver, which was earlier by default set to `liblinear', but after an update in sklearn, the default solver was changed to `lbfgs'. Kindly try setting the solver as liblinear, and try the code again, as shown below:
 
 bagging\_lr = BaggingClassifier(base\_estimator=LogisticRegression(solver=`liblinear', random\_state=1), random\_state=1)
@@ -107,6 +103,7 @@ While predicting.
 
 
 	\section{Boosting}
+	\subsection{Section FAQ}
 	\resetquestioncounter{}
     \begin{qanda}
 		\begin{question}
@@ -125,7 +122,7 @@ What is the difference between AdaBoost and Gradient Boosting?
 		
 		The Gradient boosting algorithm builds the first weak learner and calculates the Loss Function. \newline
 		
-		It then builds a second learner to predict the loss after the first step. The step continues for the third learner and then for the fourth learner and so on until a certain threshold is reached. \\ \hline
+		It then builds a second learner to predict the loss after the first step. The step continues for the third learner and then for the fourth learner and so on until a certain threshold is reached. \\ \hline%
 				\end{tabular}
 		\end{answer}
    \end{qanda}
@@ -163,10 +160,7 @@ How does AdaBoost (Adaptive Boosting Algorithm) work?
 				\end{bulletedlist}
 				\item If a training example is misclassified, then that training example is assigned a higher weight so that the probability of appearing that particular misclassified training example is higher in the next training set for training the classifier.
 				\item After performing the previous step, ideally, the trained classifier will perform better on the misclassified examples next time.
-				\item The weights are based on increasing the probability of being chosen in the next sequential training sub-set.
-			\end{bulletedlist}
-		\end{answer}
-  \end{qanda}
+				\item The weights are based on increasing the probability of being chosen in the next sequential training sub-set.\end{bulletedlist}\end{answer}\end{qanda}%
 
     \begin{qanda}
 		\begin{question}

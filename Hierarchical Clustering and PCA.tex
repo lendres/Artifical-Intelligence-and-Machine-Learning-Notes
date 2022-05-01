@@ -1,4 +1,4 @@
-	\chapter{Hierarchical Clustering and PCA}
+	\section{Hierarchical Clustering and Principle Component Analysis (PCA)}
 	\resetquestioncounter{}
 	\begin{qanda}
 		\begin{question}
@@ -89,6 +89,11 @@ We can get a different number of clusters from the dendrogram at different heigh
 		\label{fig:hierarchicalclustering}
 	\end{figure}
 
+	\section{Top Down or Bottom Up}
+In the divisive or top-down clustering method we assign all of the observations to a single cluster and then partition the cluster into two least similar clusters.
+
+In the agglomerative or bottom-up clustering method we assign each observation to its cluster. Then, compute the similarity (e.g., distance) between each of the clusters and join the two most similar clusters.
+
 	\section{Dimensionality Reduction}
 	\begin{bulletedlist}
 		\item The process of reducing the number of independent variables.
@@ -120,7 +125,7 @@ We can get a different number of clusters from the dendrogram at different heigh
 		\end{bulletedlist}
 	\end{bulletedlist}
 
-	\section{PCA}
+	\section{Principle Component Analysis (PCA)}
 	\begin{bulletedlist}
 		\item Creates new variables using linear combinations of old variables.
 		\item Is designed to create variables that are independent of one another.
@@ -148,3 +153,11 @@ We can get a different number of clusters from the dendrogram at different heigh
 		\caption{.}
 		\label{fig:eigenvaluesandvariation}
 	\end{figure}
+
+	\section{Cophenetic Correlation}
+Used to compare different clustering results.
+
+Takes a measurement type and calculates all the distances between the points and the heights in the dendrogram that they combine at.  If the correlation of these two columns is a measure of how good the dendrogram is.
+
+	\section{t-SNE}
+t-distributed stochastic neighbor embedding a non-linear technique for combining features.  It is only used for visualization.

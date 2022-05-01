@@ -4,9 +4,9 @@
 1
 1
 Machine Learning and Artificial Intelligence.tex
-31
+34
+7
 4
-2
 
 
 
@@ -15,22 +15,40 @@ Machine Learning and Artificial Intelligence.tex
 
 Machine Learning and Artificial Intelligence.tex
 TeX
-152055739 0 -1 171 -1 713 0 0 1348 583 0 22 247 -1 -1 0 0 27 -1 -1 27 1 0 713 -1   0
+152055739 2 -1 299 -1 305 0 0 1348 583 0 242 161 -1 -1 0 0 27 -1 -1 27 1 0 305 -1   0
 Setup.tex
 TeX
-1060795 0 -1 2081 -1 144 234 234 1582 817 0 22 19 -1 -1 0 0 188 -1 -1 188 1 0 144 -1   0
-Installation Notes.tex
-TeX
-269496251 0 -1 2355 -1 2387 208 208 1556 791 0 366 760 -1 -1 0 0 29 -1 -1 29 1 0 2387 -1   0
+1060795 0 -1 2081 -1 144 234 234 1582 817 0 22 0 -1 -1 0 0 188 -1 -1 188 1 0 144 -1   0
 Modeling.tex
 TeX
-1060795 0 -1 1397 -1 2192 260 260 1608 843 0 158 133 -1 -1 0 0 19 -1 -1 19 1 0 2192 -1   0
-Feature Selection, Model Selection, and Tuning.tex
+1060795 0 -1 1397 -1 2117 260 260 1608 843 0 22 -621 -1 -1 0 0 19 -1 -1 19 1 0 2117 -1   0
+K-means Clustering.tex
 TeX
-286273467 1 -1 1510 -1 1488 208 208 1556 791 0 22 570 -1 -1 0 0 53 0 0 53 1 0 1488 -1   0
+17838011 1 -1 1346 -1 1318 128 128 1325 693 0 22 552 -1 -1 0 0 29 -1 -1 29 1 0 1318 -1   0
+Hierarchical Clustering and PCA.tex
+TeX
+269496251 0 -1 882 -1 5722 128 128 1325 693 0 22 616 -1 -1 0 0 -1 -1 -1 -1 1 0 5722 -1   0
+C:\Custom Program Files\LaTeX\TeX\LaTeX\lelists.sty
+TeX:DTX
+22032314 0 149 17 149 2 130 130 1478 713 0 32 368 -1 -1 0 0 14 0 0 14 1 0 2 149   0
+C:\Custom Program Files\LaTeX\TeX\LaTeX\lequestionandanswer.sty
+TeX:DTX
+5255099 0 -1 1421 -1 1409 96 96 1293 661 0 22 368 -1 -1 0 0 -1 -1 -1 -1 1 0 1409 -1   0
+Statistics.tex
+TeX
+286273467 1 -1 912 -1 745 64 64 1287 679 0 22 115 -1 -1 0 0 23 -1 -1 23 1 0 745 -1   0
+Regression.tex
+TeX
+286273467 0 -1 13269 -1 13272 182 182 1530 765 0 22 759 -1 -1 0 0 42 -1 -1 42 1 0 13272 -1   0
+Installation Notes.tex
+TeX
+286273467 0 -1 2355 -1 2387 208 208 1556 791 0 366 759 -1 -1 0 0 29 -1 -1 29 1 0 2387 -1   0
 Machine Learning Pipeline and Hyperparameter Tuning.tex
 TeX
-269496251 1 -1 744 -1 772 26 26 1345 609 0 142 361 -1 -1 0 0 62 -1 -1 62 1 0 772 -1   0
+286273467 1 -1 744 -1 772 26 26 1345 609 0 142 345 -1 -1 0 0 62 -1 -1 62 1 0 772 -1   0
+Feature Selection, Model Selection, and Tuning.tex
+TeX
+269496251 0 -1 1510 -1 1488 208 208 1556 791 0 782 552 -1 -1 0 0 53 0 0 53 1 0 1488 -1   0
 Acronyms.tex
 TeX
 286273467 0 -1 629 -1 844 182 182 1530 765 0 190 627 -1 -1 0 0 16 -1 -1 16 1 0 844 -1   0
@@ -40,15 +58,9 @@ TeX
 Modeling Glossary.tex
 TeX
 269496251 0 -1 523 -1 540 234 234 1582 817 0 326 494 -1 -1 0 0 34 -1 -1 34 1 0 540 -1   0
-Regression.tex
-TeX
-286273467 0 -1 13269 -1 13271 182 182 1530 765 0 22 342 -1 -1 0 0 42 -1 -1 42 1 0 13271 -1   0
 Data Analysis.tex
 TeX
 269496315 0 -1 512 -1 512 182 182 1530 765 0 734 228 -1 -1 0 0 24 -1 -1 24 1 0 512 -1   0
-Statistics.tex
-TeX
-286273467 1 -1 912 -1 745 64 64 1287 679 0 22 133 -1 -1 0 0 23 -1 -1 23 1 0 745 -1   0
 C:\Custom Program Files\LaTeX\TeX\LaTeX\lecode.sty
 TeX:DTX
 273690619 0 -1 0 -1 0 78 78 1426 661 0 22 0 -1 -1 0 0 24 -1 -1 24 1 0 0 -1   0
@@ -85,9 +97,6 @@ TeX:DTX
 Machine Learning.tex
 TeX
 1060795 0 -1 31 -1 31 32 32 1287 597 0 22 38 -1 -1 0 0 27 -1 -1 27 1 0 31 -1   0
-C:\Custom Program Files\LaTeX\TeX\LaTeX\lelists.sty
-TeX:DTX
-5255098 0 0 1 1 1 130 130 1478 713 0 22 19 -1 -1 0 0 14 0 0 14 1 0 1 1   0
 C:\Custom Program Files\LaTeX\TeX\LaTeX\lelistofnotations.sty
 TeX:DTX
 273690555 0 -1 2137 -1 2138 128 128 1351 743 0 382 978 -1 -1 0 0 140 -1 -1 140 1 0 2138 -1   0

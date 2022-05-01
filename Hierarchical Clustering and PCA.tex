@@ -85,6 +85,66 @@ We can get a different number of clusters from the dendrogram at different heigh
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.0in]{hierarchicalclustering}
-		\caption{Normal distribution.}
+		\caption{Hierarchical clustering.}
 		\label{fig:hierarchicalclustering}
+	\end{figure}
+
+	\section{Dimensionality Reduction}
+	\begin{bulletedlist}
+		\item The process of reducing the number of independent variables.
+		\item Reducing dimensionality of independent variables helps in many ways.
+		\begin{bulletedlist}
+			\item Removes multi-collinearity to improve machine learning model performance.
+			\item Helps reduce over fitting.
+			\item Decreases computational times for fitting models.
+			\item Make visualization easier.
+			\item Decreases storage requirements.
+			\item Avoids curse of dimensionality.
+		\end{bulletedlist}
+		\item Dimensionality reduction plays a significant role in analyzing data.
+	\end{bulletedlist}
+
+	\section{Dimensionality Reduction Techniques}
+
+	\begin{bulletedlist}
+		\item Feature elimination.
+		\begin{bulletedlist}
+			\item Simply identify and remove variables (columns) that are not important.
+			\item The disadvantage is that we would gain no insight from those dropped variables and loose any information they contain.
+		\end{bulletedlist}
+		\item Feature action.
+		\begin{bulletedlist}
+			\item Create a few new variables from the old variables
+			\item PCA  Principal Component Analysis: is the most popular feature extraction technique (linear)
+			\item t-SNE (non-linear)
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+	\section{PCA}
+	\begin{bulletedlist}
+		\item Creates new variables using linear combinations of old variables.
+		\item Is designed to create variables that are independent of one another.
+		\item Also manages to tell us how important each of these new variables are.
+		\item This ``importance,'' helps us to choose how many variables we will use.
+		\item Scale the data and compute the covariance matrix.
+		\item Break the covariance matrix into magnitude and direction. Eigenvectors and the Eigenvalues of the covariance matrix can be thought of as the natural axis/directions and magnitudes along those axis, of the data.
+		\begin{bulletedlist}
+			\item The eigenvalues also can be used to calculate the percentage of variation explained by each component.
+		\end{bulletedlist}
+		\item Soft in the eigenvalues in descending order and calculate the cumulative percentage of variation explained.
+		\item Pick the number of principal components you will use.
+		\item Transform to new variables.
+	\end{bulletedlist}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2.0in]{principalcomponentanalyis}
+		\caption{.}
+		\label{fig:principalcomponentanalyis}
+	\end{figure}
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2.0in]{eigenvaluesandvariation}
+		\caption{.}
+		\label{fig:eigenvaluesandvariation}
 	\end{figure}

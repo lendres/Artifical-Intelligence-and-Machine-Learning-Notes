@@ -160,4 +160,83 @@ Used to compare different clustering results.
 Takes a measurement type and calculates all the distances between the points and the heights in the dendrogram that they combine at.  If the correlation of these two columns is a measure of how good the dendrogram is.
 
 	\section{t-SNE}
-t-distributed stochastic neighbor embedding a non-linear technique for combining features.  It is only used for visualization. 
+t-distributed stochastic neighbor embedding a non-linear technique for combining features.  It is only used for visualization.
+	\begin{bulletedlist}
+		\item A non-linear dimensionality reduction technique which is mainly used for visualization purposes of high dimensional data.
+		\item Maps high-dimensional data to 2 or 3 dimensions, making it easier for us to visualize.
+		\item Tries to preserve local structure in the data.
+		\begin{bulletedlist}
+			\item This is done by preserving the distribution of the data found in higher dimension to the lower dimension as much as possible.
+			\item This means that points that are closer to each other in the higher dimension are close in the lower dimension too, and the points far apart from each other in the higher dimension are far apart in the lower dimension too.
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+	\subsection{How Does it Work}
+	\begin{bulletedlist}
+		\item Compute a distribution that measures pairwise similarities in original data (high dimensional space).
+		\item Find a ``close'' lower dimensional distribution of pairwise similarities.
+		\item Use this mapping to transform higher dimensional data into lower dimensional data.
+		\item Finding this ``close''  technically involves minimizing the divergence between two distributions.  The minimization is usually achieved using stochastic gradient descent and Kullback-Leibler divergence is usually the measure of divergence.
+	\end{bulletedlist}
+
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.0in]{tsnedimensionalreduction}
+		\caption{.}
+		\label{fig:tsnedimensionalreduction}
+	\end{figure}
+
+	\subsection{Steps Involved in t-SNE}
+	\begin{bulletedlist}
+		\item Scale the data.
+		\item Compute the similarity of data points in high dimensional space.
+		\item Compute the similarity of data points in the corresponding lower dimensional space.
+		\item Minimize the distance between these two distributions using KL divergences.
+		\item The lower dimensional distribution obtained when the algorithm converges is the lower dimensional representation of the original data.
+	\end{bulletedlist}
+
+	\subsection{Choosing the Right Perplexity}
+	\begin{bulletedlist}
+		\item We find patterns by identifying observed clusters based on similarity of data points with multiple features.  However, after this process, the input features are no longer identifiable. and you cannot make any inference based only on the output of t-SNE.  Hence it is mainly a data exploration and visualization technique.
+		\item The hyperparameter ``perplexity'' in some sense captures the balancing act between local and global aspects of the data.  It has a significant effect on the resulting visualization.
+		\item Perplexity can also be thought of as the guess on the number of neighbors.
+		\item The range of values recommended for perplexity is between 5 and 50.
+	\end{bulletedlist}
+
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\textwidth]{perplexityvaluesfortsne}
+		\caption{.}
+		\label{fig:perplexityvaluesfortsne}
+	\end{figure}
+
+	\subsection{PCA versus t-SNE}
+	\begin{tabular}{|p{0.5\textwidth-2\tabcolsep}|p{0.5\textwidth-2\tabcolsep}|} \hline
+			\tablecolumnheadervlinesone{PCA} & \tablecolumnheadervlinestwo{t-SNE} \\ \hline
+			Linear &
+            Non-linear \\ \hline
+			Maximizes the variance capture to find the structure within the data. &
+			Relies on probability distributions to find the structure within the data.  \\ \hline
+			Seeks to preserve all pairwise distances. &
+			Seeks to preserve small pairwise distances. \\ \hline
+			Tries to preserve global structure only. &
+			Tries to preserve local structure only. \\ \hline
+			Computational time is low. &
+			Computational time is high. \\ \hline%
+		\end{tabular}
+
+
+	\subsection{Why use t-SNE Over PCA for Visualization}
+	\begin{bulletedlist}
+		\item The visualization illustrates how distances between points are computed by PCA (dotted line) and t-SNE (solid line).
+		\item The points, which are actually distant as per structure of data, are interpreted as similar (close) by PCA.
+		\item However, t-SNE captures the local structure correctly and interprets them as dissimilar (far apart).
+	\end{bulletedlist}
+
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2.25in]{tsneversuspca}
+		\caption{.}
+		\label{fig:tsneversuspca}
+	\end{figure}
+

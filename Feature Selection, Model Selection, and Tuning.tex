@@ -35,7 +35,7 @@ How to treat outliers is a very tricky topic, it mainly depends on the problem s
 
 Let us consider an example of a bank.  In a bank, account balance might have high outliers as few people will have a high amount in their accounts, but should we be treating this value or removing it? So I think here we have to consider that in practical life situations we cannot remove these accounts and if we replace them with any other value that will make the data biased.
 
-So the best option would be thinking w.r.t. the problem statement. If the problem statement is: Who is more likely to do a credit card default then I think we can remove people with a high balance in their account as they are less likely to default. In another case, if the problem statement is: Who is going to take a home loan then also I think we can remove outliers but if our problem statement is about business loans then we have to consider these outliers having high balance as they might take a loan for their business.
+So the best option would be thinking with respect to the problem statement. If the problem statement is: Who is more likely to do a credit card default then I think we can remove people with a high balance in their account as they are less likely to default. In another case, if the problem statement is: Who is going to take a home loan then also I think we can remove outliers but if our problem statement is about business loans then we have to consider these outliers having high balance as they might take a loan for their business.
 
 All the above judgments should be made by doing the necessary EDA on the data set to figure out the relationship of balance with the target (credit card default, home loan, business loan, etc.). None of the conclusions should come without the data supporting them.
 
@@ -71,7 +71,7 @@ What are the techniques to handle imbalanced data sets?
 		\end{question}
 
 		\begin{answer}
-One approach to addressing the problem of class imbalance is to randomly resample the training data set. The two main approaches to randomly resampling an imbalanced data set are to delete examples from the majority class, called under sampling, and to duplicate examples from the minority class, called over sampling.
+One approach to addressing the problem of class imbalance is to randomly re-sample the training data set. The two main approaches to randomly resampling an imbalanced data set are to delete examples from the majority class, called under sampling, and to duplicate examples from the minority class, called over sampling.
 		\end{answer}
 	\end{qanda}
 

@@ -17,10 +17,16 @@
     % Set the search path for figures.  This way we can change it if required without having to modified
     % all of the \includegraphics calls.
 	\graphicspath{{Figures/}}
+	\renewcommand{\topfraction}{0.95}
+	\renewcommand{\textfraction}{0.05}
+	\renewcommand{\bottomfraction}{0.95}
+	\renewcommand{\floatpagefraction}{0.85}
 
 	\usepackage{lequestionandanswer}
-%	\useqandadoublespacing{}
-%	\setlength{\qaspacebetweenqanda}{6pt}
+	\useqandaspacing{}
+	\setlength{\qaspacebetweenquestions}{8pt}
+	\setlength{\qaspacebetweenqanda}{4pt}
+	\newcommand{\qandqlistfix}{\vspace{-\baselinestretch\baselineskip}}
 
 	% HYPOTHESIS TEST TABLE.
 	% Table package.

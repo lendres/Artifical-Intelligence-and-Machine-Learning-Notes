@@ -5,8 +5,8 @@
 1
 Machine Learning and Artificial Intelligence.tex
 37
-7
-1
+8
+5
 
 
 
@@ -15,25 +15,28 @@ Machine Learning and Artificial Intelligence.tex
 
 Machine Learning and Artificial Intelligence.tex
 TeX
-152055739 5 -1 1544 -1 1545 0 0 1348 583 0 292 391 -1 -1 0 0 27 -1 -1 27 1 0 1545 -1   0
+152055739 5 -1 1544 -1 1545 0 0 1348 583 0 238 380 -1 -1 0 0 27 -1 -1 27 1 0 1545 -1   0
 Deep Learning.tex
 TeX
-269496251 0 -1 6124 -1 6064 0 0 1197 565 0 372 667 -1 -1 0 0 -1 -1 -1 -1 1 0 6064 -1   0
+1060795 0 -1 6863 -1 6689 0 0 1197 565 0 150 532 -1 -1 0 0 24 -1 -1 24 1 0 6689 -1   0
+Modeling Glossary.tex
+TeX
+1060795 0 -1 1976 -1 2034 234 234 1582 817 0 1086 627 -1 -1 0 0 34 -1 -1 34 1 0 2034 -1   0
 Setup.tex
 TeX
-1060795 0 -1 650 -1 774 234 234 1582 817 0 358 322 -1 -1 0 0 188 -1 -1 188 1 0 774 -1   0
+1060795 0 -1 650 -1 774 234 234 1582 817 0 358 304 -1 -1 0 0 188 -1 -1 188 1 0 774 -1   0
 Hierarchical Clustering and PCA.tex
 TeX
-17838011 1 -1 8882 -1 8718 128 128 1325 693 0 22 184 -1 -1 0 0 73 -1 -1 73 1 0 8718 -1   0
+17838011 1 -1 8882 -1 8718 128 128 1325 693 0 22 171 -1 -1 0 0 73 -1 -1 73 1 0 8718 -1   0
 Acronyms.tex
 TeX
-17838011 0 -1 885 -1 910 182 182 1530 765 0 452 782 -1 -1 0 0 16 -1 -1 16 1 0 910 -1   0
+286273467 0 -1 453 -1 473 182 182 1530 765 0 310 323 -1 -1 0 0 16 -1 -1 16 1 0 473 -1   0
 C:\Custom Program Files\LaTeX\TeX\LaTeX\lequestionandanswer.sty
 TeX:DTX
-5255099 1 -1 3121 -1 3070 96 96 1293 661 0 22 2737 -1 -1 0 0 40 -1 -1 40 1 0 3070 -1   0
+5255099 1 -1 3121 -1 3070 96 96 1293 661 0 22 817 -1 -1 0 0 40 -1 -1 40 1 0 3070 -1   0
 C:\Custom Program Files\LaTeX\TeX\LaTeX\lelists.sty
 TeX:DTX
-22032314 0 151 11 149 3 130 130 1478 713 0 42 598 -1 -1 0 0 14 0 0 14 1 0 3 149   0
+22032314 0 151 11 149 3 130 130 1478 713 0 38 589 -1 -1 0 0 14 0 0 14 1 0 3 149   0
 Statistics.tex
 TeX
 286273467 1 -1 7398 -1 7142 64 64 1287 679 0 22 4485 -1 -1 0 0 23 -1 -1 23 1 0 7142 -1   0
@@ -67,9 +70,6 @@ TeX
 Machine Learning Pipeline and Hyperparameter Tuning.tex
 TeX
 286273467 1 -1 744 -1 772 26 26 1345 609 0 142 345 -1 -1 0 0 62 -1 -1 62 1 0 772 -1   0
-Modeling Glossary.tex
-TeX
-269496251 0 -1 523 -1 540 234 234 1582 817 0 326 494 -1 -1 0 0 34 -1 -1 34 1 0 540 -1   0
 Data Analysis.tex
 TeX
 269496315 0 -1 512 -1 512 182 182 1530 765 0 734 228 -1 -1 0 0 24 -1 -1 24 1 0 512 -1   0
@@ -144,6 +144,7 @@ ASCII:EDT
 *K-means Clustering
 *Hierarchical Clustering and PCA
 *Deep Learning Prework
+*Deep Learning
 *Installation Notes
 *List of Notations.tex
 *machinelearning.bib

@@ -74,6 +74,27 @@
 	}
 
 
+
+	\newlength{\figureheretopspacing}
+	\setlength{\figureheretopspacing}{10pt plus2pt minus2pt}
+	\newlength{\figureherebottomspacing}
+	\setlength{\figureherebottomspacing}{6pt plus2pt minus2pt}
+
+	% Figure environment that does not float.
+	\newenvironment{figurehere}
+	{
+		\vspace{\figureheretopspacing}
+		% The 1.5 cm is double the indent of the numbered list.
+		\par\noindent\begin{minipage}[t]{\textwidth}
+		\centering
+	}
+	{
+		\end{minipage}
+	}
+
+
+
+
 	\usepackage{amsmath}
 	\usepackage{lemath}
 	\setlength{\mathwhererightmargin}{0pt}
@@ -115,4 +136,4 @@
 	\renewcommand*{\LARGE}{\fontsize{17pt}{22pt}\selectfont}
 
 	% INCLUDE A BIBLIOGRAPHY.
-	\bibliographystyle{leplain} 
+	\bibliographystyle{leplain}

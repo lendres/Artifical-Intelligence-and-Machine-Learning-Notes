@@ -74,13 +74,12 @@
 	}
 
 
-
 	\newlength{\figureheretopspacing}
 	\setlength{\figureheretopspacing}{10pt plus2pt minus2pt}
 	\newlength{\figureherebottomspacing}
 	\setlength{\figureherebottomspacing}{6pt plus2pt minus2pt}
 
-	% Figure environment that does not float.
+	% Figure environment that does not float.  Caption is not allowed.
 	\newenvironment{figurehere}
 	{
 		\vspace{\figureheretopspacing}
@@ -91,7 +90,6 @@
 	{
 		\end{minipage}
 	}
-
 
 
 
@@ -136,4 +134,4 @@
 	\renewcommand*{\LARGE}{\fontsize{17pt}{22pt}\selectfont}
 
 	% INCLUDE A BIBLIOGRAPHY.
-	\bibliographystyle{leplain}
+	\bibliographystyle{leplain} 

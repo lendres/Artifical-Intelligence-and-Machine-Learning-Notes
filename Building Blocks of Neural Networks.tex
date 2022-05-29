@@ -433,6 +433,15 @@ Generating new data to supplement the existing data.  For example, add noise to 
 		\label{fig:dropout}
 	\end{figure}
 
+	\subsubsection{Guidelines for Dropout}
+	\begin{bulletedlist}
+		\item The choice of which units to be dropped is random.
+		\item The Dropout method is similar to the Random Forest technique in selecting the random features for the model building.
+		\item What should be the Dropout ratio in a neural network is a hyperparameter. The dropout ratio (p) is between 0<=p<=1. Whenever a deep neural network is over fitting the (p) value should be high.
+		\item A good value for the dropout ratio in the hidden layer is 0.5-0.8.
+		\item The Dropout technique is applied to the training data, during prediction on test data all the neurons will be fully connected and one additional work is done during prediction is the dropout ratio (p) with be multiplied with weights (w) in every layer.
+	\end{bulletedlist}
+
 	\section{Noise in Neural Networks}
 	\begin{bulletedlist}
 		\item Training a neural network with smaller data sets may be prone to over fit the model so adding some noise during the training process can make the model more robust and reduce generalization error.
@@ -445,10 +454,11 @@ Generating new data to supplement the existing data.  For example, add noise to 
 
 	\begin{bulletedlist}
 		\item Batch normalization is a technique for improving the performance and stability of neural networks.
+		\item It helps prevent co-variance shift (the inputs are shifting in distribution).
+		\item It reduces or eliminates the need for weight initialization and input scaling.
 		\item The idea is to normalize the inputs of each layer in such a way that they have a mean output activation of zero and a standard deviation of one.
 		\item This is analogous to how the inputs to networks are standardized.
-		\item Due to these normalization ``layers'' between the fully connected layers, the range of input
-distribution of each layer stays the same, no matter the changes in the previous layer.
+		\item Due to these normalization ``layers'' between the fully connected layers, the range of input distribution of each layer stays the same, no matter the changes in the previous layer.
 		\item Given x inputs from the k-th neuron. Consider a batch of activations at some layer. For making each feature dimension unit gaussian, use \equationname~\ref{eq:batchnormalization1}.
 	\end{bulletedlist}
 
@@ -477,6 +487,7 @@ There are usually two stages in which Batch Normalization is applied:
 		\item After non-linearity
 	\end{numberedlist}
 
+	\vspace{\baselineskip}
 	\begin{bulletedlist}
 		\item For sigmoid and tanh activation, the normalized region is more linear than nonlinear.
 		\item For ReLU activation, half of the inputs are zeroed out.
@@ -500,5 +511,167 @@ There are usually two stages in which Batch Normalization is applied:
 		\beta^k  &= E\left[x^k \right]          \label{eq:batchnormalizationbeta}
 	\end{align}
 
+	\subsection{Mini Batches}
+
+	\begin{bulletedlist}
+		\item Improves gradient flow through the network.
+		\item Allows higher learning rates.
+		\item Reduces the strong dependence on initialization.
+		\item Acts as a form of regularization in a funny way, and slightly reduces the need for dropout, maybe.
+	\end{bulletedlist}
+
+	\vspace{\baselineskip}
+	\begin{plainlist}
+		\item {\bfseries Input}: Values of $x$ over a mini-batch $B = \{x_1 \ldots m \}$; parameters to be learned $\gamma, \beta$
+		\item {\bfseries Output}: $\{ y_i = \textrm{B}\textrm{N}_{\gamma,\beta} \left(x_i\right) \}$
+	\end{plainlist}
+
+	\begin{align}
+		\mu_B       &= \frac{1}{m} \sum_{i=1}^m x_i  \\
+		\sigma_B^2  &= \frac{1}{m}  \sum_{i=1}^m \left( x_i - \mu_B \right)^2 \\
+		\hat{x}_i   &= \frac{x_i - \mu_B}{\sqrt{\sigma_B^2 + \epsilon}}  \\
+		y_i         &= \gamma\hat{x}_i + \beta \equiv \textrm{B}\textrm{N}_{\gamma,\beta} \left(x_i\right)
+	\end{align}
+
+	\subsubsection{Fitting the Batch Norm in the Deep Layers}
+	\begin{bulletedlist}
+		\item Batch Normalization is used on the input side just on the inputs of the layer before or after the activation function in the previous layer.
+		\item It may be appropriate to use the Batch Normalization technique before the activation function for activations that may result in non-normal distributions like the ReLU activation function.
+	\end{bulletedlist}
+
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\textwidth-1in]{batchnormalizationdeeplayers}
+		\caption{Batch normalization deep layers.  In the above, $\phi$ is the activation function, $\sum$ is the summation of the inputs and weights, and BN is the batch normalization.}
+		\label{fig:batchnormalizationdeeplayers}
+	\end{figure}
+
+	\subsubsection{Batch Normalization During Test Time}
+	\begin{bulletedlist}
+		\item Usually, when we use Batch Normalization, it is required to analyze its behavior during test time.  As the network gets trained, we try to normalize using population rather than using mini-batch statistics.
+		\item Alternatively, we use the exponential moving average to compute the mean and variance for test time.
+	\end{bulletedlist}
+
+
+	\subsubsection{When Batch Normalization Does Not Work}
+	\begin{bulletedlist}
+		\item A feature of batch normalization in training mode changes the absolute scale of the features according to the batch statistics, which is a random variable, while the relative distances between features are preserved.
+		\item This is completely fine for e.g. classification and segmentation tasks, where the semantics of the image are invariant to arbitrary scaling and shifting of the channel values.
+		\item Batch normalization should not be used mostly with dropouts as dropouts shift the variance keeping the average constant.
+For example, that you run a batch of images through batch normalization.  The absolute color information is lost, but the dogs will still look like dogs and cats will still look like cats.
+		\item The information in the image data is preserved and the images can still be classified or segmented.
+		\item In other words, in a dog/cat classification problem, as long as the features from an image of a dog remain more ``dog-like'' than ``cat-like'' after batch normalization, we do not worry too much about the absolute level of dog-likeness.
+	\end{bulletedlist}
+
+	\subsubsection{Guidelines for Batch Normalization}
+	\begin{bulletedlist}
+		\item Batch normalization may be used on the inputs to the layer before or after the activation function in the previous layer.
+		\item It may be more appropriate after the activation function if for s-shaped functions like the hyperbolic tangent and logistic function.
+		\item It may be appropriate before the activation function for activations that may result in non-Gaussian distributions like the rectified linear activation function, the modern default for most network types.
+		\item Using batch norm depends on the problem, it should be used when the absolute scale of the features do not matter.
+		\item Batch normalization should be used in the deeper network.
+		\item Batch normalization often leads to a worse performance when It is combined with dropout in both theoretical and statistical aspects.
+		\item Theoretically, dropout shifts the variance of a specific neural unit when we transfer the state of that network from train to test.
+		\item However, batch normalization would maintain its statistical variance, which is accumulated from the entire learning procedure, in the test phase.
+		\item The inconsistency of that variance (we name this scheme as ``variance shift'') causes the unstable numerical behavior in an inference that leads to more erroneous predictions finally when applying dropout before batch normalization.
+	\end{bulletedlist}
+
+	\section{Hyperparameter Optimization}
+	\begin{bulletedlist}
+		\item Parameters are the ones which the model will learn from the data and gives the values.  Examples:
+		\begin{bulletedlist}
+			\item In Linear regression, the weight coefficients and bias are learned from the data.
+			\item In the Support Vector Machine, support vectors near the margin line are parameters.
+		\end{bulletedlist}
+		\item Hyperparameters are the ones which we will be giving the model that helps in the learning process.  Examples:
+		\begin{bulletedlist}
+			\item In Decision Tree and Random Forest max\_Depth, min\_sample, min\_sample\_leaf, max\_leaf\_node, and criterion are the hyperparameters.
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+	\vspace{\baselineskip}
+	\begin{bulletedlist}
+		\item Hyperparameters in neural networks include:
+		\begin{bulletedlist}
+			\item Activation Function
+			\item Number of Neurons in each layer
+			\item Number of hidden layers
+			\item Optimizer
+			\item Loss/cost function
+		\end{bulletedlist}
+		\item Hyperparameters to play with:
+		\begin{bulletedlist}
+			\item Network architecture
+			\item Learning rate, its multiplier schedule
+			\item Regularization (L2/dropout strength)
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.8in]{neuralnetworklearningrates}
+		\caption{Learning rates in neural networks.}
+		\label{fig:neuralnetworklearningrates}
+	\end{figure}
+
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.8in]{neuralnetworkslosscurve}
+		\caption{Loss curve in neural networks.  Training curve is in blue, validation curve is in gold.}
+		\label{fig:neuralnetworkslosscurve}
+	\end{figure}
+
+	\section{Recipe for Training Neural Network}
+	\begin{numberedlist}
+		\item Become one with the data.
+		\item Set up the end-to-end training/evaluation skeleton + get dumb baselines.
+		\item Over fit.
+		\item Regularize.
+		\item Tune.
+		\item Squeeze out the juice.
+	\end{numberedlist}
+
 	\section{Types of Neural Networks}
+	\begin{bulletedlist}
+		\item Feed forward.
+		\begin{bulletedlist}
+			\item Information is only fed forward.
+			\item Multi-layer perceptron.
+			\item Convolution neural networks.
+			\begin{bulletedlist}
+				\item Popular in computer vision.
+				\item Builds nodes in grids.
+				\item Feeds information to nodes from overlapping grids.
+				\item After a few layers of grids, the information gets flatten to an array and fed into a normal neural network.
+				\item Helps to keep spacial information.
+			\end{bulletedlist}
+		\end{bulletedlist}
+		\item Recurrent neural networks.
+		\begin{bulletedlist}
+			\item Good for time series data.
+			\item Uses some sense of memory, what happens next depends on some way what happened in the past.
+			\item Nodes can get input from previous runs (see \equationname{}s~\ref{eq:recurrentneuralnetwork1} and~\ref{eq:recurrentneuralnetwork2}).
+			\item 
+			\item LSTM (long short term memories).
+			\begin{bulletedlist}
+				\item Replaces node with algorithm/node that remembers more history.
+			\end{bulletedlist}
+		\end{bulletedlist}
+		\item Deep neural networks.
+		\begin{bulletedlist}
+			\item Networks with many layers.  There is no formal definition of how many layers is needed to qualify as a deep network.
+		\end{bulletedlist}
+		\item GAN (generalized adversarial networks).
+		\begin{bulletedlist}
+			\item Two neural networks working and testing off of each other.
+			\item One network creates input for the other.
+			\item Second network is called the discriminator.
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+	\begin{align}
+		w_1 x^1 + w_2 x^2            &= z  \label{eq:recurrentneuralnetwork1} \\
+		w_1 x^1 + w_2 x^2 + z^{old}  &= z  \label{eq:recurrentneuralnetwork2}
+	\end{align}
+
 	\section{Hands On Neural Network} 

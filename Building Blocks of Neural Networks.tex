@@ -36,10 +36,11 @@ What is the need for advanced optimization?
 Gradient descent optimization algorithms:
 	\begin{bulletedlist}
 		\item Gradient descent
-		\item Stochastic Gradient Descent
-		\item Mini Batch Gradient descent
-		\item Gradient descent Momentum
-		\item RMS prop
+		\item Stochastic gradient descent.
+		\item Mini batch gradient descent.
+		\item Adagrad (adaptive gradient descent).  Has individual learning rates for each dimension.  The entire learning rate decreases as optimization proceeds.  It does very well for convex problems.  For very non-convex surfaces, adagrad does not do well.  The learning rate can go to zero very fast, sometimes halting the optimization even before a local minimum is reached.
+		\item Gradient descent with momentum3
+		\item RMS prop (root mean square propagation).  Less aggressive than adagrad.  It is a decaying moving average (points in the past are weighted less than more recent points).
 		\item Adam
 	\end{bulletedlist}
 
@@ -100,11 +101,404 @@ Please reference \figurename~\ref{fig:rmsprophowitworks} for the following:
 		\label{fig:rmsprophowitworks}
 	\end{figure}
 
+	\subsection{Estimating Moments of the Gradient}
+
+	\begin{bulletedlist}
+		\item In stochastic gradient descent with momentum, we compute the first moment of the gradient ($g_t$) given as $m_t$ in the below diagram.
+		\item In RMSprop we compute the second moment of the derivative. It is given as $V_t$ in the diagram.
+		\item $\beta_1$ and $\beta_2$ are tunable hyperparameters of the algorithm.
+	\end{bulletedlist}
+
+In \equationname{}s~\ref{eq:firstmoment} and~\ref{eq:secondmoment} $m_t$ is the first moment (mean) of the gradient.  While $V_t$ is the second moment of the gradient.
+	\begin{align}
+		m_t &= \beta_1 m_{t-1} + \left( 1-\beta_1 \right) g_t   \label{eq:firstmoment} \\
+		v_t &= \beta_2 v_{t-1} + \left( 1-\beta_2 \right) g_t^2 \label{eq:secondmoment}
+	\end{align}
+
+	\subsection{Why RMSprop Enhances Convergence Speed}
+	\begin{bulletedlist}
+		\item The generic problem in traditional optimization algorithms like gradient descent is the speed of convergence. The gradient in the direction of weight is low and in the direction of bias is high.
+		\item Let us understand this in the dimensions of weights and bias of gradient descent.  In an ideal scenario, we need a high convergence speed in the direction of weight(or horizontal direction) and a slow speed in the direction of bias(vertical direction)In gradient descent.
+		\item In GD we have uncontrolled steps in both directions.  This hinders the freedom of choosing a bigger learning rate (due to the risk of overshooting minima) while attempting to speed up the convergence.
+		\item While using RMSprop, we dampen the movement in the direction of bias and in parallel speed up the same in the direction of weight.  This helps to solve the problem in two ways:
+		\begin{bulletedlist}
+			\item It speeds up the convergence in the direction of weight.
+			\item It slows down the convergence speed in the direction of bias.
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+	\section{Adam}
+``Adam'' stands for ``adaptive moments.''  Adam (2014) is RMSprop (learning rate) and stochastic gradient descent with momentum (solver/optimizer).  Adam is fast but comes at a small price. Stochastic gradient descent with momentum can typically find better minimums than Adam.
+
+	\begin{bulletedlist}
+		\item Adam can be defined as the merger of RMS prop and SGD with momentum.
+		\item Like RMSprop, it utilizes the squared gradients to scale the learning rate, and similarly, like SGD with momentum, it uses the moving average of the gradient as an alternative to the gradient itself.
+		\item Adam utilizes the estimations of the first and second moments of the gradient to adapt the learning rate for each weight in the neural network.
+		\item The first moment is the mean and the second moment is not centered variance, i.e.\ during the calculation of variance, we don't subtract the mean.
+	\end{bulletedlist}
+
+The first and second moments are seen in \equationname{}s~\ref{eq:firstmoment} and~\ref{eq:secondmoment}, respectively.  \equationname{}s~\ref{eq:biascorrectedfirstmoment} and~\ref{eq:biascorrectedsecondmoment} are the bias corrected estimates of the first and second moments, respectively.
+
+	\begin{align}
+		\hat{m}_t     &= \frac{m_t}{1-\beta_1^t }    \label{eq:biascorrectedfirstmoment} \\
+		\hat{v}_t     &= \frac{v_t}{1-\beta_2^t} \label{eq:biascorrectedsecondmoment}    \\
+		\theta_{t+1}  &= \theta_t - \frac{\eta \hat{m}_t}{\sqrt{\hat{v}_t+\epsilon}}
+	\end{align}
+
+	\begin{bulletedlist}
+		\item Adam optimizer is termed as Adaptive moment estimation optimizer.
+		\item Algorithms like Stochastic gradient descent with momentum, RMSprop, and Adam's optimizer are similar in performance but Adam has a slight edge over the others due to the
+bias correction performed in Adam.
+		\item In reality, Adam optimizer is a combination of Stochastic gradient descent with momentum and the RMSprop.  In Adam, the learning rate becomes a tunable hyperparameter while in RMSprop it is an adaptive parameter.
+		\item Adam optimizer can be explained in below three steps:
+		\begin{numberedlist}
+			\item Estimating moments of the gradient.
+			\item Bias correction step.
+			\item Updating the weights.
+		\end{numberedlist}
+	\end{bulletedlist}
+
+	\subsection{Bias Correction Step}
+	\begin{bulletedlist}
+		\item In Adam's optimization, the most crucial step is the bias correction part.  In RMSprop we initiate the momentum terms(mt and vt )with 0 which is a bias. In Adam optimization, the bias correction step makes it independent of the initial value.
+		\item The below steps are called bias correction steps.
+		\item The ideal value of $\beta_1$ is 0.9 while that of $\beta_2$ is 0.999.
+	\end{bulletedlist}
+
+	\subsection{Updating the Weights}
+Now finally the weights are updated as follows
 
 	\section{Weight initialization and its Techniques}
-	\section{Regularization}
 
-	\section{Dropout}
+What is Weight Initialization?
+	\begin{bulletedlist}
+		\item Weight Initialization is a procedure to assign weights to a neural network with some small random values during the training process in a neural network model.
+	\end{bulletedlist}
+
+\vspace{\baselineskip}
+\noindent Why do we need Weight Initialization?
+	\begin{bulletedlist}
+		\item The purpose of using the weight initialization technique is to prevent the neural network from exploding or vanishing gradient during the forward and
+backward propagation. If either occurs, the neural network will take a longer time to converge.
+		\item For example, very large weights will push the activation functions like Sigmoid out to the edges where the gradient is essentially zero.
+		\item You want the variance to sum to a constant.  If it collapses to zero, the same weights (no variance) are used across all nodes of the layer.  A single node could capture the same information.
+	\end{bulletedlist}
+
+
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2.5in]{weightinitialization}
+		\caption{.}
+		\label{fig:weightinitialization}
+	\end{figure}
+
+	\begin{bulletedlist}
+		\item {\bfseries Initialize all weights with 0}:  Your network will not learn as all the weights are the same.
+		\begin{bulletedlist}
+			\item This makes your model equivalent to a linear model.
+			\item When you set all weights to 0, the derivative with respect to loss function is the same for every w in every layer, thus, all the weights have the same values in the subsequent iteration.
+			\item This makes the hidden units symmetric and continues for all the n iterations you run.
+			\item Thus setting weights to zero makes your network no better than a linear model
+		\end{bulletedlist}
+		\item {\bfseries Initialize all weights with large numbers}:  The activation functions becomes a linear combination of large numbers.  Activation functions like Sigmoid have gradients close to zero at the extreme edge, therefore the model cannot learn.
+		\item {\bfseries Initialize with random numbers}: Works okay for small networks (similar to our two-layer MNIST classifier), but it may lead to distributions of the activations that are not homogeneous across the layers of the network.
+		\begin{bulletedlist}
+			\item Initializing weights randomly, following standard normal distribution (np.random.randn(n, n-1) in Python) while working with a (deep) neural network can potentially lead to 2 issues - vanishing gradients or exploding gradients.
+			\item The variance drops in the deeper layers.
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+	\subsection{Vanishing Gradients}
+In the case of deep networks, for any activation function, abs(dW) will get smaller and smaller as we go backward with every layer during back propagation.  The earlier layers are the
+slowest to train in such a case.
+
+The weight update is minor and results in slower convergence.  This makes the optimization of the loss function slow.  In the worst case, this may completely stop the neural network from training further.
+
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2.5in]{vanishingandexplodinggradients}
+		\caption{Vanishing and exploding gradients.}
+		\label{fig:vanishingandexplodinggradients}
+	\end{figure}
+
+	\subsection{Exploding Gradients}
+This is the exact opposite of vanishing gradients.  Consider you have non-negative and large weights and small activations A (as can be the case for sigmoid(z)).
+
+This may result in oscillating around the minima or even overshooting the optimum again and again and the model will never learn!
+
+Another impact of exploding gradients is that huge values of the gradients may cause number overflow resulting in incorrect computations or introductions of NaN's.  This might also lead to the loss of taking the value NaN.
+
+	\subsection{Weight Initialization Techniques}
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\textwidth]{weightinitialization1}
+		\caption{Vanishing and exploding gradients.}
+		\label{fig:weightinitialization1}
+	\end{figure}
+
+	\begin{bulletedlist}
+		\item Random Uniform
+		\item {\bfseries Xavier Initialization}
+		\begin{bulletedlist}
+			\item We want to initialize the weights with random values that are not ``too small'' and not ``too large'' (see \figurename{}).
+			\item Weights are chosen based on the number of nodes in the previous layer.
+			\item Today, this means take all weights, sample from a normal distribution, adjusted for number of nodes from previous layer.
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+	\begin{figure}[tbp]
+		\begin{minipage}[t]{0.475\textwidth}
+			\centering
+			\includegraphics[height=0.75in]{xaviernormal}
+			\caption{Xavier normal initialization.}
+			\label{fig:xaviernormal}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.475\textwidth}
+			\centering
+			\includegraphics[height=1.0in]{xavieruniform}
+			\caption{Xavier uniform initialization.}
+			\label{fig:xavieruniform}
+		\end{minipage}
+	\end{figure}
+
+	\begin{figure}[tbp]
+		\begin{minipage}[t]{0.475\textwidth}
+			\centering
+			\includegraphics[height=0.65in]{henormal}
+			\caption{HE normal initialization.}
+			\label{fig:henormal}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.475\textwidth}
+			\centering
+			\includegraphics[height=0.8in]{heuniform}
+			\caption{HE uniform initialization.}
+			\label{fig:heuniform}
+		\end{minipage}
+	\end{figure}
+
+HE is used for activation functions that cut off half of the weights (ReLU), you double the weights to account.
+
+	\subsection{Best Practices}
+Which is Good?  Weight initialization techniques for different activation functions:
+
+	\begin{tabular}{|p{0.5\qandatextwidth-2\tabcolsep}|p{0.5\qandatextwidth-2\tabcolsep}|} \hline
+			\tablecolumnheadervlinesone{Activation Function} & \tablecolumnheadervlinestwo{Weight Initialization Technique} \\ \hline
+			Relu, Leaky Relu &
+			HE Initialization \\ \hline
+			Sigmoid, TanH &
+			Xavier Initialization \\ \hline
+	\end{tabular}
+
+	\subsection{Continued Research}
+Proper Initialization is an active area of research:
+
+\researchreference{Understanding the difficulty of training deep feed forward neural networks}{by Glorot and Bengio, 2010}
+\researchreference{Exact solutions to the nonlinear dynamics of learning in deep linear neural networks}{by Saxe et al, 2013}
+\researchreference{Delving deep into rectifiers: Surpassing human-levll performance on ImageNet classification}{by He et al., 2015}
+\researchreference{Data-dependent Initializations of Convolutional Neural Networks}{by Kr{\"a}henb{\"u}hl et al., 2015}
+\researchreference{All you need is a good init}{by Mishkin and Matas, 2015}
+\researchreference{Centered Weight Normalization in Accelerating Training of Deep Neural Networks}{by Huang et al., 2017}
+\researchreference{Adjusting for Dropout Variance in Batch Normalization and Weight}{Initialization: by Hendrycks et al., 2017}
+
+	\section{Over Fitting in Neural Networks}
+
+	\begin{bulletedlist}
+		\item Neural networks are prone to over fitting because of the larger number of parameters.
+		\item ANN is able to model higher order and complex functions which makes it more prone to over fitting.
+	\end{bulletedlist}
+
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2.25in]{neuralnetworksoverfitting}
+		\caption{Over fitting in neural networks.}
+		\label{fig:neuralnetworksoverfitting}
+	\end{figure}
+
+	\section{Regularization}
+{\bfseries The solution to over fitting is regularization.}
+
+A fully connected layer occupies most of the parameters, and hence, neurons develop co-dependency amongst each other during training which curbs the individual power of each neuron leading to over-fitting of the training data.
+
+How could this possibly be a good idea?  It forces the network to have a redundant representation.  Another interpretation is that a dropout is an approach to regularization in neural networks which helps to reduce interdependent learning amongst the neurons.
+
+	\begin{figure}[tbp]
+		\begin{minipage}[t]{0.475\textwidth}
+			\centering
+			\includegraphics[height=1.25in]{dropoutredundent1}
+			%\caption{Xavier normal initialization.}
+			\label{fig:dropoutredundent1}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.475\textwidth}
+			\centering
+			\includegraphics[height=1.25in]{dropoutredundent2}
+			%\caption{Xavier uniform initialization.}
+			\label{fig:dropoutredundent2}
+		\end{minipage}
+	\end{figure}
+
+At test time all neurons are always ON.  We must scale the activations so that for each neuron: output at test time = expected output at training time.
+
+A $\lambda$ parameter adds a penalty to the loss function prevent large weights.
+
+	\subsection{Early Stopping}
+	\begin{bulletedlist}
+		\item Early stopping is a technique similar to cross-validation where a part of training data is kept as the validation data. When the performance of the validation data starts worsening, the model will immediately stop the training.
+		\item We usually reduce over fitting by observing the training/validation accuracy gap during training and then stop at the right point.
+		\item In the given in \figurename~\ref{fig:regularzationearlystopping}, the model will stop training at the dotted line since after that our model will start over fitting on the training data.
+	\end{bulletedlist}
+
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2.25in]{regularzationearlystopping}
+		\caption{Drop out.}
+		\label{fig:regularzationearlystopping}
+	\end{figure}
+
+	\subsection{L2 and L1 Regularization}
+	\begin{plainlist}
+		\item L1
+		\begin{bulletedlist}
+			\item Lasso (least absolute shrinkage and selection operator)
+			\item $\sum \left| w_i \right|$
+			\item Sets some weights to zero (causing them to drop out, reduces connection between nodes) which is why it is referred to as a selection operator.
+		\end{bulletedlist}
+		\item L2
+		\begin{bulletedlist}
+			\item Ridge
+			\item $\sum \left( w_i \right)^2$
+			\item Reduces some weights to very small.
+		\end{bulletedlist}
+	\end{plainlist}
+
+	\vspace{\baselineskip}
+	\begin{bulletedlist}
+		\item {\bfseries Penalty terms}: L1 regularization uses the sum of the absolute values of the weights, while L2 regularization uses the sum of the weights squared.
+		\item {\bfseries Feature selection}: L1 performs feature selection by reducing the coefficients of some predictors to 0, while L2 does not.
+		\item {\bfseries Computational efficiency}: L2 has an analytical solution, while L1 does not.
+		\item {\bfseries Multi-collinearity}: L2 addresses multi-collinearity by constraining the coefficient norm.
+	\end{bulletedlist}
+
+	\subsection{L2 Regularization}
+	\begin{bulletedlist}
+		\item Due to the addition of the regularization term, the weights decrease because it assumes that a neural network with a smaller weight leads to
+a simpler model. Therefore, it will also reduce the over fitting problem to quite an extent.
+		\item Weight updation equation with regularization term is given in fig (b).
+		\item If the learning rate is high difference in (1-nl) will be low and weights will go down.
+		\item If the learning rate is low the difference in (1-nl) will be high and weights will be high.
+	\end{bulletedlist}
+
+	\begin{equation}
+		W_{ij} - \frac{n\nabla\left(L\right)}{\nabla W_{ij}}
+	\end{equation}
+	\begin{equation}
+		W_{ij}\left(1-nl\right) - \frac{n\nabla\left(L\right)}{\nabla W_{ij}}
+	\end{equation}
+	\begin{mathwhere}[0.75in]
+		\mathdefitem{n}{the learning rate;}
+		\mathdefitem{l}{the regularization parameter;}
+		\mathdefitem{(1-nl)}{weight decay.}
+	\end{mathwhere}
+
+	\subsection{Data Augmentation}
+Generating new data to supplement the existing data.  For example, add noise to images, rotate images, change color of images.
+
+	\subsection{Dropout Regularization}
+	\begin{bulletedlist}
+		\item During training, randomly set some neurons to zero in the forward pass.
+		\item Forces the nodes to start to train separately, preventing some nodes from becoming strong and some becoming weak.
+		\item You can implement drop out on any layer except the output.
+		\item Builds some redundancy for situations where some input is not present, et cetera.
+		\item Effectively creates several smaller networks that are combined in the end.
+		\item Can help prevent co-adapting (nodes in one layer introduce an error and nodes in another layer correct it).
+		\item With dropout, nodes are getting less input than in the full model, therefore weights must be scaled to adjust for the increase in input.  You can scale during training or during testing.
+		\begin{bulletedlist}
+			\item Regular dropout: scaling during testing.
+			\item Inverse dropout: scaling during training.
+		\end{bulletedlist}
+		\item Dropout probabilities:
+		\begin{bulletedlist}
+			\item Input layer: A dropout probability of 0.8 works well (use 80\% of input).
+			\item Hidden layers: A dropout probability of 0.5 works well.
+			\item Output layer: Don't use dropout.
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2.25in]{dropout}
+		\caption{Drop out.}
+		\label{fig:dropout}
+	\end{figure}
+
+	\section{Noise in Neural Networks}
+	\begin{bulletedlist}
+		\item Training a neural network with smaller data sets may be prone to over fit the model so adding some noise during the training process can make the model more robust and reduce generalization error.
+		\item Noise can be added in various formats. It is mainly added to inputs, weights, activation functions, and even gradients.
+		\item The commonly used noise for training is Gaussian noise and it is mainly added to the input variables. Gaussian noise is simply termed to be a noise with a mean of zero and standard deviation of one and adding this noise to the inputs is termed as jitter.
+		\item Here the amount of noise to be added is a hyperparameter.
+	\end{bulletedlist}
+
 	\section{Batch Normalization}
+
+	\begin{bulletedlist}
+		\item Batch normalization is a technique for improving the performance and stability of neural networks.
+		\item The idea is to normalize the inputs of each layer in such a way that they have a mean output activation of zero and a standard deviation of one.
+		\item This is analogous to how the inputs to networks are standardized.
+		\item Due to these normalization ``layers'' between the fully connected layers, the range of input
+distribution of each layer stays the same, no matter the changes in the previous layer.
+		\item Given x inputs from the k-th neuron. Consider a batch of activations at some layer. For making each feature dimension unit gaussian, use \equationname~\ref{eq:batchnormalization1}.
+	\end{bulletedlist}
+
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2.25in]{batchnormalization1}
+		\caption{Drop out.}
+		\label{fig:batchnormalization1}
+	\end{figure}
+ 	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2.25in]{batchnormalization2}
+		\caption{Drop out.}
+		\label{fig:batchnormalization2}
+	\end{figure}
+
+	\begin{equation}
+		\hat{x}^k = \frac{x^k - E\left[x^k \right]}{\sqrt{Var\left[x^k \right]}}
+		\label{eq:batchnormalization1}
+	\end{equation}
+
+	\subsection{Scale and Shift}
+There are usually two stages in which Batch Normalization is applied:
+	\begin{numberedlist}
+		\item Before the activation function (non-linearity)
+		\item After non-linearity
+	\end{numberedlist}
+
+	\begin{bulletedlist}
+		\item For sigmoid and tanh activation, the normalized region is more linear than nonlinear.
+		\item For ReLU activation, half of the inputs are zeroed out.
+		\item So, some transformation has to be done to move the distribution away from 0.
+		\item A scaling factor $\gamma$ and shifting factor $\beta$ are used to do this.
+	\end{bulletedlist}
+
+	\begin{equation}
+		y^k = \gamma^k \hat{x}^k + \beta^k
+		\label{eq:batchnormalization2}
+	\end{equation}
+
+	\subsection{Final Definition of Batch Normalization}
+	\begin{numberedlist}
+		\item Normalize using \equationname~\ref{eq:batchnormalization1}
+		\item And then allow the network to squash the range if it wants to using \equationname~\ref{eq:batchnormalization2}, where $\gamma^k$ and $\beta^k$ are given by \equationname{}s~\ref{eq:batchnormalizationgamma} and~\ref{eq:batchnormalizationbeta}, respectively.
+	\end{numberedlist}
+
+	\begin{align}
+		\gamma^k &= \sqrt{Var\left[x^k \right]} \label{eq:batchnormalizationgamma} \\
+		\beta^k  &= E\left[x^k \right]          \label{eq:batchnormalizationbeta}
+	\end{align}
+
 	\section{Types of Neural Networks}
-	\section{Hands On Neural Network}
+	\section{Hands On Neural Network} 

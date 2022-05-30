@@ -130,6 +130,15 @@
 	\newcommand*{\formattedepigraph}[2]{\epigraph{\textit{#1}}{--- #2}}
 
 	% FONTS
+	% Define colors for use with fonts.
+	\usepackage{color}
+	\definecolor{warningcolor}{rgb}{0.753,0,0}	
+
+	% Special font formatting commands.
+	\newcommand*{\important}[1]{\textbf{\textit{#1}}}
+	\newcommand*{\warning}[1]{\textcolor{warningcolor}{\bfseries#1}}
+
+	% Font sizes.
 	\renewcommand*{\large}{\fontsize{13pt}{16pt}\selectfont}
 	\renewcommand*{\Large}{\fontsize{14pt}{19pt}\selectfont}
 	\renewcommand*{\LARGE}{\fontsize{17pt}{22pt}\selectfont}

@@ -49,94 +49,97 @@ Will the images always be provided in zip file format?
 The image data sets are usually provided in the following formats:
 
 	\begin{bulletedlist}
-		\item {\bfseries Folders/Directories}: The whole data set can be given in a single directory or a zip file which can be extracted to get a directory. This directory can contain sub-folders like training and testing. The training and testing folders may contain individual sub-folders for each category of image. The whole structure can be observed in the below image.
-		\item {\bfseries TensorFlow data sets}:
-		\item {\bfseries numpy arrays}:
+		\item {\bfseries Folders/Directories}: The whole data set can be given in a single directory or a zip file which can be extracted to get a directory. This directory can contain sub-folders like training and testing. The training and testing folders may contain individual sub-folders for each category of image. The whole structure can be observed in the \figurename~\ref{fig:cnnimagesinfiles}.
+		\item {\bfseries TensorFlow data sets}: The data sets can be loaded from as shown in \figurename~\ref{fig:cnntensorflowdataset}.
+		\item {\bfseries numpy arrays}: The images can also be given as numpy arrays and the labels to the corresponding images can be given in a CSV file.  The images that are converted into numpy arrays can be given in \textcode{images.npy} file and the labels corresponding to each image can be given in the \textcode{labels.csv file}.  The \textcode{np.load()} function can be used to read the numpy arrays and the \textcode{pd.read\_csv()} function from pandas can be used to read the \textcode{csv} file as shown in \figurename~\ref{fig:cnnnumpyarraydataset}.
 	\end{bulletedlist}
 		\end{answer}
 	\end{qanda}
 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2in]{cnnimagesinfiles}
+		\caption{Cross validation.}
+		\label{fig:cnnimagesinfiles}
+	\end{figure}
 
-cnnimagesinfiles
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\textwidth-1in]{cnntensorflowdataset}
+		\caption{Loading a TensorFlow image data set.}
+		\label{fig:cnntensorflowdataset}
+	\end{figure}
 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\textwidth]{cnnnumpyarraydataset}
+		\caption{Numpy array loading of image data set.}
+		\label{fig:cnnnumpyarraydataset}
+	\end{figure}
 
 	\begin{qanda}
 		\begin{question}
-
+Do we need to split the image data into train and test sets before pre-processing?
 		\end{question}
 		\begin{answer}
+The splitting of image data should be performed before any operations or pre-processing steps on images.  One way is to divide the data set into two subsets:
+	\begin{numberedlist}
+		\item Training set: a subset to train a model.
+		\item Test set: a subset to test the model.
+	\end{numberedlist}
 
+Separating the data enables you to evaluate your model generalization capabilities and have an idea of how it would perform on unseen data.  Good performance on the test set is a useful indicator of good performance on new data in general, assuming that:
+	\begin{bulletedlist}
+		\item The samples were drawn independently and at random from the distribution to create the test set.
+		\item The test set is large enough.	
+	\end{bulletedlist}
+
+The second way is to divide the data set into three subsets:
+	\begin{numberedlist}
+		\item Training set: a subset to train a model.
+		\item Validation set: a subset to validate and tune our model.
+		\item Test set: a subset to test the model.
+	\end{numberedlist}
 		\end{answer}
 	\end{qanda}
 
 	\begin{qanda}
 		\begin{question}
-
+What is the difference between MNIST and Fashion MNIST data sets that are used in the course?
 		\end{question}
 		\begin{answer}
-
+The MNIST data consists of images of 10 handwritten digits from 0 to 9, and this data set can be directly loaded using the \textcode{load\_data()} function of TensorFlow.  Whereas, Fashion MNIST can also be loaded using the same \textcode{load\_data()} function, it consists of fashion images like shoes, shirts, etc belonging to 10 different categories.
 		\end{answer}
 	\end{qanda}
 
 	\begin{qanda}
 		\begin{question}
-
+What is the difference between \textcode{resize()} and \textcode{reshape()} functions (in context of images)?
 		\end{question}
 		\begin{answer}
-
+The \textcode{reshape()} function changes the shape only and not the number of pixels.  For example, the image of size 6 x 4 can be reshaped into 12 x 2.  Here we did not change the number of pixels.  But an image of 6 x 6 can be resized into 10 x 10 using the resize function.  Here the number of pixels are increased.
 		\end{answer}
 	\end{qanda}
 
 	\begin{qanda}
 		\begin{question}
-
+Which function can be used to get the names of labels that are encoded using an encoder?
 		\end{question}
 		\begin{answer}
-
+The \textcode{inverse\_transform()} function can be used to decode the labels from the encoded vectors.  For example: if a label ``car'' is encoded using a label binarizer into an array of [0,0,1] then \textcode{inverse\_transform()} can be used to get the label name from this array.
 		\end{answer}
 	\end{qanda}
 
 	\begin{qanda}
 		\begin{question}
-
+How to unzip a zipfile in Google Colab?
 		\end{question}
 		\begin{answer}
-
+The unzip command can be used to unzip the file in Google Colab.
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber !unzip ``path to the file''
+		\end{code}
 		\end{answer}
 	\end{qanda}
 
-	\begin{qanda}
-		\begin{question}
 
-		\end{question}
-		\begin{answer}
-
-		\end{answer}
-	\end{qanda}
-
-	\begin{qanda}
-		\begin{question}
-
-		\end{question}
-		\begin{answer}
-
-		\end{answer}
-	\end{qanda}
-
-	\begin{qanda}
-		\begin{question}
-
-		\end{question}
-		\begin{answer}
-
-		\end{answer}
-	\end{qanda}
-
-	\begin{qanda}
-		\begin{question}
-
-		\end{question}
-		\begin{answer}
-
-		\end{answer}
-	\end{qanda}

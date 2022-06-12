@@ -4,9 +4,9 @@
 1
 1
 Machine Learning and Artificial Intelligence.tex
-41
+42
 7
-2
+3
 
 
 
@@ -15,25 +15,28 @@ Machine Learning and Artificial Intelligence.tex
 
 Feature Selection, Model Selection, and Tuning.tex
 TeX
-1060795 1 -1 720 -1 708 208 208 1556 791 0 22 304 -1 -1 0 0 53 0 0 53 1 0 708 -1   0
-Machine Learning and Artificial Intelligence.tex
-TeX
-152055739 1 -1 1698 -1 1669 234 234 1582 817 0 118 646 -1 -1 0 0 188 -1 -1 188 1 0 1669 -1   0
+1060795 1 -1 12271 -1 12110 208 208 1556 791 0 22 230 -1 -1 0 0 53 0 0 53 1 0 12110 -1   0
 Convolutional Neural Networks.tex
 TeX
-269496315 0 -1 2371 -1 1583 78 78 1397 661 0 582 114 -1 -1 0 0 40 -1 -1 40 1 0 1583 -1   0
+1060859 1 -1 10 -1 0 78 78 1397 661 0 22 0 -1 -1 0 0 40 -1 -1 40 1 0 0 -1   0
+Computer Vision Prework.tex
+TeX
+1060859 2 -1 26 -1 33 224 224 1421 789 0 382 0 -1 -1 0 0 -1 -1 -1 -1 1 0 33 -1   0
 Acronyms.tex
 TeX
-17838011 2 -1 1293 -1 1298 182 182 1530 765 0 158 532 -1 -1 0 0 16 -1 -1 16 1 0 1298 -1   0
+286273467 0 -1 1003 -1 1024 182 182 1530 765 0 392 230 -1 -1 0 0 16 -1 -1 16 1 0 1024 -1   0
 C:\Custom Program Files\LaTeX\TeX\LaTeX\lequestionandanswer.sty
 TeX:DTX
-5255099 1 -1 3121 -1 3070 96 96 1293 661 0 22 817 -1 -1 0 0 40 -1 -1 40 1 0 3070 -1   0
+5255099 1 -1 3121 -1 3070 96 96 1293 661 0 22 759 -1 -1 0 0 40 -1 -1 40 1 0 3070 -1   0
 C:\Custom Program Files\LaTeX\TeX\LaTeX\lelists.sty
 TeX:DTX
-22032314 0 51 1 94 114 130 130 1478 713 0 974 551 -1 -1 0 0 14 0 0 14 1 0 114 94   0
+22032314 0 51 1 94 114 130 130 1478 713 0 974 529 -1 -1 0 0 14 0 0 14 1 0 114 94   0
 C:\Custom Program Files\LaTeX\TeX\LaTeX\lemath.sty
 TeX:DTX
 5255163 0 -1 0 -1 0 52 52 1371 635 0 22 0 -1 -1 0 0 24 -1 -1 24 1 0 0 -1   0
+Machine Learning and Artificial Intelligence.tex
+TeX
+420491195 0 -1 1670 -1 1692 234 234 1582 817 0 372 460 -1 -1 0 0 188 -1 -1 188 1 0 1692 -1   0
 Installation Notes.tex
 TeX
 286273467 2 -1 5066 -1 5071 208 208 1556 791 0 438 1140 -1 -1 0 0 29 -1 -1 29 1 0 5071 -1   0

@@ -1,0 +1,142 @@
+	\chapter{Convolutional Neural Networks}
+
+	\resetquestioncounter{}
+	\begin{qanda}
+		\begin{question}
+ What is Computer Vision?
+		\end{question}
+		\begin{answer}
+Computer Vision is a field of Artificial Intelligence that enables computers or systems to derive or extract meaningful information from a digital image or video data and take actions or recommendations based on this information.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+ What is the Normalization of pixels?
+		\end{question}
+		\begin{answer}
+For most image data, the pixel values are integers with values between 0 and 255. Normalization scales these pixel values between 0 and 1 before modeling.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Why should Normalization be performed on pixels?
+		\end{question}
+		\begin{answer}
+Neural networks process inputs using small weight values and inputs with large integer values can disrupt or slow down the learning process, so it is a good practice to normalize the pixels so that the values would range between 0 and 1.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How is smoothing performed on images?
+		\end{question}
+		\begin{answer}
+Smoothing an image is required to reduce noise and blur the false edges. Smoothing is usually performed using Gaussian Blur. Gaussian filtering is highly effective at removing noise from the image. We can use the below code to perform Gaussian Blur.
+
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber blur\_image = cv2.GaussianBlur(original\_image, (5,5), 0)
+		\end{code}
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Will the images always be provided in zip file format?
+		\end{question}
+		\begin{answer}
+The image data sets are usually provided in the following formats:
+
+	\begin{bulletedlist}
+		\item {\bfseries Folders/Directories}: The whole data set can be given in a single directory or a zip file which can be extracted to get a directory. This directory can contain sub-folders like training and testing. The training and testing folders may contain individual sub-folders for each category of image. The whole structure can be observed in the below image.
+		\item {\bfseries TensorFlow data sets}:
+		\item {\bfseries numpy arrays}:
+	\end{bulletedlist}
+		\end{answer}
+	\end{qanda}
+
+
+cnnimagesinfiles
+
+
+	\begin{qanda}
+		\begin{question}
+
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}

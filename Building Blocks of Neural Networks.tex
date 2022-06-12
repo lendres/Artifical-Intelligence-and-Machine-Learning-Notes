@@ -39,7 +39,7 @@ Gradient descent optimization algorithms:
 		\item Stochastic gradient descent.
 		\item Mini batch gradient descent.
 		\item Adagrad (adaptive gradient descent).  Has individual learning rates for each dimension.  The entire learning rate decreases as optimization proceeds.  It does very well for convex problems.  For very non-convex surfaces, adagrad does not do well.  The learning rate can go to zero very fast, sometimes halting the optimization even before a local minimum is reached.
-		\item Gradient descent with momentum3
+		\item Gradient descent with momentum.
 		\item RMS prop (root mean square propagation).  Less aggressive than adagrad.  It is a decaying moving average (points in the past are weighted less than more recent points).
 		\item Adam
 	\end{bulletedlist}
@@ -80,6 +80,7 @@ see \figurename~\ref{fig:stochasticgradientdescent}
 		\item It is a gradient based optimization technique used in training a neural network.
 		\item Gradients of very complex functions like neural networks have a tendency to either vanish or explode as the data propagates through the function.
 		\item RMSprop deals with this issue by using a moving average of squared gradients to normalize the gradient.
+		\item RMSprop is an adaptive learning algorithm that tries to improve AdaGrad. Instead of taking the cumulative sum of squared gradients like in AdaGrad, it takes the ``exponential moving average.''
 		\item This balances the step size, decreasing the step for large gradients to avoid exploding and increasing the step for small gradients to avoid vanishing.
 		\item RMSprop is preferred over gradient descent because it has a very good convergence speed towards the minima of the cost function.
 	\end{bulletedlist}
@@ -118,7 +119,7 @@ In \equationname{}s~\ref{eq:firstmoment} and~\ref{eq:secondmoment} $m_t$ is the 
 	\subsection{Why RMSprop Enhances Convergence Speed}
 	\begin{bulletedlist}
 		\item The generic problem in traditional optimization algorithms like gradient descent is the speed of convergence. The gradient in the direction of weight is low and in the direction of bias is high.
-		\item Let us understand this in the dimensions of weights and bias of gradient descent.  In an ideal scenario, we need a high convergence speed in the direction of weight(or horizontal direction) and a slow speed in the direction of bias(vertical direction)In gradient descent.
+		\item Let us understand this in the dimensions of weights and bias of gradient descent.  In an ideal scenario, we need a high convergence speed in the direction of weight(or horizontal direction) and a slow speed in the direction of bias (vertical direction) in gradient descent.
 		\item In GD we have uncontrolled steps in both directions.  This hinders the freedom of choosing a bigger learning rate (due to the risk of overshooting minima) while attempting to speed up the convergence.
 		\item While using RMSprop, we dampen the movement in the direction of bias and in parallel speed up the same in the direction of weight.  This helps to solve the problem in two ways:
 		\begin{bulletedlist}
@@ -407,7 +408,9 @@ Generating new data to supplement the existing data.  For example, add noise to 
 
 	\subsection{Dropout Regularization}
 	\begin{bulletedlist}
-		\item During training, randomly set some neurons to zero in the forward pass.
+		\item During \textbf{training}, randomly set some neurons to zero in the forward pass.
+		\item During \textbf{testing}, all neurons are on.
+		\item Because of the different number of neurons on during training and testing, the weights must be scaled.
 		\item Forces the nodes to start to train separately, preventing some nodes from becoming strong and some becoming weak.
 		\item You can implement drop out on any layer except the output.
 		\item Builds some redundancy for situations where some input is not present, et cetera.
@@ -651,7 +654,7 @@ For example, that you run a batch of images through batch normalization.  The ab
 			\item Good for time series data.
 			\item Uses some sense of memory, what happens next depends on some way what happened in the past.
 			\item Nodes can get input from previous runs (see \equationname{}s~\ref{eq:recurrentneuralnetwork1} and~\ref{eq:recurrentneuralnetwork2}).
-			\item 
+			\item
 			\item LSTM (long short term memories).
 			\begin{bulletedlist}
 				\item Replaces node with algorithm/node that remembers more history.

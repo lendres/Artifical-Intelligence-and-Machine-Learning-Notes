@@ -1,3 +1,28 @@
-	\chapter{Neural Network Troubleshooting}
+	\chapter{Neural Network Usage and Troubleshooting Guide}
 	\section{No Loss Displayed / Loss Contains NaN}
 
+	\begin{bulletedlist}
+		\item Make sure there are no \textcode{NaN}s in the source data.
+		\item Make sure the processing did not add \textcode{NaN}s.  \textcode{StandardScaler} has been known to introduce them.
+	\end{bulletedlist}
+
+
+	\section{Hyperparameter Turning}
+There are different ways of hyperparameter tuning.  See the \textcode{Data Scientist Employee Attrition Case Study.ipynb} for examples.
+
+	\begin{bulletedlist}
+		\item Using \textcode{sklearn} classes such as \textcode{RandomSearchCV} or \textcode{GridSearchCV}.
+		\begin{bulletedlist}
+			\item The classifier used is the \textcode{KerasClassifier}.
+			\item The tuning is otherwise done in the same manner as any other hyperparameter turning using the \textcode{sklearn} library.
+		\end{bulletedlist}
+		\item Using the \textcode{dask\_ml} library.
+		\begin{bulletedlist}
+			\item The library implements a parallelized version of \textcode{GridSearchCV}.
+		\end{bulletedlist}
+		\item Using the \textcode{kerastuner} library.
+		\begin{bulletedlist}
+			\item Contains a small set of classes for tuning.  They can be inherited to create your own.
+			\item Allows you to tuner on things like number of layers which is difficult in some of the other methods.
+		\end{bulletedlist}
+	\end{bulletedlist}

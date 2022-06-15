@@ -1,6 +1,7 @@
 \noindent {}Table{} \hfill Page\vspace *{\lofskip }\endgraf 
 \addvspace {10\p@ }
 \addvspace {\chapterstyleblofskip }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Comparison of hypothesis test types}}{8}{tablerowcounter.1.1.11}%
 \addvspace {10\p@ }
 \addvspace {\chapterstyleblofskip }
 \contentsline {table}{\numberline {2.1}{\ignorespaces Plot types for numerical data.\relax }}{10}{table.caption.9}%
@@ -36,8 +37,9 @@
 \addvspace {\chapterstyleblofskip }
 \addvspace {10\p@ }
 \addvspace {\chapterstyleblofskip }
-\contentsline {table}{\numberline {13.1}{\ignorespaces \relax }}{124}{table.caption.141}%
-\contentsline {table}{\numberline {13.2}{\ignorespaces Padding and strides examples.\relax }}{139}{table.caption.167}%
+\contentsline {table}{\numberline {13.1}{\ignorespaces HOG versus SIFT feature extraction}}{124}{table.caption.141}%
+\contentsline {table}{\numberline {13.2}{\ignorespaces Padding and strides examples.\relax }}{139}{table.caption.166}%
+\contentsline {table}{\numberline {13.3}{\ignorespaces Pooling examples.\relax }}{140}{table.caption.169}%
 \addvspace {10\p@ }
 \addvspace {\chapterstyleblofskip }
 \addvspace {10\p@ }

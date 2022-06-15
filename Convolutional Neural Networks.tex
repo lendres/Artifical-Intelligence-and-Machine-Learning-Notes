@@ -1,4 +1,5 @@
 	\chapter{Convolutional Neural Networks}
+	\section{Frequently Asked Questions}
 
 	\resetquestioncounter{}
 	\begin{qanda}
@@ -142,4 +143,67 @@ The unzip command can be used to unzip the file in Google Colab.
 		\end{answer}
 	\end{qanda}
 
+	\section{Introduction}
+
+Convolution neural networks are a special type of neural network designed to work with image data.  CNNs use convolutional layers hidden layers which perform convolution operations. They have some different characteristics to artificial neural networks.
+	\begin{bulletedlist}
+		\item Unlike ANNs, CNNs capture the spatial structure of the image.
+		\item CNNs follow the concept of parameter sharing i.e. one filter is applied over the whole image, because of which they are much more computationally efficient.
+		\item The first part in this architecture is the convolutional layer followed by the pooling layer and the second part is the fully connected layer.  This whole architecture is called a convolutional neural network.
+	\end{bulletedlist}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\textwidth]{convolutionneuralnetwork}
+		\caption[Convolution neural network]{Convolution neural network.  Image source \href{https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53}{toward data science}.}
+		\label{fig:convolutionneuralnetwork}
+	\end{figure}
+
+	\section{Convolutional Layer - Filter/Kernel}
+	\begin{bulletedlist}
+		\item A convolution operation uses a small array of numbers called a filter/kernel on the input image.
+		\item Each filter is designed to identify a specific feature in the input space of the image, such as horizontal edges, vertical edges etc.
+		\item A CNN is able to successfully capture the spatial and temporal dependencies in an image through the application of relevant filters.
+		\item The role of the CNN is to reduce the images into a form which is easier to process, without losing features which are important for getting a good prediction.
+		\item The convolution is performed as shown in \figurename{}s~\ref{fig:convolutionoperationstepsa} and~\ref{fig:convolutionoperationstepsb}.
+	\end{bulletedlist}
+
+	\section{Pooling layer in CNNs}
+
+	\begin{bulletedlist}
+		\item After a convolution operation, we usually perform pooling to reduce the dimensions of the feature map.
+		\item It enables us to reduce the number of parameters, which both reduces the training time and the over fitting.
+		\item Pooling layers down sample each feature map independently, reducing the height and width, but keeping the depth same.
+		\item There are two types of pooling - Max and Average.  Max pooling just takes the maximum value whereas average pooling takes the average value in the pooling window (see \figurename~\ref{fig:poolingtypes}).
+		\item Contrary to the convolution operation, pooling has no parameters.
+	\end{bulletedlist}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.5in]{poolingtypes}
+		\caption[Types of pooling]{Types of pooling.}
+		\label{fig:poolingtypes}
+	\end{figure}
+
+	\section{Padding and Stride in CNNs}
+	\begin{bulletedlist}
+		\item Stride specifies how much we move the filter at each step. By default the value of the stride is 1 and is represented by the first figure
+		\item We can also increase the value of stride if we want less overlap between the filters. It also makes the resulting feature map smaller since we are skipping over some locations.
+		\item The second figure demonstrates the stride 2.
+	\end{bulletedlist}
+
+We see that after using stride, the size of the feature map is smaller than the input. If we want to maintain the same dimensions, we can use padding to surround the input with zeros.  In the following, refer to \figurename~\ref{fig:paddingandstrideincnn}.
+
+	\begin{bulletedlist}
+		\item The grey area around the input in the third figure is the padding.
+		\item We either pad with zeros or the values on the edge, to match the dimensions of the feature map with the input.
+		\item Padding is commonly used in CNNs to preserve the size of the feature maps, otherwise they would shrink at each layer, which is not desirable.
+	\end{bulletedlist}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2.5in]{paddingandstrideincnn}
+		\caption[Padding and stride in CNNs]{Padding and stride in CNNs.}
+		\label{fig:paddingandstrideincnn}
+	\end{figure}
 

@@ -143,11 +143,19 @@
 	\renewcommand*{\Large}{\fontsize{14pt}{19pt}\selectfont}
 	\renewcommand*{\LARGE}{\fontsize{17pt}{22pt}\selectfont}
 
-
+	% Used to center figures in a table cell.
 	\usepackage{adjustbox}
 
 	\usepackage{subcaption}
 	\captionsetup[sub]{font=normalsize}
+
+	% Add extra space for the numbering in the table of contents, list of figures, and list of tables.
+	\setlength{\cftfignumwidth}{3em}
+	\setlength{\cfttabnumwidth}{3em}
+	\setlength{\cftsecnumwidth}{3em}
+	\setlength{\cftsubsecnumwidth}{3.75em}
+	\setlength{\cftsubsubsecnumwidth}{4.5em}
+
 
 	% INCLUDE A BIBLIOGRAPHY.
 	\bibliographystyle{leplain} 

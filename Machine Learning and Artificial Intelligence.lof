@@ -2,10 +2,10 @@
 \addvspace {10\p@ }
 \addvspace {\chapterstyleblofskip }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Normal distribution.\relax }}{2}{figure.caption.4}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Levels versus factors for \acrshort {anova}.\relax }}{5}{figure.caption.5}%
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Hypothesis testing errors.\relax }}{6}{figure.caption.6}%
-\contentsline {figure}{\numberline {1.4}{\ignorespaces \relax }}{6}{figure.caption.7}%
-\contentsline {figure}{\numberline {1.5}{\ignorespaces \relax }}{9}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Levels versus factors for ANOVA}}{5}{figure.caption.5}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Hypothesis testing errors}}{6}{figure.caption.6}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Hypothesis test matrix}}{6}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Hypothesis test flow chart}}{9}{figure.caption.8}%
 \addvspace {10\p@ }
 \addvspace {\chapterstyleblofskip }
 \addvspace {10\p@ }
@@ -150,36 +150,41 @@
 \addvspace {10\p@ }
 \addvspace {\chapterstyleblofskip }
 \contentsline {figure}{\numberline {13.1}{\ignorespaces Feature extraction.\relax }}{123}{figure.caption.140}%
-\contentsline {figure}{\numberline {13.2}{\ignorespaces Image of a brick used for convolution example.\relax }}{125}{figure.caption.142}%
-\contentsline {figure}{\numberline {13.3}{\ignorespaces Image of brick wall with vertical edge detection (left) and horizontal edge detection (right).\relax }}{125}{figure.caption.143}%
-\contentsline {figure}{\numberline {13.4}{\ignorespaces \relax }}{127}{figure.caption.144}%
-\contentsline {figure}{\numberline {13.5}{\ignorespaces \relax }}{127}{figure.caption.145}%
-\contentsline {figure}{\numberline {13.6}{\ignorespaces \relax }}{127}{figure.caption.146}%
+\contentsline {figure}{\numberline {13.2}{\ignorespaces Image of a brick used for convolution example}}{125}{figure.caption.142}%
+\contentsline {figure}{\numberline {13.3}{\ignorespaces Convolution vertical and horizontal edge detection}}{125}{figure.caption.143}%
+\contentsline {figure}{\numberline {13.4}{\ignorespaces Edge detection step 1}}{127}{figure.caption.144}%
+\contentsline {figure}{\numberline {13.5}{\ignorespaces Edge detection step 2}}{127}{figure.caption.145}%
+\contentsline {figure}{\numberline {13.6}{\ignorespaces Edge detection step 3}}{127}{figure.caption.146}%
 \contentsline {figure}{\numberline {13.7}{\ignorespaces \relax }}{128}{figure.caption.147}%
-\contentsline {figure}{\numberline {13.8}{\ignorespaces \relax }}{128}{figure.caption.148}%
-\contentsline {figure}{\numberline {13.9}{\ignorespaces \relax }}{129}{figure.caption.149}%
-\contentsline {figure}{\numberline {13.10}{\ignorespaces \relax }}{130}{figure.caption.150}%
-\contentsline {figure}{\numberline {13.11}{\ignorespaces \relax }}{131}{figure.caption.151}%
+\contentsline {figure}{\numberline {13.8}{\ignorespaces Image convoluted with a filter to produce a feature map.\relax }}{128}{figure.caption.148}%
+\contentsline {figure}{\numberline {13.9}{\ignorespaces Edge detection steps, part 1.\relax }}{130}{figure.caption.149}%
+\contentsline {figure}{\numberline {13.10}{\ignorespaces Edge detection steps, part 2.\relax }}{131}{figure.caption.150}%
+\contentsline {figure}{\numberline {13.11}{\ignorespaces \relax }}{132}{figure.caption.151}%
 \contentsline {figure}{\numberline {13.12}{\ignorespaces \relax }}{132}{figure.caption.152}%
-\contentsline {figure}{\numberline {13.13}{\ignorespaces \relax }}{132}{figure.caption.153}%
+\contentsline {figure}{\numberline {13.13}{\ignorespaces \relax }}{133}{figure.caption.153}%
 \contentsline {figure}{\numberline {13.14}{\ignorespaces \relax }}{133}{figure.caption.154}%
 \contentsline {figure}{\numberline {13.15}{\ignorespaces \relax }}{133}{figure.caption.155}%
 \contentsline {figure}{\numberline {13.16}{\ignorespaces \relax }}{134}{figure.caption.156}%
 \contentsline {figure}{\numberline {13.17}{\ignorespaces \relax }}{134}{figure.caption.157}%
 \contentsline {figure}{\numberline {13.18}{\ignorespaces \relax }}{134}{figure.caption.158}%
-\contentsline {figure}{\numberline {13.19}{\ignorespaces \relax }}{135}{figure.caption.159}%
-\contentsline {figure}{\numberline {13.20}{\ignorespaces Convolution weights are treated as learnable parameters.}}{136}{figure.caption.160}%
-\contentsline {figure}{\numberline {13.21}{\ignorespaces Convolution under utilizes edge pixels.\relax }}{137}{figure.caption.161}%
+\contentsline {figure}{\numberline {13.19}{\ignorespaces Convolution weights are treated as learnable parameters.}}{135}{figure.caption.159}%
+\contentsline {figure}{\numberline {13.20}{\ignorespaces Convolution under utilizes edge pixels.\relax }}{136}{figure.caption.160}%
+\contentsline {figure}{\numberline {13.21}{\ignorespaces \relax }}{137}{figure.caption.161}%
 \contentsline {figure}{\numberline {13.22}{\ignorespaces \relax }}{137}{figure.caption.162}%
 \contentsline {figure}{\numberline {13.23}{\ignorespaces \relax }}{138}{figure.caption.163}%
 \contentsline {figure}{\numberline {13.24}{\ignorespaces \relax }}{138}{figure.caption.164}%
-\contentsline {figure}{\numberline {13.25}{\ignorespaces \relax }}{138}{figure.caption.165}%
-\contentsline {figure}{\numberline {13.26}{\ignorespaces Stride.\relax }}{139}{figure.caption.166}%
+\contentsline {figure}{\numberline {13.25}{\ignorespaces Stride.\relax }}{138}{figure.caption.165}%
+\contentsline {figure}{\numberline {13.26}{\ignorespaces Max pooling.\relax }}{139}{figure.caption.167}%
+\contentsline {figure}{\numberline {13.27}{\ignorespaces Average pooling.\relax }}{140}{figure.caption.168}%
+\contentsline {figure}{\numberline {13.28}{\ignorespaces Flattening a 3D array for use in a neural network.\relax }}{141}{figure.caption.170}%
 \addvspace {10\p@ }
 \addvspace {\chapterstyleblofskip }
-\contentsline {figure}{\numberline {14.1}{\ignorespaces Cross validation.\relax }}{141}{figure.caption.168}%
-\contentsline {figure}{\numberline {14.2}{\ignorespaces Loading a TensorFlow image data set.\relax }}{141}{figure.caption.169}%
-\contentsline {figure}{\numberline {14.3}{\ignorespaces Numpy array loading of image data set.\relax }}{142}{figure.caption.170}%
+\contentsline {figure}{\numberline {14.1}{\ignorespaces Cross validation.\relax }}{143}{figure.caption.171}%
+\contentsline {figure}{\numberline {14.2}{\ignorespaces Loading a TensorFlow image data set.\relax }}{143}{figure.caption.172}%
+\contentsline {figure}{\numberline {14.3}{\ignorespaces Numpy array loading of image data set.\relax }}{144}{figure.caption.173}%
+\contentsline {figure}{\numberline {14.4}{\ignorespaces Convolution neural network}}{145}{figure.caption.174}%
+\contentsline {figure}{\numberline {14.5}{\ignorespaces Types of pooling}}{146}{figure.caption.175}%
+\contentsline {figure}{\numberline {14.6}{\ignorespaces Padding and stride in CNNs}}{147}{figure.caption.176}%
 \addvspace {10\p@ }
 \addvspace {\chapterstyleblofskip }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Enable nbextensions for Jupyter notebooks.\relax }}{143}{figure.caption.171}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Enable nbextensions for Jupyter notebooks.\relax }}{148}{figure.caption.177}%

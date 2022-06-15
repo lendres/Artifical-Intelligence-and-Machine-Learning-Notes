@@ -33,7 +33,10 @@ The two most historically-important, manual feature extraction techniques have b
 		\item SIFT (Scale Invariant Feature Transform)
 	\end{bulletedlist}
 
-	\begin{table}
+	\begin{topcaptiontable}
+        \centering
+        \lecaption{}
+        \label{tab:}
 		\begin{tabular}{|p{0.5\textwidth-2\tabcolsep}|p{0.5\textwidth-2\tabcolsep}|} \hline
 				\tablecolumnheadervlinesone{HOG} & \tablecolumnheadervlinestwo{SIFT} \\ \hline
 				HOG mainly focuses on the structure and shape of an object. &
@@ -46,7 +49,7 @@ The two most historically-important, manual feature extraction techniques have b
 				\adjustbox{center}{\includegraphics[height=1.5in]{hogfeaturedetection}} &
 				\adjustbox{center}{\includegraphics[height=1.5in]{siftfeaturedetection}} \\ \hline
 		\end{tabular}
-	\end{table}
+	\end{topcaptiontable}
 
 	\subsection{Disadvantages of Conventional Feature Extraction Techniques}
 	\begin{bulletedlist}
@@ -79,7 +82,6 @@ The two most historically-important, manual feature extraction techniques have b
 		\end{bulletedlist}
 		\item As seen from the below example in \figurename~\ref{fig:convolutionbrickwalledgedetection}, convolution filters can help us achieve any of the feature extraction tasks we may require for our images.
 	\end{bulletedlist}
-
 
 	\begin{figure}[h]
 		\centering
@@ -213,65 +215,53 @@ used interchangeably across the industry.
 	\end{numberedlist}
 
 	\begin{figure}[tbp]
-
 		\begin{minipage}[t]{\textwidth}
-
 			\begin{minipage}[t]{\textwidth}
 				\centering
 				\includegraphics[height=1.5in]{convolutionoperationstep1}
 				\subcaption{Step 1}
 				\label{fig:convolutionoperationstep1}
 			\end{minipage}
-
 			\begin{minipage}[t]{\textwidth}
 				\centering
 				\includegraphics[height=1.5in]{convolutionoperationstep2}
 				\subcaption{Step 2}
 				\label{fig:convolutionoperationstep2}
 			\end{minipage}
-
-%			\vskip\baselineskip
-
 			\begin{minipage}[t]{\textwidth}
 				\centering
 				\includegraphics[height=1.5in]{convolutionoperationstep3}
 				\subcaption{Step 3}
 				\label{fig:convolutionoperationstep3}
 			\end{minipage}
-
 		\end{minipage}
 		\caption{}
-		\label{fig:convolutionoperationsteps}
+		\label{fig:convolutionoperationstepsa}
 	\end{figure}
 
 	\begin{figure}[tbp]
-
 		\begin{minipage}[t]{\textwidth}
-
 			\begin{minipage}[t]{\textwidth}
 				\centering
 				\includegraphics[height=1.5in]{convolutionoperationstep4}
 				\subcaption{Step 4}
 				\label{fig:convolutionoperationstep4}
 			\end{minipage}
-
 			\begin{minipage}[t]{\textwidth}
 				\centering
 				\includegraphics[height=1.5in]{convolutionoperationstep5}
-				\subcaption{Step 4}
+				\subcaption{Step 5}
 				\label{fig:convolutionoperationstep5}
 			\end{minipage}
-
 			\begin{minipage}[t]{\textwidth}
 				\centering
 				\includegraphics[height=1.5in]{convolutionoperationstep6}
-				\subcaption{Step 4}
+				\subcaption{Step 6}
 				\label{fig:convolutionoperationstep6}
 			\end{minipage}
-
 		\end{minipage}
 		\caption{}
-		\label{fig:convolutionoperationsteps}
+		\label{fig:convolutionoperationstepsb}
 	\end{figure}
 
 	\subsection{Intuition behind Convolutions}
@@ -285,8 +275,6 @@ the element-wise product, and hence in the output matrix.
 		\item In other words, convolution filters are adept at identifying those regions of the image which have pixel patterns that match the pixel pattern of the filter itself.
 		\item That is why the above filter would be considered a type of vertical edge detector.  It has a vertical pattern of pixels (-1s, 0s and 1s) which represent a left-to-right increasing gradient.  Any regions in the input image that have a similar pattern to this would be identified by this filter, and amplified numerically with a higher output value for those regions.
 		\item One other point of consideration is that filters with odd-valued dimensions (such as 3 x 3 Filters) are preferred, due to the presence of a central pixel.
-		\item 
-		\item 
 	\end{bulletedlist}
 
 
@@ -327,9 +315,206 @@ directions.
 		\label{fig:prewittfilterexample}
 	\end{figure}
 
+	\subsubsection{The Sobel Filter}
+	\begin{bulletedlist}
+		\item The Sobel filter was conceptualized by Irwin Sobel and Gary Feldman from the Stanford Artificial Intelligence Laboratory (SAIL) in the 1960s.
+		\item It is similar to the Prewitt Filter, with the only change being in the central values of the positive and negative numbers, which are now +2 and -2 instead of +1 and -1.
+		\item This filter can give better intensities in the regions containing edges, in comparison to the results from the Prewitt Filter.
+	\end{bulletedlist}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.2in]{sobelfilter}
+		\caption{}
+		\label{fig:sobelfilter}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2.25in]{sobelfilterexample}
+		\caption{}
+		\label{fig:sobelfileterexample}
+	\end{figure}
 
 
+	\subsubsection{The Laplacian Filter}
+	\begin{bulletedlist}
+		\item The Laplacian filter (named after Pierre-Simon Laplace, the famous French scientist with several contributions in mathematical and statistical theory) is a second-order derivative filter that tries to highlight those regions where pixel intensities change abruptly.
+		\item The implication of being a second-order filter is that unlike the Prewitt and Sobel Filters (which need a kernel in the horizontal and vertical directions each), the Laplacian filter only needs one kernel, which can detect both kinds of edges.
+		\item One other thing to keep in mind is that Laplacian Filters are very sensitive to noise. So in many cases, the image may need to be smoothed out before applying the Filter.
+	\end{bulletedlist}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.2in]{laplacianfilter}
+		\caption{}
+		\label{fig:laplacianfilter}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.75in]{laplacianfilterexample}
+		\caption{}
+		\label{fig:laplacianfilterexample}
+	\end{figure}
 
 
+	\subsection{Convolution on RGB images}
+	\begin{bulletedlist}
+		\item When performing the convolution operation on RGB images as opposed to gray scale, the number of channels in the filter must equal the number of channels in the image (3).
+		\item To compute the output of this convolution operation for example, we take the 3x3x3 filter, and first place it in the upper-left most position.
+		\item Notice that the 3x3x3 filter has 27 numbers.
+		\item So we take each of these 27 numbers, multiply them with the corresponding first 27 numbers (9 each - 3x3 from the red, green and blue channels), and add up those products to get a final sum.  That sum goes into the relevant cell in the output.
+	\end{bulletedlist}
 
-CNN-Filters, Padding, Strides, and Pooling. 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.35in]{convolutiononrgbimages}
+		\caption{}
+		\label{fig:convolutiononrgbimages}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.75in]{convolutionwithmultiplefilters}
+		\caption{}
+		\label{fig:convolutionwithmultiplefilters}
+	\end{figure}
+
+
+	\subsection{Convolutional Neural Networks (CNNs)}
+	\begin{bulletedlist}
+		\item However, the Computer Vision industry came to understand that such handcrafted filters would not easily generalize across all kinds of images.
+		\item There are a lot of complex patterns that need to be detected in many kinds of images, and it is far from trivial to think of all the expected patterns in an image and design handcrafted filters that could try and capture all of those patterns. Such an endeavor (similar to feature engineering) is ideally something we would want to automate in some way to help the model scale and generalize well to different tasks.
+		\item The idea of Convolutional Neural Networks is that while the dimensions of the convolution filters might remain a hyperparameter (which we give to the model), the values of the convolution filters themselves, could become learnable parameters. These are values which the model would learn by itself through the iterative cycle of forward propagation and back propagation, to find the filter values that work best for that predictive task.
+		\item This turns out to be the magic of Convolutional Neural Networks (CNNs), and this is one of the main reasons why they have enjoyed great success in image prediction tasks across a wider variety of image-related data than was previously possible.
+		\item So the way convolutional filters really work in CNNs is by the Neural Network itself learning the best values / parameters of the filter - this eliminates the need for hand-coding values and the developer having to choose good filter values for image prediction tasks.
+		\item In the coming module, we will learn more about some other architectural building blocks of a CNN, before understanding their end-to-end structure and getting a sense for all the image manipulation operations happening in the various layers of the CNN.
+	\end{bulletedlist}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.0in]{convolutionneuralnetworkweights}
+		\caption[Convolution weights are treated as learnable parameters.]{Convolution weights are treated as learnable parameters.  Rather than us handcrafting the values of the Ws in the filter, in a CNN, we merely give the dimensions of the filter, but ask the CNN to learn the best values of Ws for the task by itself.}
+		\label{fig:convolutionneuralnetworkweights}
+	\end{figure}
+
+
+	\subsection{Padding, Strides, and Pooling}
+	\begin{bulletedlist}
+		\item We have now understood the mathematical working of the Convolution operation, which is a sum of the element-wise products between the input and the filter. This is carried out through a sliding mechanism in order to generate each number in the output feature map (see \figurename{}s~\ref{fig:convolutionoperationstepsa} and~\ref{fig:convolutionoperationstepsb}).
+		\item This mechanism of the vanilla Convolution Operation has three significant drawbacks:
+		\item The first drawback of Convolution is that it under-utilizes pixels at the edge of the image (see \figurename~\ref{fig:convolutionunderutilizespixels}), especially the pixels at the corners, or close to the corners in relatively large images.  These pixels may only be utilized a small number of times by the sliding filter, in comparison to pixels closer to the center of the image.  For example: The 0 pixels circled in the corners would only be utilized once by the sliding filter in all its movement across the rows and columns of the image.
+		\item This drawback of convolutions is a significant disadvantage for images where there is important information in the corners or edges of the image.  For example: In this cropped image of the duck, the vanilla Convolution Operation may perform poorly in classifying the image as a duck, because the crucial information about the shape of the duck's head, which is needed in classifying this image as that of a duck, is only in the corner of the image. Such regions, as we have seen, are poorly utilized by the vanilla convolution operation.
+		\item The second drawback of Convolution has to do with the dimensionality of the convolution process - as we see in the example below, the 3x3 convolution filter decreases the dimensions of the image from 6x6 in the input, to 4x4 in the output.
+		\item The generalized formula is that for an input (n,n) and filter size (f,f), the output feature map will have dimensions (n-f+1, n-f+1), which is a reduced size in comparison to the image input size (see~\ref{fig:convolutionoperationstep6}).
+		\item The third drawback of convolution is that the convolution operation records the precise position of each of the features in the input. However, this would mean that just a small movement in the position of a feature would give us a different output.
+		\item That may not always be ideal, and sometimes it may just be required to detect only the presence of an object in the image and not exactly where it is present.  In that case we do not need exact positions, but just need to validate the presence of the object in the whole image.
+	\end{bulletedlist}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.1in]{convolutionunderutilizespixels}
+		\caption{Convolution under utilizes edge pixels.}
+		\label{fig:convolutionunderutilizespixels}
+	\end{figure}
+
+	\subsubsection{Padding}
+
+	\begin{bulletedlist}
+		\item The first two previously-mentioned drawbacks of convolutions can both be addressed through a single technique, padding.
+		\item Padding is a simple trick to add extra pixels to the edges or boundaries of the image, so that the effective size of the image gets increased. This increase in effective size of the image solves both of the first two drawbacks of convolution in the following ways:
+		\begin{bulletedlist}
+			\item It solves the problem of under-utilized edge pixels, because now the pixels originally at the edge are closer to the center and will be utilized more often by the convolution filter.
+			\item It also solves the shrinking problem of convolutions, because padding creates an enlarged image, and shrinking the enlarged size can give an output with the original size.
+		\end{bulletedlist}
+		\item For example, in \figurename~\ref{fig:paddingnopadding}, we observe that the input image, with a size of 4x4, shrinks to an output size of 2x2, when a 3x3 convolution filter is applied on it.
+		\item The disadvantage of shrinking exhibited by the convolution operation, can be addressed using padding as shown below.  Here we pad the input image with zeros (0) along the boundaries, to effectively convert it from a 4x4 image to a 6x6 input image.  When a 3x3 filter is convolved over a 6x6 image, the output is a 4x4 matrix which is the same size as the original 4x4 input.
+		\item Thus, padding effectively helps us get the same output size as the input, and avoid shrinkage.
+	\end{bulletedlist}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.1in]{paddingnopadding}
+		\caption{}
+		\label{fig:paddingnopadding}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.25in]{paddingwithpadding}
+		\caption{}
+		\label{fig:paddingwithpadding}
+	\end{figure}
+
+
+In the computer vision literature, two types of padding are described:
+	\begin{bulletedlist}
+		\item Valid Padding: This is the least used method as this essentially means no padding.  Here we do not perform any padding operation on the array (see \figurename~\ref{fig:validpadding}).
+		\begin{bulletedlist}
+			\item We observe below that the output size of the array decreases to 2x2 when a 4x4 input image is convolved using a 3x3 filter without any padding.
+		\end{bulletedlist}
+		\item Same Padding: It pads the input size in-order to make the output size same as the input size.  One of the basic type of same padding is called Zero Padding. In this, we add/pad zeros to all the edges of an image to prevent the loss of the original pixel values of the image.
+		\begin{bulletedlist}
+			\item We observe that the shape of the output is now the same as that of the input image when we apply zero padding on the input image. Thus padding helps in maintaining the output shape of the image to the same as the input even after convolution.
+Padding with zeros converts the 4x4 input to 6x6 (see \figurename~\ref{fig:samepadding}).
+			\item This causes the output to be 4x4, the same as the original input size.
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.1in]{validpadding}
+		\caption{}
+		\label{fig:validpadding}
+	\end{figure}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.1in]{samepadding}
+		\caption{}
+		\label{fig:samepadding}
+	\end{figure}
+
+
+	\subsubsection{Strides}
+
+	\begin{bulletedlist}
+		\item The third drawback of convolutions, however, about the operation being too precise, may be addressed through another idea called Strides.
+		\item We observe during convolution that we slide from the top-most corner to the bottom-most corner by a shift - this shift is called the Stride.
+	\end{bulletedlist}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.25in]{strides}
+		\caption{Stride.}
+		\label{fig:strides}
+	\end{figure}
+
+
+	\subsubsection{Mathematical Interpretation of Padding and Strides}
+
+Let us understand the mathematical interpretation of padding and strides using some examples.
+
+
+	\begin{topcaptiontable}
+        \centering
+        \lecaption{Padding and strides examples.}
+        \label{tab:}
+		\begin{tabular}{|p{0.5\textwidth-2\tabcolsep}|p{0.5\textwidth-2\tabcolsep}|} \hline
+			\tablecolumnheadervlinesone{Example 1 - Only Padding} & \tablecolumnheadervlinestwo{Example 2 - Using Padding and Strides} \\ \hline
+			Size of the input image (nxn): 4x4
+Size of the filter (fxf): 3x3
+Padding (p): 1 &
+	        Size of input image (nxn): 5x5
+Size of the filter (fxf): 3x3
+Padding (p): 0
+Stride (s): 2 \\ \hline
+			 The shape of the output can be calculated using the formula: n+2p-f+1
+So according to our example, the output shape would be: 4+(2*1)-3+1 = 4 &
+	        The shape of the output can be calculated
+using the formula: int((n+2p-f)/s+1)
+So according to our example, the output
+shape would be:
+int((5+(2*0)-3)/2+1) = 2
+Note: int() in Python rounds the number
+down to its nearest integer value. int(3.6)=3 \\ \hline
+		\end{tabular}
+	\end{topcaptiontable}

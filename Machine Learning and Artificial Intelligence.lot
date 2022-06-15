@@ -1,0 +1,44 @@
+\noindent {}Table{} \hfill Page\vspace *{\lofskip }\endgraf 
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Plot types for numerical data.\relax }}{10}{table.caption.9}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Plot types for categorical data.\relax }}{10}{table.caption.10}%
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Transformation and imputing functions.\relax }}{12}{table.caption.11}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Transforming skewed data.\relax }}{12}{table.caption.12}%
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\contentsline {table}{\numberline {5.1}{\ignorespaces \relax }}{28}{table.caption.15}%
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\contentsline {table}{\numberline {8.1}{\ignorespaces \relax }}{51}{table.caption.27}%
+\contentsline {table}{\numberline {8.2}{\ignorespaces PCA versus t-SNE.\relax }}{59}{table.caption.35}%
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\contentsline {table}{\numberline {9.1}{\ignorespaces Comparison of hyperparameters used to tune the performance of the gradient descent algorithm.\relax }}{65}{table.caption.66}%
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\contentsline {table}{\numberline {10.1}{\ignorespaces \relax }}{74}{table.caption.75}%
+\contentsline {table}{\numberline {10.2}{\ignorespaces \relax }}{81}{table.caption.87}%
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\contentsline {table}{\numberline {11.1}{\ignorespaces \relax }}{111}{table.caption.130}%
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\contentsline {table}{\numberline {13.1}{\ignorespaces \relax }}{124}{table.caption.141}%
+\contentsline {table}{\numberline {13.2}{\ignorespaces Padding and strides examples.\relax }}{139}{table.caption.167}%
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }

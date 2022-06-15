@@ -128,15 +128,20 @@ neural networks.
 high level of features from data and importantly unstructured data. So this is one of the greatest feature of deep learning over machine learning thus reducing the task of developing new feature extractors for every problem.
 	\end{bulletedlist}
 
-	\begin{tabular}{|p{0.5\qandatextwidth-2\tabcolsep}|p{0.5\qandatextwidth-2\tabcolsep}|} \hline
-			\tablecolumnheadervlinesone{Machine Learning} & \tablecolumnheadervlinestwo{Deep Learning} \\ \hline
-			It can easily train on lesser data and requires lesser time to train. &
-			It requires large data and longer time to train. \\ \hline
-			It trains on CPU. &
-			It trains on GPU. \\ \hline
-			Some ML algorithms can be easily interpreted. &
-			Difficult to interpret. \\ \hline%
-	\end{tabular}
+	\begin{topcaptiontable}
+        \centering
+        \lecaption{}
+        \label{tab:}
+		\begin{tabular}{|p{0.5\qandatextwidth-2\tabcolsep}|p{0.5\qandatextwidth-2\tabcolsep}|} \hline
+				\tablecolumnheadervlinesone{Machine Learning} & \tablecolumnheadervlinestwo{Deep Learning} \\ \hline
+				It can easily train on lesser data and requires lesser time to train. &
+				It requires large data and longer time to train. \\ \hline
+				It trains on CPU. &
+				It trains on GPU. \\ \hline
+				Some ML algorithms can be easily interpreted. &
+				Difficult to interpret. \\ \hline%
+		\end{tabular}
+	\end{topcaptiontable}
 
 	\begin{figure}[h]
 		\centering
@@ -334,20 +339,24 @@ Perceptron Learning Algorithm
 		\label{fig:perceptronlearningalgorithm2}
 	\end{figure}
 
-
-	\begin{tabular}{|p{0.5\qandatextwidth-2\tabcolsep}|p{0.5\qandatextwidth-2\tabcolsep}|} \hline
-			\tablecolumnheadervlinesone{McCulloch-Pitts Neuron} & \tablecolumnheadervlinestwo{Rosenblatt's Perceptron} \\ \hline
-			It has an input layer that acts like dendrites. &
-			It has an Input layer that acts as dendrites. \\ \hline
-			It has two parts, the first part, g is weighted addition of inputs. The weights are manually initialized and all have same weight. &
-			It has two parts, first part is weighted addition Each input is multiplied with a weight (which is typically initialized with some random value) \\ \hline
-			The weighted sum is passed through an activation function f which yields a 1 if threshold is crossed, else 0. &
-			The sum is then passed through an activation function which yields a 1 if threshold is crossed. \\ \hline
-			&
-			The step function can be defined in such a way that output can range from -1 to +1. \\ \hline
-			&
-			It captured the error and had a logic built in to adjust the weights automatically to reduce the error. \\ \hline
-	\end{tabular}
+	\begin{topcaptiontable}
+        \centering
+        \lecaption{}
+        \label{tab:}
+		\begin{tabular}{|p{0.5\qandatextwidth-2\tabcolsep}|p{0.5\qandatextwidth-2\tabcolsep}|} \hline
+				\tablecolumnheadervlinesone{McCulloch-Pitts Neuron} & \tablecolumnheadervlinestwo{Rosenblatt's Perceptron} \\ \hline
+				It has an input layer that acts like dendrites. &
+				It has an Input layer that acts as dendrites. \\ \hline
+				It has two parts, the first part, g is weighted addition of inputs. The weights are manually initialized and all have same weight. &
+				It has two parts, first part is weighted addition Each input is multiplied with a weight (which is typically initialized with some random value) \\ \hline
+				The weighted sum is passed through an activation function f which yields a 1 if threshold is crossed, else 0. &
+				The sum is then passed through an activation function which yields a 1 if threshold is crossed. \\ \hline
+				&
+				The step function can be defined in such a way that output can range from -1 to +1. \\ \hline
+				&
+				It captured the error and had a logic built in to adjust the weights automatically to reduce the error. \\ \hline
+		\end{tabular}
+	\end{topcaptiontable}
 
 	\subsection{Weakness of Perceptron}
 	\begin{bulletedlist}

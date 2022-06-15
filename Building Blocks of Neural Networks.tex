@@ -284,13 +284,18 @@ HE is used for activation functions that cut off half of the weights (ReLU), you
 	\subsection{Best Practices}
 Which is Good?  Weight initialization techniques for different activation functions:
 
-	\begin{tabular}{|p{0.5\qandatextwidth-2\tabcolsep}|p{0.5\qandatextwidth-2\tabcolsep}|} \hline
-			\tablecolumnheadervlinesone{Activation Function} & \tablecolumnheadervlinestwo{Weight Initialization Technique} \\ \hline
-			Relu, Leaky Relu &
-			HE Initialization \\ \hline
-			Sigmoid, TanH &
-			Xavier Initialization \\ \hline
-	\end{tabular}
+	\begin{topcaptiontable}
+        \centering
+        \lecaption{}
+        \label{tab:}
+		\begin{tabular}{|p{0.5\qandatextwidth-2\tabcolsep}|p{0.5\qandatextwidth-2\tabcolsep}|} \hline
+				\tablecolumnheadervlinesone{Activation Function} & \tablecolumnheadervlinestwo{Weight Initialization Technique} \\ \hline
+				Relu, Leaky Relu &
+				HE Initialization \\ \hline
+				Sigmoid, TanH &
+				Xavier Initialization \\ \hline
+		\end{tabular}
+	\end{topcaptiontable}
 
 	\subsection{Continued Research}
 Proper Initialization is an active area of research:

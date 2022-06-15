@@ -211,19 +211,25 @@ t-distributed stochastic neighbor embedding a non-linear technique for combining
 	\end{figure}
 
 	\subsection{PCA versus t-SNE}
-	\begin{tabular}{|p{0.5\textwidth-2\tabcolsep}|p{0.5\textwidth-2\tabcolsep}|} \hline
-			\tablecolumnheadervlinesone{PCA} & \tablecolumnheadervlinestwo{t-SNE} \\ \hline
-			Linear &
-            Non-linear \\ \hline
-			Maximizes the variance capture to find the structure within the data. &
-			Relies on probability distributions to find the structure within the data.  \\ \hline
-			Seeks to preserve all pairwise distances. &
-			Seeks to preserve small pairwise distances. \\ \hline
-			Tries to preserve global structure only. &
-			Tries to preserve local structure only. \\ \hline
-			Computational time is low. &
-			Computational time is high. \\ \hline%
-	\end{tabular}
+See \tablename~\ref{tab:pcaversustsne}
+	\begin{topcaptiontable}
+        \centering
+        \lecaption{PCA versus t-SNE.}
+        \label{tab:pcaversustsne}
+		\begin{tabular}{|p{0.5\textwidth-2\tabcolsep}|p{0.5\textwidth-2\tabcolsep}|} \hline
+				\tablecolumnheadervlinesone{PCA} & \tablecolumnheadervlinestwo{t-SNE} \\ \hline
+				Linear &
+	            Non-linear \\ \hline
+				Maximizes the variance capture to find the structure within the data. &
+				Relies on probability distributions to find the structure within the data.  \\ \hline
+				Seeks to preserve all pairwise distances. &
+				Seeks to preserve small pairwise distances. \\ \hline
+				Tries to preserve global structure only. &
+				Tries to preserve local structure only. \\ \hline
+				Computational time is low. &
+				Computational time is high. \\ \hline
+		\end{tabular}
+	\end{topcaptiontable}
 
 
 	\subsection{Why use t-SNE Over PCA for Visualization}

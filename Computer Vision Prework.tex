@@ -439,11 +439,11 @@ directions.
 
 In the computer vision literature, two types of padding are described:
 	\begin{bulletedlist}
-		\item Valid Padding: This is the least used method as this essentially means no padding.  Here we do not perform any padding operation on the array (see \figurename~\ref{fig:validpadding}).
+		\item {\bfseries Valid Padding}: This is a term that means no padding.  This is the least used method.  Here we do not perform any padding operation on the array (see \figurename~\ref{fig:validpadding}).
 		\begin{bulletedlist}
 			\item We observe below that the output size of the array decreases to 2x2 when a 4x4 input image is convolved using a 3x3 filter without any padding.
 		\end{bulletedlist}
-		\item Same Padding: It pads the input size in-order to make the output size same as the input size.  One of the basic type of same padding is called Zero Padding. In this, we add/pad zeros to all the edges of an image to prevent the loss of the original pixel values of the image.
+		\item {\bfseries Same Padding}: It pads the input size in-order to make the output size same as the input size.  One of the basic type of same padding is called Zero Padding. In this, we add/pad zeros to all the edges of an image to prevent the loss of the original pixel values of the image.
 		\begin{bulletedlist}
 			\item We observe that the shape of the output is now the same as that of the input image when we apply zero padding on the input image. Thus padding helps in maintaining the output shape of the image to the same as the input even after convolution.
 Padding with zeros converts the 4x4 input to 6x6 (see \figurename~\ref{fig:samepadding}).

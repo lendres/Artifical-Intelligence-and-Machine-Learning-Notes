@@ -5,8 +5,8 @@
 1
 Machine Learning and Artificial Intelligence.tex
 42
-6
-3
+4
+1
 
 
 
@@ -16,21 +16,21 @@ Machine Learning and Artificial Intelligence.tex
 Machine Learning and Artificial Intelligence.tex
 TeX
 152055739 0 -1 1123 -1 898 234 234 1582 817 0 22 253 -1 -1 0 0 188 -1 -1 188 1 0 898 -1   0
-Introduction to Deep Neural Networks.tex
-TeX
-1060795 0 -1 10000 -1 10156 156 156 1553 528 0 22 368 -1 -1 0 0 47 -1 -1 47 1 0 10156 -1   0
 Computer Vision Prework.tex
 TeX
-1060795 5 -1 21528 -1 21529 224 224 1421 789 0 402 -6675 -1 -1 0 0 38 -1 -1 38 1 0 21529 -1   0
-Installation Notes.tex
-TeX
-286273467 5 -1 621 -1 622 208 208 1556 791 0 612 391 -1 -1 0 0 29 -1 -1 29 1 0 622 -1   0
+269496251 5 -1 31938 -1 31939 224 224 1421 789 0 402 506 -1 -1 0 0 38 -1 -1 38 1 0 31939 -1   0
 C:\Custom Program Files\LaTeX\TeX\LaTeX\lequestionandanswer.sty
 TeX:DTX
 5255099 1 -1 3121 -1 3070 96 96 1293 661 0 22 759 -1 -1 0 0 40 -1 -1 40 1 0 3070 -1   0
 C:\Custom Program Files\LaTeX\TeX\LaTeX\lelists.sty
 TeX:DTX
 22032314 0 51 1 94 1 130 130 1478 713 0 22 529 -1 -1 0 0 14 0 0 14 1 0 1 94   0
+Introduction to Deep Neural Networks.tex
+TeX
+269496251 0 -1 10000 -1 10156 156 156 1553 528 0 22 368 -1 -1 0 0 47 -1 -1 47 1 0 10156 -1   0
+Installation Notes.tex
+TeX
+286273467 5 -1 621 -1 622 208 208 1556 791 0 612 391 -1 -1 0 0 29 -1 -1 29 1 0 622 -1   0
 Deep Learning Prework.tex
 TeX
 286273467 2 -1 6469 -1 6473 234 234 1553 817 0 162 -989 -1 -1 0 0 33 -1 -1 33 1 0 6473 -1   0

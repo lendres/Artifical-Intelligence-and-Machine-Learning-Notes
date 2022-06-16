@@ -85,7 +85,7 @@ We can get a different number of clusters from the dendrogram at different heigh
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.0in]{hierarchicalclustering}
-		\caption{Hierarchical clustering.}
+		\caption[Hierarchical clustering]{Hierarchical clustering.}
 		\label{fig:hierarchicalclustering}
 	\end{figure}
 
@@ -144,13 +144,13 @@ In the agglomerative or bottom-up clustering method we assign each observation t
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.0in]{principalcomponentanalyis}
-		\caption{.}
+		\caption[Principal component analysis]{Principal component analysis.}
 		\label{fig:principalcomponentanalyis}
 	\end{figure}
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.0in]{eigenvaluesandvariation}
-		\caption{.}
+		\caption[Eigenvalues and fraction of variation explained]{Eigenvalues and fraction of variation explained.}
 		\label{fig:eigenvaluesandvariation}
 	\end{figure}
 
@@ -160,7 +160,7 @@ Used to compare different clustering results.
 Takes a measurement type and calculates all the distances between the points and the heights in the dendrogram that they combine at.  If the correlation of these two columns is a measure of how good the dendrogram is.
 
 	\section{t-SNE}
-t-distributed stochastic neighbor embedding a non-linear technique for combining features.  It is only used for visualization.
+T-distributed stochastic neighbor embedding a non-linear technique for combining features.  It is only used for visualization.
 	\begin{bulletedlist}
 		\item A non-linear dimensionality reduction technique which is mainly used for visualization purposes of high dimensional data.
 		\item Maps high-dimensional data to 2 or 3 dimensions, making it easier for us to visualize.
@@ -182,7 +182,7 @@ t-distributed stochastic neighbor embedding a non-linear technique for combining
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.0in]{tsnedimensionalreduction}
-		\caption{.}
+		\caption[Dimensionality reduction with t-SNE]{Dimensionality reduction with t-SNE.}
 		\label{fig:tsnedimensionalreduction}
 	\end{figure}
 
@@ -206,15 +206,15 @@ t-distributed stochastic neighbor embedding a non-linear technique for combining
  	\begin{figure}[h]
 		\centering
 		\includegraphics[width=\textwidth]{perplexityvaluesfortsne}
-		\caption{.}
+		\caption[Perplexity values]{Perplexity values.}
 		\label{fig:perplexityvaluesfortsne}
 	\end{figure}
 
 	\subsection{PCA versus t-SNE}
 See \tablename~\ref{tab:pcaversustsne}
-	\begin{topcaptiontable}
+	\begin{table}
         \centering
-        \lecaption{PCA versus t-SNE.}
+        \caption[PCA versus t-SNE]{PCA versus t-SNE.}
         \label{tab:pcaversustsne}
 		\begin{tabular}{|p{0.5\textwidth-2\tabcolsep}|p{0.5\textwidth-2\tabcolsep}|} \hline
 				\tablecolumnheadervlinesone{PCA} & \tablecolumnheadervlinestwo{t-SNE} \\ \hline
@@ -229,7 +229,7 @@ See \tablename~\ref{tab:pcaversustsne}
 				Computational time is low. &
 				Computational time is high. \\ \hline
 		\end{tabular}
-	\end{topcaptiontable}
+	\end{table}
 
 
 	\subsection{Why use t-SNE Over PCA for Visualization}
@@ -242,7 +242,7 @@ See \tablename~\ref{tab:pcaversustsne}
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.25in]{tsneversuspca}
-		\caption{.}
+		\caption[Example of t-SNE]{Example of t-SNE.}
 		\label{fig:tsneversuspca}
 	\end{figure}
 

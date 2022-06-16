@@ -31,11 +31,10 @@ Unsupervised learning models are used for three main tasks: clustering, associat
 %		\codeitemnonumber
 %	\end{code}
 
-    \begin{topcaptiontable}[h]
+    \begin{table}[h]
         \centering
-        \lecaption{Transformation and imputing functions.}
+        \caption[Transformation and imputing functions]{Transformation and imputing functions.}
         \label{tab:transfomrationandimputing}
-		
         \begin{tabular}{|p{2.5in}|p{\textwidth-3.0in}|} \hline
 			\tablecolumnheadervlinesone{Class/Function} 	& \tablecolumnheadervlinestwo{Plotting Function(s)} \\ \hline
 			\codetext{StandardScaler}						& Scales values to a range between 0 and 1. \\ \hline
@@ -43,13 +42,13 @@ Unsupervised learning models are used for three main tasks: clustering, associat
 			\codetext{KNNImputer}							&	 \\ \hline
 			\codetext{DataFrame[``c''].map(lbls)}		& Maps values in \textcode{``c''} from one to another based on the dictionary \textcode{lbls}. \\ \hline
 		\end{tabular}
-	\end{topcaptiontable}
+	\end{table}
 
 	\subsection{Skewed Data}
 For highly skewed data, there are three main options for transforming data.
-	\begin{topcaptiontable}[h]
+	\begin{table}[h]
         \centering
-        \lecaption{Transforming skewed data.}
+        \caption[Transforming skewed data]{Transforming skewed data.}
         \label{tab:transformingskeweddata}
         \begin{tabular}{|p{2.5in}|p{\textwidth-3.0in}|} \hline
 			\tablecolumnheadervlinesone{Class/Function} 	& \tablecolumnheadervlinestwo{Plotting Function(s)} \\ \hline
@@ -57,7 +56,7 @@ For highly skewed data, there are three main options for transforming data.
 			\codetext{sqrt}								&	 \\ \hline
 			\codetext{np.arcsinh}						& Hyperbolic sin inverse.  Works on data with zeros and negative values.  Works a lot like a log transformation. \\ \hline
 		\end{tabular}
-	\end{topcaptiontable}
+	\end{table}
 
 See the video in section 2.7 of the Great Learning course.
 

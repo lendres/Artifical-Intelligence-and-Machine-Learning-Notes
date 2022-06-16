@@ -22,7 +22,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.5in]{imagefeatureextraction}
-		\caption{Feature extraction.}
+		\caption[Feature extraction]{Feature extraction.}
 		\label{fig:imagefeatureextraction}
 	\end{figure}
 
@@ -33,9 +33,9 @@ The two most historically-important, manual feature extraction techniques have b
 		\item SIFT (Scale Invariant Feature Transform)
 	\end{bulletedlist}
 
-	\begin{topcaptiontable}
+	\begin{table}
         \centering
-        \lecaption[HOG versus SIFT feature extraction]{HOG versus SIFT feature extraction.}
+        \caption[HOG versus SIFT feature extraction]{HOG versus SIFT feature extraction.}
         \label{tab:hogversussift}
 		\begin{tabular}{|p{0.5\textwidth-2\tabcolsep}|p{0.5\textwidth-2\tabcolsep}|} \hline
 				\tablecolumnheadervlinesone{HOG} & \tablecolumnheadervlinestwo{SIFT} \\ \hline
@@ -50,7 +50,7 @@ The two most historically-important, manual feature extraction techniques have b
 				\adjustbox{center}{\includegraphics[height=1.5in]{hogfeaturedetection}} &
 				\adjustbox{center}{\includegraphics[height=1.5in]{siftfeaturedetection}} \\ \hline
 		\end{tabular}
-	\end{topcaptiontable}
+	\end{table}
 
 	\subsection{Disadvantages of Conventional Feature Extraction Techniques}
 	\begin{bulletedlist}
@@ -174,7 +174,7 @@ used interchangeably across the industry.
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.5in]{edgedetectioncar}
-		\caption{}
+		\caption[Edge detection example]{Edge detection example.}
 		\label{fig:edgedetectioncar}
 	\end{figure}
 
@@ -265,11 +265,10 @@ used interchangeably across the industry.
 		\item Convolutions can be used for various kinds of feature extraction tasks, depending only on the pixel pattern of the filter.
 		\item The convolution filter used in the previous example, for instance, has a vertical pattern of -1s, 0s and 1s.  It is also known in the industry as the Prewitt Filter.
 		\item The above convolution filter would be considered a type of vertical edge detector, capable of identifying vertical edges in the image.
-		\item The reason for this is due to the nature of the convolution operation, which uses a sum of element-wise products. The  implication of that is those regions of the image which have similar vertical patterns to those of the filter, get amplified in
-the element-wise product, and hence in the output matrix.
+		\item The reason for this is due to the nature of the convolution operation, which uses a sum of element-wise products. The  implication of that is those regions of the image which have similar vertical patterns to those of the filter, get amplified in the element-wise product, and hence in the output matrix.
 		\item In other words, convolution filters are adept at identifying those regions of the image which have pixel patterns that match the pixel pattern of the filter itself.
 		\item That is why the above filter would be considered a type of vertical edge detector.  It has a vertical pattern of pixels (-1s, 0s and 1s) which represent a left-to-right increasing gradient.  Any regions in the input image that have a similar pattern to this would be identified by this filter, and amplified numerically with a higher output value for those regions.
-		\item One other point of consideration is that filters with odd-valued dimensions (such as 3 x 3 Filters) are preferred, due to the presence of a central pixel.
+		\item One other point of consideration is that filters with odd-valued dimensions (such as 3 x 3 Filters) are preferred, due to the presence of a central pixel.  The central pixel acts as a focus point and the filter is looking at the area surrounding the pixel.
 	\end{bulletedlist}
 
 
@@ -300,13 +299,13 @@ directions.
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.0in]{prewittfilter}
-		\caption{}
+		\caption[Prewitt filter]{Prewitt filter.}
 		\label{fig:prewittfilter}
 	\end{figure}
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.75in]{prewittfilterexample}
-		\caption{}
+		\caption[Prewitt filter example]{Prewitt filter example.}
 		\label{fig:prewittfilterexample}
 	\end{figure}
 
@@ -320,13 +319,13 @@ directions.
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.0in]{sobelfilter}
-		\caption{}
+		\caption[Sobel filter]{Sobel filter.}
 		\label{fig:sobelfilter}
 	\end{figure}
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.5in]{sobelfilterexample}
-		\caption{}
+		\caption[Sobel filter example]{Sobel filter example.}
 		\label{fig:sobelfileterexample}
 	\end{figure}
 
@@ -341,13 +340,13 @@ directions.
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.0in]{laplacianfilter}
-		\caption{}
+		\caption[Laplacian filter]{Laplacian filter.}
 		\label{fig:laplacianfilter}
 	\end{figure}
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.75in]{laplacianfilterexample}
-		\caption{}
+		\caption[Laplacian filter example]{Laplacian filter example.}
 		\label{fig:laplacianfilterexample}
 	\end{figure}
 
@@ -363,13 +362,13 @@ directions.
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.35in]{convolutiononrgbimages}
-		\caption{}
+		\caption[Convolution on RGB images]{Convolution on RGB images.}
 		\label{fig:convolutiononrgbimages}
 	\end{figure}
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.75in]{convolutionwithmultiplefilters}
-		\caption{}
+		\caption[Convolution with multiple filters]{Convolution with multiple filters.}
 		\label{fig:convolutionwithmultiplefilters}
 	\end{figure}
 
@@ -387,7 +386,7 @@ directions.
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.0in]{convolutionneuralnetworkweights}
-		\caption[Convolution weights are treated as learnable parameters.]{Convolution weights are treated as learnable parameters.  Rather than us handcrafting the values of the Ws in the filter, in a CNN, we merely give the dimensions of the filter, but ask the CNN to learn the best values of Ws for the task by itself.}
+		\caption[Convolution weights are treated as learnable parameters]{Convolution weights are treated as learnable parameters.  Rather than us handcrafting the values of the Ws in the filter, in a CNN, we merely give the dimensions of the filter, but ask the CNN to learn the best values of Ws for the task by itself.}
 		\label{fig:convolutionneuralnetworkweights}
 	\end{figure}
 
@@ -407,7 +406,7 @@ directions.
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.1in]{convolutionunderutilizespixels}
-		\caption{Convolution under utilizes edge pixels.}
+		\caption[Convolution under utilizes edge pixels]{Convolution under utilizes edge pixels.}
 		\label{fig:convolutionunderutilizespixels}
 	\end{figure}
 
@@ -428,13 +427,13 @@ directions.
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.1in]{paddingnopadding}
-		\caption{}
+		\caption[Convolution without padding shrinks the matrix]{Convolution without padding shrinks the matrix.}
 		\label{fig:paddingnopadding}
 	\end{figure}
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.25in]{paddingwithpadding}
-		\caption{}
+		\caption[Using padding prevents matrix shrinking]{Using padding prevents matrix shrinking.}
 		\label{fig:paddingwithpadding}
 	\end{figure}
 
@@ -452,18 +451,17 @@ Padding with zeros converts the 4x4 input to 6x6 (see \figurename~\ref{fig:samep
 		\end{bulletedlist}
 	\end{bulletedlist}
 
-
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.1in]{validpadding}
-		\caption{}
+		\caption[Valid padding]{Valid padding.}
 		\label{fig:validpadding}
 	\end{figure}
 
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.1in]{samepadding}
-		\caption{}
+		\caption[Same padding]{Same padding.}
 		\label{fig:samepadding}
 	\end{figure}
 
@@ -478,7 +476,7 @@ Padding with zeros converts the 4x4 input to 6x6 (see \figurename~\ref{fig:samep
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.25in]{strides}
-		\caption{Stride.}
+		\caption[Stride]{Stride.}
 		\label{fig:strides}
 	\end{figure}
 
@@ -487,9 +485,9 @@ Padding with zeros converts the 4x4 input to 6x6 (see \figurename~\ref{fig:samep
 
 Let us understand the mathematical interpretation of padding and strides using some examples.
 
-	\begin{topcaptiontable}
+	\begin{table}
         \centering
-        \lecaption{Padding and strides examples.}
+        \caption[Padding and strides examples]{Padding and strides examples.}
         \label{tab:}
 		\begin{tabular}{|p{0.5\textwidth-2\tabcolsep}|p{0.5\textwidth-2\tabcolsep}|} \hline
 			\tablecolumnheadervlinesone{Example 1 - Only Padding} & \tablecolumnheadervlinestwo{Example 2 - Using Padding and Strides} \\ \hline
@@ -506,7 +504,7 @@ So according to our example, the output shape would be: 4+(2*1)-3+1 = 4 &
 So according to our example, the output shape would be: int((5+(2*0)-3)/2+1) = 2 \vspace{\baselineskip}\newline
 Note: int() in Python rounds the number down to its nearest integer value. int(3.6)=3 \\ \hline
 		\end{tabular}
-	\end{topcaptiontable}
+	\end{table}
 
 	\subsubsection{Pooling}
 
@@ -527,23 +525,23 @@ Note: int() in Python rounds the number down to its nearest integer value. int(3
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=0.85in]{maxpooling}
-		\caption{Max pooling.}
+		\caption[Max pooling]{Max pooling.}
 		\label{fig:maxpooling}
 	\end{figure}
 
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=0.85in]{averagepooling}
-		\caption{Average pooling.}
+		\caption[Average pooling]{Average pooling.}
 		\label{fig:averagepooling}
 	\end{figure}
 
 	\subsubsection{Mathematical Interpretation of Pooling}
 For examples, see \tablename~\ref{tab:poolingexamples}.
 
-	\begin{topcaptiontable}
+	\begin{table}
         \centering
-        \lecaption{Pooling examples.}
+        \caption[Pooling examples]{Pooling examples.}
         \label{tab:poolingexamples}
 		\begin{tabular}{|p{0.5\textwidth-2\tabcolsep}|p{0.5\textwidth-2\tabcolsep}|} \hline
 			\tablecolumnheadervlinesone{Example 1 - Only Pooling} & \tablecolumnheadervlinestwo{Example 2 - Pooling with Padding and Strides} \\ \hline
@@ -559,7 +557,7 @@ So according to our example, the output shape would be: 5-3+1= 3 &
 So according to our example, the output shape would be: int((5+(2*1)-3)/2+1) = 3 \vspace{\baselineskip}\newline
 Note: int() in Python rounds the number down to its nearest integer value. int(3.6)=3 \\ \hline
 		\end{tabular}
-	\end{topcaptiontable}
+	\end{table}
 
 	\subsection{Flattening to a 1D Array}
 
@@ -590,6 +588,6 @@ Example:
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.2in]{flatteninganarray}
-		\caption{Flattening a 3D array for use in a neural network.}
+		\caption[Flattening a 3D array]{Flattening a 3D array for use in a neural network.}
 		\label{fig:flatteninganarray}
 	\end{figure}

@@ -205,7 +205,7 @@ And missing value imputation leads to data leakage, so should be done after spli
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.5in]{crossvalidation}
-		\caption{Cross validation.}
+		\caption[Cross validation]{Cross validation.}
 		\label{fig:normaldistrution}
 	\end{figure}
 
@@ -229,7 +229,7 @@ We can handle the imbalanced data set cases to minimize the Type II errors by ba
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=5.0in]{overandundersampling}
-		\caption{Over and under sampling.}
+		\caption[Over and under sampling]{Over and under sampling.}
 		\label{fig:overandundersampling}
 	\end{figure}
 
@@ -257,7 +257,7 @@ Large coefficients indicate a case where for a unit change in the input variable
 	\begin{figure}[tbh]
 		\centering
 		\includegraphics[width=\textwidth]{modelcoefficients}
-		\caption{Model coefficients.}
+		\caption[Model coefficients]{Model coefficients.}
 		\label{fig:modelcoefficients}
 	\end{figure}
 
@@ -282,7 +282,7 @@ Large coefficients indicate a case where for a unit change in the input variable
 	\begin{figure}[tbh]
 		\centering
 		\includegraphics[width=\textwidth]{linearversusridgeregression}
-		\caption{Linear versus ridge regression.}
+		\caption[Linear versus ridge regression]{Linear versus ridge regression.}
 		\label{fig:linearversusridgeregression}
 	\end{figure}
 
@@ -313,13 +313,13 @@ To compare the Ridge and Lasso, let us first transform our error function (which
 
 	\begin{bulletedlist}
 		\item Every ring on the error function represents a combination of coefficients (m1 and m2 in the image) which result in same quantum of error i.e.\ SSE.
-		\item Let us convert that to a 2d contour plot.  In the contour plot, every ring represents one quantum of error.
+		\item Let us convert that to a 2D contour plot.  In the contour plot, every ring represents one quantum of error.
 		\item The innermost ring / bull's eye is the combination of the coefficients that gives the lease SSE.
 	\end{bulletedlist}
 
 	\begin{figure}[tbh]
 		\centering
 		\includegraphics[width=2.0in]{ridgeversuslasso1}
-		\caption{}
+		\caption[Ridge versus Lasso regression]{Ridge versus Lasso regression.}
 		\label{fig:ridgeversuslasso1}
 	\end{figure} 

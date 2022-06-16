@@ -5,7 +5,7 @@ Non-convex functions have local minimums in addition to the global minimum (see 
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.0in]{complicatedlossfunction}
-		\caption{.}
+		\caption[Local minimums of a non-convex function]{Local minimums of a non-convex function.}
 		\label{fig:complicatedlossfunction}
 	\end{figure}
 
@@ -21,7 +21,7 @@ Saddle points, Hessian and long local furrows.  In multiple dimensions:
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.0in]{saddlepoint}
-		\caption{.}
+		\caption[Saddle point]{Saddle point.}
 		\label{fig:saddlepoint}
 	\end{figure}
 
@@ -57,7 +57,7 @@ see \figurename~\ref{fig:stochasticgradientdescent}
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.0in]{stochasticgradientdescent}
-		\caption{.}
+		\caption[Stochastic gradient descent]{Stochastic gradient descent.}
 		\label{fig:stochasticgradientdescent}
 	\end{figure}
 
@@ -68,7 +68,7 @@ see \figurename~\ref{fig:stochasticgradientdescent}
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.0in]{stochasticgradientdescentmomentum}
-		\caption{.}
+		\caption[Stochastic gradient descent with momentum]{Stochastic gradient descent with momentum.}
 		\label{fig:stochasticgradientdescentmomentum}
 	\end{figure}
 
@@ -98,7 +98,7 @@ Please reference \figurename~\ref{fig:rmsprophowitworks} for the following:
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.0in]{rmsprophowitworks}
-		\caption{.}
+		\caption[Root mean square propagation equations]{Root mean square propagation equations.}
 		\label{fig:rmsprophowitworks}
 	\end{figure}
 
@@ -189,7 +189,7 @@ backward propagation. If either occurs, the neural network will take a longer ti
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.5in]{weightinitialization}
-		\caption{.}
+		\caption[Weight initialization for neural networks]{Weight initialization for neural networks.}
 		\label{fig:weightinitialization}
 	\end{figure}
 
@@ -218,7 +218,7 @@ The weight update is minor and results in slower convergence.  This makes the op
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.5in]{vanishingandexplodinggradients}
-		\caption{Vanishing and exploding gradients.}
+		\caption[Vanishing and exploding gradients]{Vanishing and exploding gradients.}
 		\label{fig:vanishingandexplodinggradients}
 	\end{figure}
 
@@ -232,8 +232,8 @@ Another impact of exploding gradients is that huge values of the gradients may c
 	\subsection{Weight Initialization Techniques}
  	\begin{figure}[h]
 		\centering
-		\includegraphics[width=\textwidth]{weightinitialization1}
-		\caption{Vanishing and exploding gradients.}
+		\includegraphics[height=3in]{weightinitialization1}
+		\caption[Neural network weight initialization]{Neural network weight initialization.}
 		\label{fig:weightinitialization1}
 	\end{figure}
 
@@ -251,14 +251,14 @@ Another impact of exploding gradients is that huge values of the gradients may c
 		\begin{minipage}[t]{0.475\textwidth}
 			\centering
 			\includegraphics[height=0.75in]{xaviernormal}
-			\caption{Xavier normal initialization.}
+			\caption[Xavier normal initialization]{Xavier normal initialization.}
 			\label{fig:xaviernormal}
 		\end{minipage}
 		\hfill
 		\begin{minipage}[t]{0.475\textwidth}
 			\centering
 			\includegraphics[height=1.0in]{xavieruniform}
-			\caption{Xavier uniform initialization.}
+			\caption[Xavier uniform initialization]{Xavier uniform initialization.}
 			\label{fig:xavieruniform}
 		\end{minipage}
 	\end{figure}
@@ -267,14 +267,14 @@ Another impact of exploding gradients is that huge values of the gradients may c
 		\begin{minipage}[t]{0.475\textwidth}
 			\centering
 			\includegraphics[height=0.65in]{henormal}
-			\caption{HE normal initialization.}
+			\caption[HE normal initialization]{HE normal initialization.}
 			\label{fig:henormal}
 		\end{minipage}
 		\hfill
 		\begin{minipage}[t]{0.475\textwidth}
 			\centering
 			\includegraphics[height=0.8in]{heuniform}
-			\caption{HE uniform initialization.}
+			\caption[HE uniform initialization]{HE uniform initialization.}
 			\label{fig:heuniform}
 		\end{minipage}
 	\end{figure}
@@ -284,10 +284,10 @@ HE is used for activation functions that cut off half of the weights (ReLU), you
 	\subsection{Best Practices}
 Which is Good?  Weight initialization techniques for different activation functions:
 
-	\begin{topcaptiontable}
+	\begin{table}
         \centering
-        \lecaption{}
-        \label{tab:}
+        \caption[Pairing activation functions with weight initialization techniques]{Pairing activation functions with weight initialization techniques.}
+        \label{tab:activationfunctionsandweightinitialization}
 		\begin{tabular}{|p{0.5\qandatextwidth-2\tabcolsep}|p{0.5\qandatextwidth-2\tabcolsep}|} \hline
 				\tablecolumnheadervlinesone{Activation Function} & \tablecolumnheadervlinestwo{Weight Initialization Technique} \\ \hline
 				Relu, Leaky Relu &
@@ -295,7 +295,7 @@ Which is Good?  Weight initialization techniques for different activation functi
 				Sigmoid, TanH &
 				Xavier Initialization \\ \hline
 		\end{tabular}
-	\end{topcaptiontable}
+	\end{table}
 
 	\subsection{Continued Research}
 Proper Initialization is an active area of research:
@@ -318,7 +318,7 @@ Proper Initialization is an active area of research:
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.25in]{neuralnetworksoverfitting}
-		\caption{Over fitting in neural networks.}
+		\caption[Over fitting in neural networks]{Over fitting in neural networks.}
 		\label{fig:neuralnetworksoverfitting}
 	\end{figure}
 
@@ -333,16 +333,15 @@ How could this possibly be a good idea?  It forces the network to have a redunda
 		\begin{minipage}[t]{0.475\textwidth}
 			\centering
 			\includegraphics[height=1.25in]{dropoutredundent1}
-			%\caption{Xavier normal initialization.}
 			\label{fig:dropoutredundent1}
 		\end{minipage}
 		\hfill
 		\begin{minipage}[t]{0.475\textwidth}
 			\centering
 			\includegraphics[height=1.25in]{dropoutredundent2}
-			%\caption{Xavier uniform initialization.}
 			\label{fig:dropoutredundent2}
 		\end{minipage}
+		\caption[Use of drop out to prevent over fitting]{Use of drop out to prevent over fitting.}
 	\end{figure}
 
 At test time all neurons are always ON.  We must scale the activations so that for each neuron: output at test time = expected output at training time.
@@ -359,7 +358,7 @@ A $\lambda$ parameter adds a penalty to the loss function prevent large weights.
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.25in]{regularzationearlystopping}
-		\caption{Drop out.}
+		\caption[Preventing over fitting by stopping when testing error starts increasing]{Preventing over fitting by stopping when testing error starts increasing.}
 		\label{fig:regularzationearlystopping}
 	\end{figure}
 
@@ -437,7 +436,7 @@ Generating new data to supplement the existing data.  For example, add noise to 
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.25in]{dropout}
-		\caption{Drop out.}
+		\caption[Before and after applying drop out in a neural network]{Before and after applying drop out in a neural network.}
 		\label{fig:dropout}
 	\end{figure}
 
@@ -473,13 +472,13 @@ Generating new data to supplement the existing data.  For example, add noise to 
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.25in]{batchnormalization1}
-		\caption{Drop out.}
+		\caption[Batch normalization of hidden layers]{Batch normalization of hidden layers.}
 		\label{fig:batchnormalization1}
 	\end{figure}
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=2.25in]{batchnormalization2}
-		\caption{Drop out.}
+		\caption[Batch normalization and activation functions]{Batch normalization of a hidden layer's output to maps it to an appropriate range for an activation function.}
 		\label{fig:batchnormalization2}
 	\end{figure}
 
@@ -549,8 +548,8 @@ There are usually two stages in which Batch Normalization is applied:
 
  	\begin{figure}[h]
 		\centering
-		\includegraphics[width=\textwidth-1in]{batchnormalizationdeeplayers}
-		\caption{Batch normalization deep layers.  In the above, $\phi$ is the activation function, $\sum$ is the summation of the inputs and weights, and BN is the batch normalization.}
+		\includegraphics[height=1.25in]{batchnormalizationdeeplayers}
+		\caption[Batch normalization of deep layers]{Batch normalization of deep layers.  In the above, $\phi$ is the activation function, $\sum$ is the summation of the inputs and weights, and BN is the batch normalization.}
 		\label{fig:batchnormalizationdeeplayers}
 	\end{figure}
 
@@ -618,14 +617,14 @@ For example, that you run a batch of images through batch normalization.  The ab
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.8in]{neuralnetworklearningrates}
-		\caption{Learning rates in neural networks.}
+		\caption[Learning rates in neural networks]{Learning rates in neural networks.}
 		\label{fig:neuralnetworklearningrates}
 	\end{figure}
 
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.8in]{neuralnetworkslosscurve}
-		\caption{Loss curve in neural networks.  Training curve is in blue, validation curve is in gold.}
+		\caption[Loss curve in neural networks]{Loss curve in neural networks.  Training curve is in blue, validation curve is in gold.}
 		\label{fig:neuralnetworkslosscurve}
 	\end{figure}
 

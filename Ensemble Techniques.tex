@@ -222,9 +222,9 @@ where residuals are initially high
 	\section{Comparison}
 What is the difference between bagging and boosting?
 
-	\begin{topcaptiontable}
+	\begin{table}
         \centering
-        \lecaption{}
+        \caption[Bagging versus boosting]{Bagging versus boosting.}
         \label{tab:}
 		\begin{tabular}{|p{0.5\textwidth-2\tabcolsep}|p{0.5\textwidth-2\tabcolsep}|} \hline
 			\tablecolumnheadervlinesone{Bagging} & \tablecolumnheadervlinestwo{Boosting} \\ \hline
@@ -239,7 +239,7 @@ What is the difference between bagging and boosting?
 			Examples: Bagging Classifier, Random Forest &
 			Examples are AdaBoost, Gradient Boosting Classifier \\ \hline
 		\end{tabular}
-	\end{topcaptiontable}
+	\end{table}
 
 	\section{Gradient Boosting}
 Gradient boosting uses subsequent models to predict the residuals.  The original model is added to the results of the residual predictors (which weight errors more) to get a complete model.  The residual predictors are added to the main model using a learning correction ($\alpha$) that reduces its contribution.  If a weight of 1 is used, the model will be over fit.

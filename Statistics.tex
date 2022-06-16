@@ -28,7 +28,7 @@ coefficient of variation
 	\begin{figure}[tbp]
 		\centering
 		\includegraphics[height=2.5in]{normaldistrution}
-		\caption{Normal distribution.}
+		\caption[Normal distribution]{Normal distribution.}
 		\label{fig:normaldistrution}
 	\end{figure}
 
@@ -184,12 +184,15 @@ Type 2 error (false negative): Concluding there is not a change in probability w
 
 
 \newpage{}
-%    \begin{topcaptiontable}
+%    \begin{table}
 %        \centering
-%        \lecaption{Comparison of Hypothesis Test Types.  See the Jupiter notebook "Hypothesis Testing Statistical Learning Week 2" for more information and examples.}
+%        \caption{Comparison of Hypothesis Test Types.  See the Jupiter notebook "Hypothesis Testing Statistical Learning Week 2" for more information and examples.}
 %        \label{tab:hypothesistests}
 % \tabledoublecline{1}{4}
-        \begin{longtable}{|N|p{1.25in}|p{3.08in}|p{1.2in}|} \hline
+        \begin{longtable}{|N|p{1.25in}|p{3.08in}|p{1.2in}|}
+        	\caption[Comparison of hypothesis test types]{Comparison of hypothesis test types.  See the Jupiter notebook ``Hypothesis Testing Statistical Learning Week 2'' for more information and examples.}
+         	\label{tab:comparisonofhypothesistesttypes}\\
+        	\hline
 			\multicolumn{1}{|c|}{} & \tablecolumnheadervlinestwo{Significance of Test} &
 				\tablecolumnheadervlinestwo{Assumptions} &
 				\tablecolumnheadervlinestwo{Distribution/Test} \endhead \hline
@@ -291,9 +294,8 @@ Type 2 error (false negative): Concluding there is not a change in probability w
 					\item Populations variances are equal
 				\end{nospacebulletedlist} &
 				\distributiontest{F-distribution}{One-way \acrshort{anova} F-test} \\ \hline
- 		\caption[Comparison of hypothesis test types]{Comparison of hypothesis test types.  See the Jupiter notebook ``Hypothesis Testing Statistical Learning Week 2'' for more information and examples.}
         \end{longtable}
-%    \end{topcaptiontable}
+%    \end{table}
 
 
 %			\label{trw:} &
@@ -313,6 +315,5 @@ Type 2 error (false negative): Concluding there is not a change in probability w
 		\codeitem \ref{trw:equalityoftwoproportions}) statsmodels.stats.proportion.proportions\_ztest([numpy arrays])
 		\codeitem \ref{trw:onevariance}) DistributionTests.ChiSquareVariance(\arguments)
 		\codeitem \ref{trw:chisquaredindependence}) scipy.stats.chi2\_contingency(\arguments)
-		\codeitem \ref{trw:anova}) (\arguments)
-		\codeitem \ref{trw:}) scipy.stats.f\_oneway(\arguments)
+		\codeitem \ref{trw:anova}) scipy.stats.f\_oneway(\arguments)
 	\end{code} 

@@ -188,4 +188,6 @@
 \contentsline {figure}{\numberline {14.6}{\ignorespaces Padding and stride in CNNs}}{147}{figure.caption.176}%
 \addvspace {10\p@ }
 \addvspace {\chapterstyleblofskip }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Enable nbextensions for Jupyter notebooks}}{148}{figure.caption.177}%
+\addvspace {10\p@ }
+\addvspace {\chapterstyleblofskip }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Enable nbextensions for Jupyter notebooks}}{168}{figure.caption.177}%

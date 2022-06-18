@@ -1,0 +1,766 @@
+	\chapter{Interview Questions}
+	\resetquestioncounter{}
+	\begin{qanda}
+		\begin{question}
+Name a function which is most useful to convert a multidimensional array into a one-dimensional array. For this function will changing the output array affect the original array?
+		\end{question}
+		\begin{answer}
+The flatten( ) can be used to convert a multidimensional array into a 1D array. If we modify the output array returned by flatten( ), it will not affect the original array because this function returns a copy of the original array.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+ If there are two variables defined as `a = 3' and `b = 4', will ID() function return the same values for a and b?
+		\end{question}
+		\begin{answer}
+The id() function in python returns the identity of an object, which is actually the memory address. Since, this identity is unique and constant for every object, it will not return same values for a and b.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+For what Beautiful soup library is used for?
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+In python, if we create two variables `mean = 7' and `Mean = 7' , will both of them be considered as equivalent?
+		\end{question}
+		\begin{answer}
+Python is a case-sensitive language.  It has the ability to distinguish uppercase or lowercase letters and hence these variables `mean = 7' and `Mean = 7' will not be considered as equivalent.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is the use of 'inplace' in pandas functions?
+		\end{question}
+		\begin{answer}
+Inplace is a parameter available for a number of pandas functions. It impacts how the function executes. Using 'inplace = True', the original dataframe can be modified and it will return nothing. The default behaviour is 'inplace = False' which returns a copy of the dataframe, without affecting the original dataframe.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How can you change the index of a dataframe in python?
+		\end{question}
+		\begin{answer}
+DataFrame.set\_index(keys, drop=True, append=False, inplace=False, verify\_integrity=False) keys: label or array-like or list of labels/arrays This parameter can be either a single column key, a single array of the same length as the calling DataFrame, or a list containing an arbitrary combination of column keys and arrays. Here, ``array'' encompasses Series, Index, np.ndarray, and instances of Iterator.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+ How would check a number is prime or not using Python?
+		\end{question}
+		\begin{answer}
+\# taking input from user number = int(input("Enter any number: ")) \# prime number is always greater than 1 if number > 1: for i in range(2, number): if (number \% i) == 0: print(number, ``is not a prime number'') break else: print(number, ``is a prime number'') \# if the entered number is less than or equal to 1 \# then it is not a prime number else: print(number, ``is not a prime number'')
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is the difference between univariate and bivariate analysis? What all different functions can be used in python?
+		\end{question}
+		\begin{answer}
+Univariate analysis summarizes only one variable at a time while Bivariate analysis compares two variables. Below are a few functions which can be used in the univariate and bivariate analysis: 1. To find the population proportions with different types of blood disorders. df.Thal.value\_counts() 2. To make a plot of the distribution : sns.distplot(df.Variable.dropna()) 3. Find the minimum, maximum, average, and standard deviation of data. There is a function called describe() which returns the minimum, maximum, mean etc. of the numerical variables of the data frame. 4. Find the mean of the Variable df.Variable.dropna().mean() 5. Boxplot to observe outliers sns.boxplot(x = ' ', y = ' ', hue = ' ', data=df) 6. Correlation plot: data.corr()
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is the difference between 'for' loop and 'while' loop?
+		\end{question}
+		\begin{answer}
+'for' loop is used to obtain a certain result. In a for loop, the number of iterations to be performed is already known. - In 'while' loop, the number of iterations is not known. Here, the statement runs until a specific condition is met and the assertion is proven untrue.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Differentiate between Call by value and Call by reference.
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}
+How will you import multiple excel sheets in a data frame?	
+	\begin{qanda}
+		\begin{question}
+The excel sheets can be read using 'pd.read\_excel()' function into a dataframe and then using 'pd.concat()', concatenate all the excel sheets- Syntax: df = pd.concat(pd.read\_excel('sheet\_name', sheet\_name=None), ignore\_index=True)
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is the difference between 'Append' and 'Extend' function?
+		\end{question}
+		\begin{answer}
+The append() method adds an item to the end of the list. The syntax of the append() method is: list.append(item) On the other hand, the extend method extends the list by adding each element from iterable. The syntax of the extend() method is: list.extend(item)
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What are the data types available in Python?
+		\end{question}
+		\begin{answer}
+Python has the following standard data types: - Boolean - Set - Mapping Type: dictionary - Sequence Type: list, tuple, string - Numeric Type: complex, float, int.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Can you write a function using python to impute outliers?
+		\end{question}
+		\begin{answer}
+import numpy as np def remove Outliers(x, outlierConstant): a = np.array(x) upper\_quartile = np.percentile(a, 75) lower\_quartile = np.percentile(a, 25) IQR = (upper\_quartile - lower\_quartile) * outlierConstant quartileSet = (lower\_quartile - IQR, upper\_quartile + IQR) resultList = for y in a.tolist(): if y > = quartileSet[0] and y < = quartileSet[1]: resultList.append(y) return resultList
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Can any type of string be converted into an int, in Python?
+		\end{question}
+		\begin{answer}
+Python offers the int() method that takes a String object as an argument and returns an integer. This can be done only when the value is either of numeric object or floating-point. But keep these special cases in mind - A floating-point (an integer with a fractional part) as an argument will return the float rounded down to the nearest whole integer.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How would check a number is armstrong number using Python?
+		\end{question}
+		\begin{answer}
+\# Python program to check if the number is an Armstrong number or not \# take input from the user num = int(input(``Enter a number: '')) \# initialize sum sum = 0 \# find the sum of the cube of each digit temp = num while temp > 0: digit = temp \% 10 sum += digit ** 3 temp //= 10 \# display the result if num == sum: print(num,``is an Armstrong number'') else: print(num,``is not an Armstrong number'')
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is the difference between list, array and tuple in Python?
+		\end{question}
+		\begin{answer}
+The list is an ordered collection of data types.  The list is mutable. Lists are dynamic and can contain objects of different data types.  List elements can be accessed by index number An array is an ordered collection of similar data types.  An array is mutable.  An array can be accessed by using its index number.  Tuples are immutable and can store any type of data type. It is defined using ().  It cannot be changed or replaced as it is an immutable data type.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is the difference between iloc and loc activity?
+		\end{question}
+		\begin{answer}
+loc gets rows (or columns) with particular labels from the index. iloc gets rows (or columns) at particular positions in the index and it only takes integers.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How does the reverse function work in Python?
+		\end{question}
+		\begin{answer}
+The built-in reverse( ) function reverses the contents of a list object inplace. That means, it does not return a new instance of the original list, rather it makes a direct change to the original list object. Syntax: list.reverse()
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is the apply function in Python? How does it work?
+		\end{question}
+		\begin{answer}
+Pandas.apply allow the users to pass a function and apply it on every single value of the Pandas series. Syntax: s.apply(func, convert\_dtype=True, args=())
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How do you get the frequency of a categorical column of a dataframe using python?
+		\end{question}
+		\begin{answer}
+Using df.value\_counts(), where df is the dataframe. The value\_counts() function returns the counts of the distinct elements in a dataframe column, sorted in descending order by default.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Will range(5) include `5' in its output?
+		\end{question}
+		\begin{answer}
+The range() function in python always excludes the last integer from the result. Here it will generate a numeric series from `0' to (5-1)=4, and it will not include `5'.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How can you drop a column in python?
+		\end{question}
+		\begin{answer}
+Pandas `drop()' method is used to remove specific rows and columns. To drop a column, the parameter 'axis' should be set as `axis = 1'. This parameter determines whether to drop labels from the columns or rows (index). Default behavior is, axis = 0. Syntax: df.drop(`column\_name', axis=1)
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How NaN values behave while comparing with itself?
+		\end{question}
+		\begin{answer}
+NaN values can not be compared with itself. That's why, checking if a variable is equal to itself is the most popular way to look for NaN values. If it isn't, it's most likely a NaN value.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How can we convert a python series object into a dataframe?
+		\end{question}
+		\begin{answer}
+The to\_frame() is a function that helps us to convert a series object into a dataframe. Syntax: Series.to\_frame(name=None) name: this name will substitute the existing series name while creating the dataframe.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How do you read a file without using Pandas?
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+ Can you plot 3D plots using matplotlib? Describe the function.
+		\end{question}
+		\begin{answer}
+Yes Function: import numpy as np import matplotlib.pyplot as plt fig = plt.figure() ax = plt.axes(projection ='3d')
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How get\_dummies() is different from OneHotEncoder?
+		\end{question}
+		\begin{answer}
+OneHotEncoder cannot process string values directly.  If your nominal features are strings, then you need to first map them into integers.  pandas.get\_dummies is kind of the opposite.  By default, it only converts string columns into one-hot representation, unless columns are specified.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Name a tool that can be used to convert categorical columns into a numeric column.
+		\end{question}
+		\begin{answer}
+One of the most used and popular ones are LabelEncoder and OneHotEncoder. Both are provided as parts of sklearn library. LabelEncoder can be used to transform categorical data into integers: from sklearn.preprocessing import LabelEncoder label\_encoder = LabelEncoder() x = ['Apple', 'Orange', 'Apple', 'Pear'] y = label\_encoder.fit\_transform(x) print(y) array([0, 1, 0, 2]) OneHotEncoder can be used to transform categorical data into one hot encoded array: from sklearn.preprocessing import OneHotEncoder onehot\_encoder = OneHotEncoder(sparse=False) y = y.reshape(len(y), 1) onehot\_encoded = onehot\_encoder.fit\_transform(y) print(onehot\_encoded)
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+ow will you remove duplicate data from a dataframe?
+		\end{question}
+		\begin{answer}
+The 'drop\_duplicates( )' function in python eliminates the redundant rows from the DataFrame and returns it.  Syntax: DataFrame.drop\_duplicates(subset=None, keep=' ', inplace=False) subset: Subset takes a column or list of column label.  The default value is none.  After passing columns, it will consider them only for duplicates.  keep: keep is to control how to consider duplicate value.  It has only three distinct values ('first', 'last', 'false') and default is 'first'.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How do you select a sample of dataframe?
+		\end{question}
+		\begin{answer}
+Depending on the situation, there are a few possible ways to select a sample from the dataframe - 1. Randomly select a single row: df = df.sample() 2. Randomly select a specified n number of rows: df = df.sample(n=3) 3. Allow a random selection of the same row more than once: df = df.sample(n=3,replace=True) 4. Randomly select a specified fraction of the total number of rows: df = df.sample(frac=0.50)
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How groupby function works in Python?
+		\end{question}
+		\begin{answer}
+Pandas dataframe.groupby() function is used to split the data into groups based on some criteria. pandas objects can be split on any of their axes. Syntax: DataFrame.groupby(by=None, axis=0, level=None, as\_index=True, sort=True, group\_keys=True, squeeze=False, **kwargs) by: mapping, function, str, or iterable axis: int, default 0 level: If the axis is a MultiIndex (hierarchical), group by a particular level or levels as\_index: For aggregated output, return object with group labels as the index. Only relevant for DataFrame input. sort: Sort group keys. Get better performance by turning this off. Note this does not influence the order of observations within each group. groupby preserves the order of rows within each group. group\_keys: When calling apply, add group keys to index to identify pieces squeeze: Reduce the dimensionality of the return type if possible, otherwise return a consistent type Returns: GroupBy object
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How do you check the distribution of data in python?
+		\end{question}
+		\begin{answer}
+A simple and commonly used plot to quickly check the distribution of a sample of data is the histogram. from matplotlib import pyplot pyplot.hist(data)
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Which libraries in SciPy have you worked with in your project?
+		\end{question}
+		\begin{answer}
+SciPy contains modules for optimization, linear algebra, integration, interpolation, special functions, FFT, signal and image processing, ODE solvers etc Subpackages include: scipy.cluster scipy.constants scipy.fftpack scipy.integrate scipy.interpolation scipy.linalg scipy.io scipy.ndimage scipy.odr scipy.optimize scipy.signal scipy.sparse scipy.spatial scipy.special scipy.stats scipy.weaves
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How is the Python series different from a single column dataframe?
+		\end{question}
+		\begin{answer}
+Python series is the data structure for a single column of a DataFrame, not only conceptually, but literally, i.e. the data in a DataFrame is actually stored in memory as a collection of Series Series is a one-dimensional object that can hold any data type such as integers, floats and strings and it does not have any name/header whereas the dataframe has column names.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What does the function zip() do?
+		\end{question}
+		\begin{answer}
+The zip() function takes iterables (can be zero or more), aggregates them in a tuple, and return it. The syntax of the zip() function is: zip(*iterables)
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+ Can lambda function be used within a user-defined function?
+		\end{question}
+		\begin{answer}
+Yes. A lambda function evaluates an expression for a given argument. It can be used as an anonymous function within another function.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What does [::-1] do in python?
+		\end{question}
+		\begin{answer}
+[::] just produces a copy of all the elements in order [::-1] produces a copy of all the elements in reverse order
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+ How do you check missing values in a dataframe using python?
+		\end{question}
+		\begin{answer}
+Pandas isnull() function detect missing values in the given object. It returns a boolean same-sized object indicating if the values are NA. Missing values get mapped to True and non-missing value gets mapped to False.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Explain a scenario where negative indices are used in python.
+		\end{question}
+		\begin{answer}
+Python programming language supports negative indexing of arrays, something which is not available in arrays in most other programming languages. This means that the index value of -1 gives the last element, and -2 gives the second last element of an array. The negative indexing starts from where the array ends. This means that the last element of the array is the first element in the negative indexing which is -1.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Python or R, which one would you prefer for text analytics?
+		\end{question}
+		\begin{answer}
+
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What all different methods can be used to standardize the data using python?
+		\end{question}
+		\begin{answer}
+Min Max Scaler.  Standard Scaler.  Max Abs Scaler. Robust Scaler.  Quantile Transformer Scaler.  Power Transformer Scaler.  Unit Vector Scaler.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How would you define a block in Python?
+		\end{question}
+		\begin{answer}
+A block is a group of statements in a program or script.  Usually, it consists of at least one statement and declarations for the block, depending on the programming or scripting language.  A language which allows grouping with blocks is called a block-structured language
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How do you do Up-sampling of data? Name a python function or explain the code.
+		\end{question}
+		\begin{answer}
+Up-sampling is the process of randomly duplicating observations from the minority class in order to reinforce its signal. There are several heuristics for doing so, but the most common way is to simply resample with replacement. Module for resampling in Python: from sklearn.utils import resample.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is machine learning?
+		\end{question}
+		\begin{answer}
+Machine learning is a branch of artificial intelligence (AI) that focuses on the use of data and algorithms to mimic the way that humans learn. It aims to gradually improve by learning from the events that happened in the past (data captured in past), assuming that the past data is a good representation of the future. There are various machine learning algorithms available to build a model that can learn the hidden patterns from the past data, known as training data, in order to make predictions for the future data or the unseen data, based on which decisions can be taken. For example: Predicting the prices of a house based on attributes of the property.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Machine learning helps in summarizing the patterns in the data in a mathematically precise way. What exactly is the mathematical outcome of any (machine learning) model building exercise?
+		\end{question}
+		\begin{answer}
+Machine learning models take data as input to find the hidden patterns in it and try to summarize the patterns that exist in the data by establishing a relationship between the predictors and the predicted values in a mathematically precise way. The mathematical outcome of a model can be as simple as an equation that relates the predictors to the target variable. For example, the relationship between salary and years of experience of an individual.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Machine learning automates the process of building mathematical models out of data. Explain/elaborate on this statement in the light of the linear regression algorithm.
+		\end{question}
+		\begin{answer}
+Linear regression is a linear model which tries to fit the best fit line through the data and establish the relationship between the independent variables and the dependent variable in a form of a linear equation. The equation of the best fit line can be given as: Y = ax1 + bx2 + c Where a and b are the coefficients of x1 and x2 variables respectively and c is the constant. The linear regression tries to fit the line in such a way that the errors are minimized, that is, the predicted values are closer to the observed values. The machine-learning algorithm of linear regression automates the process of model building i.e it automatically finds the best fit line which has the minimum error or predicts the values that are closest to the observed values. This means that process of finding the relationship between independent variables and the dependent variable is automated.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+ If you model performs very well on the data that it was trained on but not on the data that it has not seen so far, how will you address that performance gap? Why is it important to address that gap?
+		\end{question}
+		\begin{answer}
+Data generally contains information as well as noise. When we fit a model on the training data, it learns both the information and noise. If the model learns too much noise and fails to capture the required information then we see that there is a performance gap between the training performance and the performance on the unseen data (test set). This performance gap indicates that the model is over fitting, i.e. failing to replicate the performance of the training set on the test set. To address this performance gap between the training and the test set various regularization techniques can be applied. In linear models like linear regression, regularization techniques like ridge regression and lasso regression can be used. In non-linear models like decision trees, the pruning techniques like pre-pruning and post-pruning techniques can be used to deal with the performance gap. Also, the technique of cross-validation can be implemented to determine the performance of the model on the unseen data set.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+hen a model gets to production, it will have to make prediction on data that it has not see so far, how can we ensure that the model performs well on this data?
+		\end{question}
+		\begin{answer}
+Before sending the model to production we can check the performance and validity of the model by using methods. Train - Validation split: In this method, we divide the training set into two parts one part is kept for training, and the other is kept for validating the model performance. We train the model on the training set and test it against the validation set. Based on the performance of the model on the validation set we tune the hyperparameters of the model to get a generalized and good model performance. K-fold cross-validation: In this method, we divide the training set into k-folds. Where k can be any number ranging from 2 to the maximum number of records in the dataset - 1 (generally 10 folds are preferred). Let's assume that we set the value of k to be 5, then, in this case, 4 folds will be used for training the model and the left-out fold will be used as a test set. The same procedure is repeated for all the folds i.e each fold will be used as a training and test set. To determine the model performance average of metrics across all the folds is taken. With this method, we can be sure of the model's performance because the model has been tested across various data sets.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is supervised learning?
+		\end{question}
+		\begin{answer}
+Supervised learning is a type of machine learning method in which algorithms are trained using well "labeled" training data, that is independent variables are already tagged against a defined target variable. With this technique, we can make predictions and compare them against the ground truth. For example, Determining if a client might default on a loan or not.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is unsupervised learning?
+		\end{question}
+		\begin{answer}
+Unsupervised learning is a type of machine learning method in which models are trained using an unlabeled data set i.e there is no defined target variable against the independent variables. Since there is no defined target, there is no specific way to compare model performance in most unsupervised learning methods. Hence, unsupervised learning algorithms generally perform the task by clustering the data set into groups according to certain measures of similarities. For example, Advertising companies segment the population into smaller groups with similar demographics and purchasing habits to reach their target market with relevant ads.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How do we measure performance of a supervised learning model?
+		\end{question}
+		\begin{answer}
+There are several performance metrics available to measure the performance of a supervised learning model. In case of a regression problem, some of the metrics available to measure the performance are R2, Adj. R2, RMSE, MAE, etc. In case of a classification problem, some of the metrics available to measure the performance are Accuracy, Precision, Recall, F1-Score, etc.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How do we measure performance of an unsupervised learning model?
+		\end{question}
+		\begin{answer}
+There are several performance metrics available to measure the performance of an unsupervised learning model such as silhouette score, cophenetic correlation, etc.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is the difference between correlation and multicollinearity?
+		\end{question}
+		\begin{answer}
+Correlation is a statistical measure that expresses the strength of a linear relationship between two quantitative variables. A correlation can be positive or negative. In a positive correlation, the two variables move in the same direction i.e. when one variable increases, the other variable also increases, and vice versa. Whereas in a negative correlation, the two variables move in the opposite direction i.e. when one variable increases, the other variable will decrease, and vice versa. Correlation gives a sense of the relationship between two variables, known as pair-wise correlation. When two or more variables have a strong linear relationship they are said to be multicollinear. Multicollinearity is a challenge in linear models because when two or more independent variables display high correlation the model is not able to distinguish between the individual effects of the independent variables on the dependent variable. Multicollinearity can be detected using the Variance Inflation Factor (VIF).
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How does multicollinearity affect the performance of a linear regression model?
+		\end{question}
+		\begin{answer}
+Multicollinearity doesn't impact the performance of a linear regression model, it only impacts the interpretation from the model.  Multicollinearity is a challenge in linear regression because when two or more independent variables display high correlation the model is not able to distinguish between the individual effects of the independent variables on the dependent variable.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Which evaluation metric should you use to evaluate a linear regression model built on a dataset that has a lot of outliers in it?
+		\end{question}
+		\begin{answer}
+MAE would be a good metric in that case because it is most robust to outliers. MSE or RMSE is extremely sensitive to outliers and penalizes the outliers more.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+ What is the difference between r-squared and adjusted r-squared?
+		\end{question}
+		\begin{answer}
+R-squared (R2) is a statistical measure that represents the proportion of the variance that is explained in the dependent variable by the independent variables. For example, if the R2 of a model is 0.70, then 70\% of the variation can be explained by the model's inputs. Adjusted R-squared is a modified version of R-squared that has been adjusted for the number of independent variables in the model and penalizes the model performance for adding variables that do not improve the existing model. If we add a new independent variable in the model, the R2 of the model will always increase. However, the adjusted R-squared increases only when the new independent variable improves the model more than expected by chance. It decreases when the independent variable improves the model by less than expected.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How will you explain Decision Tree to a non-tech person?
+		\end{question}
+		\begin{answer}
+A decision tree can be considered as an inverted tree representation that grows from top to bottom instead of bottom to top. It tries to mimic the human decision-making process and tries to represent all the possible solutions to a decision based on certain conditions. For example, If you have to decide whether to go out for a coffee or not at a nearby place, a simple decision tree can look like Start with the main question that is ``To go out for coffee?'' The decision to go out depends on the location of the place, so the second question becomes ``Is the place nearby?'' If `yes' then go for coffee else `No.'
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Why are decision trees prone to over fitting?
+		\end{question}
+		\begin{answer}
+The main aim of the decision tree is to achieve homogeneity among the leaf nodes i.e any split made by the decision tree should result in pure leaves which contain one type of decision only. For example, If we are trying to predict whether a person will default on a loan or not and we use the decision tree to make this prediction then the result from the decision tree split must result in all the defaulters in one leaf and all the non-defaulters on another leaf node. If the composition of the leaf node is 50\% defaulters and 50\% non-defaulters then the leaf is considered completely impure. If a decision tree is built without any restrictions the tree will grow to its full length and will try to achieve homogeneity by capturing complex patterns as well as noise present in the data during this process. Due to this, it ends up learning all the patterns that are present in the training data but fails to replicate the performance on unseen data i.e it leads to over fitting.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How can you improve the performance of and over fitting Decision Tree model?
+		\end{question}
+		\begin{answer}
+To avoid over fitting in decision trees and get a generalized model which performs well on training as well as the test set we can use Pruning techniques. There are two ways to prune a decision tree: a) Pre-Pruning: In this method, the decision tree is restricted before it can grow to its full length by bounding the depth of the tree. There are several other hyperparameters that are available in the SKlearn implementation of the Decision tree which help in restricting the growth of the tree. This method is also known as the early stopping of tree. b) Post-Pruning: In this method, the tree is allowed to grow to its full length and then the sub-trees of the decision tree are pruned. The sub-trees that are pruned in this process are the ones that do not provide any significant information to the model. The significance of the sub-tree is calculated by removing it and checking the error between the full-grown tree and the tree from which the sub-tree was removed. If the error is large that signifies the removed sub-tree is important in prediction, if the error is small it signifies that the sub-tree is not much important in the prediction.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How is a random forest model different from just using `n' decision trees?
+		\end{question}
+		\begin{answer}
+Let's say we build `n' decision trees and a Random Forest model with `n' decision tree estimators. The Random Forest model will be different from the `n' decision trees because it will employ the process of bootstrapping in rows as well as columns. Each decision tree in the random forest model will be built on a different data set because of sampling with replacement in columns and rows.  The final output of the random forest will be decided on the basis of voting or averaging of the results from `n' decision tree estimators built in the random forest thereby making the prediction more robust.  Whereas, if we train `n' decision the outcome will be the same because the underlying training data for each of the decision trees is the same.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How is AUC different from ROC?
+		\end{question}
+		\begin{answer}
+The ROC curve (receiver operating characteristic curve) is a curve showing the performance of a classification model at different thresholds. This curve plots two parameters, False Positive Rate (FPR) on the x-axis and True Positive Rate (TPR) on the y-axis. AUC stands for ``Area under the ROC Curve'' i.e, AUC measures the entire area under the ROC curve. These two metrics are typically used together to check the performance of a binary classification problem.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How are k-means and hierarchical clustering different?
+		\end{question}
+		\begin{answer}
+K-Means is a centroid-based clustering algorithm whereas hierarchical clustering is a connectivity-based clustering algorithm. In centroid-based clustering methods, the idea of similarity is defined as the closeness of data point from the center of the cluster whereas, in connectivity clustering methods, the idea of similarity is defined as the closeness of data points with each other. There are several differences between K-Means and Hierarchical Clustering like: 1. K-Means uses a pre-defined number of clusters that is before starting to cluster the data points we have to mention the number of clusters. Whereas in Hierarchical clustering all the data points are considered as separate clusters and there is no requirement for mentioning the number of clusters beforehand. 2. K-Means clustering uses mean or median to find the centroid of a cluster whereas there are different linkage methods like ward, single, etc can be used to find the similarity between two or more clusters in hierarchical clustering. 3. The computation complexity is higher for hierarchical clustering for larger datasets whereas K-Means clustering is computationally less expensive for larger data sets. 4. K Means clustering starts with a random choice of clusters, the results produced by running the algorithm many times may differ. Whereas the results of hierarchical clustering are reproducible.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How would you identify the optimal number of clusters in your data set?
+		\end{question}
+		\begin{answer}
+The most common method to identify the optimal number of clusters in K-Means clustering is the elbow method. In the elbow method, we iterate over a range of K values i.e number of clusters, and for each value of K within-cluster sum of squares (WCSS) is calculated that is the distance between each point and the centroid in a cluster. When we plot the WCSS with the number of clusters or K value, the plot looks like an Elbow because as the number of clusters increases, the WCSS value will start to decrease. The K value is chosen where a rapid decrease in the WCSS is observed or the point, where the line in the plot starts to move almost parallel to the X-axis. The K value corresponding to this point is the optimal number of clusters.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Why is it important to understand the bias variance trade-off when applying data science?
+		\end{question}
+		\begin{answer}
+It is important to understand the bias-variance trade-off because a model high on the bias fails to identify the underlying patterns on the training data which leads to the creation of a simple model that fails to perform well on the training set as well as the test set leading to high errors on training and test sets or under fitting. Whereas a model high on the variance will be too complex and learn all the patterns as well the noise on the training set perfectly but will fail to replicate the same performance on the test set leading to high errors on the test set or over fitting. To avoid such issues, it is important to understand the trade-off between bias and variance while working on a business problem and come up with an optimal solution that maintains a balance between bias and variance so that model is neither under fitting nor over fitting but is a good fit.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is an activation function, and why does a neural network need one?
+		\end{question}
+		\begin{answer}
+Activation Functions are mathematical functions that apply a transformation on the output of a layer in a neural network, which generally tends to be a linear combination of the nodes of the previous layer with weights and biases. Activation Functions are crucial because they introduce non-linearity into the neural network - without this, a neural net is simply a large linear combination of its nodes, and hence, no more powerful than a linear regressor or classifier. Neural networks are needed to find patterns and draw decision boundaries in problems that can be highly complex and non-linear, and this makes Activation Functions extremely important to their functioning. Some examples of Activation Functions are the Sigmoid function, the Tanh function, and the ReLU function.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Why is the Sigmoid activation function not preferred in hidden layers of deep neural networks?
+		\end{question}
+		\begin{answer}
+The Sigmoid function takes in any real number and outputs a continuous numeric value between 0 and 1, which can then be discretized using a threshold (Ex: 0.5) and converted into either 0 or 1 - hence its use as a binary classifier. Therefore, the Sigmoid function is generally preferred in the output layer of a binary classification neural network. It is not recommended to use it in the hidden layers because of the vanishing gradient problem i.e, if your input is on the higher side in terms of magnitude (where the sigmoid function goes flat), then the gradient will be close to zero. Due to the calculus of the chain rule of derivatives used in back propagation, this would result in multiple small values being multiplied with each other to determine the final step size in gradient descent, and that would be an extremely small step, meaning the neural network's learning speed would be negligible. Hence, we do not prefer using the Sigmoid function in the hidden layers of deep neural networks.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Why is it not a good idea to use the Sigmoid function in the output layer of a neural network meant for multi-class classification problems?
+		\end{question}
+		\begin{answer}
+The Sigmoid function merely outputs the probability / likelihood of that option being correct, without taking into account the other options in a multi-class problem, and the fact that the probabilities of all the multiple classes should add up to 1. This is actually done by the Softmax activation function, which is a generalized version of the Sigmoid for multi-class problems. Hence. we usually use the Softmax function in the output layer of a neural network when dealing with multi-class classification, so that we can get the output in a probabilistic shape taking all the options into account, and not just one.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What are the potential pitfalls of using neural networks for supervised learning?
+		\end{question}
+		\begin{answer}
+The first problem with traditional fully connected neural networks is that they are very computationally intensive, so they may take significantly longer to train and come up with predictions than a more traditional machine learning algorithm, due to their vast number of parameters and their hierarchical non-linear complexity - especially in deep neural networks. This drawback means that naturally, neural networks would need to significantly outperform a competing ML model in terms of the evaluation metrics for us to even consider using them for supervised learning - and this tends to happen only once we cross a certain threshold in terms of the volume of training data, usually in the order of millions of training examples. Hence neural networks should not be used on smaller or intermediate sized training datasets in supervised learning problems, because an ML model would likely perform as well or better at a fraction of the compute cost with that size of data. Another problem with neural networks is their black-box nature - we often don't know how or why the NN came up with a certain output. Since its internal working is often not interpretable, it is often out of the question to consider using neural networks in sensitive use cases where the explainability of a model is paramount, such as healthcare or criminal justice. These are the potential pitfalls of using neural networks that one should keep in mind before applying them to supervised learning problems.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What hyperparameters can you tune inside neural networks?
+		\end{question}
+		\begin{answer}
+The architecture of a neural network, in terms of the number of neurons, the number of layers and the activation function at various layers, is the first obvious set of hyperparameters that can be tuned. The learning characteristics of the network, such as its learning rate, the number of epochs and the batch size, are also an important set of hyperparameters which be tuned to improve the network's performance. There are smaller and more nuanced hyperparameters that can also help in fine-tuning the neural net, such as momentum parameters, a decay in the learning rate, the dropout ratio, the weight initialization scheme and the batch normalization hyperparameters.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What are the pros and cons of using Batch Gradient Descent vs Stochastic Gradient Descent?
+		\end{question}
+		\begin{answer}
+Batch Gradient Descent suffers from computational cost, especially for larger datasets, because it accepts the entire training dataset as one batch. This means each epoch will take a long time to complete. So in case of a large training dataset, Stochastic Gradient Descent may be preferred. However, the convergence characteristics of Batch Gradient Descent are better - it converges directly to a minima, whereas Stochastic Gradient Descent will oscillate in the near vicinity of the minima without properly reaching it, although Stochastic Gradient Descent does converge and reach that point faster. Stochastic Gradient Descent also shows very noisy learning characteristics, due to the variability between each training example used. Another drawback of Stochastic Gradient Descent is that since we use only one example at a time, we lose the compute advantage of vectorized implementation on it. So Batch Gradient Descent is generally preferred for smaller datasets, while Stochastic Gradient Descent is used for larger datasets. However due to the significant drawbacks of each approach, a compromise called Mini-Batch Gradient Descent is often preferred among vanilla optimization algorithms that don't use momentum or adaptive gradient, albeit with the cost of an additional hyperparameter to tune, which is the mini-batch size.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Is the bias-variance tradeoff in Machine Learning applicable to Deep Neural Networks? Why do you say so?
+		\end{question}
+		\begin{answer}
+The biggest advantage of neural networks is that unlike traditional machine learning algorithms, they appear to have no limit to the sheer complexity of the decision boundaries they can create. This means that although they are data hungry, when they are actually provided with larger and larger volumes of data, their performance tends to continually improve when the number of nodes and layers in the network is increased, as opposed to machine learning algorithms, whose performance tends to stagnate beyond a point even after access to larger amounts of data. All of this means that the traditional bias-variance tradeoff seen in machine learning may not strictly be applicable in deep learning; neural networks merely appear to move to a new stage of the tradeoff when the volume of data and the complexity of the neural network are correspondingly increased.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Let's say you have two neural networks. One of them has one hidden layer with sixteen nodes, while the other has four hidden layers with four nodes each, so they both have sixteen neurons, just in different configurations. Which of these is likely to perform better on a complex supervised learning task and why?
+		\end{question}
+		\begin{answer}
+Although the width (number of neurons in a layer) and depth (number of layers) of neural networks are both important factors in determining its performance, complex supervised learning tasks such as classifying a picture as a dog / cat appear to be best solved by introducing a hierarchy in the neural network, that can progressively learn more and more complex patterns in the data. In such an example, the second network, with four layers of four nodes each, would be likely to perform better on the task than the first network, since it has multiple layers and hence provides the network with a hierarchical mode of learning, where the deeper layers may be able to understand more complex shapes and patterns in the data. The depth of the neural network seems to increase its ability to learn complex representations of the data more than its width - Ex: Some of the most famous neural networks like GPT-3 have nearly a hundred layers.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+How different is the decision boundary created by a neural network in comparison to other non-linear ML algorithms such as Decision Trees and Random Forests? Which of these techniques can create the most flexible non-linear decision boundary and why?
+		\end{question}
+		\begin{answer}
+Neural networks can create the most complex decision boundaries out of all the alternatives listed, due to their hierarchical nature of complexity and the fact that each node or layer added in the network increases the flexibility of the model. Although Decision Trees, Random Forests and Neural Networks are all non-linear approaches, the nature of the non-linearity in the decision boundary differs among them. Decision Trees create "piecewise" non-linearity - they create orthogonal / linear splits on every individual feature and create rectangular boundaries based on that. This approach is more flexible than linear, but perhaps not as flexible as a curved non-linear boundary. Random Forests attempt to aggregate multiple trees and hence approach a curved boundary by combining multiple linear splits, but they still only approximate curved non-linearity and don't actually accomplish it. Neural networks do however, created curved non-linear decision boundaries because they combine multiple linear nodes and apply non-linear transformations in the form of activation functions at each layer, and that level of flexibility in creating curved non-linearity is unrivalled by any other machine learning algorithm.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What would be a good use case for implementing fully connected or other kinds of neural networks for supervised learning over other ML models and why?
+		\end{question}
+		\begin{answer}
+The use case for neural networks in supervised learning should ideally be in those scenarios where traditional machine learning algorithms are known to fail or be inadequate for solving the problem. This could be for highly unstructured kinds of data such as images, text or audio, where the algorithm itself has to extract the features relevant to the prediction from the dataset, and hence a traditional machine learning approach wouldn't work. Another use case for neural networks is when the size of the dataset is quite large, and we would like that increased dataset size to translate to improved pattern detection by the model. So when we have an extremely large dataset (in the order of millions of examples) or unstructured data, neural networks may be preferred over ML models.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Would applying a neural network make sense in a healthcare setting where we need to predict the diagnosis and medication to offer a patient based on the symptoms displayed? Why do you think so?
+		\end{question}
+		\begin{answer}
+No, neural networks should ideally not be applied for any use case where the interpretability or explainability of a model's decision making is paramount. Healthcare is a highly sensitive domain, where decision making around diagnosis and medication for symptoms can make a huge difference to the health condition of the patient, and medical practitioners cannot afford to make mistakes in that process. Hence, the model used needs absolute transparency rather than top performance which is not explainable, and neural networks would not be as preferred for a healthcare use-case as decision trees or random forests.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is the role of the Convolution operation in helping a neural network understand images?
+		\end{question}
+		\begin{answer}
+Convolution is a mathematical operation which takes two inputs such as image matrix and a filter or kernel. It is the first layer to extract features from an input image in a CNN. Convolution helps to retain the relationship between pixels by learning image features using small squares of input data. The way the convolution operation mathematically works is by using the dot product of the filter vector and pixel vector to replace the image pixels with new values (modified image), and these dot product values are higher when the pattern of the filter matches the pattern of the pixels. Hence, convolution excels at detecting patterns and features in the image that match the patterns of the filters, and this is how feature extraction is performed on the image.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Why do we mostly use the ReLU activation function in the feature extraction stage of convolutional neural networks (CNNs)?
+		\end{question}
+		\begin{answer}
+ReLU has the advantage of being simple to compute and also avoiding the vanishing gradient problem, due to its constant derivative of 1. This is useful in CNNs which are deep networks, as the error from back propagation is easily propagated for the neural network's learning.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is the role of fully connected layers in a CNN?
+		\end{question}
+		\begin{answer}
+The output from the convolutional layers represents high-level features in the data. While that output could be flattened and connected to the output layer, adding a fully-connected layer is a (usually) cheap way of learning non-linear combinations of these features. Essentially the convolutional layers are providing a meaningful, low-dimensional, and somewhat invariant feature space, and the fully-connected layer is learning a (possibly non-linear) function in that space.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What are some drawbacks of using Convolutional Neural Networks on image datasets, and how can they be addressed?
+		\end{question}
+		\begin{answer}
+Although CNNs are optimized to work on image data and perform better and more efficiently on images than fully connected neural networks, they still suffer from some drawbacks which should be kept in mind. CNNs require quite a lot of labeled image data in order to reach near-human levels of performance in image related tasks, and such data may not readily be available. In that case, it may be better to use Transfer Learning to import the weights and architecture of a pre-trained model and only fine tune its last few layers to apply it to the problem at hand. CNNs may also be susceptible to spurious patterns in the data (such as the sky always being present in car images - so it wrongly learns that having a sky is important to classify something as a car), and this susceptibility can be resolved by diversifying the training dataset to ensure nothing else about the images is consistent other than the exact pattern we want the CNN to learn. CNNs can also be susceptible to small perturbations in the dataset, for example: not being rotationally invariant, and this problem should be addressed through the technique of data augmentation through various image modification techniques such as flipping, rotation, cropping, mirroring, color modification etc.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Why is text pre-processing an essential part of NLP? What happens if we fail to pre-process text data?
+		\end{question}
+		\begin{answer}
+Text preprocessing helps us to get rid of unhelpful parts of the data, or noise by converting all characters to lowercase, removing punctuation marks, and removing stop words and typos. Removing noise comes in handy when you want to do text analysis on pieces of data like comments or tweets. It will be helpful to get rid of the text that interferes with text analysis If not pre-processed, you will receive an error or your model will not perform as expected.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+In case you're working on an NLP application such as sentiment analysis of Twitter posts, describe the text pre-processing steps that would most likely be required?
+		\end{question}
+		\begin{answer}
+1] Lowercasing for consistency. 2] Stemming to reduce the words to root form. 3] Lemmatization to map words to their root form. 4] Stop words removal because they carry low information and don't contribute to the sentiment analysis. 5] Noise removal including digits, hashtags (they are Twitter comments), and characters. 6] Remove emoticons (they are Twitter comments) because they are noise.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Which evaluation metric is suitable to measure the performance of sentiment analysis and why?
+		\end{question}
+		\begin{answer}
+Sentiment analysis is a classification problem, thus, it uses the metrics of Precision, Recall, F-score, and Accuracy. Also, average measures like macro, micro, and weighted F1 scores are useful for multi-class problems. Accuracy is used when the True Positives and True negatives are more important while F1-score is used when the False Negatives and False Positives are crucial. F1 scores also are helpful when there is a lot of class imbalance. As sentiment analysis is a real-time problem, we can expect a lot of class imbalance. Thus, F1 scores are mostly used.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+What is the difference between stemming and lemmatization? Could you provide an example?
+		\end{question}
+		\begin{answer}
+Stemming and Lemmatization both generate the foundation of the inflected words. The difference is that the stem may not be an actual word, whereas the lemma is an actual language word. For eg: beautiful and beautifully will be stemmed to beauti which has no meaning in the English dictionary. The same are however lemmatized to beautiful and beautifully respectively without changing the meaning of the words.
+		\end{answer}
+	\end{qanda}
+
+	\begin{qanda}
+		\begin{question}
+Would you consider Logistic Regression to be a special case of using Neural Networks? If so, how?
+		\end{question}
+		\begin{answer}
+Yes, logistic regression is a specialized case of a one-node neural network, where we use the Sigmoid activation function and the cost function being minimized is the Binary Cross-Entropy function.
+		\end{answer}
+	\end{qanda}

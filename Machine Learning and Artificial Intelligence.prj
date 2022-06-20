@@ -6,31 +6,37 @@
 Machine Learning and Artificial Intelligence.tex
 43
 3
-0
+1
 
 
 
 
 
 
-Interview Questions.tex
-TeX
-269496315 5 -1 31046 -1 31048 156 156 1475 739 0 670 -760 -1 -1 0 0 -1 -1 -1 -1 1 0 31048 -1   0
-C:\Custom Program Files\LaTeX\TeX\LaTeX\lequestionandanswer.sty
-TeX:DTX
-5255099 1 -1 3121 -1 3070 96 96 1293 661 0 22 741 -1 -1 0 0 40 -1 -1 40 1 0 3070 -1   0
-C:\Custom Program Files\LaTeX\TeX\LaTeX\lelists.sty
-TeX:DTX
-22032314 0 51 1 94 1 130 130 1478 713 0 22 513 -1 -1 0 0 14 0 0 14 1 0 1 94   0
 Machine Learning and Artificial Intelligence.tex
 TeX
-420491195 0 -1 1911 -1 1930 234 234 1582 817 0 270 589 -1 -1 0 0 188 -1 -1 188 1 0 1930 -1   0
+152055739 1 -1 1016 -1 1048 234 234 1582 817 0 22 437 -1 -1 0 0 188 -1 -1 188 1 0 1048 -1   0
+Convolutional Neural Networks.tex
+TeX
+269496251 0 -1 25803 -1 25803 78 78 1397 661 0 372 644 -1 -1 0 0 40 -1 -1 40 1 0 25803 -1   0
+Computer Vision Prework.tex
+TeX
+1060795 1 -1 36214 -1 36228 224 224 1421 789 0 312 437 -1 -1 0 0 38 -1 -1 38 1 0 36228 -1   0
+Feature Selection, Model Selection, and Tuning.tex
+TeX
+269496251 1 -1 20336 -1 20126 208 208 1556 791 0 22 621 -1 -1 0 0 53 0 0 53 1 0 20126 -1   0
+C:\Custom Program Files\LaTeX\TeX\LaTeX\lelists.sty
+TeX:DTX
+290467770 0 51 1 94 1 130 130 1478 713 0 22 506 -1 -1 0 0 14 0 0 14 1 0 1 94   0
+C:\Custom Program Files\LaTeX\TeX\LaTeX\lequestionandanswer.sty
+TeX:DTX
+273690555 1 -1 3121 -1 3070 96 96 1293 661 0 22 736 -1 -1 0 0 40 -1 -1 40 1 0 3070 -1   0
+Interview Questions.tex
+TeX
+269496315 5 -1 31046 -1 31048 156 156 1475 739 0 532 391 -1 -1 0 0 30 -1 -1 30 1 0 31048 -1   0
 Introduction to Deep Neural Networks.tex
 TeX
 269496251 1 -1 112 -1 88 156 156 1553 528 0 22 38 -1 -1 0 0 47 -1 -1 47 1 0 88 -1   0
-Computer Vision Prework.tex
-TeX
-269496251 1 -1 196 -1 109 224 224 1421 789 0 22 76 -1 -1 0 0 38 -1 -1 38 1 0 109 -1   0
 Deep Learning Prework.tex
 TeX
 286273467 2 -1 6469 -1 6473 234 234 1553 817 0 134 3002 -1 -1 0 0 33 -1 -1 33 1 0 6473 -1   0
@@ -40,9 +46,6 @@ TeX
 Statistics.tex
 TeX
 269496251 5 -1 863 -1 864 64 64 1287 679 0 392 -6325 -1 -1 0 0 23 -1 -1 23 1 0 864 -1   0
-Convolutional Neural Networks.tex
-TeX
-269496251 5 -1 3614 -1 3615 78 78 1397 661 0 572 -2806 -1 -1 0 0 40 -1 -1 40 1 0 3615 -1   0
 List of Notations.tex
 TeX
 269496251 0 -1 355 -1 268 32 32 1255 647 0 22 92 -1 -1 0 0 0 -1 -1 0 1 0 268 -1   0
@@ -88,9 +91,6 @@ TeX
 Machine Learning Pipeline and Hyperparameter Tuning.tex
 TeX
 286273467 5 -1 11114 -1 11115 26 26 1345 609 0 342 644 -1 -1 0 0 62 -1 -1 62 1 0 11115 -1   0
-Feature Selection, Model Selection, and Tuning.tex
-TeX
-269496251 0 -1 20226 -1 20254 208 208 1556 791 0 482 3289 -1 -1 0 0 53 0 0 53 1 0 20254 -1   0
 Modeling.tex
 TeX
 269496251 5 -1 4897 -1 4898 260 260 1608 843 0 442 1656 -1 -1 0 0 19 -1 -1 19 1 0 4898 -1   0
@@ -167,6 +167,7 @@ ASCII:EDT
 *Neural Network Troubleshooting
 *Computer Vision Prework
 *Convolutional Neural Networks
+*Interview Questions
 *Installation Notes
 *List of Notations.tex
 *machinelearning.bib

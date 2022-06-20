@@ -143,9 +143,222 @@ The unzip command can be used to unzip the file in Google Colab.
 		\end{answer}
 	\end{qanda}
 
+	\section{ANNs versus CNNs}
+	\subsection{Image Classification Using ANNs}
+	\subsubsection{Method}
+
+	\begin{bulletedlist}
+		\item If the images are RGB, we know that each image will have 3 channels, which will be represented by 3 matrices - each matrix numerically representing the pixel intensity values from that channel.
+		\item The information about brightness, contrast, edges, shape, texture, shadows etc. of an image does not depend on color. So the RGB representation of images only adds to the complexity, and may be replaced by their gray scale version instead.
+		\item For that reason, we will use the gray scale color space, which isolates the color information into a single channel.
+		\item In ANNs, one neuron would be used for each input (\figurename~\ref{fig:imageprocessingwithann}). Here the inputs are the pixel values in an image.  For an image with 28 x 28 pixels, the flattened input layer will have 28*28 = 784 inputs.
+		\item Every node/element in the output vector refers to an output class.  The input sample is labeled according to the class with the highest score.
+	\end{bulletedlist}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[height=1.5in]{catimagetorgbchannels}
+		\caption[Image broken down into RGB channels]{Image broken down into RGB channels.}
+		\label{fig:catimagetorgbchannels}
+	\end{figure}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=\textwidth]{imageprocessingwithann}
+		\caption[Image processing with ANNs]{Image processing with ANNs.}
+		\label{fig:imageprocessingwithann}
+	\end{figure}
+
+
+	\subsubsection{Challenges with Image Classification Using ANNs}
+
+	\begin{bulletedlist}
+		\item One of the main disadvantages of ANNs is that \textbf{they are not translation invariant}.  For example, a cat may be present in the center, left, or right of an image.  ANNs would try to learn the location the cat is present as an indicator of its presence.  This may give inconsistent results.
+		\item Another problem with ANNs is that \textbf{they lose spatial information} after getting the image matrix converted into a flattened array.  This means ANNs do not leverage the fact that nearby pixels are more strongly related than distant ones.
+		\item Yet another disadvantage of ANNs for image classification, has to do with detecting which features of an image are important and which ones are not. When detecting the presence of the object, there is no use of looking at the background or other features of an image. There is unfortunately no scope to use this idea in a traditional ANN, which may give importance to every pixel in an
+image, and will hence try to learn the background of the object as well.  For example, a cat remains a cat whether it is in the garden or on a table.  However, an ANN will wrongly learn about the background and assume that a cat appears in a specific background.
+	\end{bulletedlist}
+
+
+	\subsubsection{The Computationally Expensive Nature of ANNs}
+	\begin{bulletedlist}
+		\item ANNs are very computationally expensive.
+		\item To use an ANN, we would first have to flatten the input. Using just two fully-connected layers (of 32 and 2 nodes each) on the input image of 28x28x1, we observe that there are already about 50,000 trainable parameters, and this would just increase with an increase in the number of layers.
+	\end{bulletedlist}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=\textwidth-1in]{fullyconnectannforimageprocessing}
+		\caption[Expense of image processing with ANNs]{Expense of image processing with ANNs.}
+		\label{fig:fullyconnectannforimageprocessing}
+	\end{figure}
+
+	\subsection{Spatial and Translational Invariance of CNNs}
+
+	\begin{bulletedlist}
+		\item CNNs have the in built property of handling positional shifts, or translations of a given image. They are
+spatially and translationally invariant (see \figurename~\ref{fig:translationalinvarianceforcnns}).
+		\item In the below example, we have three images of a cat.  It obviously remains a cat regardless of whether it appears in the left, the center or the top right corner of the image.  Unlike ANNs, CNNs are able to understand this, as you would expect for any practical computer vision model.
+		\item CNNs achieve this through the use of convolutional and pooling layers.
+		\item Convolutional layers extract the right set of features from the image by applying filters that match those patterns in the image. Since the same filter is applied through a sliding mechanism throughout the whole image, the features of the image get detected irrespective of their position.
+		\item The result of the convolutional layer is sent to the pooling layer. The pooling layer reduces the image complexity and size, and extracts the important features from the pooling patch. This achieves the dual task of eliminating unwanted background features, as well as the translational invariance of removing the information about the exact position of the object in the image.
+		\item This is why CNNs will likely work well even for shifted objects in images, even if the CNN is not explicitly trained on images with such variability.
+		\item Each layer in the CNN introduces some amount of translational invariance, and the more layers we add, the more effective it usually becomes.
+		\item \textbf{CNNs automatically detect or learn the important features of an image without any human supervision.} For example, in an image data set of handwritten digits, CNNs learn the distinctive features for each digit by themselves, by learning the best filter values through back propagation.
+		\item Convolutional filters change the input in such a way that only the important features are extracted.  In \figurename~\ref{fig:cnnsignorebackground}, detecting the presence of the dog does not require extracting information about the background (depicted in red lines).  We only need to extract the relevant features of the dog, and ignore all other information.  This is achieved using convolution and pooling.
+	\end{bulletedlist}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=\textwidth-1in]{translationalinvarianceforcnns}
+		\caption[Translational invariance for CNNs]{Translational invariance for CNNs.}
+		\label{fig:translationalinvarianceforcnns}
+	\end{figure}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=\textwidth-1in]{cnnsignorebackground}
+		\caption[CNNs ignore background]{CNNs ignore background.}
+		\label{fig:cnnsignorebackground}
+	\end{figure}
+
+	\subsection{Computational Advantage of CNNs}
+	\begin{bulletedlist}
+		\item \textbf{Weight sharing}: In the convolution process, we apply the same filter to every patch of the image.
+As a result:
+		\begin{bulletedlist}
+			\item It reduces the number of weights that must be learned, which reduces training time and cost.
+			\item It makes the filter search insensitive to the location of the important features in the image.
+		\end{bulletedlist}
+		\item Let's say we have an image of size 50x50x3 (i.e.\ 7500 pixels or features) as represented in \figurename~\ref{fig:cnnfeatures}.
+		\begin{bulletedlist}
+			\item Taking a CNN Layer with 10 filters and a kernel size of 3x3, we'll have the given output of size 48x48x10 size having 23040 features.
+			\item Unlike in ANNs, the number of trainable parameters still remains a small fraction of the features and does not scale with that large number.
+			\item Number of trainable parameters = (filter size x number of channels + bias) x No. of filters = (3x3x3 + 1) x 10 = 280
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=\textwidth-2in]{cnnfeatures}
+		\caption[CNNs features]{CNNs features.}
+		\label{fig:cnnfeatures}
+	\end{figure}
+
+	\subsection{Summary}
+
+	\begin{bulletedlist}
+		\item CNNs perform better than ANNs in the crucial task of capturing the relevant features from an image, by ignoring any spatial and translational transformations.
+		\item The use of filters in a CNN helps us reduce the dimensionality of the image and extract only the important and required information.
+		\item Convolutional filters require exponentially less trainable parameters in comparison to the fully-connected dense layers required in ANNs, and this gives CNNs a computational advantage over ANNs as well.
+	\end{bulletedlist}
+
+	\section{CNN Architecture}
+
+	\begin{bulletedlist}
+		\item The CNN architecture for image classification is comprised of two major parts:
+		\begin{numberedlist}
+			\item The feature extraction stage with (a) Convolution layer + Activation function and (b) Pooling layer.
+			\item The prediction stage with (a) Flatten layer and (b) Fully connected layer.
+		\end{numberedlist}
+	\end{bulletedlist}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=\textwidth-1in]{cnnarchitecture}
+		\caption[CNNs architecture]{CNNs architecture.}
+		\label{fig:cnnarchitecture}
+	\end{figure}
+
+	\subsection{Convolutional Layer}
+
+	\begin{bulletedlist}
+		\item In the convolutional layer, a filter is applied on an input image to build a feature map.
+		\item Filters can be custom made.  In convolutional neural networks though, the values of the filters are learned through training to determine the important features that can categorize the image more accurately. We simply pass the number of filters and their sizes to the CNN, and the model learns the filter values to develop various feature maps that capture the presence of the features detected.
+	\end{bulletedlist}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=\textwidth-1in]{cnnfeatureextraction}
+		\caption[CNN feature extraction]{CNN feature extraction.}
+		\label{fig:cnnfeatureextraction}
+	\end{figure}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=\textwidth-1in]{cnnconvolution}
+		\caption[CNN convolution]{CNN convolution.}
+		\label{fig:cnnconvolution}
+	\end{figure}
+
+
+	\subsubsection{Activation Function}
+	\begin{bulletedlist}
+		\item The next step is the Activation Function. In CNNs, the ReLU activation function is used to incorporate a non-linear component into neural networks.
+		\item The ReLU function is used in CNNs because the convolution operation is essentially a linear operation (a sum of element-wise products) between the image and the filter, and ReLU adds the non-linearity required for this operation to be able to detect complex non-linear boundaries in the image.
+		\item One advantage of using ReLU (Rectified Linear Unit) is that if there are any negative pixels, the function will convert it into zero. This is useful for visualizing these image maps, since negative pixels have no meaning, and it makes subsequent computations more efficient since zeros are easy to work with.
+	\end{bulletedlist}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=\textwidth-1in]{cnnactivationfunction}
+		\caption[CNN activation function]{CNN activation function.}
+		\label{fig:cnnactivationfunction}
+	\end{figure}
+
+
+	\subsubsection{Pooling Layer}
+	\begin{bulletedlist}
+		\item The next step in the Feature Extraction stage is Pooling.  The pooling layer helps in removing unwanted features from the image.  In doing so, it reduces the size of the image and hence decreases the computational cost of the model.
+		\item CNNs can use `Max Pooling' (see \figurename~\ref{fig:maxpooling}) to create a pooled feature map using only the maximum values of each patch, and dispose of the unnecessary pixel information.
+		\item An important question here is - Do we lose information in this process?  The answer is Yes.  The final feature map includes fewer cells and thus less information than the original input image.  But, the purpose of this step is to discard irrelevant features so that the network can do its job more efficiently.
+		\item This process is what's responsible for the ``spatial invariance'' property of CNNs.  Pooling also reduces the size of the images, and hence the number of parameters, which minimizes the likelihood of ``over fitting'', which neural networks are often susceptible to.
+	\end{bulletedlist}
+
+	\subsubsection{Flatten Layer}
+	\begin{bulletedlist}
+		\item After the Feature Extraction stage, we move to the Prediction stage of the CNN.  The first step of the Prediction stage is the Flatten layer.
+		\item In this layer, the CNN literally flattens the pooled feature map into a column vector, and the output is used in a standard artificial neural network configuration, which are the fully connected layers of the CNN.
+	\end{bulletedlist}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=\textwidth-2.0in]{cnnflattenpooledfeaturemap}
+		\caption[Flattening pooled features maps to an array]{Flattening pooled features maps to an array.}
+		\label{fig:cnnflattenpooledfeaturemap}
+	\end{figure}
+
+	\subsubsection{Fully Connected Layer}
+	\begin{bulletedlist}
+		\item So far, we have learned about the convolution operation, the activation function, pooling and flattening. The final stage of the process is the fully connected layer, where the information from the previous layers is sent to an artificial neural network architecture with Dense (fully connected) layers.
+		\item The aim of this step is to take the input and combine the features into a wider variety of attributes that make the convolutional network more capable of categorizing images, which is the sole purpose of building a convolutional neural network.
+	\end{bulletedlist}
+
+	\section{Building a CNN Model}
+	\begin{bulletedlist}
+		\item Let's say we want to build a simple Convolutional Neural Network (CNN) for a prediction problem.  Let's say we need to classify an image as a dog or a cat.
+		\item We can build a simple CNN with convolution and pooling layers to solve this problem.
+	\end{bulletedlist}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[width=\textwidth-0.75in]{cnnexamplesetup}
+		\caption[CNN basic example]{CNN basic example.  The fully connected object is meant to represent one or more hidden layers in a neural network.}
+		\label{fig:cnnexamplesetup}
+	\end{figure}
+
+	\subsection{Summary}
+	\begin{bulletedlist}
+		\item We are starting off by applying filters to input images in the form of a convolutional layer.
+		\item We break up the linearity of the convolution operation, using the ReLU activation function.
+		\item We reduce the image dimension using pooling, for isolating the important features and computational efficiency.
+		\item We flatten the feature map and feed it into a fully-connected neural network to generate the final predictions.
+		\item Throughout this process, the trainable parameters of the CNN - the weights and filter values, are trained and continuously updated through back propagation so that the CNN can achieve its best possible performance in image prediction tasks.
+	\end{bulletedlist}
+
 	\section{Introduction}
 
-Convolution neural networks are a special type of neural network designed to work with image data.  CNNs use convolutional layers hidden layers which perform convolution operations. They have some different characteristics to artificial neural networks.
+Convolution neural networks are a special type of neural network designed to work with image data.  CNNs use convolutional layers hidden layers which perform convolution operations.  They have some different characteristics to artificial neural networks.
 	\begin{bulletedlist}
 		\item Unlike ANNs, CNNs capture the spatial structure of the image.
 		\item CNNs follow the concept of parameter sharing i.e. one filter is applied over the whole image, because of which they are much more computationally efficient.
@@ -154,7 +367,7 @@ Convolution neural networks are a special type of neural network designed to wor
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=\textwidth]{convolutionneuralnetwork}
+		\includegraphics[width=\textwidth-0.5in]{convolutionneuralnetwork}
 		\caption[Convolution neural network]{Convolution neural network.  Image source \href{https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53}{toward data science}.}
 		\label{fig:convolutionneuralnetwork}
 	\end{figure}
@@ -168,7 +381,7 @@ Convolution neural networks are a special type of neural network designed to wor
 		\item The convolution is performed as shown in \figurename{}s~\ref{fig:convolutionoperationstepsa} and~\ref{fig:convolutionoperationstepsb}.
 	\end{bulletedlist}
 
-	\section{Pooling layer in CNNs}
+	\section{Pooling Layer in CNNs}
 
 	\begin{bulletedlist}
 		\item After a convolution operation, we usually perform pooling to reduce the dimensions of the feature map.
@@ -202,7 +415,7 @@ We see that after using stride, the size of the feature map is smaller than the 
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[height=2.5in]{paddingandstrideincnn}
+		\includegraphics[height=3.5in]{paddingandstrideincnn}
 		\caption[Padding and stride in CNNs]{Padding and stride in CNNs.}
 		\label{fig:paddingandstrideincnn}
 	\end{figure}

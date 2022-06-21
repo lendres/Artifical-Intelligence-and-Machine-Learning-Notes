@@ -10,13 +10,16 @@
 *.bbl
 *.blg
 *.toc
+*.lof
+*.lot
+*.alg
 *.acn
 *.acr
-*.alg
 *.stg
 *.sto
 *.sts
 *.ist
+*.mdg
 *.mto
 *.mts
 *.glg
@@ -33,4 +36,3 @@ Thumbs.db
 
 _temp.*
 *.sav
-Machine Learning and Artificial Intelligence.mdl

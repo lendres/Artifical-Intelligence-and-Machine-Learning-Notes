@@ -420,3 +420,66 @@ We see that after using stride, the size of the feature map is smaller than the 
 		\label{fig:paddingandstrideincnn}
 	\end{figure}
 
+
+
+
+
+	\section{Model Building Practices}
+What should the order of different layers in a Convolutional Neural Network be? Where should I put my Batch Norm, Dropout, Activation, and Pooling layers?  Are there any guidelines regarding the same?
+
+	\subsection{Dropout vs Batch Normalization}
+The standard deviation issue.
+
+There is a big problem that appears when you mix these layers, especially when Batch Normalization is right after Dropout.
+Dropouts try to keep the same mean of the outputs without dropouts, but it does change the standard deviation, which will cause a huge difference in the Batch Normalization between training and validation. (During training, the Batch Normalization receives changed standard deviations, and accumulates and stores them. During validation, the dropouts are turned off, the standard deviation is not a changed one anymore, but the original. But Batch Normalization, because it's invalidation, will not use the batch statistics, but the stored statistics, which will be very different from the batch statistics).
+
+So, the first and most important rule is: don't place a Batch Normalization after a Dropout (or a SpatialDropout).
+Usually,  try to leave at least two convolutional/dense layers without any dropout before applying a batch normalization, to avoid this.
+
+	\subsection{Dropout vs Batch Normalization}
+If done in an improper order, it can result in changing the zeros to another value.
+
+Also important, the role of the Dropout is to zero the influence of some of the weights of the next layer.  If you apply a normalization after the dropout, you will not have zeros anymore, but a certain value that will be repeated for many units.  And this value will vary from batch to batch. So, although there is noise added, you are not killing units as a pure dropout is supposed to do.
+
+	\subsection{Dropout vs MaxPooling}
+The problem of using a regular Dropout before a MaxPooling is that you will zero some pixels, and then the MaxPooling will take the maximum value, sort of ignoring part of your dropout. If your dropout happens to hit a maximum pixel, then the pooling will result in the second maximum, not in zero.
+So, Dropout before MaxPooling reduces the effectiveness of the dropout.
+
+	\subsection{Batch Normalization vs Activation}
+Depending on the activation function, using a batch normalization before it can be a good advantage.
+For a ReLU activation, the normalization makes the model fail-safe against a bad luck case of ``all zeros freeze a ReLU layer.''  It will also tend to guarantee that half of the units will be zero and the other half linear.
+
+For a sigmoid or a tanh, the Batch Normalization will guarantee that the values are within a healthy range, avoiding saturation and vanishing gradients (values that are too far from zero will hit an almost flat region of these functions, causing vanishing gradients).
+There are people that say there are other advantages if you do the contrary, I'm not fully aware of these advantages, I like the ones I mentioned very much.
+
+	\subsection{Dropout vs Activation}
+With ReLU, there is no difference, it can be proved that the results are exactly the same (Links to an external site.)Links to an external site.
+
+With activations that are not centered, such as sigmoid putting a dropout before the activation will not result in zeros, but in other values.  For a sigmoid, the final results of the dropout before it would be 0.5.
+
+If you add a tanh after a dropout, for instance, you will have the zeros, but the scaling that dropout applies to keep the same mean will be distorted by the tanh.
+
+	\subsection{MaxPooling vs Activation}
+There is nothing much here. If the activation is not very weird, the final result would be the same.
+
+	\subsection{Conclusions}
+Find the appropriate order of layers which is often useful
+	\begin{bulletedlist}
+	\item Group 1
+		\begin{bulletedlist}
+			\item Convolution
+			\item Batch Norm
+			\item Activation
+			\item MaxPooling
+			\item Dropout or SpatialDropout
+		\end{bulletedlist}
+	\item Group 2
+		\begin{bulletedlist}
+			\item Convolution
+			\item ----- (there was a dropout in the last group, no Batch Norm here)
+			\item Activation
+			\item MaxPooling
+			\item Dropout or SpatialDropout (decide to use or not)
+			\item After two groups without dropout, can use Batch Norm again
+		\end{bulletedlist}
+	\end{bulletedlist}

@@ -599,7 +599,7 @@ Activation Functions are mathematical functions that apply a transformation on t
 Why is the Sigmoid activation function not preferred in hidden layers of deep neural networks?
 		\end{question}
 		\begin{answer}
-The Sigmoid function takes in any real number and outputs a continuous numeric value between 0 and 1, which can then be discretized using a threshold (Ex: 0.5) and converted into either 0 or 1 - hence its use as a binary classifier. Therefore, the Sigmoid function is generally preferred in the output layer of a binary classification neural network. It is not recommended to use it in the hidden layers because of the vanishing gradient problem i.e, if your input is on the higher side in terms of magnitude (where the sigmoid function goes flat), then the gradient will be close to zero. Due to the calculus of the chain rule of derivatives used in back propagation, this would result in multiple small values being multiplied with each other to determine the final step size in gradient descent, and that would be an extremely small step, meaning the neural network's learning speed would be negligible. Hence, we do not prefer using the Sigmoid function in the hidden layers of deep neural networks.
+The Sigmoid function takes in any real number and outputs a continuous numeric value between 0 and 1, which can then be discretized using a threshold (Ex: 0.5) and converted into either 0 or 1 - hence its use as a binary classifier. Therefore, the Sigmoid function is generally preferred in the output layer of a binary classification neural network. It is not recommended to use it in the hidden layers because of the vanishing gradient problem i.e, if your input is on the higher side in terms of magnitude (where the sigmoid function goes flat), then the gradient will be close to zero. Due to the calculus of the chain rule of derivatives used in backpropagation, this would result in multiple small values being multiplied with each other to determine the final step size in gradient descent, and that would be an extremely small step, meaning the neural network's learning speed would be negligible. Hence, we do not prefer using the Sigmoid function in the hidden layers of deep neural networks.
 		\end{answer}
 	\end{qanda}
 
@@ -698,7 +698,7 @@ Convolution is a mathematical operation which takes two inputs such as image mat
 Why do we mostly use the ReLU activation function in the feature extraction stage of convolutional neural networks (CNNs)?
 		\end{question}
 		\begin{answer}
-ReLU has the advantage of being simple to compute and also avoiding the vanishing gradient problem, due to its constant derivative of 1. This is useful in CNNs which are deep networks, as the error from back propagation is easily propagated for the neural network's learning.
+ReLU has the advantage of being simple to compute and also avoiding the vanishing gradient problem, due to its constant derivative of 1. This is useful in CNNs which are deep networks, as the error from backpropagation is easily propagated for the neural network's learning.
 		\end{answer}
 	\end{qanda}
 
@@ -763,4 +763,4 @@ Would you consider Logistic Regression to be a special case of using Neural Netw
 		\begin{answer}
 Yes, logistic regression is a specialized case of a one-node neural network, where we use the Sigmoid activation function and the cost function being minimized is the Binary Cross-Entropy function.
 		\end{answer}
-	\end{qanda}
+	\end{qanda} 

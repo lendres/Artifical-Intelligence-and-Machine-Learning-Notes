@@ -103,10 +103,10 @@ ReLU (or Rectified Linear Unit) is the most widely used activation function. It 
 
 	\begin{qanda}
 		\begin{question}
-What is the meaning of back propagation?
+What is the meaning of backpropagation?
 		\end{question}
 		\begin{answer}
-Back propagation is a technique to improve the performance of the network. It back-propagates the error and updates the weights to reduce the error.
+backpropagation is a technique to improve the performance of the network. It back-propagates the error and updates the weights to reduce the error.
 		\end{answer}
 	\end{qanda}
 
@@ -869,23 +869,23 @@ Cross entropy
 
 	\section{Local Optimum and Saddle Point}
 
-	\section{Back Propagation}
-Back propagation uses the chain rule to make for more efficient calculations of the gradients.
+	\section{backpropagation}
+backpropagation uses the chain rule to make for more efficient calculations of the gradients.
 
 	\begin{bulletedlist}
-		\item Back propagation is the process of learning that the neural network employs to re-calibrate the weights and bias at every layer and every node to minimize the error in the output layer
+		\item backpropagation is the process of learning that the neural network employs to re-calibrate the weights and bias at every layer and every node to minimize the error in the output layer
 		\item During the first pass of forward propagation, the weights and bias are random number. The random numbers are generated within a small range say 0-1
 		\item Needless to say, the output of the first iteration is almost always incorrect. The difference between actual value / class and predicted value / class is the error
 		\item All the nodes in all the preceding layers have contributed to the error and hence need to get their share of the error and correct their weights
-		\item This process of allocating proportion of the error to all the nodes in the previous layer is back propagation
-		\item The goal of back propagation is to adjust weights and bias in proportion to the error contribution and in iterative process identify the optimal combination of weights
+		\item This process of allocating proportion of the error to all the nodes in the previous layer is backpropagation
+		\item The goal of backpropagation is to adjust weights and bias in proportion to the error contribution and in iterative process identify the optimal combination of weights
 		\item At each layer, at each node, gradient descent algorithm is applied to adjust the weights
 	\end{bulletedlist}
 
  	\begin{figure}[h]
 		\centering
 		\includegraphics[height=1.75in]{backpropagation}
-		\caption[Back propagation]{Back propagation.}
+		\caption[backpropagation]{backpropagation.}
 		\label{fig:backpropagation}
 	\end{figure}
 

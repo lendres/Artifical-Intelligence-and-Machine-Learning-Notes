@@ -210,7 +210,7 @@ backward propagation. If either occurs, the neural network will take a longer ti
 	\end{bulletedlist}
 
 	\subsection{Vanishing Gradients}
-In the case of deep networks, for any activation function, abs(dW) will get smaller and smaller as we go backward with every layer during back propagation.  The earlier layers are the
+In the case of deep networks, for any activation function, abs(dW) will get smaller and smaller as we go backward with every layer during backpropagation.  The earlier layers are the
 slowest to train in such a case.
 
 The weight update is minor and results in slower convergence.  This makes the optimization of the loss function slow.  In the worst case, this may completely stop the neural network from training further.

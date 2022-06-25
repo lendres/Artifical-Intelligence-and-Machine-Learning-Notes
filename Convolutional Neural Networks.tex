@@ -766,7 +766,7 @@ network itself learns to rely more on larger filter sizes (like 5x5 Convolutions
 		\label{fig:inceptionnetworkstructuralcomponents}
 	\end{figure}
 
-	\subsubsection{Average Pooling + Convolution + FC + Softmax}	
+	\subsubsection{Average Pooling + Convolution + Fully Conected + Softmax}	
 	\begin{bulletedlist}
 		\item In CNNs, as the network grows deeper, the chances of the network being subject to the Vanishing Gradient problem increases.
 		\item To prevent the middle of the Inception Network from dying out, two auxiliary classifiers were introduced, consisting of Average Pooling, Convolution, Fully Connected and Softmax Layers.  These auxiliary classifiers apply Softmax to the outputs of two inception modules, and compute an auxiliary loss.

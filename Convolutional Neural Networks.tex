@@ -1,5 +1,5 @@
 	\chapter{Convolutional Neural Networks}
-	\section{Frequently Asked Questions}
+	\section{CNNs Frequently Asked Questions}
 
 	\resetquestioncounter{}
 	\begin{qanda}
@@ -429,8 +429,7 @@ We see that after using stride, the size of the feature map is smaller than the 
 	\end{figure}
 
 
-	\section{Transfer Learning}
-	\subsection{Frequently Asked Questions}
+	\subsection{Transfer Learning Frequently Asked Questions}
 	\begin{qanda}
 		\begin{question}
 Are there any other Transfer Learning or pre-trained models other than VGG16?
@@ -465,6 +464,7 @@ GPUs can perform multiple, simultaneous computations. This enables the distribut
 	\end{qanda}
 
 
+	\section{Regularization in CNNs}
 	\subsection{Over Fitting in CNNs}
 	\begin{bulletedlist}
 		\item If we only have a limited amount of data to train on, a neural network may be good at recognizing the data that it has been trained. However, it may not perform well on new data, i.e., data it has never seen before (see \figurename~\ref{fig:cnnoverfitting}).
@@ -525,13 +525,6 @@ approaches to potentially prevent this over fitting problem.
 learn from new input distributions during an update.
 		\item Batch Normalization standardizes the activations of each input variable per mini-batch, which means that during the weight update, the assumptions made by the subsequent layer regarding the spread and distribution of inputs will not alter drastically. It turns out that when the distribution of inputs to each layer is similar, training a network is more efficient and faster.
 		\item In addition to speeding up learning, Batch Normalization (in short Batch Norm) also provides a weak form of regularization. Since Batch Norm is performed on mini-batches, it adds noise to the data, which results in regularization.
-		\item We have already learned about the dropout regularization technique, which is used in neural network training to reduce over fitting.  Let's see how dropout is used after the convolution layer in CNNs.
-		\item Convolution between a filter and an input produces feature maps in the convolution layer.  In images, the values of neighboring pixels are highly correlated, resulting in correlated cells in feature maps.  Thus, dropping the cells of feature maps at random using a basic dropout method may not actually prevent over fitting, because even if one cell is removed, the neighboring cell
-could give a highly correlated gradient.  That's why we use another idea called Spatial Dropout.
-		\item In Spatial Dropout, whole feature maps themselves are randomly dropped.  Dropping a feature map, means making all the cells of that feature map 0, which would be as good as not using it.  Let's suppose we obtained 8 feature maps after the convolution operation. If spatial dropout is applied with dropout probability 0.25, then the expected number of dropped feature maps is 2.
-		\begin{bulletedlist}
-			\item
-		\end{bulletedlist}
 	\end{bulletedlist}
 
 	\begin{figure}[tbh]
@@ -547,6 +540,14 @@ could give a highly correlated gradient.  That's why we use another idea called 
 		\caption[Example of covariance shift]{Example of covariance shift.  The input shifted from being from only orange cats to orange and white cats.  This isn't a great example.  Really, it is just any change in the input data.}
 		\label{fig:covarianceshift}
 	\end{figure}
+
+	\subsection{Spatial Dropout}
+	\begin{bulletedlist}
+		\item We have already learned about the dropout regularization technique, which is used in neural network training to reduce over fitting.  Let's see how dropout is used after the convolution layer in CNNs.
+		\item Convolution between a filter and an input produces feature maps in the convolution layer.  In images, the values of neighboring pixels are highly correlated, resulting in correlated cells in feature maps.  Thus, dropping the cells of feature maps at random using a basic dropout method may not actually prevent over fitting, because even if one cell is removed, the neighboring cell
+could give a highly correlated gradient.  That's why we use another idea called Spatial Dropout.
+		\item In Spatial Dropout, whole feature maps themselves are randomly dropped.  Dropping a feature map, means making all the cells of that feature map 0, which would be as good as not using it.  Let's suppose we obtained 8 feature maps after the convolution operation. If spatial dropout is applied with dropout probability 0.25, then the expected number of dropped feature maps is 2.
+	\end{bulletedlist}
 
 	\begin{figure}[tbh]
 		\centering
@@ -760,8 +761,8 @@ network itself learns to rely more on larger filter sizes (like 5x5 Convolutions
 
 	\begin{figure}[tbh]
 		\centering
-		\includegraphics[width=\textwidth-2in]{inceptionnetworkstructuralcomponents}
-		\caption[Inception structural components]{Inception structural components.}
+		\includegraphics[height=3in]{inceptionnetworkstructuralcomponents}
+		\caption[Inception structural module of convolution, max pooling, and LRN]{Inception structural module of convolution, max pooling, and LRN.}
 		\label{fig:inceptionnetworkstructuralcomponents}
 	\end{figure}
 
@@ -772,7 +773,12 @@ network itself learns to rely more on larger filter sizes (like 5x5 Convolutions
 		\item The total loss function of the InceptionNet equals the weighted sum of the real loss of the main chain and the auxiliary loss.
 	\end{bulletedlist}
 
-
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[height=3in]{inceptionnetworkpoolingconvolutionfcsoftmax}
+		\caption[Inception structural module of average pooling, convolution, FC, and Softmax]{Inception structural module of average pooling, convolution, Fully connected, and Softmax.}
+		\label{fig:inceptionnetworkpoolingconvolutionfcsoftmax}
+	\end{figure}
 
 
 	\subsection{Transfer Learning Architectures - Residual Networks}

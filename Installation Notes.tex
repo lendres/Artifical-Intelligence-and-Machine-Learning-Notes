@@ -118,4 +118,27 @@ Use the following:
 \textcode{!pip list}
 
 from google.colab import drive
-drive.mount("/content/drive") 
+drive.mount("/content/drive")
+
+
+	\section{TensorFlow}
+\noindent CPU version:
+	\begin{code}[\codenumbering]{}
+		\codeitemnonumber conda create -n tf tensorflow
+		\codeitemnonumber conda activate tf
+		\codeitemnonumber conda install spyder
+	\end{code}
+
+\noindent GPU version:
+	\begin{code}[\codenumbering]{}
+		\codeitemnonumber conda create -n tf-gpu tensorflow-gpu
+		\codeitemnonumber conda activate tf-gpu
+		\codeitemnonumber conda install spyder
+	\end{code}
+
+	\begin{numberedlist}
+		\item Open Anaconda Navigator.
+		\item In top left corner you see Selector: ``Applications on: base(root).''
+		\item Change: ``base root'' for ``Tensorflow'' it assumes that it was already installed based on link above
+		\item Install Spyder.
+	\end{numberedlist}

@@ -121,7 +121,7 @@ Run the below code and its dependency before performing the operations based on 
 	\begin{bulletedlist}
 		\item Languages are changing everyday, new words, new rules, etc.
 		\item The number of tokens is not fixed. A natural language can have hundreds of thousands of different words, new words are created on the fly.
-		\item Words can have different meanings depending on context, and they can acquire new meanings over time (apple(a fruit), Apple(the company)], they can even change their parts of speech(Google--> to google).
+		\item Words can have different meanings depending on context, and they can acquire new meanings over time (apple(a fruit), Apple(the company)], they can even change their parts of speech(Google to google).
 		\item Every language has its own uniqueness. Like in the case of English we have words, sentences, paragraphs and so on to limit our language. But in Thai, there is no concept of sentences.
 	\end{bulletedlist}
 
@@ -144,10 +144,10 @@ Run the below code and its dependency before performing the operations based on 
 
 	\subsection{Text Analytics Framework}
 	\begin{bulletedlist}
-		\item NLTK: The Natural Language Toolkit is a complete platform that contains more than 50 corpora and lexical resources. It also provides the necessary tools, interfaces, and methods to process and analyze text data.
+		\item NLTK: The Natural Language Toolkit is a complete platform that contains more than 50 corpora and lexical resources. It also provides the necessary tools, interfaces, and methods to process and analyze text data.  More for academia and research.
 		\item Beautiful Soup : It can be used to scrape data from web and also for text cleaning with its inbuilt parsers.
 		\item TextBlob: Provides several capabilities including text processing, phrase extraction, classification, POS tagging, text translation and sentiment analysis.
-		\item Spacy : It is a production grade NLP library that offers similar functionality as that of NLTK and TextBlob
+		\item Spacy: It is a production grade NLP library that offers similar functionality as that of NLTK and TextBlob.  Optimized for productions, parallelized, distributed, et cetera.
 	\end{bulletedlist}
 
 	\subsection{Types of Processing Steps}
@@ -207,7 +207,8 @@ recommended.
 		\item Words that are derived from one another can be mapped to a central word or symbol, especially if they have the same
 core meaning.
 		\item Used for dimensionality reduction.
-		\item Word stem may not be present in dictionary.
+		\item Word stem may not be present in dictionary, it does not cross check to ensure the new word is valid.
+		\item and may not make sense in the sentence structure.  It just reduces the word to the stem without additional validation or checks.
 		\item ``cook,'' ``cooking,'' and ``cooked'' all are reduced to same stem of ``cook.''
 	\end{bulletedlist}
 
@@ -217,5 +218,32 @@ core meaning.
 		\caption[Word stemming]{Word stemming.}
 		\label{fig:wordstemming}
 	\end{figure}
+
+
+	\subsection{Lemmatization}
+	\begin{bulletedlist}
+		\item Lemmatization involves resolving words to their dictionary form.  A lemma of a word is its dictionary or canonical form.
+		\item Lemmatization returns an actual word of the language, it is used where it is vital to get valid words.
+		\item Examples:
+		\begin{bulletedlist}
+			\item walking $\rightarrow$ walk (core-word extraction)
+			\item was $\rightarrow$ be (tense conversion to present tense)
+			\item mice $\rightarrow$ mouse (plural to singular)
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+    \begin{table}[h]
+        \centering
+        \caption[stemming and lemmatization comparison]{Stemming and lemmatization comparison.}
+        \label{tab:stemmingandlemma}
+        \begin{tabular}{|c|c|c|} \hline
+			\tablecolumnheadervlinesone{Word} 	& \tablecolumnheadervlinestwo{Stem}   & \tablecolumnheadervlinestwo{Lemma}\\ \hline
+			Studies						        & Studi                               & Study \\ \hline
+		\end{tabular}
+	\end{table}
+
+
+
+
 
 

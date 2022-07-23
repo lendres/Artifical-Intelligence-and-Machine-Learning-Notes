@@ -106,12 +106,13 @@ Run the below code and its dependency before performing the operations based on 
 		\item Semantic Analysis
 		\begin{bulletedlist}
 			\item Semantic analysis of a corpus (a large and structured set of texts) is the task of building structures that approximate concepts from a large set of documents.
-			\item Application of Semantic Analysis:
+			\item Application of Semantic Analysis
 			\begin{bulletedlist}
-				\item Text Similarity
-				\item Context Recognition
-				\item Sentence Parsing
-				\item Topic Modeling
+				\item
+				\begin{bulletedlist}
+					\item Categorizing complaints on consumer
+					\item forums to respective departments.
+				\end{bulletedlist}
 			\end{bulletedlist}
 		\end{bulletedlist}
 	\end{bulletedlist}
@@ -243,6 +244,192 @@ core meaning.
 
 
 
+	\section{Statistical NLP}
+
+    \begin{table}[h]
+        \centering
+        \caption[Statistical NLP]{Statistical natural language processing.}
+        \label{tab:statisticalnlp}
+        \begin{tabular}{|c|l|p{2in}|p{2in}|} \hline
+			\tablecolumnheadervlinesone{No.} 	& \tablecolumnheadervlinestwo{Topic}   & \tablecolumnheadervlinestwo{Scope}   & \tablecolumnheadervlinestwo{Objective}\\ \hline
+			1	& Bag of words	& Creating features using Bag of words, Countvectorizer	& Understand feature creation using Bag-Of-Words \\ \hline
+			2	& Tf-IDF Model	& Term frequency, idf	& Understand difference between count-vectorizer and tf-idf vectorizer \\ \hline
+			3	& Text classification using	ML	& How to use ML algorithm to do text classification		& Understand use cases of text classification \\ \hline
+			4	& VADER Sentiment Analysis	& sentiment Analysis with VADER	& Brief idea on sentiment analysis \\ \hline
+		\end{tabular}
+	\end{table}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=4in]{posttextprocessing}
+		\caption[Post text preprocessing]{Post text preprocessing.}
+		\label{fig:posttextprocessing}
+	\end{figure}
+
+	\section{Word Representations}
+	\begin{bulletedlist}
+		\item Sparse
+		\begin{bulletedlist}
+			\item Term-document matrix or Document - Term matrix
+			\begin{bulletedlist}
+				\item Given a fixed vocabulary, we count the number of times each word occurs in a document for all documents. This matrix is the term - document matrix.
+				\item We count the number of times a each word pair occurs in the document for a given vocabulary, resulting matrix is the term -term matrix.
+			\end{bulletedlist}
+			\item TF-IDF
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+	\section{Vectorization}
+	\begin{bulletedlist}
+		\item Tf-Idf vectors
+		\begin{bulletedlist}
+			\item Tf-idf is similar to term -document matrix with each word occurrence count divided by inverse document matrix.
+		\end{bulletedlist}
+		\item One-hot encoding of words.
+		\item Above representations of documents are sparse since most of the elements in the matrix will be zero.
+		\item These representations do not take into account individual word relationships.
+	\end{bulletedlist}
+
+	\section{Bag of Words}
+
+	\begin{bulletedlist}
+		\item Feature extraction approach in NLP.
+		\item In this model, a text (such as a sentence or a document) is represented as the bag of its words, disregarding grammar and even word order but keeping multiplicity.
+		\item We use the tokenized words for each observation and find out the frequency of each token.
+		\item We define the vocabulary of corpus as all the unique words in the corpus above and below some certain threshold of frequency.
+		\item Each sentence or document is defined by a vector of same dimension as vocabulary containing the frequency of each word of the vocabulary in the sentence.
+		\item The bag-of-words model is commonly used in methods of document classification where the (frequency of) occurrence of each word is used as a feature for training a classifier.
+	\end{bulletedlist}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=2.25in]{bagofwords}
+		\caption[Bag of words]{Bag of words.}
+		\label{fig:bagofwords}
+	\end{figure}
 
 
+	\section{Tf-idf Vector}
 
+	\begin{bulletedlist}
+		\item TF-IDF (term frequency times inverse document frequency) is a scheme to weight individual tokens.
+		\item One of the advantage of TF-IDF is reduce the impact of tokens that occur very frequently, hence offering little to none in terms of information.
+	\end{bulletedlist}
+
+	\begin{equation}
+		TF = \frac{\textrm{frequency of a word in a document}}{\textrm{total number of words in the document}}
+	\end{equation}
+
+
+TF captures how important a word is to the document (without looking at the other documents in the data set).
+
+
+Example: He is a good boy.  She is also good.
+    \begin{table}[h]
+        \centering
+        \caption[Statistical NLP]{Statistical natural language processing.}
+        \label{tab:stemmingandlemma}
+        \begin{tabular}{|l|c|} \hline
+        	\tabletitle{2}{Document 1} \\ \hline
+			\tablecolumnheadervlinesone{Word} 	& \tablecolumnheadervlinestwo{Count}  \\ \hline
+			he				& 1 \\ \hline
+			is				& 2 \\ \hline
+			a				& 1 \\ \hline
+			good			& 2 \\ \hline
+			boy				& 1 \\ \hline
+			she				& 1 \\ \hline
+			also			& 1 \\ \hline
+			\textbf{total}	& \textbf{9} \\ \hline
+		\end{tabular}
+	\end{table}
+	\begin{eqnarray}
+		TF(he, doc1)  	& = 1/9  	& = 0.11	\\
+		TF(good, doc1)	& = 2/9		& = 0.22
+	\end{eqnarray}
+
+Example 2: Radhika is a good person.
+    \begin{table}[h]
+        \centering
+        \caption[Statistical NLP]{Statistical natural language processing.}
+        \label{tab:stemmingandlemma}
+        \begin{tabular}{|l|c|} \hline
+        	\tabletitle{2}{Document 1} \\ \hline
+			\tablecolumnheadervlinesone{Word} 	& \tablecolumnheadervlinestwo{Count}  \\ \hline
+			Radhika		& 1 \\ \hline
+			is			& 2 \\ \hline
+			a			& 1 \\ \hline
+			good		& 2 \\ \hline
+			person		& 1 \\ \hline
+			\textbf{total}	& \textbf{5} \\ \hline
+		\end{tabular}
+	\end{table}
+	\begin{eqnarray}
+		TF(he, doc1)  	& = 0/5  	& = 0	\\
+		TF(good, doc1)	& = 1/5		& = 0.2
+	\end{eqnarray}
+
+	\begin{equation}
+		IDF = \log\left(\frac{\textrm{number of documents}}{\textrm{number of documents word is in}}\right)
+	\end{equation}
+
+IDF tells us if a word (feature) can be used to distinguish documents. If a word appears in majority of the documents then IDF will be close to `0' i.e.\ give low weight to that feature.
+
+	\begin{eqnarray}
+		TF-IDF(he, doc1)  	& = 0.11*0.301  	& = 0.03311	\\
+		TF-IDF(good, doc1)	& = 0.22*0			& = 0 \\
+		TF-IDF(good, doc2)	& = 0*0.301			& = 0 \\
+		TF-IDF(good, doc2)	& = 0.2*0			& = 0
+	\end{eqnarray}
+
+    \begin{table}[h]
+        \centering
+        \caption[TF-IDF example]{TF-IDF example.}
+        \label{tab:stemmingandlemma}
+        \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|} \hline
+			 & \tablecolumnheadervlinestwo{a} & \tablecolumnheadervlinestwo{also} & \tablecolumnheadervlinestwo{boy} & \tablecolumnheadervlinestwo{good} & \tablecolumnheadervlinestwo{he} & \tablecolumnheadervlinestwo{is} & \tablecolumnheadervlinestwo{person} & \tablecolumnheadervlinestwo{she} & \tablecolumnheadervlinestwo{Radhika} \\ \hline
+			Index      & 0 & 1 & 2 & 3 & 4       & 5 & 6 & 7 & 8 \\ \hline
+			Document 1 &   &   &   & 0 & 0.03311 &   &   &   &   \\ \hline
+			Document 2 &   &   &   & 0 & 0       &   &   &   &   \\ \hline
+		\end{tabular}
+	\end{table}
+
+	\section{N-gram}
+	\begin{bulletedlist}
+		\item It's a sequence of N-words.
+		\item Bi-gram is a special case of N-grams where we consider only the sequence of two words.
+		\item In N-gram models we calculate the probability of Nth words give the sequence of N-1 words. We do this by calculating the relative frequency of the sequence occurring in the text corpus.
+	\end{bulletedlist}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=1.25in]{ngram}
+		\caption[N-gram]{N-gram.}
+		\label{fig:ngram}
+	\end{figure}
+
+	\section{Text classifications using ML}
+We can assign a category to different forms of text i.e. Articles, news, paragraphs, books, web pages etc.  Text classification has applications like spam filtering, sentiment analysis, document classification, text based analysis in marketing and product management.
+
+	\section{Sentiment Analysis}
+	\begin{bulletedlist}
+		\item It's the content based subjective information retrieval obtained from monitoring online conversations.
+		\item Used extensively to get overall end user feedback.
+		\item Used for making text classification based automated mailing applications.
+		\item Used for gaining insights on areas of improvement in product management.
+	\end{bulletedlist}
+
+	\section{VADER}
+	\begin{bulletedlist}
+		\item VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis tool that is specifically attuned to sentiments expressed in social media.
+		\item VADER uses a combination of sentiment lexicon which is a list of lexical features (e.g., words) which are generally labelled according to their semantic orientation as either positive or negative.
+		\item Like VADER sentiment analysis can be also be done using - NLTK, TextBlob.
+	\end{bulletedlist}
+
+	\section{Sentiment Analysis-Example}
+	\begin{bulletedlist}
+		\item Sentiment analysis - positive or negative
+		\begin{bulletedlist}
+			\item ``This is a ridiculously priced toothbrush.  Seriously, no way to get around it. It is absurdly priced and I'm almost embarrassed to be admitting that I bought it.  With that said... Wow, this thing is amazing.''
+			\item ``These pens make me feel so feminine and desirable. I can barely keep the men away when I'm holding one of these in my dainty hand.  My husband has started to take fencing lessons just to keep the men away.''
+		\end{bulletedlist}
+	\end{bulletedlist}

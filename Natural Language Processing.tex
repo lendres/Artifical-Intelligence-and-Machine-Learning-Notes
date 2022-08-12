@@ -418,12 +418,21 @@ We can assign a category to different forms of text i.e. Articles, news, paragra
 		\item Used for gaining insights on areas of improvement in product management.
 	\end{bulletedlist}
 
+	\subsection{TextBlob}
+The sentiment property of the "TextBlob" returns a named tuple of the form Sentiment(polarity, subjectivity).
+	\begin{bulletedlist}
+		\item The polarity score is afloat within the range [-1.0, 1.0].  Less than zero is negative sentiment, more than zero is positive sentiment.
+		\item The subjectivity is afloat within the range [0.0, 1.0] where 0.0 is very objective and 1.0 is very subjective.
+	\end{bulletedlist}
+
 	\section{VADER}
 	\begin{bulletedlist}
 		\item VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis tool that is specifically attuned to sentiments expressed in social media.
-		\item VADER uses a combination of sentiment lexicon which is a list of lexical features (e.g., words) which are generally labelled according to their semantic orientation as either positive or negative.
+		\item VADER uses a combination of sentiment lexicon which is a list of lexical features (e.g., words) which are generally labeled according to their semantic orientation as either positive or negative.
 		\item Like VADER sentiment analysis can be also be done using - NLTK, TextBlob.
+		\item The sum of the values of pos, neg and neu in the polarity score of VADER sentiment analyzer equals to 1. Compound score is the overall sentiment normalized between -1 and 1.  Generally, less than -0.5 is negative sentiment, greater than 0.5 is positive sentiment, and between them is considered neutral.
 	\end{bulletedlist}
+
 
 	\section{Sentiment Analysis-Example}
 	\begin{bulletedlist}
@@ -433,3 +442,24 @@ We can assign a category to different forms of text i.e. Articles, news, paragra
 			\item ``These pens make me feel so feminine and desirable. I can barely keep the men away when I'm holding one of these in my dainty hand.  My husband has started to take fencing lessons just to keep the men away.''
 		\end{bulletedlist}
 	\end{bulletedlist}
+
+
+	\section{GRU}
+	\begin{bulletedlist}
+		\item Grated recurrent unit.
+		\item Incorporates the two gate operating mechanisms called \textit{update gate} and \textit{reset gate}.
+		\item The update gate is responsible for determining the amount of previous information that needs to pass along the next state.  This is powerful because the model can decide to copy all the information from the past and eliminate the risk of vanishing gradient.
+		\item The reset gate is used from the model to decide how much of the past information is needed to neglect.  It decides whether the previous cell state is important or not.
+	\end{bulletedlist}
+
+Comparison of LSTM and GRU:
+	\begin{bulletedlist}
+		\item Use LSTM if you are dealing with large sequences and accuracy is of concern.
+		\item Use GRU when you have less memory and want faster results.
+		\item GRU has two gates, LSTM has three.
+		\item GRU does not possess any internal memory, they don't have an output gate that is present in LSTM.
+		\item In LSTM the input gate and target gate are coupled by an update gate and in GRU the reset gate is applied directly to the previous hidden state.  In LSTM the responsibility of the reset gate is taken by both the input and target gates.
+	\end{bulletedlist}
+
+	\section{Transformers}
+

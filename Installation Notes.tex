@@ -1,4 +1,31 @@
 	\chapter{Installation Notes}
+
+	\section{Virtual Environments}
+From the Anaconda command prompt:
+	\begin{code}[\codenumbering]{}
+		\codeitemnonumber Navigate to the directory where you want the environment installed.
+		\codeitemnonumber python -m venv \textit{<environmentname>}
+		\codeitemnonumber cd \textit{<environmentname>}/Scripts/
+		\codeitemnonumber activate.bat [from scripts directory]
+		\codeitemnonumber pip install spyder-kernels==2.2.*
+	\end{code}
+
+	\section{Django}
+Reference: \href{https://realpython.com/django-setup/#mysql}{Django installation}
+
+\noindent From the Anaconda command prompt:
+	\begin{code}[\codenumbering]{}
+		\codeitemnonumber python -m pip install django
+		\codeitemnonumber python -m pip freeze > requirements.txt
+		\codeitemnonumber django-admin startproject \textit{<projectname>}
+		\codeitemnonumber cd \textit{<projectname>}
+		\codeitemnonumber python manage.py startapp \textit{<appname>}
+		\codeitemnonumber python manage.py makemigrations \textit{<appname>} [from directory with manage.py]
+		\codeitemnonumber python manage.py migrate \textit{<appname>}
+	\end{code}
+
+
+	\section{Miscellaneous}
 \codetext{!\{sys.executable\} -m pip install pandas-profiling}
 
 Use this to import from another directory.
@@ -154,4 +181,4 @@ Installed it from the Anaconda Navagator Environments
 	\section{Contractions}
 	\begin{code}[\codenumbering]{}
 		\codeitemnonumber !pip install contractions
-	\end{code}
+	\end{code} 

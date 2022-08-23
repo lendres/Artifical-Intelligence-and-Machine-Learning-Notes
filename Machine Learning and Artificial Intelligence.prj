@@ -5,8 +5,8 @@
 1
 Machine Learning and Artificial Intelligence.tex
 48
-5
-3
+6
+2
 
 
 
@@ -19,12 +19,15 @@ TeX
 SQL.tex
 TeX
 1060859 0 7 20 -1 16 128 128 1325 693 0 22 19 -1 -1 0 0 14 -1 -1 14 1 0 16 -1   0
+Installation Notes.tex
+TeX
+286273467 0 -1 1108 -1 403 208 208 1556 791 0 526 152 -1 -1 0 0 1137 -1 -1 1137 1 0 403 -1   0
 Word Embedding and Deep Learning for NLP.tex
 TeX
 1060795 0 -1 269 -1 1077 156 156 1475 739 0 1278 304 -1 -1 0 0 55 -1 -1 55 1 0 1077 -1   0
 Physics Guided Machine Learning.tex
 TeX
-269496315 0 -1 623 -1 731 156 156 1475 739 0 174 399 -1 -1 0 0 42 -1 -1 42 1 0 731 -1   0
+1060859 0 -1 623 -1 731 156 156 1475 739 0 174 399 -1 -1 0 0 42 -1 -1 42 1 0 731 -1   0
 Natural Language Processing.tex
 TeX
 17838075 0 -1 22128 -1 22161 192 192 1389 757 0 110 494 -1 -1 0 0 38 -1 -1 38 1 0 22161 -1   0
@@ -43,9 +46,6 @@ TeX
 Convolutional Neural Networks.tex
 TeX
 286273467 0 -1 10 -1 56361 78 78 1397 661 0 22 759 -1 -1 0 0 40 -1 -1 40 1 0 56361 -1   0
-Installation Notes.tex
-TeX
-286273467 0 -1 6318 -1 6690 208 208 1556 791 0 552 644 -1 -1 0 0 29 -1 -1 29 1 0 6690 -1   0
 Title Page.tex
 TeX
 269496315 0 -1 420 -1 423 156 156 1504 739 0 172 345 -1 -1 0 0 18 -1 -1 18 1 0 423 -1   0
@@ -184,6 +184,7 @@ ASCII:EDT
 *Convolutional Neural Networks
 *Natural Language Processing
 *Word Embedding and Deep Learning for NLP
+*Physics Guided Machine Learning
 *SQL
 *Interview Questions
 *Installation Notes

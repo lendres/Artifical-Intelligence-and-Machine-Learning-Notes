@@ -11,6 +11,4 @@ rem		0 - No processing.
 rem		1 - Processing for the "glossary" package.
 rem		2 - Processing for the "glossaries" package.
 
-call makedocument %1 2
-
-rem pause
+call make_document %1 2

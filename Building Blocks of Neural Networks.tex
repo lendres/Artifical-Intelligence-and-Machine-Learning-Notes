@@ -2,7 +2,7 @@
 
 	\section{Local Optimum and Saddle Points}
 Non-convex functions have local minimums in addition to the global minimum (see \figurename~\ref{fig:complicatedlossfunction}).
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.0in]{complicatedlossfunction}
 		\caption[Local minimums of a non-convex function]{Local minimums of a non-convex function.}
@@ -18,7 +18,7 @@ Saddle points, Hessian and long local furrows.  In multiple dimensions:
 		\item Usually, they treat each weight independently and set learning rates for each differently.
 		\item Examples: RMSprop, ADAM, Nesterov momentum.
 	\end{bulletedlist}
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.0in]{saddlepoint}
 		\caption[Saddle point]{Saddle point.}
@@ -54,7 +54,7 @@ In this course, we will be discussing RMSprop and Adam.
 		\item In SGD convergence to global minima happens very slowly as it will take a single record in each iteration during forward and backward propagation.
 	\end{bulletedlist}
 see \figurename~\ref{fig:stochasticgradientdescent}
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.0in]{stochasticgradientdescent}
 		\caption[Stochastic gradient descent]{Stochastic gradient descent.}
@@ -65,7 +65,7 @@ see \figurename~\ref{fig:stochasticgradientdescent}
 		\item To overcome the noisy data produced by the Mini batch Gradient descent there is another variant of Gradient Descent called Gradient descent with momentum which will smoothen the noisy data.
 		\item Gradient Descent with Momentum uses exponentially weighted averages of gradients over the previous iteration to stabilize the convergence (see \figurename~\ref{fig:stochasticgradientdescent}).
 	\end{bulletedlist}
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.0in]{stochasticgradientdescentmomentum}
 		\caption[Stochastic gradient descent with momentum]{Stochastic gradient descent with momentum.}
@@ -95,7 +95,7 @@ Please reference \figurename~\ref{fig:rmsprophowitworks} for the following:
 		\item $\epsilon$ epsilon is the additive term.  It just ensures that the denominator does not get equal to zero when Vdb or Vdw becomes equal to zero.  Ideally, its value is 10-8.
 		\item Ideally, dw is small and db is high. Hence step size of w increases(divided by a smaller number) and that of b decreases(divided by a larger number).  Due to this the convergence in the direction of weight increases in RMSprop.
 	\end{bulletedlist}
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.0in]{rmsprophowitworks}
 		\caption[Root mean square propagation equations]{Root mean square propagation equations.}
@@ -186,7 +186,7 @@ backward propagation. If either occurs, the neural network will take a longer ti
 	\end{bulletedlist}
 
 
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.5in]{weightinitialization}
 		\caption[Weight initialization for neural networks]{Weight initialization for neural networks.}
@@ -215,7 +215,7 @@ slowest to train in such a case.
 
 The weight update is minor and results in slower convergence.  This makes the optimization of the loss function slow.  In the worst case, this may completely stop the neural network from training further.
 
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.5in]{vanishingandexplodinggradients}
 		\caption[Vanishing and exploding gradients]{Vanishing and exploding gradients.}
@@ -230,7 +230,7 @@ This may result in oscillating around the minima or even overshooting the optimu
 Another impact of exploding gradients is that huge values of the gradients may cause number overflow resulting in incorrect computations or introductions of NaN's.  This might also lead to the loss of taking the value NaN.
 
 	\subsection{Weight Initialization Techniques}
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=3in]{weightinitialization1}
 		\caption[Neural network weight initialization]{Neural network weight initialization.}
@@ -315,7 +315,7 @@ Proper Initialization is an active area of research:
 		\item ANN is able to model higher order and complex functions which makes it more prone to over fitting.
 	\end{bulletedlist}
 
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.25in]{neuralnetworksoverfitting}
 		\caption[Over fitting in neural networks]{Over fitting in neural networks.}
@@ -355,7 +355,7 @@ A $\lambda$ parameter adds a penalty to the loss function prevent large weights.
 		\item In the given in \figurename~\ref{fig:regularzationearlystopping}, the model will stop training at the dotted line since after that our model will start over fitting on the training data.
 	\end{bulletedlist}
 
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.25in]{regularzationearlystopping}
 		\caption[Preventing over fitting by stopping when testing error starts increasing]{Preventing over fitting by stopping when testing error starts increasing.}
@@ -433,7 +433,7 @@ Generating new data to supplement the existing data.  For example, add noise to 
 		\end{bulletedlist}
 	\end{bulletedlist}
 
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.25in]{dropout}
 		\caption[Before and after applying drop out in a neural network]{Before and after applying drop out in a neural network.}
@@ -473,13 +473,13 @@ Before doing dropout, the features are sorted from most important to least impor
 		\item Given x inputs from the k-th neuron. Consider a batch of activations at some layer. For making each feature dimension unit gaussian, use \equationname~\ref{eq:batchnormalization1}.
 	\end{bulletedlist}
 
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.25in]{batchnormalization1}
 		\caption[Batch normalization of hidden layers]{Batch normalization of hidden layers.}
 		\label{fig:batchnormalization1}
 	\end{figure}
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.25in]{batchnormalization2}
 		\caption[Batch normalization and activation functions]{Batch normalization of a hidden layer's output to maps it to an appropriate range for an activation function.}
@@ -550,7 +550,7 @@ There are usually two stages in which Batch Normalization is applied:
 		\item It may be appropriate to use the Batch Normalization technique before the activation function for activations that may result in non-normal distributions like the ReLU activation function.
 	\end{bulletedlist}
 
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.25in]{batchnormalizationdeeplayers}
 		\caption[Batch normalization of deep layers]{Batch normalization of deep layers.  In the above, $\phi$ is the activation function, $\sum$ is the summation of the inputs and weights, and BN is the batch normalization.}
@@ -618,14 +618,14 @@ For example, that you run a batch of images through batch normalization.  The ab
 		\end{bulletedlist}
 	\end{bulletedlist}
 
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.8in]{neuralnetworklearningrates}
 		\caption[Learning rates in neural networks]{Learning rates in neural networks.}
 		\label{fig:neuralnetworklearningrates}
 	\end{figure}
 
- 	\begin{figure}[h]
+ 	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.8in]{neuralnetworkslosscurve}
 		\caption[Loss curve in neural networks]{Loss curve in neural networks.  Training curve is in blue, validation curve is in gold.}

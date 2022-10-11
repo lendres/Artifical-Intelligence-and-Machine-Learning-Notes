@@ -193,7 +193,7 @@ recommended.
 		\end{bulletedlist}
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.5in]{stopwords}
 		\caption[Stop words]{Stop words.}
@@ -212,7 +212,7 @@ core meaning.
 		\item ``cook,'' ``cooking,'' and ``cooked'' all are reduced to same stem of ``cook.''
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.5in]{wordstemming}
 		\caption[Word stemming]{Word stemming.}
@@ -232,7 +232,7 @@ core meaning.
 		\end{bulletedlist}
 	\end{bulletedlist}
 
-    \begin{table}[h]
+    \begin{table}[htb]
         \centering
         \caption[stemming and lemmatization comparison]{Stemming and lemmatization comparison.}
         \label{tab:stemmingandlemma}
@@ -246,7 +246,7 @@ core meaning.
 
 	\section{Statistical NLP}
 
-    \begin{table}[h]
+    \begin{table}[htb]
         \centering
         \caption[Statistical NLP]{Statistical natural language processing.}
         \label{tab:statisticalnlp}
@@ -259,7 +259,7 @@ core meaning.
 		\end{tabular}
 	\end{table}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[width=4in]{posttextprocessing}
 		\caption[Post text preprocessing]{Post text preprocessing.}
@@ -301,7 +301,7 @@ core meaning.
 		\item The bag-of-words model is commonly used in methods of document classification where the (frequency of) occurrence of each word is used as a feature for training a classifier.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.25in]{bagofwords}
 		\caption[Bag of words]{Bag of words.}
@@ -324,10 +324,10 @@ core meaning.
 TF captures how important a word is to the document (without looking at the other documents in the data set).  IDF captures if a word is useful for separating documents.  That is, does a word appear in some document but not others.  It reduces the importance of words used in many documents and increases the importance of words used infrequently.
 
 Example: He is a good boy.  She is also good.
-    \begin{table}[h]
+    \begin{table}[htb]
         \centering
         \caption[Statistical NLP]{Statistical natural language processing.}
-        \label{tab:stemmingandlemma}
+        \label{tab:statisticalnlp1}
         \begin{tabular}{|l|c|} \hline
         	\tabletitle{2}{Document 1} \\ \hline
 			\tablecolumnheadervlinesone{Word} 	& \tablecolumnheadervlinestwo{Count}  \\ \hline
@@ -347,10 +347,10 @@ Example: He is a good boy.  She is also good.
 	\end{eqnarray}
 
 Example 2: Radhika is a good person.
-    \begin{table}[h]
+    \begin{table}[htb]
         \centering
         \caption[Statistical NLP]{Statistical natural language processing.}
-        \label{tab:stemmingandlemma}
+        \label{tab:statisticalnlp2}
         \begin{tabular}{|l|c|} \hline
         	\tabletitle{2}{Document 1} \\ \hline
 			\tablecolumnheadervlinesone{Word} 	& \tablecolumnheadervlinestwo{Count}  \\ \hline
@@ -380,10 +380,10 @@ IDF tells us if a word (feature) can be used to distinguish documents. If a word
 		TF-IDF(good, doc2)	& = 0.2*0			& = 0
 	\end{eqnarray}
 
-    \begin{table}[h]
+    \begin{table}[htb]
         \centering
         \caption[TF-IDF example]{TF-IDF example.}
-        \label{tab:stemmingandlemma}
+        \label{tab:tftdfexample}
         \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|} \hline
 			 & \tablecolumnheadervlinestwo{a} & \tablecolumnheadervlinestwo{also} & \tablecolumnheadervlinestwo{boy} & \tablecolumnheadervlinestwo{good} & \tablecolumnheadervlinestwo{he} & \tablecolumnheadervlinestwo{is} & \tablecolumnheadervlinestwo{person} & \tablecolumnheadervlinestwo{she} & \tablecolumnheadervlinestwo{Radhika} \\ \hline
 			Index      & 0 & 1 & 2 & 3 & 4       & 5 & 6 & 7 & 8 \\ \hline
@@ -399,7 +399,7 @@ IDF tells us if a word (feature) can be used to distinguish documents. If a word
 		\item In N-gram models we calculate the probability of Nth words give the sequence of N-1 words. We do this by calculating the relative frequency of the sequence occurring in the text corpus.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.25in]{ngram}
 		\caption[N-gram]{N-gram.}

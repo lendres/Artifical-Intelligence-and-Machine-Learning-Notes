@@ -19,7 +19,7 @@
 		\end{bulletedlist}
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.5in]{imagefeatureextraction}
 		\caption[Feature extraction]{Feature extraction.}
@@ -84,14 +84,14 @@ The two most historically-important, manual feature extraction techniques have b
 		\item As seen from the below example in \figurename~\ref{fig:convolutionbrickwalledgedetection}, convolution filters can help us achieve any of the feature extraction tasks we may require for our images.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.25in]{convolutionbrickwall}
 		\caption[Image of a brick used for convolution example]{Image of a brick used for convolution example.}
 		\label{fig:convolutionbrickwall}
 	\end{figure}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.25in]{convolutionbrickwalledgedetection}
 		\caption[Convolution vertical and horizontal edge detection]{Image of brick wall with vertical edge detection (left) and horizontal edge detection (right).}
@@ -130,19 +130,19 @@ complex shapes such as the eyes, the ears, the nose or the mouth.
 		\end{bulletedlist}
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=0.85in]{edgedetectioncross}
 		\caption[Edge detection step 1]{Edge detection step 1.}
 		\label{fig:edgedetectioncross}
 	\end{figure}
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.25in]{edgedetectioncrossgrayscale}
 		\caption[Edge detection step 2]{Edge detection step 2.}
 		\label{fig:edgedetectioncrossgrayscale}
 	\end{figure}
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.25in]{edgedetectioncrossgrayscale2}
 		\caption[Edge detection step 3]{Edge detection step 3.}
@@ -171,7 +171,7 @@ used interchangeably across the industry.
 		\end{numberedlist}
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.5in]{edgedetectioncar}
 		\caption[Edge detection example]{Edge detection example.}
@@ -187,7 +187,7 @@ used interchangeably across the industry.
 		\item Let us now try to understand the mathematical working of convolution kernels, in order to understand the intuition behind how kernel edge detectors work.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=0.7in]{convolutededgedetection}
 		\caption{Image convoluted with a filter to produce a feature map.}
@@ -296,13 +296,13 @@ used interchangeably across the industry.
 directions.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.0in]{prewittfilter}
 		\caption[Prewitt filter]{Prewitt filter.}
 		\label{fig:prewittfilter}
 	\end{figure}
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.75in]{prewittfilterexample}
 		\caption[Prewitt filter example]{Prewitt filter example.}
@@ -316,13 +316,13 @@ directions.
 		\item This filter can give better intensities in the regions containing edges, in comparison to the results from the Prewitt Filter.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.0in]{sobelfilter}
 		\caption[Sobel filter]{Sobel filter.}
 		\label{fig:sobelfilter}
 	\end{figure}
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2.5in]{sobelfilterexample}
 		\caption[Sobel filter example]{Sobel filter example.}
@@ -337,13 +337,13 @@ directions.
 		\item One other thing to keep in mind is that Laplacian Filters are very sensitive to noise. So in many cases, the image may need to be smoothed out before applying the Filter.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.0in]{laplacianfilter}
 		\caption[Laplacian filter]{Laplacian filter.}
 		\label{fig:laplacianfilter}
 	\end{figure}
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.75in]{laplacianfilterexample}
 		\caption[Laplacian filter example]{Laplacian filter example.}
@@ -359,13 +359,13 @@ directions.
 		\item So we take each of these 27 numbers, multiply them with the corresponding first 27 numbers (9 each - 3x3 from the red, green and blue channels), and add up those products to get a final sum.  That sum goes into the relevant cell in the output.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.35in]{convolutiononrgbimages}
 		\caption[Convolution on RGB images]{Convolution on RGB images.}
 		\label{fig:convolutiononrgbimages}
 	\end{figure}
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.75in]{convolutionwithmultiplefilters}
 		\caption[Convolution with multiple filters]{Convolution with multiple filters.}
@@ -383,7 +383,7 @@ directions.
 		\item In the coming module, we will learn more about some other architectural building blocks of a CNN, before understanding their end-to-end structure and getting a sense for all the image manipulation operations happening in the various layers of the CNN.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.0in]{convolutionneuralnetworkweights}
 		\caption[Convolution weights are treated as learnable parameters]{Convolution weights are treated as learnable parameters.  Rather than us handcrafting the values of the Ws in the filter, in a CNN, we merely give the dimensions of the filter, but ask the CNN to learn the best values of Ws for the task by itself.}
@@ -403,7 +403,7 @@ directions.
 		\item That may not always be ideal, and sometimes it may just be required to detect only the presence of an object in the image and not exactly where it is present.  In that case we do not need exact positions, but just need to validate the presence of the object in the whole image.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.1in]{convolutionunderutilizespixels}
 		\caption[Convolution under utilizes edge pixels]{Convolution under utilizes edge pixels.}
@@ -424,13 +424,13 @@ directions.
 		\item Thus, padding effectively helps us get the same output size as the input, and avoid shrinkage.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.1in]{paddingnopadding}
 		\caption[Convolution without padding shrinks the matrix]{Convolution without padding shrinks the matrix.}
 		\label{fig:paddingnopadding}
 	\end{figure}
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.25in]{paddingwithpadding}
 		\caption[Using padding prevents matrix shrinking]{Using padding prevents matrix shrinking.}
@@ -451,14 +451,14 @@ Padding with zeros converts the 4x4 input to 6x6 (see \figurename~\ref{fig:samep
 		\end{bulletedlist}
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.1in]{validpadding}
 		\caption[Valid padding]{Valid padding.}
 		\label{fig:validpadding}
 	\end{figure}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.1in]{samepadding}
 		\caption[Same padding]{Same padding.}
@@ -473,7 +473,7 @@ Padding with zeros converts the 4x4 input to 6x6 (see \figurename~\ref{fig:samep
 		\item We observe during convolution that we slide from the top-most corner to the bottom-most corner by a shift - this shift is called the Stride.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.25in]{strides}
 		\caption[Stride]{Stride.}
@@ -488,7 +488,7 @@ Let us understand the mathematical interpretation of padding and strides using s
 	\begin{table}
         \centering
         \caption[Padding and strides examples]{Padding and strides examples.}
-        \label{tab:}
+        \label{tab:paddingandstrides}
 		\begin{tabular}{|p{0.5\textwidth-2\tabcolsep}|p{0.5\textwidth-2\tabcolsep}|} \hline
 			\tablecolumnheadervlinesone{Example 1 - Only Padding} & \tablecolumnheadervlinestwo{Example 2 - Using Padding and Strides} \\ \hline
 			Size of the input image (nxn): 4x4 \newline
@@ -522,14 +522,14 @@ Note: int() in Python rounds the number down to its nearest integer value. int(3
 		\end{bulletedlist}
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=0.85in]{maxpooling}
 		\caption[Max pooling]{Max pooling.}
 		\label{fig:maxpooling}
 	\end{figure}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=0.85in]{averagepooling}
 		\caption[Average pooling]{Average pooling.}
@@ -585,7 +585,7 @@ Example:
 		\item Size after Flattening this 3D Matrix: (2400, 1)
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.2in]{flatteninganarray}
 		\caption[Flattening a 3D array]{Flattening a 3D array for use in a neural network.}

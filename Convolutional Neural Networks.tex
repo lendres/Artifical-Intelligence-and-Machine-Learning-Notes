@@ -57,21 +57,21 @@ The image data sets are usually provided in the following formats:
 		\end{answer}
 	\end{qanda}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=2in]{cnnimagesinfiles}
 		\caption[Cross validation]{Cross validation.}
 		\label{fig:cnnimagesinfiles}
 	\end{figure}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[width=\textwidth-1in]{cnntensorflowdataset}
 		\caption[Loading a TensorFlow image data set]{Loading a TensorFlow image data set.}
 		\label{fig:cnntensorflowdataset}
 	\end{figure}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[width=\textwidth]{cnnnumpyarraydataset}
 		\caption[Numpy array loading of image data set]{Numpy array loading of image data set.}
@@ -371,7 +371,7 @@ Convolution neural networks are a special type of neural network designed to wor
 		\item The first part in this architecture is the convolutional layer followed by the pooling layer and the second part is the fully connected layer.  This whole architecture is called a convolutional neural network.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[width=\textwidth-0.5in]{convolutionneuralnetwork}
 		\caption[Convolution neural network]{Convolution neural network.  Image source \href{https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53}{toward data science}.}
@@ -398,7 +398,7 @@ Convolution neural networks are a special type of neural network designed to wor
 		\item Contrary to the convolution operation, pooling has no parameters.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=1.5in]{poolingtypes}
 		\caption[Types of pooling]{Types of pooling.}
@@ -421,7 +421,7 @@ We see that after using stride, the size of the feature map is smaller than the 
 		\item Padding is commonly used in CNNs to preserve the size of the feature maps, otherwise they would shrink at each layer, which is not desirable.
 	\end{bulletedlist}
 
-	\begin{figure}[h]
+	\begin{figure}[htb]
 		\centering
 		\includegraphics[height=3.5in]{paddingandstrideincnn}
 		\caption[Padding and stride in CNNs]{Padding and stride in CNNs.}
@@ -467,7 +467,7 @@ GPUs can perform multiple, simultaneous computations. This enables the distribut
 	\section{Regularization in CNNs}
 	\subsection{Over Fitting in CNNs}
 	\begin{bulletedlist}
-		\item If we only have a limited amount of data to train on, a neural network may be good at recognizing the data that it has been trained. However, it may not perform well on new data, i.e., data it has never seen before (see \figurename~\ref{fig:cnnoverfitting}).
+		\item If we only have a limited amount of data to train on, a neural network may be good at recognizing the data that it has been trained. However, it may not perform well on new data, i.e., data it has never seen before (see \figurename~\ref{fig:cnnoverfitting1}).
 		\item The same is true for Convolutional Neural Networks. They may not be able to perform well on the
 test data set, if they have been overtrained on the training data set. There are several
 approaches to potentially prevent this over fitting problem.
@@ -516,7 +516,7 @@ approaches to potentially prevent this over fitting problem.
 
 	\subsection{Batch Normalization}
 	\begin{bulletedlist}
-		\item Before starting with Batch Normalization, let's discuss why we need normalization and how it helps in speeding up the training process.  The pixel values of an image represent a color code. If we use the images as they are and send them through a Deep Neural Network, the computation of these high numeric values may get costly. Normalizing the values to a range between 0 to 1 will reduce the computational expense.  Consider the example shown in \figurename~\ref{cnnbatchnormalization1}.
+		\item Before starting with Batch Normalization, let's discuss why we need normalization and how it helps in speeding up the training process.  The pixel values of an image represent a color code. If we use the images as they are and send them through a Deep Neural Network, the computation of these high numeric values may get costly. Normalizing the values to a range between 0 to 1 will reduce the computational expense.  Consider the example shown in \figurename~\ref{fig:cnnbatchnormalization1}.
 		\item Moreover, data points with high values in the non-normalized data set can induce neural network instability. This occurs due to the comparatively large inputs cascading down through the network's layers, which may lead to imbalanced gradients, resulting in the well-known exploding gradient problem.
 		\item Normalization reduces variation between the data points by placing all the data on the same scale. This helps prevent exploding gradient problems as there's less variation within data points.  It turns out that scaling data points also makes training a network more efficient and faster.
 		\item How is Batch Normalization different from Normalization?  In deep learning, rather than just performing normalization once in the beginning, Batch Normalization is proposed as a technique to scale the output of each layer, specifically by standardizing the activations of each input variable per mini-batch.
@@ -560,7 +560,7 @@ could give a highly correlated gradient.  That's why we use another idea called 
 		\includegraphics[width=3in]{cnnfeatureextractionwithdropout}
 		\end{minipage}
 		\caption[Spacial drop out in CNNs]{Spacial drop out in CNNs.}
-		\label{fig:covarianceshift}
+		\label{fig:cnnfeaturemap}
 	\end{figure}
 
 	\section{Introduction to Transfer Learning}
@@ -713,7 +713,7 @@ it utilized the same building blocks - convolution and pooling layers, for featu
 		\item Choosing the right filter size to extract the information needed from an image is not straightforward, as we see from the three images of cats.
 		\item So in that case, why not have filters with multiple sizes operate on the same input, and then aggregate their results somehow, like an ensemble model?  This is the core idea behind the Inception Network.
 		\item The Inception Network (the winner of ILSVRC 2014), consists of certain specialized repeating blocks, each of which concatenates the outputs from multiple convolutional pathways.
-		\item These blocks are also known as Inception Modules, and they represent a key point of difference between the Inception Network and other architectures (\figurename~\ref{inceptionmodule}).
+		\item These blocks are also known as Inception Modules, and they represent a key point of difference between the Inception Network and other architectures (\figurename~\ref{fig:inceptionmodule}).
 		\item Hence rather than choosing between 1x1, 3x3 or 5x5 convolutional filter sizes, the Inception Module concatenates the feature maps that are produced from these filters.
 		\item The importance of the Inception module can be recalled by the Hebbian Principle of Human Learning, which states that ``Neurons that fire together wire together.'' This means that when creating a new layer in a Deep Learning model, one should always pay attention to the learnings of the previous layer.
 		\item Suppose a layer in our CNN has learned to focus on individual parts of the face. The next layer should then focus on the overall face in the image, and recognize it. To perform this recognition, the layers should have the appropriate filter sizes for the recognition task of that layer.  The Inception Network, unlike other architectures of the time, provides scope for this idea.

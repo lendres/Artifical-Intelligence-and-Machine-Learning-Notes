@@ -7,6 +7,7 @@
  What are the fields of NLP?
  		\end{question}
 		\begin{answer}
+Fields of NLP include the following.
 			\begin{bulletedlist}
 				\item Speech Recognition - The translation of spoken language into text.
 				\item Natural Language Understanding - The computer's ability to understand what we say.
@@ -21,7 +22,7 @@ What are the Major Challenges of Natural Language Processing (NLP)?
 		\end{question}
 		\begin{answer}
 Natural Language Processing (NLP) Challenges:\\
-{\small \url{https://monkeylearn.com/blog/natural-language-processing-challenges/}}
+\href{https://monkeylearn.com/blog/natural-language-processing-challenges/}{Natural language processing challenges}
 		\end{answer}
 	\end{qanda}
 
@@ -40,9 +41,7 @@ A comprehensive introduction to text preprocessing, covering the different techn
 How to remove numbers from a string in a Pandas DataFrame column?
 		\end{question}
 		\begin{answer}
-You can use the below code and define a suitable function for it, iterate that over the DataFrame:
-
-text = re.sub(r'\d+', '', text)
+You can use the below code and define a suitable function for it, iterate that over the DataFrame: text = re.sub(r'\d+', '', text)
 		\end{answer}
 	\end{qanda}
 
@@ -95,7 +94,7 @@ Run the below code and its dependency before performing the operations based on 
 		\end{bulletedlist}
 		\item Part of Speech Tagging
 		\begin{bulletedlist}
-			\item In corpus linguistics, part-of-speech tagging (POS tagging or PoS tagging or POST), also called grammatical tagging or word-category disambiguation, is the process of marking up a word in a text (corpus) as corresponding to a particular part of speech, based on both its definition and its context.
+			\item In corpus linguistics, part-of-speech tagging (POS tagging, PoS tagging, POST), also called grammatical tagging or word-category disambiguation, is the process of marking up a word in a text (corpus) as corresponding to a particular part of speech, based on both its definition and its context.
 			\item A simplified form of this is the identification of words as nouns, verbs, adjectives, adverbs, etc.
 			\item \href{Tag-set}{https://www.ling.upenn.edu/courses/Fall\_2003/ling001/penn\_treebank\_pos.html}
 		\end{bulletedlist}
@@ -250,13 +249,13 @@ core meaning.
         \centering
         \caption[Statistical NLP]{Statistical natural language processing.}
         \label{tab:statisticalnlp}
-        \begin{tabular}{|c|l|p{2in}|p{2in}|} \hline
+        \begin{tabularx}{0.9\linewidth}{|c|L|L|L|} \hline
 			\tablecolumnheadervlinesone{No.} 	& \tablecolumnheadervlinestwo{Topic}   & \tablecolumnheadervlinestwo{Scope}   & \tablecolumnheadervlinestwo{Objective}\\ \hline
 			1	& Bag of words	& Creating features using Bag of words, Countvectorizer	& Understand feature creation using Bag-Of-Words \\ \hline
 			2	& Tf-IDF Model	& Term frequency, idf	& Understand difference between count-vectorizer and tf-idf vectorizer \\ \hline
 			3	& Text classification using	ML	& How to use ML algorithm to do text classification		& Understand use cases of text classification \\ \hline
 			4	& VADER Sentiment Analysis	& sentiment Analysis with VADER	& Brief idea on sentiment analysis \\ \hline
-		\end{tabular}
+		\end{tabularx}
 	\end{table}
 
 	\begin{figure}[htb]

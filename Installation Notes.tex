@@ -26,7 +26,7 @@ Reference: \href{https://realpython.com/django-setup/#mysql}{Django installation
 
 
 	\section{Miscellaneous}
-\codetext{!\{sys.executable\} -m pip install pandas-profiling}
+\textcode{!\{sys.executable\} -m pip install pandas-profiling}
 
 Use this to import from another directory.
 	\begin{code}[\codenumbering]{}
@@ -87,10 +87,10 @@ Original short cut target value:
 
 
 	\subsection{Changing Jupyter Start Up Location}
-This section shows how to change the default Jupyter start up folder.  This information was take from:\\
-{\small \url{https://stackoverflow.com/questions/35254852/how-to-change-the-jupyter-start-up-folder}}
+This section shows how to change the default Jupyter start up folder.  This information was take from:
+\href{https://stackoverflow.com/questions/35254852/how-to-change-the-jupyter-start-up-folder}{How to change the Jupyter start folder}
 
-	\subsubsection{Jupyter Notebook and JupyterLab < 3.0 Versions}
+	\subsubsection{Jupyter Notebook and JupyterLab \texorpdfstring{$<$}{<} 3.0 Versions}
 	\begin{numberedlist}
 		\item Use \textcode{Run as Administrator} on the Anaconda Powershell Prompt.
 		\item At the command prompt run:\\ \textcode{jupyter notebook --generate-config}. \label{nl:jupyterstartupfoldergenerateconfiguration}
@@ -105,7 +105,7 @@ This section shows how to change the default Jupyter start up folder.  This info
 		\item Click the \textcode{Ok} button.
 	\end{numberedlist}
 
-	\subsubsection{JupyterLab >= 3, Jupyter Notebook Classic, and RetroLab}
+	\subsubsection{JupyterLab \texorpdfstring{$>=$}{>=} 3, Jupyter Notebook Classic, and RetroLab}
 	\begin{bulletedlist}
 		\item In step~\ref{nl:jupyterstartupfoldergenerateconfiguration} above, replace:\\ \textcode{jupyter notebook --generate-config}\\ with\\ \textcode{jupyter server --generate-config}.
 		\item In step~\ref{nl:jupyterstartupfolderconfigurationfile} above, the file written is typically:\\ \textcode{jupyter\_server\_config.py}
@@ -172,13 +172,8 @@ drive.mount("/content/drive")
 
 
 	\section{Spacy}
-Installed it from the Anaconda Navagator Environments
+Installed it from the Anaconda Navigator Environments
 	\begin{code}[\codenumbering]{}
 		\codeitemnonumber !pip install spacy
 		\codeitemnonumber !python -m spacy download en\_core\_web\_sm
-	\end{code}
-
-	\section{Contractions}
-	\begin{code}[\codenumbering]{}
-		\codeitemnonumber !pip install contractions
-	\end{code} 
+	\end{code}%

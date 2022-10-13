@@ -1,4 +1,4 @@
-	\documentclass{lebook}
+	\documentclass[draft]{lebook}
 
 	% This document requires the use of Lance A. Endres's LaTeX library available at the following location:
 	% https://github.com/lendres/LaTeX
@@ -34,14 +34,6 @@
 	\mainmatter{}
 
 
-	\begin{bulletedlist}
-		\item
-		\begin{bulletedlist}
-			\item
-		\end{bulletedlist}
-	\end{bulletedlist}
-
-
 	% Glossary entries need to be defined before they can be referenced.
 	\input{"Statistics Glossary"}
 	\input{"Modeling Glossary"}
@@ -72,7 +64,9 @@
 
 	\input{Recommendation Systems}
 
-	\appendix
+\referencename~\cite{ref:abbassian1998a}
+
+	\appendix{}
 	\input{"Interview Questions"}
 	\input{"Installation Notes"}
 

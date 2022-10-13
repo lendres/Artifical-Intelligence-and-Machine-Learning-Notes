@@ -275,14 +275,14 @@ Entropy log is usually base 2, but it does not have to be.  Any log base can be 
 	\begin{equation}
 		E(Y) - E(Y|X)
 	\end{equation}
-	\begin{mathwhere}[0.4in]
+	\begin{mathwhere}[0.85in]
 		\mathdefitem{E(Y)}{entropy of the parent node;}
 		\mathdefitem{E(Y|X)}{entropy of the combined children nodes.}
 	\end{mathwhere}
 Parent should have large entropy; the children should be purer and therefore have less entropy.
 
 	\subsection{Cross Validation}
-Cross Validation is a common Machine Learning technique that splits the data into n non-overlapping groups, and runs $n$ experiments:
+Cross Validation is a common Machine Learning technique that splits the data into n non-over\-lapping groups, and runs $n$ experiments:
 	\begin{bulletedlist}
 		\item In each experiment, $n-1$ groups are used to train a model and the model is tested on the left out group.
 		\item The results are summarized over the $n$ experiments.
@@ -316,7 +316,7 @@ The smaller the $\alpha$ the smaller the value added by the subtree removed.  Re
 A small $\alpha$ means a complex model with lots of nodes.
 
 	\begin{bulletedlist}
-		\item Starting from the Full tree, create a sequence of trees that are sequentially smaller (pruned).
+		\item Starting from the full tree, create a sequence of trees that are sequentially smaller (this is called ``pruning'').
 		\item At each step the algorithm
 		\item try removing each possible subtree
 		\item find the ``relative error decrease per node'' for that subtree Complexity parameter,

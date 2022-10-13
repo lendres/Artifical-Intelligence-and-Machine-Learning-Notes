@@ -132,7 +132,7 @@ high level of features from data and importantly unstructured data. So this is o
         \centering
         \caption[Machine learning versus deep learning]{Machine learning versus deep learning.}
         \label{tab:machineversusdeeplearning}
-		\begin{tabular}{|p{0.5\qandatextwidth-2\tabcolsep}|p{0.5\qandatextwidth-2\tabcolsep}|} \hline
+		\begin{tabular}{|p{0.5\qandatextwidth-2.5\tabcolsep}|p{0.5\qandatextwidth-2.5\tabcolsep}|} \hline
 				\tablecolumnheadervlinesone{Machine Learning} & \tablecolumnheadervlinestwo{Deep Learning} \\ \hline
 				It can easily train on lesser data and requires lesser time to train. &
 				It requires large data and longer time to train. \\ \hline
@@ -294,7 +294,7 @@ fixed.
 		\item A threshold to evaluate the sum of weighted inputs against. Output a 1 (neuron firing) if the weighted sum is more than the threshold, else a zero (neuron not firing).
 		\item Other than the inputs from sensors / neighboring neurons, they also get a special `bias' input, which just has a value of 1.
 		\item The bias is like an intercept in a linear equation.  Useful in generating more functions with the same inputs.
-		\item This was an improvement of the work of Warren McCulloch and Walter Pitts, McCulloch-Pitts neuron.
+		\item This was an improvement of the work of Warren McCulloch and Walter Pitts, Mc\-Cul\-loch-Pitts neuron.
 		\item McCulloch Pitts neuron had a fixed set of weights associated with inputs and as a result, did not have the ability to learn.
 		\item They had no bias term either Rosenblatt's neuron was inspired by a rule coined by Donald Hebb (researcher studying biological neurons), according to which learning in brain is stored in form of changes to the strength of relationships between two connected neurons ``Neurons that fire together, wire together.''
 		\item Rosenblatt's neuron can model the basic OR/AND/NOT functions (building blocks of computing systems).
@@ -334,7 +334,7 @@ Perceptron Learning Algorithm
 	\end{figure}
  	\begin{figure}[htb]
 		\centering
-		\includegraphics[height=1.25in]{perceptronlearningalgorithm2}
+		\includegraphics[width=\linewidth]{perceptronlearningalgorithm2}
 		\caption[Perceptron learning algorithm part 2]{Perceptron learning algorithm part 2.}
 		\label{fig:perceptronlearningalgorithm2}
 	\end{figure}
@@ -343,7 +343,7 @@ Perceptron Learning Algorithm
         \centering
         \caption[McCulloch-Pitts neuron versus Rosenblatt's perceptron]{McCulloch-Pitts neuron versus Rosenblatt's perceptron.}
         \label{tab:mccullochpittsversusrosenblatt}
-		\begin{tabular}{|p{0.5\qandatextwidth-2\tabcolsep}|p{0.5\qandatextwidth-2\tabcolsep}|} \hline
+		\begin{tabularx}{\linewidth}{|L|L|} \hline
 				\tablecolumnheadervlinesone{McCulloch-Pitts Neuron} & \tablecolumnheadervlinestwo{Rosenblatt's Perceptron} \\ \hline
 				It has an input layer that acts like dendrites. &
 				It has an Input layer that acts as dendrites. \\ \hline
@@ -355,14 +355,14 @@ Perceptron Learning Algorithm
 				The step function can be defined in such a way that output can range from -1 to +1. \\ \hline
 				&
 				It captured the error and had a logic built in to adjust the weights automatically to reduce the error. \\ \hline
-		\end{tabular}
+		\end{tabularx}
 	\end{table}
 
 	\subsection{Weakness of Perceptron}
 	\begin{bulletedlist}
 		\item Papert and Minsky demonstrated that the perceptron was incapable of handling some of the binary gates such as XOR**
 		\item Given that it cannot represent all possible binary gates, it could not have been used for all possible computations hence the objective of computer based AI was a pipe dream!
-		\item XOR is an example of distribution of classes not linearly separable in two dimensions but is easily separable in higher 3 dimensional space. Ref: http://www.mind.ilstu.edu/curriculum/artificial\_neural\_net/xor\_problem\_and\_solution.php
+		\item XOR is an example of distribution of classes not linearly separable in two dimensions but is easily separable in higher 3 dimensional space.\newline{}Reference: \href{http://www.mind.ilstu.edu/curriculum/artificial\_neural\_net/xor\_problem\_and\_solution.php}{ANN XOR problem and solution}
 		\item It was subsequently demonstrated that instead of making a neuron intelligent, a network of neurons can be used to do what a single neuron could not
 		\item This was the birth of a Artificial Neural Network
 	\end{bulletedlist}
@@ -440,6 +440,12 @@ function (\figurename~\ref{fig:artificialneuralnetworkfullyconnected2}).
 		\includegraphics[height=1.5in]{artificialneuralnetworkfullyconnected6}
 		\caption[Fully connected artificial neural network part 6]{Fully connected artificial neural network part 6.}
 		\label{fig:artificialneuralnetworkfullyconnected6}
+	\end{figure}
+ 	\begin{figure}[htb]
+		\centering
+		\includegraphics[height=1.5in]{artificialneuralnetworkfullyconnected7}
+		\caption[Fully connected artificial neural network part 7]{Fully connected artificial neural network part 7.}
+		\label{fig:artificialneuralnetworkfullyconnected7}
 	\end{figure}
 
 	\subsection{Application of Artificial Neural Networks}

@@ -4,127 +4,136 @@
 1
 1
 Machine Learning and Artificial Intelligence.tex
-48
-6
-4
+51
+5
+2
 
+:\Custom Program Files\LaTeX\TeX\LaTeX\lequestionandanswer.sty
+TeX:DTX
+5255099 0 186 3 138 3 96 96 1293 661 0 1 51 304 -1 0 0 40 41 0 39 1 1 0 3 138  0 -1 0
+Natural Language Processing.tex
+TeX
+17838075 0 -1 13535 -1 13248 192 192 1389 757 0 1 37 208 -1 0 0 38 38 -1 -1 1473 1 0 13248 -1  0 -1 0
+Setup.tex
+TeX
+269496250 0 148 99 149 4 26 26 1345 609 0 1 79 608 -1 0 0 105 106 0 111 1 1 0 4 149  0 -1 0
+:\Custom Program Files\LaTeX\TeX\LaTeX\lecode.sty
+TeX:DTX
+5255163 0 11 46 11 46 78 78 1426 661 0 0 337 176 -1 0 0 24 25 0 23 1 1 0 46 11  0 0 0
+:\Custom Program Files\LaTeX\TeX\LaTeX\lefonts.sty
+TeX:STY
+1060850 0 0 1 24 31 26 26 1072 445 1 0 281 336 -1 -1 0 0 25 0 0 25 1 0 31 24  0 0 0
 Machine Learning and Artificial Intelligence.tex
 TeX
-152055739 1 -1 3108 -1 2902 234 234 1582 817 0 1 37 496 -1 0 0 188 23 -1 -1 3151 1 0 2902 -1  0 -1 0
-Recommendation Systems.tex
+420491195 0 -1 2294 -1 1967 234 234 1582 817 0 1 37 256 -1 0 0 188 30 -1 -1 3091 1 0 1967 -1  0 -1 0
+Installation Notes.tex
 TeX
-1060859 0 -1 4225 -1 4233 64 64 1261 629 0 1 247 608 -1 0 0 33 33 -1 -1 1093 1 0 4233 -1  0 -1 0
+286273467 0 -1 8047 -1 8047 208 208 1556 791 0 1 142 704 -1 0 0 29 29 -1 -1 1227 1 0 8047 -1  0 -1 0
+Interview Questions.tex
+TeX
+269496315 0 -1 577 -1 58965 156 156 1475 739 0 1 37 592 -1 0 0 30 32 -1 -1 1141 1 0 58965 -1  0 -1 0
+Machine Learning and Artificial Intelligence.bbl
+TeX:AUX
+269496306 0 14 1 16 1 182 182 1530 601 1 0 71 256 -1 -1 0 0 27 0 0 27 1 0 1 16  0 0 0
+machinelearning.bib
+BibTeX
+1049586 0 53 20 51 2 130 130 1478 713 0 1 44 560 -1 0 0 60 0 0 58 1 1 0 2 51  0 -1 0
+:\Custom Program Files\LaTeX\TeX\LaTeX\lesections.sty
+TeX:STY
+1060850 0 217 1 217 1 26 26 1072 445 1 0 71 304 -1 -1 0 0 -1 -1 -1 -1 1 0 1 217  0 0 0
+Ensemble Techniques.tex
+TeX
+17838011 2 -1 13327 -1 13335 0 0 1265 565 0 1 268 464 -1 0 0 30 30 -1 -1 821 1 0 13335 -1  0 -1 0
+Statistics.tex
+TeX
+1060795 0 -1 7376 -1 7375 64 64 1287 679 0 1 233 240 -1 0 0 23 21 -1 -1 713 1 0 7375 -1  0 -1 0
+Introduction to Deep Neural Networks.tex
+TeX
+1060795 0 -1 19447 -1 19447 156 156 1553 528 0 0 169 352 -1 0 0 47 47 -1 -1 1794 1 0 19447 -1  0 0 0
+Building Blocks of Neural Networks.tex
+TeX
+17838011 6 -1 17957 -1 17833 182 182 1501 765 0 1 37 288 -1 0 0 45 45 -1 -1 2255 1 0 17833 -1  0 -1 0
+Convolutional Neural Networks.tex
+TeX
+17838010 0 715 176 715 180 78 78 1397 661 0 1 1157 192 -1 0 0 41 0 0 41 1 1 0 180 715  0 1 5 1 128 158 159 165
+Computer Vision Prework.tex
+TeX
+1060795 0 -1 36797 -1 36802 224 224 1421 789 0 1 478 336 -1 0 0 38 34 -1 -1 2178 1 0 36802 -1  0 -1 0
+Neural Network Troubleshooting.tex
+TeX
+1060859 1 -1 1282 -1 1276 234 234 1553 817 0 1 324 400 -1 0 0 57 57 -1 -1 1397 1 0 1276 -1  0 -1 0
+K-means Clustering.tex
+TeX
+17838011 2 -1 4448 -1 4458 128 128 1325 693 0 1 632 336 -1 0 0 29 29 -1 -1 949 1 0 4458 -1  0 -1 0
+Clustering.tex
+TeX
+1060795 5 -1 6324 -1 6325 260 260 1579 843 0 1 422 288 -1 0 0 46 46 -1 -1 2117 1 0 6325 -1  0 -1 0
+Deep Learning Prework.tex
+TeX
+17838011 2 -1 6469 -1 6473 234 234 1553 817 0 1 65 288 -1 0 0 33 33 -1 -1 1344 1 0 6473 -1  0 -1 0
+Hierarchical Clustering and PCA.tex
+TeX
+286273467 0 245 52 -1 13037 128 128 1325 693 0 1 562 128 -1 0 0 73 73 -1 -1 3794 1 0 13037 -1  0 -1 0
+Regression.tex
+TeX
+17838011 0 -1 17486 -1 17490 182 182 1530 765 0 1 940 288 -1 0 0 42 40 -1 -1 1897 1 0 17490 -1  0 -1 0
+Modeling.tex
+TeX
+1060795 0 -1 5328 -1 5337 260 260 1608 843 0 1 184 528 -1 0 0 19 19 -1 -1 1679 1 0 5337 -1  0 -1 0
+Data Analysis.tex
+TeX
+1060795 0 -1 1412 -1 1421 182 182 1530 765 0 1 436 512 -1 0 0 24 24 -1 -1 922 1 0 1421 -1  0 -1 0
 Acronyms.tex
 TeX
 17838011 1 -1 20 -1 31 182 182 1530 765 0 1 114 32 -1 0 0 16 16 -1 -1 435 1 0 31 -1  0 0 0
-Setup.tex
-TeX
-1060794 0 140 30 6 27 26 26 1345 609 0 1 240 -480 -1 0 0 105 106 0 105 1 1 0 27 6  0 -1 0
 Modeling Glossary.tex
 TeX
-269496251 2 -1 523 -1 527 234 234 1582 817 0 1 212 192 -1 0 0 34 34 -1 -1 631 1 0 527 -1  0 0 0
-Feature Selection, Model Selection, and Tuning.tex
-TeX
-1060795 2 -1 16790 -1 16794 208 208 1556 791 0 1 653 304 -1 0 0 53 51 -1 -1 3482 1 0 16794 -1  0 -1 0
-Introduction to Deep Neural Networks.tex
-TeX
-1060795 0 -1 24353 -1 24814 156 156 1553 528 0 1 506 96 -1 0 0 47 47 -1 -1 1794 1 0 24814 -1  0 -1 0
-:\Users\lance.endres\AppData\Roaming\WinEdt Team\WinEdt 11\ConfigEx\MainMenu.ini
-DATA:INI:EDT
-269485050 0 3522 9 3531 30 156 156 1202 575 1 1 289 448 -1 -1 0 0 -1 -1 -1 -1 1 0 30 3531  0 -1 0
-Convolutional Neural Networks.tex
-TeX
-286273466 0 715 176 715 180 78 78 1397 661 0 1 1157 192 -1 0 0 41 0 0 41 1 1 0 180 715  0 1 5 1 128 158 159 165
+1060795 2 -1 523 -1 527 234 234 1582 817 0 1 212 192 -1 0 0 34 34 -1 -1 631 1 0 527 -1  0 0 0
 Statistics Glossary.tex
 TeX
 17838011 0 -1 119 -1 81 0 0 1255 565 0 1 142 64 -1 0 0 34 34 -1 -1 830 1 0 81 -1  0 0 0
-Modeling.tex
+Title Page.tex
 TeX
-1060795 0 -1 21 -1 1720 260 260 1608 843 0 1 324 160 -1 0 0 19 19 -1 -1 1679 1 0 1720 -1  0 -1 0
+1060859 0 -1 472 -1 131 156 156 1504 739 0 1 268 16 -1 0 0 18 151 -1 -1 737 1 0 131 -1  0 -1 0
+Equations.tex
+TeX
+17838011 1 -1 1617 -1 1634 26 26 1374 609 0 1 247 800 -1 0 0 98 98 -1 -1 1843 1 0 1634 -1  0 0 0
 List of Notations.tex
 TeX
 1060795 1 -1 1 -1 35 32 32 1255 647 0 1 303 0 -1 0 0 0 37 -1 -1 0 1 0 35 -1  0 -1 0
-Statistics.tex
+Recommendation Systems.tex
 TeX
-269496251 1 -1 4994 -1 5007 64 64 1287 679 0 1 709 304 -1 0 0 23 21 -1 -1 713 1 0 5007 -1  0 -1 0
-machinelearning.bib
-BibTeX
-269485042 0 50 46 50 45 130 130 1478 713 0 1 429 704 -1 0 0 60 0 0 60 1 1 0 45 50  0 1 1 2
+1060859 0 -1 581 -1 491 64 64 1261 629 0 1 702 192 -1 0 0 33 33 -1 -1 1086 1 0 491 -1  0 -1 0
 SQL.tex
 TeX
-269496315 0 -1 13 -1 16 128 128 1325 693 0 22 23 -1 -1 0 0 14 -1 -1 14 1 0  16 -1 0
-Natural Language Processing.tex
+1060859 0 -1 13 -1 16 128 128 1325 693 0 1 37 16 -1 0 0 14 14 -1 -1 16 1 0 16 -1  0 -1 0
+Feature Selection, Model Selection, and Tuning.tex
 TeX
-286273531 0 -1 16065 -1 16305 192 192 1389 757 0 22 345 -1 -1 0 0 38 -1 -1 38 1 0  16305 -1 0
+17838011 0 -1 7554 -1 7559 208 208 1556 791 0 1 576 224 -1 0 0 53 51 -1 -1 3324 1 0 7559 -1  0 -1 0
+Machine Learning Pipeline and Hyperparameter Tuning.tex
+TeX
+17838011 0 -1 2073 -1 2074 26 26 1345 609 0 1 688 288 -1 0 0 62 62 -1 -1 2127 1 0 2074 -1  0 -1 0
+:\Custom Program Files\LaTeX\TeX\LaTeX\learticle.cls
+TeX:STY
+269496306 0 0 1 0 1 104 104 1150 523 1 0 71 0 -1 -1 0 0 26 0 0 26 1 0 1 0  0 0 0
+:\Projects\ddosi\pyddosi\Research-Post-Processor\install\SegmentSignalInstall.py
+DATA
+273678578 0 0 1 28 2 156 156 1202 575 1 0 78 256 -1 -1 0 0 -1 -1 -1 -1 1 0 2 28  0 0 0
+:\Custom Program Files\LaTeX\TeX\LaTeX\ikosybusinessletter.cls
+TeX:STY
+269496306 0 0 1 0 1 130 130 1176 549 1 0 71 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\lance.endres\AppData\Roaming\WinEdt Team\WinEdt 11\ConfigEx\MainMenu.ini
+DATA:INI:EDT
+269485050 0 3522 9 3531 30 156 156 1202 575 1 1 289 448 -1 -1 0 0 -1 -1 -1 -1 1 0 30 3531  0 -1 0
 :\Custom Program Files\LaTeX\TeX\LaTeX\letable.sty
 TeX:DTX
 5255163 1 -1 497 -1 508 32 32 1325 435 0 262 138 -1 -1 0 0 24 -1 -1 24 1 0  508 -1 0
-Regression.tex
-TeX
-286273467 1 -1 2166 -1 2174 182 182 1530 765 0 322 253 -1 -1 0 0 42 -1 -1 42 1 0  2174 -1 0
-Installation Notes.tex
-TeX
-286273467 0 -1 6318 -1 6690 208 208 1556 791 0 552 644 -1 -1 0 0 29 -1 -1 29 1 0  6690 -1 0
-Title Page.tex
-TeX
-269496315 0 -1 420 -1 423 156 156 1504 739 0 172 345 -1 -1 0 0 18 -1 -1 18 1 0  423 -1 0
-Interview Questions.tex
-TeX
-269496315 0 -1 58833 -1 58630 156 156 1475 739 0 286 690 -1 -1 0 0 30 -1 -1 30 1 0  58630 -1 0
-Building Blocks of Neural Networks.tex
-TeX
-286273467 0 -1 25557 -1 25639 182 182 1501 765 0 110 437 -1 -1 0 0 45 -1 -1 45 1 0  25639 -1 0
-Computer Vision Prework.tex
-TeX
-269496251 0 -1 24998 -1 25013 224 224 1421 789 0 1212 230 -1 -1 0 0 38 -1 -1 38 1 0  25013 -1 0
-Neural Network Troubleshooting.tex
-TeX
-1060859 1 -1 1282 -1 1276 234 234 1553 817 0 432 598 -1 -1 0 0 57 -1 -1 57 1 0  1276 -1 0
-Deep Learning Prework.tex
-TeX
-17838011 2 -1 6469 -1 6473 234 234 1553 817 0 134 736 -1 -1 0 0 33 -1 -1 33 1 0  6473 -1 0
-Hierarchical Clustering and PCA.tex
-TeX
-17838011 1 -1 913 -1 885 128 128 1325 693 0 22 299 -1 -1 0 0 73 -1 -1 73 1 0  885 -1 0
-K-means Clustering.tex
-TeX
-17838011 5 -1 8215 -1 8216 128 128 1325 693 0 442 391 -1 -1 0 0 29 -1 -1 29 1 0  8216 -1 0
-Clustering.tex
-TeX
-1060795 5 -1 6324 -1 6325 260 260 1579 843 0 592 736 -1 -1 0 0 46 -1 -1 46 1 0  6325 -1 0
-Machine Learning Pipeline and Hyperparameter Tuning.tex
-TeX
-17838011 5 -1 11114 -1 11115 26 26 1345 609 0 342 644 -1 -1 0 0 62 -1 -1 62 1 0  11115 -1 0
-Ensemble Techniques.tex
-TeX
-17838011 5 -1 12309 -1 12310 0 0 1265 565 0 692 230 -1 -1 0 0 30 -1 -1 30 1 0  12310 -1 0
-Data Analysis.tex
-TeX
-1060795 0 -1 840 -1 848 182 182 1530 765 0 182 483 -1 -1 0 0 24 -1 -1 24 1 0  848 -1 0
-Equations.tex
-TeX
-17838011 1 -1 1617 -1 1634 26 26 1374 609 0 262 690 -1 -1 0 0 98 -1 -1 98 1 0  1634 -1 0
 :\Custom Program Files\LaTeX\TeX\LaTeX\lelists.sty
 TeX:DTX
 290467770 0 51 1 94 1 130 130 1478 713 0 22 506 -1 -1 0 0 14 0 0 14 1 0  1 94 0
-:\Custom Program Files\LaTeX\TeX\LaTeX\lequestionandanswer.sty
-TeX:DTX
-273690555 1 -1 3121 -1 3070 96 96 1293 661 0 22 736 -1 -1 0 0 40 -1 -1 40 1 0  3070 -1 0
-Machine Learning and Artificial Intelligence.log
-DATA:UNIX
-307331314 0 0 1 5 34 128 128 1325 671 1 410 115 -1 -1 0 0 -1 -1 -1 -1 1 0  34 5 0
 :\Custom Program Files\LaTeX\TeX\LaTeX\lemath.sty
 TeX:DTX
 273690619 0 -1 0 -1 0 52 52 1371 635 0 22 0 -1 -1 0 0 24 -1 -1 24 1 0  0 -1 0
-:\Custom Program Files\LaTeX\TeX\LaTeX\lecode.sty
-TeX:DTX
-273690619 1 -1 14491 -1 14482 78 78 1426 661 0 118 -1045 -1 -1 0 0 24 -1 -1 24 1 0  14482 -1 0
-:\Program Files (x86)\WinEdt Team\WinEdt\WinEdt.btn
-DATA
-273686770 1 219 33 219 1 156 156 1504 739 1 80 667 -1 -1 0 0 69 0 0 69 1 0  1 219 0
-:\Custom Program Files\WinEdt\index_with_class_format.edt
-ASCII:EDT
-269494138 0 0 1 0 1 0 0 1348 583 1 70 0 -1 -1 0 0 -1 -1 -1 -1 1 0  1 0 0
 :\Custom Program Files\LaTeX\TeX\LaTeX\lefontsizes.sty
 TeX:DTX
 273690619 0 -1 0 -1 0 52 52 1400 635 0 22 0 -1 -1 0 0 24 -1 -1 24 1 0  0 -1 0

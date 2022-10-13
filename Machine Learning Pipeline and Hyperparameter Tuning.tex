@@ -27,14 +27,14 @@ How do you tune a model using train, test, and validation split?
 		\begin{answer}
 The process is:
 			\begin{numberedlist}
-				\item Pick a combination of hyperparameters.
-				\item Train a model using those hyperparameters.
-				\item Find the model's performance on the validation test.
-				\item Repeat this process for all combinations available.
-				\item Choose the model with the best validation score, and find out the final (generalized) score on the test set.
-			\end{numberedlist}
-		\end{answer}
-	\end{qanda}
+				\item Pick a combination of hyperparameters.%
+				\item Train a model using those hyperparameters.%
+				\item Find the model's performance on the validation test.%
+				\item Repeat this process for all combinations available.%
+				\item Choose the model with the best validation score, and find out the final (generalized) score on the test set.%
+			\end{numberedlist}%
+		\end{answer}%
+	\end{qanda}%
 
 	\begin{qanda}
 		\begin{question}
@@ -58,7 +58,7 @@ How do you upgrade the Numpy library?
 		\begin{answer}
 Tuning a model using grid search usually takes a long time, you can try the following to get more insights
 
-\noindent\textcode{grid\_cv = GridSearchCV(estimator=pipe, param\_grid=param\_grid, scoring=scorer, cv=5, n\_jobs = -1, verbose = 2)}
+\noindent\textcode{grid\_cv = GridSearchCV(estimator=pipe, param\_grid=param\_grid,\newline{}scoring=scorer, cv=5, n\_jobs = -1, verbose = 2)}
 
 \noindent n\_jobs = -1 can speed up the tuning process by utilizing all the CPU cores.
 
@@ -143,7 +143,7 @@ The advantage of ``make\_pipeline'' is the consistency in the naming of each sta
 		\begin{code}[\codenumbering]{}
 			\codeitemnonumber dt\_model = DecisionTreeClassifier(criterion = 'entropy')
 		\end{code}
-		\item To get a list of hyper parameters for a given algorithm, call the function \textcode{get\_params()}.  E.g., to get support vector classifier hyper parameters
+		\item To get a list of hyper parameters for a given algorithm, call the function \newline{}\textcode{get\_params()}.  E.g., to get support vector classifier hyper parameters:
 		\begin{code}[\codenumbering]{}
 			\codeitemnonumber from sklearn.svm import SVC
 			\codeitemnonumber svc = SVC()
@@ -152,7 +152,7 @@ The advantage of ``make\_pipeline'' is the consistency in the naming of each sta
 		\item Hyperparameters are not learnt from the data as other model parameters are.  E.g., attribute coefficients in a linear model are learnt from data while cost of error is input as hyperparameter.
 		\item Fine tuning the hyper parameters is done in a sequence of steps:
 		\begin{numberedlist}
-			\item Selecting the appropriate model type (regressor or classifier such as \textcode{sklearn.svm.SVC()})
+			\item Selecting the appropriate model type (regressor or classifier such as \newline{}\textcode{sklearn.svm.SVC()})
 			\item Identify the corresponding parameter space.
 			\item Decide the method for searching or sampling parameter space.
 			\item Decide the cross-validation scheme to ensure model will generalize

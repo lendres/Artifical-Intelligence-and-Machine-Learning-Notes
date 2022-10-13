@@ -204,7 +204,7 @@ backward propagation. If either occurs, the neural network will take a longer ti
 		\item {\bfseries Initialize all weights with large numbers}:  The activation functions becomes a linear combination of large numbers.  Activation functions like Sigmoid have gradients close to zero at the extreme edge, therefore the model cannot learn.
 		\item {\bfseries Initialize with random numbers}: Works okay for small networks (similar to our two-layer MNIST classifier), but it may lead to distributions of the activations that are not homogeneous across the layers of the network.
 		\begin{bulletedlist}
-			\item Initializing weights randomly, following standard normal distribution (np.random.randn(n, n-1) in Python) while working with a (deep) neural network can potentially lead to 2 issues - vanishing gradients or exploding gradients.
+			\item Initializing weights randomly, following standard normal distribution \newline{}(np.random.randn(n, n-1) in Python) while working with a (deep) neural network can potentially lead to 2 issues - vanishing gradients or exploding gradients.
 			\item The variance drops in the deeper layers.
 		\end{bulletedlist}
 	\end{bulletedlist}
@@ -232,7 +232,7 @@ Another impact of exploding gradients is that huge values of the gradients may c
 	\subsection{Weight Initialization Techniques}
  	\begin{figure}[htb]
 		\centering
-		\includegraphics[height=3in]{weightinitialization1}
+		\includegraphics[width=\textwidth]{weightinitialization1}
 		\caption[Neural network weight initialization]{Neural network weight initialization.}
 		\label{fig:weightinitialization1}
 	\end{figure}
@@ -288,7 +288,7 @@ Which is Good?  Weight initialization techniques for different activation functi
         \centering
         \caption[Pairing activation functions with weight initialization techniques]{Pairing activation functions with weight initialization techniques.}
         \label{tab:activationfunctionsandweightinitialization}
-		\begin{tabular}{|p{0.5\qandatextwidth-2\tabcolsep}|p{0.5\qandatextwidth-2\tabcolsep}|} \hline
+		\begin{tabular}{|p{0.5\qandatextwidth-2.5\tabcolsep}|p{0.5\qandatextwidth-2.5\tabcolsep}|} \hline
 				\tablecolumnheadervlinesone{Activation Function} & \tablecolumnheadervlinestwo{Weight Initialization Technique} \\ \hline
 				Relu, Leaky Relu &
 				HE Initialization \\ \hline
@@ -581,7 +581,7 @@ For example, that you run a batch of images through batch normalization.  The ab
 		\item It may be appropriate before the activation function for activations that may result in non-Gaussian distributions like the rectified linear activation function, the modern default for most network types.
 		\item Using batch norm depends on the problem, it should be used when the absolute scale of the features do not matter.
 		\item Batch normalization should be used in the deeper network.
-		\item Batch normalization often leads to a worse performance when It is combined with dropout in both theoretical and statistical aspects.
+		\item Batch normalization often leads to a worse performance when It is combined with drop\-out in both theoretical and statistical aspects.
 		\item Theoretically, dropout shifts the variance of a specific neural unit when we transfer the state of that network from train to test.
 		\item However, batch normalization would maintain its statistical variance, which is accumulated from the entire learning procedure, in the test phase.
 		\item The inconsistency of that variance (we name this scheme as ``variance shift'') causes the unstable numerical behavior in an inference that leads to more erroneous predictions finally when applying dropout before batch normalization.

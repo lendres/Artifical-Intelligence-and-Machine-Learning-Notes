@@ -37,10 +37,10 @@ Unsupervised learning models are used for three main tasks: clustering, associat
         \label{tab:transfomrationandimputing}
         \begin{tabular}{|p{2.5in}|p{\textwidth-3.0in}|} \hline
 			\tablecolumnheadervlinesone{Class/Function} 	& \tablecolumnheadervlinestwo{Plotting Function(s)} \\ \hline
-			\codetext{StandardScaler}						& Scales values to a range between 0 and 1. \\ \hline
-			\codetext{}						&	 \\ \hline
-			\codetext{KNNImputer}							&	 \\ \hline
-			\codetext{DataFrame[``c''].map(lbls)}		& Maps values in \textcode{``c''} from one to another based on the dictionary \textcode{lbls}. \\ \hline
+			\textcode{StandardScaler}						& Scales values to a range between 0 and 1. \\ \hline
+			\textcode{}						&	 \\ \hline
+			\textcode{KNNImputer}							&	 \\ \hline
+			\textcode{DataFrame[``c''].map(lbls)}		& Maps values in \textcode{``c''} from one to another based on the dictionary \textcode{lbls}. \\ \hline
 		\end{tabular}
 	\end{table}
 
@@ -52,9 +52,9 @@ For highly skewed data, there are three main options for transforming data.
         \label{tab:transformingskeweddata}
         \begin{tabular}{|p{2.5in}|p{\textwidth-3.0in}|} \hline
 			\tablecolumnheadervlinesone{Class/Function} 	& \tablecolumnheadervlinestwo{Plotting Function(s)} \\ \hline
-			\codetext{log}								& Will not work on data with zeros.  To avoid, you could add a small value so there are no zeros. \\ \hline
-			\codetext{sqrt}								&	 \\ \hline
-			\codetext{np.arcsinh}						& Hyperbolic sin inverse.  Works on data with zeros and negative values.  Works a lot like a log transformation. \\ \hline
+			\textcode{log}								& Will not work on data with zeros.  To avoid, you could add a small value so there are no zeros. \\ \hline
+			\textcode{sqrt}								&	 \\ \hline
+			\textcode{np.arcsinh}						& Hyperbolic sin inverse.  Works on data with zeros and negative values.  Works a lot like a log transformation. \\ \hline
 		\end{tabular}
 	\end{table}
 

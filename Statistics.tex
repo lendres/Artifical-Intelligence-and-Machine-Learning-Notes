@@ -127,7 +127,7 @@ Student's t-distribution is a family of continuous probability distributions tha
 		\item Random sampling from the population.
 	\end{bulletedlist}
 
-	\section{Analysis of Variance (\acrshort{anova})}
+	\section{Analysis of Variance (\texorpdfstring{\acrshort{anova}}{ANOVA})}
 Response: Dependent variable which is continuous and assumed to follow a normal distribution.
 Factor: Independent explanatory variable with several levels.
 Number of factors: How many variables are used.
@@ -183,127 +183,120 @@ Type 2 error (false negative): Concluding there is not a change in probability w
 
 
 
-\newpage{}
-%    \begin{table}
-%        \centering
-%        \caption{Comparison of Hypothesis Test Types.  See the Jupiter notebook "Hypothesis Testing Statistical Learning Week 2" for more information and examples.}
-%        \label{tab:hypothesistests}
-% \tabledoublecline{1}{4}
-        \begin{longtable}{|N|p{1.25in}|p{3.08in}|p{1.2in}|}
-        	\caption[Comparison of hypothesis test types]{Comparison of hypothesis test types.  See the Jupiter notebook ``Hypothesis Testing Statistical Learning Week 2'' for more information and examples.}
-         	\label{tab:comparisonofhypothesistesttypes}\\
-        	\hline
+	\newpage{}
+	\begin{longtable}{|N|P|Q|P|}
+		\caption[Comparison of hypothesis test types]{Comparison of hypothesis test types.  See the Jupiter notebook ``Hypothesis Testing Statistical Learning Week 2'' for more information and examples.}
+		\label{tab:comparisonofhypothesistesttypes}\\
+			% We have to duplicate the headings below in order to print the caption at the top of the first page and the headings only at the
+			% tops of the remaining pages.  This also prevents the caption from being repeated in the list of tables and causing warnings about
+			% multiply defined labels.  The difference between the two headings below is the use of "\endfirsthead" and "\endhead".
+			\hline
 			\multicolumn{1}{|c|}{} & \tablecolumnheadervlinestwo{Significance of Test} &
-				\tablecolumnheadervlinestwo{Assumptions} &
-				\tablecolumnheadervlinestwo{Distribution/Test} \endhead \hline
-			\label{trw:populationmean} &
-				Population mean $\nullhypothesis : \populationmean = \populationmean_0$ &
-				\begin{nospacebulletedlist}
-					\item Continuous data
-					\item Normally distributed
-					\item Sample size \textless{}30
-					\item Random sampling
-					\item Unknown population standard deviation
-				\end{nospacebulletedlist} &
-				\distributiontest{t-distribution}{one sample t-test} \\ \hline
-			\label{trw:twopopulationmeans} &
-				Equality of two population means \newline$\nullhypothesis : \populationmean_1 = \populationmean_2$ &
-				\begin{nospacebulletedlist}
-					\item Continuous data
-					\item Normally distributed or sample size \textgreater{}30
-					\item Independent populations
-					\item Random sampling
-					\item Known population standard deviations
-				\end{nospacebulletedlist} &
-				\distributiontest{normal distribution}{two independent sample z-test} \\ \hline
-			\label{trw:equalityofmeansequalunknownstandarddeviation} &
-				Equality of means with equal and unknown standard deviation \newline$\nullhypothesis : \populationmean_1 = \populationmean_2$ &
-				\begin{nospacebulletedlist}
-					\item Continuous data
-					\item Normally distributed
-					\item Independent populations
-					\item Random sampling
-					\item Equal population standard deviations
-				\end{nospacebulletedlist} &
-				\distributiontest{t-distribution}{two independent sample t-test} \\ \hline
-			\label{trw:equalityofmeansunequalunknownstandarddeviation} &
-				Equality of means with unequal and unknown standard deviations \newline$\nullhypothesis : \populationmean_1 = \populationmean_2$ &
-				\begin{nospacebulletedlist}
-					\item Continuous data
-					\item Normally distributed
-					\item Independent populations
-					\item Random sampling
-					\item Unequal population standard deviations
-				\end{nospacebulletedlist} &
-				\distributiontest{t-distribution}{two independent sample t-test} \\ \hline
-			\label{trw:pairedpoints} &
-				Equality of two population means when sample points are paired \newline$\nullhypothesis : \populationmean_1 = \populationmean_2$ \vspace*{1pt} &
-				\begin{nospacebulletedlist}
-					\item Continuous data
-					\item Normally distributed
-					\item Independent populations
-					\item Random sampling
-				\end{nospacebulletedlist} &
-				\distributiontest{t-distribution}{paired t-test} \\ \hline
-			\label{trw:oneproportion} &
-				Population proportion \newline$\nullhypothesis : \proportion = \proportion_0$ &
-				\begin{nospacebulletedlist}
-					\item Binomial distribution
-					\item Random sampling
-					\item When both mean (np) and n(1-p) are greater than or equal to 10, the binomial distribution can be approximated by a normal distribution
-				\end{nospacebulletedlist} &
-				\distributiontest{normal distribution}{one proportion z-test} \\ \hline
-			\label{trw:equalityoftwoproportions} &
-				Equality of two population proportions \newline$\nullhypothesis : \proportion_1 = \proportion_2 $ &
-				\begin{nospacebulletedlist}
-					\item Binomial distribution
-					\item Independent populations
-					\item Random sampling
-					\item When both mean (np) and n(1-p) are greater than or equal to 10, the binomial distribution can be approximated by a normal distribution
-				\end{nospacebulletedlist} &
-				\distributiontest{normal distribution}{two proportion z-test} \\ \hline
-			\label{trw:onevariance} &
-				Population variance \newline$\nullhypothesis : \populationvariance = \populationvariance_0$ &
-				\begin{nospacebulletedlist}
-					\item Continuous data
-					\item Normally distributed
-					\item Random sampling
-				\end{nospacebulletedlist} &
-				\distributiontest{chi-square distribution}{chi-square test for variance} \vspace*{2pt} \\ \hline
-			\label{trw:equalityofvariances} &
-				Equality of two population variances \newline$\nullhypothesis : \populationvariance_1 = \populationvariance_2$ &
-				\begin{nospacebulletedlist}
-					\item Normally distributed
-					\item Independent populations
-					\item Larger variance should be placed in the numerator
-				\end{nospacebulletedlist} &
-				\distributiontest{F-distribution}{F-test for variances} \\ \hline
-			\label{trw:chisquaredindependence} &
-				In a contingency tables \newline$\nullhypothesis : $ The row and column variables are independent \vspace*{1pt} &
-				\begin{nospacebulletedlist}
-					\item Random sampling
-					\item Categorical variables
-					\item Expected value of the number of sample observations in each level of the variable is at least 5
-				\end{nospacebulletedlist} &
-				\distributiontest{chi-squared distribution}{chi-squared test of independence} \\ \hline
-			\label{trw:anova} &
-				Means for more than two populations \newline$\nullhypothesis : \populationmean_1 = \populationmean_2 = \arguments = \populationmean_n$ \vspace*{1pt} &
-				\begin{nospacebulletedlist}
-					\item Normally distributed
-					\item Samples are independent simple random samples
-					\item Populations variances are equal
-				\end{nospacebulletedlist} &
-				\distributiontest{F-distribution}{One-way \acrshort{anova} F-test} \\ \hline
-        \end{longtable}
-%    \end{table}
+			\tablecolumnheadervlinestwo{Assumptions} &
+			\tablecolumnheadervlinestwo{Distribution/Test} \endfirsthead \hline
+			\multicolumn{1}{|c|}{} & \tablecolumnheadervlinestwo{Significance of Test} &
+			\tablecolumnheadervlinestwo{Assumptions} &
+			\tablecolumnheadervlinestwo{Distribution/Test} \endhead \hline
+		\label{trw:populationmean} &
+			Population mean $\nullhypothesis : \populationmean = \populationmean_0$ &
+			\begin{nospacebulletedlist}
+				\item Continuous data
+				\item Normally distributed
+				\item Sample size \textless{}30
+				\item Random sampling
+				\item Unknown population standard deviation
+			\end{nospacebulletedlist} &
+			\distributiontest{t-distribution}{one sample t-test} \\ \hline
+		\label{trw:twopopulationmeans} &
+			Equality of two population means \newline$\nullhypothesis : \populationmean_1 = \populationmean_2$ &
+			\begin{nospacebulletedlist}
+				\item Continuous data
+				\item Normally distributed or sample size \textgreater{}30
+				\item Independent populations
+				\item Random sampling
+				\item Known population standard deviations
+			\end{nospacebulletedlist} &
+			\distributiontest{normal distribution}{two independent sample z-test} \\ \hline
+		\label{trw:equalityofmeansequalunknownstandarddeviation} &
+			Equality of means with equal and unknown standard deviation \newline$\nullhypothesis : \populationmean_1 = \populationmean_2$ &
+			\begin{nospacebulletedlist}
+				\item Continuous data
+				\item Normally distributed
+				\item Independent populations
+				\item Random sampling
+				\item Equal population standard deviations
+			\end{nospacebulletedlist} &
+			\distributiontest{t-distribution}{two independent sample t-test} \\ \hline
+		\label{trw:equalityofmeansunequalunknownstandarddeviation} &
+			Equality of means with unequal and unknown standard deviations \newline$\nullhypothesis : \populationmean_1 = \populationmean_2$ &
+			\begin{nospacebulletedlist}
+				\item Continuous data
+				\item Normally distributed
+				\item Independent populations
+				\item Random sampling
+				\item Unequal population standard deviations
+			\end{nospacebulletedlist} &
+			\distributiontest{t-distribution}{two independent sample t-test} \\ \hline
+		\label{trw:pairedpoints} &
+			Equality of two population means when sample points are paired \newline$\nullhypothesis : \populationmean_1 = \populationmean_2$ \vspace*{1pt} &
+			\begin{nospacebulletedlist}
+				\item Continuous data
+				\item Normally distributed
+				\item Independent populations
+				\item Random sampling
+			\end{nospacebulletedlist} &
+			\distributiontest{t-distribution}{paired t-test} \\ \hline
+		\label{trw:oneproportion} &
+			Population proportion \newline$\nullhypothesis : \proportion = \proportion_0$ &
+			\begin{nospacebulletedlist}
+				\item Binomial distribution
+				\item Random sampling
+				\item When both mean (np) and n(1-p) are greater than or equal to 10, the binomial distribution can be approximated by a normal distribution
+			\end{nospacebulletedlist} &
+			\distributiontest{normal distribution}{one proportion z-test} \\ \hline
+		\label{trw:equalityoftwoproportions} &
+			Equality of two population proportions \newline$\nullhypothesis : \proportion_1 = \proportion_2 $ &
+			\begin{nospacebulletedlist}
+				\item Binomial distribution
+				\item Independent populations
+				\item Random sampling
+				\item When both mean (np) and n(1-p) are greater than or equal to 10, the binomial distribution can be approximated by a normal distribution
+			\end{nospacebulletedlist} &
+			\distributiontest{normal distribution}{two proportion z-test} \\ \hline
+		\label{trw:onevariance} &
+			Population variance \newline$\nullhypothesis : \populationvariance = \populationvariance_0$ &
+			\begin{nospacebulletedlist}
+				\item Continuous data
+				\item Normally distributed
+				\item Random sampling
+			\end{nospacebulletedlist} &
+			\distributiontest{chi-square distribution}{chi-square test for variance} \vspace*{2pt} \\ \hline
+		\label{trw:equalityofvariances} &
+			Equality of two population variances \newline$\nullhypothesis : \populationvariance_1 = \populationvariance_2$ &
+			\begin{nospacebulletedlist}
+				\item Normally distributed
+				\item Independent populations
+				\item Larger variance should be placed in the numerator
+			\end{nospacebulletedlist} &
+			\distributiontest{F-distribution}{F-test for variances} \\ \hline
+		\label{trw:chisquaredindependence} &
+			In a contingency tables \newline$\nullhypothesis : $ The row and column variables are independent \vspace*{1pt} &
+			\begin{nospacebulletedlist}
+				\item Random sampling
+				\item Categorical variables
+				\item Expected value of the number of sample observations in each level of the variable is at least 5
+			\end{nospacebulletedlist} &
+			\distributiontest{chi-squared distribution}{chi-squared test of independence} \\ \hline
+		\label{trw:anova} &
+			Means for more than two populations \newline$\nullhypothesis : \populationmean_1 = \populationmean_2 = \arguments = \populationmean_n$ \vspace*{1pt} &
+			\begin{nospacebulletedlist}
+				\item Normally distributed
+				\item Samples are independent simple random samples
+				\item Populations variances are equal
+			\end{nospacebulletedlist} &
+			\distributiontest{F-distribution}{One-way \acrshort{anova} F-test} \\ \hline
+	\end{longtable}
 
-
-%			\label{trw:} &
-%				\newline$\nullhypothesis : $ &
-%				\begin{nospacebulletedlist}
-%					\item
-%				\end{nospacebulletedlist} &
-%				\distributiontest{}{} \\ \hline
 
 	\begin{code}{}
 		\codeitem \ref{trw:populationmean}) scipy.stats.ttest\_1samp(\arguments)

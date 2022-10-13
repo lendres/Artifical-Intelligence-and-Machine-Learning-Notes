@@ -66,7 +66,10 @@ To prepare data for an individual tree, a subset of rows is taken but the entire
 
 
     \begin{qanda}
-		\begin{question}I am getting the below error with Bagging Classifier with Logistic Regression as base\_estimator: AttributeError: `str' object has no attribute `decode' How to solve it?\end{question}\begin{answer}
+		\begin{question}I am getting the below error with Bagging Classifier with Logistic Regression as base\_estimator: AttributeError: `str' object has no attribute `decode' How to solve it?%
+		\end{question}
+
+		\begin{answer}
 The LogisticRegression function has a parameter named solver, which was earlier by default set to `liblinear', but after an update in sklearn, the default solver was changed to `lbfgs'. Kindly try setting the solver as liblinear, and try the code again, as shown below:
 
 bagging\_lr = BaggingClassifier(base\_estimator=LogisticRegression(solver=`liblinear', random\_state=1), random\_state=1)
@@ -109,9 +112,8 @@ While predicting.
 		\begin{question}
 What is the difference between AdaBoost and Gradient Boosting?
 		\end{question}
-
 		\begin{answer}
-			\begin{tabular}{|p{0.5\qandatextwidth-2\tabcolsep}|p{0.5\qandatextwidth-2\tabcolsep}|} \hline
+			\begin{tabular}{|p{0.5\qandatextwidth-2.5\tabcolsep}|p{0.5\qandatextwidth-2.5\tabcolsep}|} \hline
 					\tablecolumnheadervlinesone{AdaBoost} & \tablecolumnheadervlinestwo{Gradient Boosting} \\ \hline
 					Adaboost is more about ``voting weights'' &
 		            Gradient boosting is more about ``adding gradient optimization.'' \\ \hline
@@ -119,10 +121,8 @@ What is the difference between AdaBoost and Gradient Boosting?
 					Gradient boosting increases the accuracy by minimizing the Loss Function (an error which is the difference of actual and predicted value) and having this loss as a target for the next iteration. \\ \hline
 					At each iteration, the Adaptive boosting algorithm changes the sample distribution by modifying the weights attached to each of the instances. &
 					Gradient boosting calculates the gradient (derivative) of the Loss Function with respect to the prediction (instead of the features). \newline
-		
-		The Gradient boosting algorithm builds the first weak learner and calculates the Loss Function. \newline
-		
-		It then builds a second learner to predict the loss after the first step. The step continues for the third learner and then for the fourth learner and so on until a certain threshold is reached. \\ \hline%
+					The Gradient boosting algorithm builds the first weak learner and calculates the Loss Function. \newline
+					It then builds a second learner to predict the loss after the first step. The step continues for the third learner and then for the fourth learner and so on until a certain threshold is reached. \\ \hline%
 				\end{tabular}
 		\end{answer}
    \end{qanda}
@@ -226,7 +226,7 @@ What is the difference between bagging and boosting?
         \centering
         \caption[Bagging versus boosting]{Bagging versus boosting.}
         \label{tab:baggingversusboosting}
-		\begin{tabular}{|p{0.5\textwidth-2\tabcolsep}|p{0.5\textwidth-2\tabcolsep}|} \hline
+		\begin{tabularx}{\linewidth}{|L|L|} \hline
 			\tablecolumnheadervlinesone{Bagging} & \tablecolumnheadervlinestwo{Boosting} \\ \hline
 			Parallel Training - All the weak learners are built in parallel i.e. independent of each other. &
 			Sequential Training - Successive weak learners to improve the accuracy from the prior learners \\ \hline
@@ -238,7 +238,7 @@ What is the difference between bagging and boosting?
 			Can help reduce bias of the model. \\ \hline
 			Examples: Bagging Classifier, Random Forest &
 			Examples are AdaBoost, Gradient Boosting Classifier \\ \hline
-		\end{tabular}
+		\end{tabularx}
 	\end{table}
 
 	\section{Gradient Boosting}

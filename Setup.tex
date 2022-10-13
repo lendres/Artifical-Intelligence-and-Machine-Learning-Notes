@@ -39,6 +39,15 @@
 
 	% A new column type to apply automatic stepping
 	\newcolumntype{N}{>{\tablerow\refstepcounter{tablerowcounter}\thetablerowcounter}c}
+	\newcolumntype{P}{>{\raggedright\arraybackslash}p{1.22in}}
+	\newcolumntype{Q}{>{\raggedright\arraybackslash}p{3.0in}}
+
+	% Use tabularx to have adjustable width columns.
+	\usepackage{tabularx}
+	% Create a tabularx column with ragged right interiors.  The default paragraph style columns tries to justify the
+	% text and ends up creating underfull warnings.
+	\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
 
 	\newcommand*{\distributiontest}[2]{#1\vspace*{8pt}\newline#2}
 
@@ -67,10 +76,7 @@
 		\end{list}
 	}
 
-
-
-	\newcommand*{\researchreference}[2]{\noindent\begin{minipage}[t]{\textwidth}{\bfseries #1}\newline #2\newline\end{minipage}}
-
+	\newcommand*{\researchreference}[2]{\noindent\begin{minipage}[t]{\textwidth}{\bfseries #1}\newline{}#2\end{minipage}\vspace{\baselineskip}}
 
 	\usepackage{amsmath}
 	\usepackage{lemath}
@@ -138,4 +144,9 @@
 
 
 	% INCLUDE A BIBLIOGRAPHY.
-	\bibliographystyle{leplain} 
+	\bibliographystyle{leplain}
+
+	% Prevents underfull warnings while creating the bibliography.  The bibliography uses the "sloppy" command.
+	% https://tex.stackexchange.com/questions/10924/underfull-hbox-in-bibliography
+	\usepackage{etoolbox}
+	\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}

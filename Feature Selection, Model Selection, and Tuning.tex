@@ -27,27 +27,26 @@ As you will try to decrease FN, FP will increase because of the values which wer
 
 	\begin{qanda}
 		\begin{question}
-How to deal with outliers?
+How should outliers be dealt with?
 		\end{question}
-
 		\begin{answer}
 How to treat outliers is a very tricky topic, it mainly depends on the problem statement. Sometimes we can't even remove outliers or treat them because that's just the way data is and should be kept like that for analysis.
 
-Let us consider an example of a bank.  In a bank, account balance might have high outliers as few people will have a high amount in their accounts, but should we be treating this value or removing it? So I think here we have to consider that in practical life situations we cannot remove these accounts and if we replace them with any other value that will make the data biased.
+Let us consider an example of a bank.  In a bank, account balance might have high outliers as few people will have a high amount in their accounts, but should we be treating this value or removing it?  We have to consider that in practical life situations we cannot remove these accounts and if we replace them with any other value that will make the data biased.
 
-So the best option would be thinking with respect to the problem statement. If the problem statement is: Who is more likely to do a credit card default then I think we can remove people with a high balance in their account as they are less likely to default. In another case, if the problem statement is: Who is going to take a home loan then also I think we can remove outliers but if our problem statement is about business loans then we have to consider these outliers having high balance as they might take a loan for their business.
+So the best option would be to consider the problem statement. If the problem statement is: Who is more likely to do a credit card default then we can remove people with a high balance in their account as they are less likely to default.  But if our problem statement is about business loans, then we have to consider these outliers having high balance as they might take a loan for their business.
 
-All the above judgments should be made by doing the necessary EDA on the data set to figure out the relationship of balance with the target (credit card default, home loan, business loan, etc.). None of the conclusions should come without the data supporting them.
+All the above judgments should be made by doing the necessary EDA on the data set to figure out the relationship of balance with the target (credit card default, business loan, etc.).  None of the conclusions should come without the data supporting them.
 
 Replacing the outliers is done when outliers are few in number and we think that this would be because of the wrong imputation. So we remove these outliers and treat them as missing data.
 		\end{answer}
 	\end{qanda}
 
+
 	\begin{qanda}
 		\begin{question}
-Why can't we use the ROC\_AUC score in case of a skewed data set?
+Why can't we use the ROC\_AUC score in case of a skewed data set?%
 		\end{question}
-
 		\begin{answer}
 This is because a small number of correct or incorrect predictions can result in a large change in the ROC Curve or ROC AUC score, that is why precision and recall are preferred more in case of skewed data.
 		\end{answer}
@@ -117,22 +116,21 @@ How K-Fold Cross-validation works?
 			\item This is done for each of the model parameters to be tested, and the model with the lowest cross-validated and validation error is chosen.
 			\item The test set has not been used so far.
 			\item Only at the very end, the test set is used to test the performance of the (optimized) model.
-		\end{bulletedlist}
+			\item Example: k-fold cross validation for hyperparameter optimization (k=3)
+		\end{bulletedlist}%
 		\begin{code}[\codenumbering]{}
-			\codeitemnonumber \# example: k-fold cross validation for hyperparameter optimization (k=3)
 			\codeitemnonumber original data split into training and test set:
 			\codeitemnonumber |---------------- train ---------------------|         |--- test ---|
 			\codeitemnonumber
-			\codeitemnonumber cross-validation: test set is not used, error is calculated from
-			\codeitemnonumber validation set (k-times) and averaged:
-			\codeitemnonumber
+			\codeitemnonumber cross-validation: test set is not used, error is calculated
+			\codeitemnonumber from validation set (k-times) and averaged:
 			\codeitemnonumber |---- train ------------------|- validation -|         |--- test ---|
 			\codeitemnonumber |---- train ---|- validation -|---- train ---|         |--- test ---|
 			\codeitemnonumber |- validation -|----------- train -----------|         |--- test ---|
 			\codeitemnonumber
-			\codeitemnonumber final measure of model performance: model is trained on all training data
-			\codeitemnonumber and the error is calculated from test set:
-			\codeitemnonumber
+			\codeitemnonumber final measure of model performance: model is trained on all
+			\codeitemnonumber training data and the error is calculated
+			\codeitemnonumber from test set:
 			\codeitemnonumber |---------------- train ---------------------|--- test ---|
 		\end{code}
 

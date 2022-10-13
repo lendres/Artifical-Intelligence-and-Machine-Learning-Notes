@@ -1,3 +1,5 @@
+	% Prevents warning because the title page is not numbered, so the hyper reference cannot be setup.
+	\hypersetup{pageanchor=false}
 	\begin{titlepage}
 
 	\bfseries
@@ -16,4 +18,6 @@
 	\normalsize Material taken from Great Learning course Artificial Intelligence and machine learning and is copy right \copyright of Great Learning.  Additional material copyright by others.
 
 	\normalsize
-	\end{titlepage} 
+	\end{titlepage}
+	% Restore hyper reference anchoring.
+	\hypersetup{pageanchor=true}

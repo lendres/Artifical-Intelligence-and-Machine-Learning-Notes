@@ -117,4 +117,21 @@ Popularity based Recommender System
 		\item Not a personalized recommendation
 	\end{bulletedlist}
 
-	\ 
+	\section{Classification model}
+	\begin{bulletedlist}
+		\item Uses features of both products as well as users in order to predict whether a user will like a product or not.
+		\item Limitation
+		\begin{numberedlist}
+			\item It is not easy to collect quality information about products and users.
+			\item Even if we are able to collect good information, they may not be sufficient to make a good classifier.
+			\item Scalability issue
+		\end{numberedlist}
+	\end{bulletedlist}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[height=2in]{recommendationsystemsclassificationmodel}
+		\caption[Classification model]{Classification model.  The outcome can be 1 if the user likes it else 0 and it incorporates personalization.}
+		\label{fig:recommendationsystemsclassificationmodel}
+	\end{figure}
+ 

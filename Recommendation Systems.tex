@@ -130,4 +130,83 @@ Popularity based Recommender System
 		\item Not a personalized recommendation
 	\end{bulletedlist}
 
-	\ 
+	\section{Classification model}
+	\begin{bulletedlist}
+		\item Uses features of both products as well as users in order to predict whether a user will like a product or not.
+		\item Limitation
+		\begin{numberedlist}
+			\item It is not easy to collect quality information about products and users.
+			\item Even if we are able to collect good information, they may not be sufficient to make a good classifier.
+			\item Scalability issue.
+		\end{numberedlist}
+	\end{bulletedlist}
+
+	\begin{figure}[tbh]
+		\centering
+		\includegraphics[height=2in]{recommendationsystemsclassificationmodel}
+		\caption[Classification model]{Classification model.  The outcome can be 1 if the user likes it else 0 and it incorporates personalization.}
+		\label{fig:recommendationsystemsclassificationmodel}
+	\end{figure}
+
+	\section{Content Based Recommendations}
+
+	\begin{bulletedlist}
+		\item Recommendations are based on information on the content of items rather than on other users' opinions.
+		\item Main idea:
+		\item If a user likes an item then he/she will also like a “similar” item
+		\item Recommend items based on their similarity:
+		\begin{bulletedlist}
+			\item Recommend items to customer x similar to previous items rated highly by x.
+		\end{bulletedlist}
+		\item No need for data on other users.
+		\begin{bulletedlist}
+			\item No cold-start or sparsity problems.
+		\end{bulletedlist}
+		\item Able to recommend to users with unique tastes.
+		\item Techniques that can be used: Cosine similarity.
+	\end{bulletedlist}
+
+	\section{Content Based Recommendation System}
+
+	\begin{bulletedlist}
+		\item Item Profiles:
+		\begin{bulletedlist}
+			\item set of features
+			\item vector
+		\end{bulletedlist}
+		\begin{bulletedlist}
+			\item Weighted average of rated item profiles
+			\item Normalize rating using average rating of user.
+		\end{bulletedlist}
+		\item Advantages
+		\begin{bulletedlist}
+			\item Content-based recommender systems don't require a lot of user data.
+			\item We just need item data and you're able to start giving recommendations to users.
+			\item Recommendation engine does not depend on lots of user data, so it is possible to give recommendations to even your first customer as long as you have adequate data to build his user profile. Does not suffer from cold start.
+			\item Less expensive to build and maintain.
+		\end{bulletedlist}
+		\item Challenges
+		\begin{bulletedlist}
+			\item Your item data needs to be well distributed.
+			\item Availability of features which explain Items and user preferences.
+			\item Recommendations will likely be direct substitutes, and not complements, of the item the user interacted with.  This is one of the key reasons why collaborative filtering provides better recommendations.
+			\item Less dynamic.
+		\end{bulletedlist}
+	\end{bulletedlist}
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=2in]{contentbaserecommendationsystem}
+		\caption[Content based recommendation system]{Content based recommendation system.}
+		\label{fig:contentbaserecommendationsystem}
+	\end{figure}
+
+	\section{Cosine Similarity}
+	\begin{bulletedlist}
+		\item Cosine Similarity is the cosine of the angle between the 2 vectors A and B
+		\item Closer the vectors, smaller will be the angle and hence larger their cosine value.
+	\end{bulletedlist}
+
+	\begin{equation}\label{eqn:cosinesimilarity}
+		CosSim(x,y) = \frac{\sum_i x_i y_i}{\sqrt{\sum_i x_i^2}\sqrt{\sum_i y_i^2}} = \frac{\langle x,y\rangle}{\|x\|\|y\|}
+	\end{equation}

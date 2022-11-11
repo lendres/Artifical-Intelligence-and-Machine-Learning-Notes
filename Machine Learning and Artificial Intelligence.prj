@@ -4,37 +4,37 @@
 1
 1
 Machine Learning and Artificial Intelligence.tex
-51
-5
+50
+4
 2
 
-:\Custom Program Files\LaTeX\TeX\LaTeX\lequestionandanswer.sty
-TeX:DTX
-5255099 0 186 3 138 3 96 96 1293 661 0 1 51 304 -1 0 0 40 41 0 39 1 1 0 3 138  0 -1 0
-Natural Language Processing.tex
-TeX
-17838075 0 -1 13535 -1 13248 192 192 1389 757 0 1 37 208 -1 0 0 38 38 -1 -1 1473 1 0 13248 -1  0 -1 0
-Setup.tex
-TeX
-269496250 0 148 99 149 4 26 26 1345 609 0 1 79 608 -1 0 0 105 106 0 111 1 1 0 4 149  0 -1 0
-:\Custom Program Files\LaTeX\TeX\LaTeX\lecode.sty
-TeX:DTX
-5255163 0 11 46 11 46 78 78 1426 661 0 0 337 176 -1 0 0 24 25 0 23 1 1 0 46 11  0 0 0
-:\Custom Program Files\LaTeX\TeX\LaTeX\lefonts.sty
-TeX:STY
-1060850 0 0 1 24 31 26 26 1072 445 1 0 281 336 -1 -1 0 0 25 0 0 25 1 0 31 24  0 0 0
 Machine Learning and Artificial Intelligence.tex
 TeX
-420491195 0 -1 2294 -1 1967 234 234 1582 817 0 1 37 256 -1 0 0 188 30 -1 -1 3091 1 0 1967 -1  0 -1 0
+152055739 0 -1 21 -1 15 234 234 1582 817 0 1 204 0 -1 0 0 188 23 -1 -1 3040 1 0 15 -1  0 -1 0
+Setup.tex
+TeX
+1060794 0 148 99 149 4 26 26 1345 609 0 1 96 588 -1 0 0 105 106 0 111 1 1 0 4 149  0 -1 0
+Recommendation Systems.tex
+TeX
+269496315 0 -1 7937 -1 8475 64 64 1261 629 0 1 42 378 -1 0 0 33 33 -1 -1 1086 1 0 8475 -1  0 -1 0
+:\Custom Program Files\LaTeX\TeX\LaTeX\lecode.sty
+TeX:DTX
+5255163 0 11 46 11 46 78 78 1426 661 0 0 431 231 -1 0 0 24 25 0 23 1 1 0 46 11  0 0 0
+:\Custom Program Files\LaTeX\TeX\LaTeX\lequestionandanswer.sty
+TeX:DTX
+273690555 0 186 3 138 3 96 96 1293 661 0 1 60 294 -1 0 0 40 41 0 39 1 1 0 3 138  0 -1 0
+Natural Language Processing.tex
+TeX
+286273531 0 -1 13535 -1 13214 192 192 1389 757 0 1 204 -1302 -1 0 0 38 38 -1 -1 1473 1 0 13214 -1  0 -1 0
+:\Custom Program Files\LaTeX\TeX\LaTeX\lefonts.sty
+TeX:STY
+269496306 0 0 1 24 31 26 26 1072 445 1 0 359 336 -1 -1 0 0 25 0 0 25 1 0 31 24  0 0 0
 Installation Notes.tex
 TeX
 286273467 0 -1 8047 -1 8047 208 208 1556 791 0 1 142 704 -1 0 0 29 29 -1 -1 1227 1 0 8047 -1  0 -1 0
 Interview Questions.tex
 TeX
 269496315 0 -1 577 -1 58965 156 156 1475 739 0 1 37 592 -1 0 0 30 32 -1 -1 1141 1 0 58965 -1  0 -1 0
-Machine Learning and Artificial Intelligence.bbl
-TeX:AUX
-269496306 0 14 1 16 1 182 182 1530 601 1 0 71 256 -1 -1 0 0 27 0 0 27 1 0 1 16  0 0 0
 machinelearning.bib
 BibTeX
 1049586 0 53 20 51 2 130 130 1478 713 0 1 44 560 -1 0 0 60 0 0 58 1 1 0 2 51  0 -1 0
@@ -101,9 +101,6 @@ TeX
 List of Notations.tex
 TeX
 1060795 1 -1 1 -1 35 32 32 1255 647 0 1 303 0 -1 0 0 0 37 -1 -1 0 1 0 35 -1  0 -1 0
-Recommendation Systems.tex
-TeX
-1060859 0 -1 581 -1 491 64 64 1261 629 0 1 702 192 -1 0 0 33 33 -1 -1 1086 1 0 491 -1  0 -1 0
 SQL.tex
 TeX
 1060859 0 -1 13 -1 16 128 128 1325 693 0 1 37 16 -1 0 0 14 14 -1 -1 16 1 0 16 -1  0 -1 0

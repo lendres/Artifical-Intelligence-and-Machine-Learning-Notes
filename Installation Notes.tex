@@ -177,3 +177,22 @@ Installed it from the Anaconda Navigator Environments
 		\codeitemnonumber !pip install spacy
 		\codeitemnonumber !python -m spacy download en\_core\_web\_sm
 	\end{code}%
+
+	
+	\section{Manim}
+The \textit{conda} version did not work.  Used the instructions at:
+	\begin{code}[\codenumbering]{}
+		\codeitemnonumber https://docs.manim.community/en/stable/installation/windows.html
+	\end{code}%
+under the heading for \textit{Manual Installation}.
+
+Namely,
+	\begin{numberedlist}
+		\item Create a new virtual environment using the procedure listed above.
+		\item Download a compiled set of \textit{FFmpeg} binaries.
+		\item Add the location of the binaries (inside of the \textit{bin} directory) to the \textit{PATH} environmental variable.
+		\item Run:
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber python -m pip install manim
+		\end{code}
+	\end{numberedlist} 

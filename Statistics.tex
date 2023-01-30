@@ -10,6 +10,10 @@ The five characteristic numbers:
 		\item \xlargest{}
 	\end{plainlist}
 
+In descriptive statistics, the interquartile range (IQR) is a measure of statistical dispersion, which is the spread of the data.  The IQR may also be called the midspread, middle 50\%, fourth spread, or H‑spread.  It is defined as the difference between the 75th and 25th percentiles of the data.  The 50th percentile is the median.
+
+A k-th percentile is a score below which a given percentage k of scores in its frequency distribution falls (exclusive definition) or a score at or below which a given percentage falls (inclusive definition).  Based on number of scores.
+
 Box plot, maximum 1.5 times interquartile range below the first quartile or above the third quartile.  The rest are outliers and plot them accordingly.
 
 
@@ -147,6 +151,10 @@ One-way \acrshort{anova}
 	\end{figure}
 
 	\section{Hypothesis Testing}
+	\subsection{One Tailed versus Two Tailed Tests}
+How can we tell whether it is a one-tailed or a two-tailed test?  It depends on the original claim in the question.  A one-tailed test looks for an ``increase'' or ``decrease'' in the parameter whereas a two-tailed test looks for a ``change'' (could be increase or decrease) in the parameter.  Therefore, if we see words such as ``increased,'' ``greater,'' ``larger,'' ``improved'' and so on, or ``decreased,'' ``less,'' ``smaller,'' and so on in the original claim of a question (>,< are used in $\alternatehypothesis$), a one-tail testis applied.  If words such as ``change,'' ``the same,'' ``different''/``difference,'' and so on are used in the claim of the question ($\neq$ is used in $\alternatehypothesis$), a two-tailed testis applied.
+
+	\subsection{Error Types}
 Type 1 error (false positive): Concluding there is a change in probability when there is not.  The null hypothesis is true, but it is rejected.  Probability of a Type 1 error is denoted as \levelofsignificance{}.
 
 Type 2 error (false negative): Concluding there is not a change in probability when there is.
@@ -158,6 +166,7 @@ Type 2 error (false negative): Concluding there is not a change in probability w
 		\label{fig:type1andtype2errors}
 	\end{figure}
 
+	\subsection{Steps in Hypothesis Testing}
 	\begin{numberedlist}
 		\item Identify the key questions.
 		\item Establish the hypotheses.
@@ -167,6 +176,7 @@ Type 2 error (false negative): Concluding there is not a change in probability w
 		\item Perform the test.
 	\end{numberedlist}
 
+	\subsection{Types of Hypothesises Tests}
 	\begin{figure}[tbp]
 		\centering
 		\includegraphics[width=6.0in]{hypothesistests}

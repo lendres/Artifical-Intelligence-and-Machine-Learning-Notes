@@ -50,8 +50,8 @@ https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html
 	\section{Imbalanced}
 	\begin{code}[\codenumbering]{}
 		\codeitemnonumber \# Jupyter notebook
-		\codeitemnonumber !pip install imblearn --user
-		\codeitemnonumber !pip install imbalanced-learn --user
+		\codeitemnonumber !pip install imblearn \switch{}user
+		\codeitemnonumber !pip install imbalanced-learn \switch{}user
 		\codeitemnonumber
 		\codeitemnonumber \# Anaconda prompt
 		\codeitemnonumber \#!pip install -U imbalanced-learn
@@ -64,15 +64,15 @@ https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html
 	\section{Anaconda and Python}
 	\begin{code}[\codenumbering]{}
 		\codeitemnonumber conda update -n base conda
-		\codeitemnonumber conda update --all
-		\codeitemnonumber jupyter contrib nbextension install --user
+		\codeitemnonumber conda update \switch{}all
+		\codeitemnonumber jupyter contrib nbextension install \switch{}user
 	\end{code}
 
 \textcode{conda install -c conda-forge sklearn-pandas}
 
 	\section{Jupyter Notebooks}
 	\subsection{Version}
-\textcode{jupyter --version}
+\textcode{jupyter \switch{}version}
 
 	\subsection{Original Start Up Short Cut}
 Original short cut target value:
@@ -93,9 +93,9 @@ This section shows how to change the default Jupyter start up folder.  This info
 	\subsubsection{Jupyter Notebook and JupyterLab \texorpdfstring{$<$}{<} 3.0 Versions}
 	\begin{numberedlist}
 		\item Use \textcode{Run as Administrator} on the Anaconda Powershell Prompt.
-		\item At the command prompt run:\\ \textcode{jupyter notebook --generate-config}. \label{nl:jupyterstartupfoldergenerateconfiguration}
+		\item At the command prompt run:\\ \textcode{jupyter notebook \switch{}generate-config}. \label{nl:jupyterstartupfoldergenerateconfiguration}
 		\item Open the written by the command in the previous step.  The file location is specified as output from the command.  Typically, it is This writes a file to:\\ \textcode{C:\textbackslash{}Users\textbackslash{}username\textbackslash{}.jupyter\textbackslash{}jupyter\_notebook\_config.py} \label{nl:jupyterstartupfolderconfigurationfile}
-		\item Search for the following line in the file:\\ \textcode{\#c.NotebookApp.notebook\_dir = \textquoteright{}\textquoteright{}} \label{nl:jupyterstartupfoldersearchforline}
+		\item Search for the following line in the file:\\ \textcode{\# c.NotebookApp.notebook\_dir = \textquoteright{}\textquoteright{}} \label{nl:jupyterstartupfoldersearchforline}
 		\item Uncomment the line.
 		\item Edit the path\footnote{\warning{Be sure to use forward slashes instead of back slashes in the path.}} to the desired location, for example:\\ \textcode{c.NotebookApp.notebook\_dir = "C:/Projects/Python/"}  \label{nl:jupyterstartupfoldereditpath}
 		\item From the start menu, right click on the Jupyter Notebook tile and select:\\ \textcode{More->Open File Location}
@@ -107,7 +107,7 @@ This section shows how to change the default Jupyter start up folder.  This info
 
 	\subsubsection{JupyterLab \texorpdfstring{$>=$}{>=} 3, Jupyter Notebook Classic, and RetroLab}
 	\begin{bulletedlist}
-		\item In step~\ref{nl:jupyterstartupfoldergenerateconfiguration} above, replace:\\ \textcode{jupyter notebook --generate-config}\\ with\\ \textcode{jupyter server --generate-config}.
+		\item In step~\ref{nl:jupyterstartupfoldergenerateconfiguration} above, replace:\\ \textcode{jupyter notebook \switch{}generate-config}\\ with\\ \textcode{jupyter server \switch{}generate-config}.
 		\item In step~\ref{nl:jupyterstartupfolderconfigurationfile} above, the file written is typically:\\ \textcode{jupyter\_server\_config.py}
 
 		\item In steps~\ref{nl:jupyterstartupfoldersearchforline} and~\ref{nl:jupyterstartupfoldereditpath} above, the configuration line:\\ \textcode{c.NotebookApp.notebook\_dir}\\ is instead:\\ \textcode{c.ServerApp.root\_dir}

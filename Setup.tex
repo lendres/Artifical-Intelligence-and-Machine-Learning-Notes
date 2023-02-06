@@ -21,8 +21,8 @@
 	\setlength{\qaspacebetweenqanda}{4pt}
 	\newcommand{\qandqlistfix}{\vspace{-\baselinestretch\baselineskip}}
 
-
-	% HYPOTHESIS TEST TABLE.
+	% TABLES
+	% Hypothesis test table.
 	% Table package.
 	\usepackage{letable}
 	\setlength{\tablerowheight}{6mm}
@@ -48,12 +48,12 @@
 	% text and ends up creating underfull warnings.
 	\newcolumntype{L}{>{\raggedright\arraybackslash}X}
 
-
+	% COMMANDS
 	\newcommand*{\distributiontest}[2]{#1\vspace*{8pt}\newline#2}
-
 	\newcommand*{\arguments}{...\hspace*{0.5pt}}
+	\newcommand*{\switch}{-{}-}
 
-
+	% LISTS
 	\usepackage{lelists}
 	\setlength{\listtopsep}{0pt}
 	
@@ -78,19 +78,22 @@
 
 	\newcommand*{\researchreference}[2]{\noindent\begin{minipage}[t]{\textwidth}{\bfseries #1}\newline{}#2\end{minipage}\vspace{\baselineskip}}
 
+	% MATH
 	\usepackage{amsmath}
 	\usepackage{lemath}
 	\setlength{\mathwhererightmargin}{0pt}
 	\setlength{\mathdefspacelength}{5.0pt}
 
+	% CODE
 	\usepackage{lecode}
 	\setlength{\initialcodeindent}{0pt}
 
+	% NOTATIONS
 	\usepackage{lelistofnotations}
 	\spacingbetweennotations{0.5\baselineskip}
 	\notationheadinglinesize{16pt}
 
-
+	% GLOSSARIES
 	% For the file extensions, use "g," "s," and "o" as the last letter and change the first 2 to create a new glossary.
 	% Optional arguments are:
 	%		toc: Adds the main glossary to the table of contents.  The others are added by default.

@@ -5,30 +5,27 @@
 1
 Machine Learning and Artificial Intelligence.tex
 50
-18
+10
 2
 
-Machine Learning and Artificial Intelligence.tex
-TeX
-152055739 0 -1 1199 -1 1179 234 234 1582 817 0 1 107 576 -1 0 0 188 23 -1 -1 3073 1 0 1179 -1  0 -1 0
 Setup.tex
 TeX
-1060794 0 120 23 102 52 26 26 1345 609 0 1 415 1200 -1 0 0 105 106 0 114 1 1 0 52 102  0 -1 0
-Ensemble Techniques.tex
-TeX
-286273467 0 -1 13327 -1 3720 0 0 1265 565 0 1 205 368 -1 0 0 30 30 -1 -1 821 1 0 3720 -1  0 -1 0
+1060794 0 48 52 39 27 26 26 1345 609 0 1 240 240 -1 0 0 105 106 0 114 1 1 0 27 39  0 -1 0
 :\Custom Program Files\LaTeX\TeX\LaTeX\lequestionandanswer.sty
 TeX:STY
-1060850 0 0 1 0 1 26 26 1446 422 1 0 71 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+1060850 0 0 1 0 1 26 26 1446 422 1 0 71 0 -1 -1 0 0 41 0 0 41 1 0 1 0  0 0 0
+:\Custom Program Files\LaTeX\TeX\LaTeX\letable.sty
+TeX:DTX
+273690619 1 69 1 70 1 32 32 1325 435 0 1 37 1120 -1 0 0 24 25 0 24 1 1 0 1 70  0 0 0
 :\Custom Program Files\LaTeX\TeX\LaTeX\lemarkup.sty
 TeX:STY
 1060850 0 2 30 12 1 130 130 1550 526 1 0 71 192 -1 -1 0 0 25 0 0 25 1 0 1 12  0 0 0
 Data Analysis.tex
 TeX
-1060795 1 -1 24 -1 0 182 182 1530 765 0 1 37 0 -1 0 0 24 24 -1 -1 922 1 0 0 -1  0 -1 0
-Machine Learning 101.tex
+1060795 2 -1 787 -1 800 182 182 1530 765 0 1 156 320 -1 0 0 24 24 -1 -1 912 1 0 800 -1  0 -1 0
+Introduction to Deep Neural Networks.tex
 TeX
-1060859 0 -1 323 -1 567 26 26 795 694 1 1 744 128 -1 -1 0 0 31 -1 -1 31 1 0 567 -1  0 -1 0
+1060795 0 -1 18399 -1 18657 156 156 1553 528 0 0 365 336 -1 0 0 47 47 -1 -1 1801 1 0 18657 -1  0 0 0
 Deep Learning Prework.tex
 TeX
 17838011 2 -1 6469 -1 6473 234 234 1553 817 0 1 1248 32 -1 0 0 33 33 -1 -1 1344 1 0 6473 -1  0 -1 0
@@ -38,30 +35,39 @@ TeX
 Modeling Glossary.tex
 TeX
 1060795 2 -1 523 -1 527 234 234 1582 817 0 1 212 192 -1 0 0 34 34 -1 -1 631 1 0 527 -1  0 0 0
-Recommendation Systems.tex
+Equations.tex
 TeX
-1060859 2 -1 1050 -1 1068 64 64 1261 629 0 1 429 320 -1 0 0 33 33 -1 -1 1086 1 0 1068 -1  0 -1 0
+17838011 0 27 59 -1 593 26 26 1374 609 0 1 37 272 -1 0 0 98 98 -1 -1 1841 1 0 593 -1  0 0 0
 Installation Notes.tex
 TeX
 17838011 0 -1 554 -1 4361 208 208 1556 791 0 1 541 256 -1 0 0 29 29 -1 -1 1227 1 0 4361 -1  0 -1 0
+Statistics.tex
+TeX
+1060795 1 -1 2031 -1 2072 64 64 1287 679 0 1 380 352 -1 0 0 23 21 -1 -1 1290 1 0 2072 -1  0 -1 0
+Recommendation Systems.tex
+TeX
+1060859 2 -1 1050 -1 1068 64 64 1261 629 0 1 429 320 -1 0 0 33 33 -1 -1 1086 1 0 1068 -1  0 -1 0
+Machine Learning 101.tex
+TeX
+1060859 0 -1 323 -1 567 26 26 795 694 1 1 744 128 -1 -1 0 0 31 -1 -1 31 1 0 567 -1  0 -1 0
+Ensemble Techniques.tex
+TeX
+17838011 0 -1 13327 -1 3720 0 0 1265 565 0 1 205 368 -1 0 0 30 30 -1 -1 821 1 0 3720 -1  0 -1 0
+Machine Learning and Artificial Intelligence.tex
+TeX
+152055739 1 -1 745 -1 715 234 234 1582 817 0 1 37 240 -1 0 0 188 23 -1 -1 3073 1 0 715 -1  0 -1 0
+Convolutional Neural Networks.tex
+TeX
+17838010 2 837 10 837 12 78 78 1397 661 0 1 177 384 -1 0 0 41 0 0 41 1 1 0 12 837  0 1 9 1 128 158 159 165 172 179 180 182
 Feature Selection, Model Selection, and Tuning.tex
 TeX
 17838011 4 -1 10434 -1 10435 208 208 1556 791 0 1 128 512 -1 0 0 53 51 -1 -1 3324 1 0 10435 -1  0 -1 0
 Machine Learning Pipeline and Hyperparameter Tuning.tex
 TeX
 17838011 2 -1 1654 -1 1638 26 26 1345 609 0 1 478 96 -1 0 0 62 62 -1 -1 2141 1 0 1638 -1  0 -1 0
-Introduction to Deep Neural Networks.tex
+Regression.tex
 TeX
-1060795 0 -1 1519 -1 1528 156 156 1553 528 0 0 365 320 -1 0 0 47 47 -1 -1 1801 1 0 1528 -1  0 0 0
-Convolutional Neural Networks.tex
-TeX
-17838010 2 837 10 837 12 78 78 1397 661 0 1 177 384 -1 0 0 41 0 0 41 1 1 0 12 837  0 1 9 1 128 158 159 165 172 179 180 182
-Statistics.tex
-TeX
-1060795 1 -1 2031 -1 2072 64 64 1287 679 0 1 380 352 -1 0 0 23 21 -1 -1 1290 1 0 2072 -1  0 -1 0
-Equations.tex
-TeX
-17838011 0 27 59 -1 593 26 26 1374 609 0 1 37 272 -1 0 0 98 98 -1 -1 1841 1 0 593 -1  0 0 0
+17838011 0 -1 13988 -1 13894 182 182 1530 765 0 1 37 288 -1 0 0 42 40 -1 -1 1897 1 0 13894 -1  0 -1 0
 :\Custom Program Files\LaTeX\TeX\LaTeX\lecaptions.sty
 TeX:STY
 269496306 1 0 1 3 1 156 156 1576 552 1 0 71 48 -1 -1 0 0 -1 -1 -1 -1 1 0 1 3  0 0 0
@@ -95,9 +101,6 @@ TeX
 Hierarchical Clustering and PCA.tex
 TeX
 286273467 0 245 52 -1 13037 128 128 1325 693 0 1 562 128 -1 0 0 73 73 -1 -1 3794 1 0 13037 -1  0 -1 0
-Regression.tex
-TeX
-17838011 0 -1 17486 -1 17490 182 182 1530 765 0 1 940 288 -1 0 0 42 40 -1 -1 1897 1 0 17490 -1  0 -1 0
 Modeling.tex
 TeX
 1060795 0 -1 5328 -1 5337 260 260 1608 843 0 1 184 528 -1 0 0 19 19 -1 -1 1679 1 0 5337 -1  0 -1 0
@@ -122,9 +125,6 @@ TeX:STY
 :\Users\lance.endres\AppData\Roaming\WinEdt Team\WinEdt 11\ConfigEx\MainMenu.ini
 DATA:INI:EDT
 269485050 0 3522 9 3531 30 156 156 1202 575 1 1 289 448 -1 -1 0 0 -1 -1 -1 -1 1 0 30 3531  0 -1 0
-:\Custom Program Files\LaTeX\TeX\LaTeX\letable.sty
-TeX:DTX
-5255163 1 -1 497 -1 508 32 32 1325 435 0 262 138 -1 -1 0 0 24 -1 -1 24 1 0  508 -1 0
 :\Custom Program Files\LaTeX\TeX\LaTeX\lelists.sty
 TeX:DTX
 290467770 0 51 1 94 1 130 130 1478 713 0 22 506 -1 -1 0 0 14 0 0 14 1 0  1 94 0

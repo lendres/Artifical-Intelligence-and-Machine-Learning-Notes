@@ -37,7 +37,7 @@
 	\renewcommand{\thetablerowcounter}{\arabic{tablerowcounter}}
 	\AtBeginEnvironment{tabular}{\setcounter{tablerowcounter}{0}}
 
-	% A new column type to apply automatic stepping
+	% A new column type to apply automatic stepping.
 	\newcolumntype{N}{>{\tablerow\refstepcounter{tablerowcounter}\thetablerowcounter}c}
 	\newcolumntype{P}{>{\raggedright\arraybackslash}p{1.22in}}
 	\newcolumntype{Q}{>{\raggedright\arraybackslash}p{3.0in}}

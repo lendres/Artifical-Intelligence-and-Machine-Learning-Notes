@@ -195,8 +195,36 @@ Namely,
 		\begin{code}[\codenumbering]{}
 			\codeitemnonumber python -m pip install manim
 		\end{code}
-		\item Check the environmental variable \textit{PATH} to ensure the MiKTeX path is included.  (To find the MiKTeX path you can use WinEdt and go to \textit{Options$\rightarrow$Execution Modes...$\rightarrow$Console Applications}.)  If it is not in the path, add it.
+		\item Check the environmental variable \textit{PATH} to ensure the MiKTeX path is included.  To find the MiKTeX path you can use WinEdt and go to:
+		\begin{plainlist}
+			\item \textit{Options$\rightarrow$Execution Modes...$\rightarrow$Console Applications}
+		\end{plainlist}
 		\item Restart the computer.
 	\end{numberedlist}
 
-
+	\section{Anaconda and Python Upgrades}
+	\begin{numberedlist}
+		\item To force Anaconda to upgrade.
+		\item Run:
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber conda update --force conda
+			\codeitemnonumber conda update anaconda
+			\codeitemnonumber conda update conda
+		\end{code}
+		\item To install an upgraded Python to the current environment (\textcode{-c conda-forge} is optional).
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber conda install -c conda-forge python=3.11
+		\end{code}
+		\item To install into a different environment.
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber conda install -n \_env-name\_ -c conda-forge python=3.11
+		\end{code}
+		\item \important{[PREFERRED]} Use Anaconda to create a new environment and install a new version of Python to it:
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber conda create -n \_env-name\_ python=3.11 anaconda
+		\end{code}
+		\item Install will a specific version of python and libraries.
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber conda install -n py311 -c conda-forge python=3.11 spyder-kernels=2.4 scikit-learn=1.2.2 matplotlib
+		\end{code}
+	\end{numberedlist}

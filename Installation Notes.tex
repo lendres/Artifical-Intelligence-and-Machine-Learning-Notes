@@ -217,14 +217,34 @@ Namely,
 		\end{code}
 		\item To install into a different environment.
 		\begin{code}[\codenumbering]{}
-			\codeitemnonumber conda install -n \_env-name\_ -c conda-forge python=3.11
+			\codeitemnonumber conda install -n ENVNAME -c conda-forge python=3.11
 		\end{code}
 		\item \important{[PREFERRED]} Use Anaconda to create a new environment and install a new version of Python to it:
 		\begin{code}[\codenumbering]{}
-			\codeitemnonumber conda create -n \_env-name\_ python=3.11 anaconda
+			\codeitemnonumber conda create -n ENVNAME python=3.11 anaconda
 		\end{code}
 		\item Install will a specific version of python and libraries.
 		\begin{code}[\codenumbering]{}
-			\codeitemnonumber conda install -n py311 -c conda-forge python=3.11 spyder-kernels=2.4 scikit-learn=1.2.2 matplotlib
+			\codeitemnonumber conda install -n ENVNAME -c conda-forge python=3.11 spyder-kernels=2.4 scikit-learn=1.2.2 matplotlib
 		\end{code}
+
+		\item PIP requirements file.
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber pip list -{}-format=freeze > requirements.txt
+			\codeitemnonumber pip install -r requirements.txt
+		\end{code}
+
+		\item Anaconda remove environment.
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber conda remove -{}-name ENVNAME -{}-all
+		\end{code}
+
+		\item Anaconda environment file.
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber conda activate ENVNAME
+			\codeitemnonumber conda env export > environmentpy.yml
+			\codeitemnonumber conda env create -f environment.yml
+		\end{code}
+
+
 	\end{numberedlist}

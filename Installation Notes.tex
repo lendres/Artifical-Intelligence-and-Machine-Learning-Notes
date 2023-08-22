@@ -61,15 +61,6 @@ https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html
 		\codeitemnonumber \# Restart the kernel after successful installation of the library
 	\end{code}
 
-	\section{Anaconda and Python}
-	\begin{code}[\codenumbering]{}
-		\codeitemnonumber conda update -n base conda
-		\codeitemnonumber conda update \switch{}all
-		\codeitemnonumber jupyter contrib nbextension install \switch{}user
-	\end{code}
-
-\textcode{conda install -c conda-forge sklearn-pandas}
-
 	\section{Jupyter Notebooks}
 	\subsection{Version}
 \textcode{jupyter \switch{}version}
@@ -204,10 +195,15 @@ Namely,
 
 	\section{Anaconda and Python Upgrades}
 	\begin{numberedlist}
-		\item To force Anaconda to upgrade.
-		\item Run:
+		\item Basic update.
 		\begin{code}[\codenumbering]{}
-			\codeitemnonumber conda update -{}-force conda
+			\codeitemnonumber conda update -n base conda
+			\codeitemnonumber conda update \switch{}all
+			\codeitemnonumber jupyter contrib nbextension install \switch{}user
+		\end{code}
+		\item To force Anaconda to upgrade
+		\begin{code}[\codenumbering]{}
+			\codeitemnonumber conda update \switch{}force conda
 			\codeitemnonumber conda update anaconda
 			\codeitemnonumber conda update conda
 		\end{code}
@@ -230,13 +226,13 @@ Namely,
 
 		\item PIP requirements file.
 		\begin{code}[\codenumbering]{}
-			\codeitemnonumber pip list -{}-format=freeze > requirements.txt
+			\codeitemnonumber pip list \switch{}format=freeze > requirements.txt
 			\codeitemnonumber pip install -r requirements.txt
 		\end{code}
 
 		\item Anaconda remove environment.
 		\begin{code}[\codenumbering]{}
-			\codeitemnonumber conda remove -{}-name ENVNAME -{}-all
+			\codeitemnonumber conda remove \switch{}name ENVNAME \switch{}all
 		\end{code}
 
 		\item Anaconda environment file.
@@ -245,6 +241,10 @@ Namely,
 			\codeitemnonumber conda env export > environmentpy.yml
 			\codeitemnonumber conda env create -f environment.yml
 		\end{code}
-
-
 	\end{numberedlist}
+
+	\section{Sypder}
+It may be necessary to force Spyder to find modules by specifying the PYTHONPATH inside Spyder.
+\begin{plainlist}
+	\item \emph{Tools}$\rightarrow$\emph{PYTHONPATH manager}
+\end{plainlist}

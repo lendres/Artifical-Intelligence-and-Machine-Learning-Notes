@@ -33,6 +33,7 @@ Figures/Image Sources/Jpg/Work Product/
 Figures/*.jpg
 Figures/*.eps
 Thumbs.db
+*.prj
 
 _temp.*
 *.sav

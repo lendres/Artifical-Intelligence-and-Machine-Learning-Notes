@@ -1,7 +1,7 @@
-	\documentclass{lebook}
+\documentclass{lebook}
 
-	% This document requires the use of Lance A. Endres's LaTeX library available at the following location:
-	% https://github.com/lendres/LaTeX
+% This document requires the use of Lance A. Endres's LaTeX library available at the following location:
+% https://github.com/lendres/LaTeX
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Notes to do:
@@ -13,67 +13,67 @@
 % Code to do:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	% SETUP
-	\input{"Setup.tex"}
+% SETUP
+\input{"Setup.tex"}
 
-	\begin{document}
+\begin{document}
 
-	\input{"Equations.tex"}
+\input{"Equations.tex"}
 
-    % MAKE A TITLE PAGE.
-	\input{"Title Page.tex"}
+   % MAKE A TITLE PAGE.
+\input{"Title Page.tex"}
 
-	\pagestyle{leplainheader}
-	\frontmatter{}
+\pagestyle{leplainheader}
+\frontmatter{}
 
-	% GENERATE THE TABLE OF CONTENTS.
-	\tableofcontents{}
-	\listoffigures{}
-	\listoftables{}
+% GENERATE THE TABLE OF CONTENTS.
+\tableofcontents{}
+\listoffigures{}
+\listoftables{}
 
-	\mainmatter{}
+\mainmatter{}
 
 
-	% Glossary entries need to be defined before they can be referenced.
-	\input{"Statistics Glossary"}
-	\input{"Modeling Glossary"}
-	\input{"Acronyms"}
+% Glossary entries need to be defined before they can be referenced.
+\input{"Statistics Glossary"}
+\input{"Modeling Glossary"}
+\input{"Acronyms"}
 
-	\input{"Machine Learning 101"}
-	\input{"Statistics"}
-	\input{"Data Analysis"}
+\input{"Machine Learning 101"}
+\input{"Statistics"}
+\input{"Data Analysis"}
 
-	\input{"Modeling"}
+\input{"Modeling"}
 
-	\input{"Regression"}
-	\input{"Ensemble Techniques"}
-	\input{"Feature Selection, Model Selection, and Tuning"}
-	\input{"Machine Learning Pipeline and Hyperparameter Tuning"}
-	\input{"Clustering"}
-	\input{"K-means Clustering"}
-	\input{"Hierarchical Clustering and PCA"}
+\input{"Regression"}
+\input{"Ensemble Techniques"}
+\input{"Feature Selection, Model Selection, and Tuning"}
+\input{"Machine Learning Pipeline and Hyperparameter Tuning"}
+\input{"Clustering"}
+\input{"K-means Clustering"}
+\input{"Hierarchical Clustering and PCA"}
 
-	\input{"Deep Learning Prework"}
-	\input{"Introduction to Deep Neural Networks"}
-	\input{"Building Blocks of Neural Networks"}
-	\input{"Neural Network Troubleshooting"}
-	\input{"Computer Vision Prework"}
-	\input{"Convolutional Neural Networks"}
-	\input{"Natural Language Processing"}
+\input{"Deep Learning Prework"}
+\input{"Introduction to Deep Neural Networks"}
+\input{"Building Blocks of Neural Networks"}
+\input{"Neural Network Troubleshooting"}
+\input{"Computer Vision Prework"}
+\input{"Convolutional Neural Networks"}
+\input{"Natural Language Processing"}
 
-	\input{"SQL"}
+\input{"SQL"}
 
-	\input{Recommendation Systems}
+\input{Recommendation Systems}
 
-	\input{Prompt Engineering}
+\input{Prompt Engineering}
+\input{Study Questions}
 
-	\appendix{}
-	\input{"Interview Questions"}
-	\input{"Installation Notes"}
+\appendix{}
+\input{"Interview Questions"}
+\input{"Installation Notes"}
 
-	\backmatter{}
-	\pagestyle{leplainheader}
-
+\backmatter{}
+\pagestyle{leplainheader}
 
 
 %	% Standard glossary entries.
@@ -82,27 +82,27 @@
 %	\printglossary[type=main, title=General Glossary]{}
 %	\renewcommand*{\chaptertitle}{General Glossary}
 
-	% Statistics glossary.
-	\printglossary[type=stats, title=Statistics Glossary]{}
-	\renewcommand*{\chaptertitle}{Statistics Glossary}
+% Statistics glossary.
+\printglossary[type=stats, title=Statistics Glossary]{}
+\renewcommand*{\chaptertitle}{Statistics Glossary}
 
-	% Modeling glossary.
-	\printglossary[type=model, title=Modeling Glossary]{}
-	\renewcommand*{\chaptertitle}{Modeling Glossary}
+% Modeling glossary.
+\printglossary[type=model, title=Modeling Glossary]{}
+\renewcommand*{\chaptertitle}{Modeling Glossary}
 
-	% Acronyms.
-	\printglossary[type=\acronymtype]
-	\renewcommand*{\chaptertitle}{Acronyms}
+% Acronyms.
+\printglossary[type=\acronymtype]
+\renewcommand*{\chaptertitle}{Acronyms}
 
-	% PRINT A LIST OF NOTATIONS / NOMENCLATURE.
-	% Argument is a text/tex file containing lines in the form of:
-	% \addnotation{Variable}{Meaning of variable.}
-	\input{"List of Notations.tex"}
+% PRINT A LIST OF NOTATIONS / NOMENCLATURE.
+% Argument is a text/tex file containing lines in the form of:
+% \addnotation{Variable}{Meaning of variable.}
+\input{"List of Notations.tex"}
 
-	% Use all glossary entries without specifically referencing them.
-	% Gather all unused glossary terms.  Putting it before "\printgossaries" seems to cause a blank page to be injected.
-	\glsaddallunused{}
+% Use all glossary entries without specifically referencing them.
+% Gather all unused glossary terms.  Putting it before "\printgossaries" seems to cause a blank page to be injected.
+\glsaddallunused{}
 
-	\bibliography{le, machinelearning}
+\bibliography{le, machinelearning}
 
-	\end{document}
+\end{document}

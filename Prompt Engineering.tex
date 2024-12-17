@@ -87,10 +87,11 @@ What are Embeddings in BERT Score?
 
 Embeddings are a way for computers to understand the meaning of words based on the words around them. It's like when you read a sentence, you can figure out what a word means by looking at the other words in the sentence.
 
-Example:
-
-ai\_generated\_summary = "Major issues, malfunctioning camera."
-human\_generated\_summary = "Severely disappointed, constant problems."
+\noindent{}Example:
+\begin{plainlist}
+\item \textcode{\Small{} ai\_generated\_summary = ``Major issues, malfunctioning camera.''}
+\item \textcode{\Small{} human\_generated\_summary = ``Severely disappointed, constant problems.''}
+\end{plainlist}
 Look at the two summaries presented above. Though the choice of words is not exactly the same, both are close in intent.
 In order to capture intent, we use specific models that encode the semantic meaning of words used in the models in a mathematical space where we can measure the distance between the words used.
 Since distances can be computed, if two words are close to each other in this mathematical space (i.e., less distance), we can infer that these two words are close in meaning.
